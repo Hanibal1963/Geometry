@@ -10,3 +10,7 @@ Bibliothek mit Berechnungsfunktionen für Flächen und Körper.
 ### ThreeDimensional
 
 ### TwoDimensional
+
+- [Circle](Geometry/TwoDimensional/Circle.md) - Berechnung von Kreisflächen
+- [Ellipse](Geometry/TwoDimensional/Ellipse.md) - Berechnung von Ellipsenflächen
+- [Rectangle](Geometry/TwoDimensional/Rectangle.md) - Berechnung von Rechteckflächen
