@@ -68,7 +68,7 @@
     <Compile Include="ThreeDimensional\Cone .vb" />
     <Compile Include="ThreeDimensional\Cuboid .vb" />
     <Compile Include="ThreeDimensional\Pyramid .vb" />
-    <Compile Include="ThreeDimensional\Sphere .vb" />
+    <Compile Include="ThreeDimensional\Sphere.vb" />
     <Compile Include="TwoDimensional\Circle.vb" />
     <Compile Include="ThreeDimensional\Cylinder .vb" />
     <Compile Include="TwoDimensional\Ellipse.vb" />
@@ -122,3 +122,4 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
+
