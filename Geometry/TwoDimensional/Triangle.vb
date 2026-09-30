@@ -4,12 +4,180 @@
 ' Datum: 11.09.2026
 ' --------------------------------------------------------------------------------------------------------
 
+Option Strict On
+Option Explicit On
+Option Infer On
+Option Compare Binary
+
+Imports System.Drawing
+
 Namespace TwoDimensional
 
     ''' <summary>
     ''' Stellt Funktionen zur berechnung von Dreiecken bereit.
     ''' </summary>
     Public Class Triangle
+
+        ''' <summary>
+        ''' Berechnet die Fläche eines Dreiecks.
+        ''' </summary>
+        ''' <param name="b">Grundseite (>= 0)</param>
+        ''' <param name="h">Höhe zur Grundseite (>= 0)</param>
+        ''' <returns>Fläche b * h / 2</returns>
+        Public Shared Function Area(b As Double, h As Double) As Double
+            If b < 0 Then Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
+            If h < 0 Then Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
+
+            Return (b * h) / 2.0
+        End Function
+
+        ''' <summary>
+        ''' Berechnet den Umfang eines Dreiecks aus drei Seiten.
+        ''' </summary>
+        ''' <param name="a">Seite a (&gt; 0)</param>
+        ''' <param name="b">Seite b (&gt; 0)</param>
+        ''' <param name="c">Seite c (&gt; 0)</param>
+        ''' <returns>Umfang a + b + c</returns>
+        Public Shared Function Perimeter(a As Double, b As Double, c As Double) As Double
+            ValidateSides(a, b, c)
+            Return a + b + c
+        End Function
+
+        ''' <summary>
+        ''' Berechnet die Höhe aus Fläche und Grundseite.
+        ''' </summary>
+        ''' <param name="area">Fläche (>= 0)</param>
+        ''' <param name="b">Grundseite (&gt; 0)</param>
+        ''' <returns>Höhe 2 * area / b</returns>
+        Public Shared Function HeightFromArea(area As Double, b As Double) As Double
+            If area < 0 Then Throw New ArgumentException("Fläche darf nicht negativ sein.", NameOf(area))
+            If b <= 0 Then Throw New ArgumentException("Grundseite muss größer als 0 sein.", NameOf(b))
+
+            Return (2.0 * area) / b
+        End Function
+
+        ''' <summary>
+        ''' Berechnet die Fläche mit der Heron-Formel aus den Seitenlängen.
+        ''' </summary>
+        ''' <param name="a">Seite a (&gt; 0)</param>
+        ''' <param name="b">Seite b (&gt; 0)</param>
+        ''' <param name="c">Seite c (&gt; 0)</param>
+        ''' <returns>Fläche nach Heron</returns>
+        Public Shared Function AreaHeron(a As Double, b As Double, c As Double) As Double
+            ValidateSides(a, b, c)
+
+            Dim s = (a + b + c) / 2.0
+            Return Math.Sqrt(s * (s - a) * (s - b) * (s - c))
+        End Function
+
+        ''' <summary>
+        ''' Berechnet einen Innenwinkel eines Dreiecks mit dem Kosinussatz.
+        ''' </summary>
+        ''' <param name="opposite">Gegenüberliegende Seite zum gesuchten Winkel (&gt; 0)</param>
+        ''' <param name="adjacent1">Anliegende Seite 1 (&gt; 0)</param>
+        ''' <param name="adjacent2">Anliegende Seite 2 (&gt; 0)</param>
+        ''' <returns>Winkel im Bogenmaß</returns>
+        Public Shared Function AngleFromSides(opposite As Double, adjacent1 As Double, adjacent2 As Double) As Double
+            ValidateSides(opposite, adjacent1, adjacent2)
+
+            Dim denominator = 2.0 * adjacent1 * adjacent2
+            Dim cosValue = ((adjacent1 * adjacent1) + (adjacent2 * adjacent2) - (opposite * opposite)) / denominator
+
+            If cosValue < -1.0 OrElse cosValue > 1.0 Then
+                Throw New ArgumentException("Die angegebenen Seiten bilden kein gültiges Dreieck.")
+            End If
+
+            Return Math.Acos(cosValue)
+        End Function
+
+        ''' <summary>
+        ''' Berechnet die Seitenlängen aus drei Eckpunkten.
+        ''' </summary>
+        ''' <param name="vertices">Drei Eckpunkte</param>
+        ''' <returns>Array mit Seitenlängen [AB, BC, CA]</returns>
+        Public Shared Function SideLengthsFromVertices(vertices As PointF()) As Double()
+            ValidateVertices(vertices)
+
+            Dim ab = Distance(vertices(0), vertices(1))
+            Dim bc = Distance(vertices(1), vertices(2))
+            Dim ca = Distance(vertices(2), vertices(0))
+
+            Return New Double() {ab, bc, ca}
+        End Function
+
+        ''' <summary>
+        ''' Berechnet die Fläche aus drei Eckpunkten (Shoelace-Formel).
+        ''' </summary>
+        ''' <param name="vertices">Drei Eckpunkte</param>
+        ''' <returns>Dreiecksfläche</returns>
+        Public Shared Function AreaFromVertices(vertices As PointF()) As Double
+            ValidateVertices(vertices)
+
+            Dim area = Math.Abs(
+                (vertices(0).X * (vertices(1).Y - vertices(2).Y)) +
+                (vertices(1).X * (vertices(2).Y - vertices(0).Y)) +
+                (vertices(2).X * (vertices(0).Y - vertices(1).Y))
+            ) / 2.0
+
+            Return area
+        End Function
+
+        ''' <summary>
+        ''' Berechnet den Umfang aus drei Eckpunkten.
+        ''' </summary>
+        ''' <param name="vertices">Drei Eckpunkte</param>
+        ''' <returns>Umfang als Summe der Seitenlängen</returns>
+        Public Shared Function PerimeterFromVertices(vertices As PointF()) As Double
+            Dim sides = SideLengthsFromVertices(vertices)
+            Return sides(0) + sides(1) + sides(2)
+        End Function
+
+        ''' <summary>
+        ''' Berechnet den Schwerpunkt (Centroid) eines Dreiecks aus den Eckpunkten.
+        ''' </summary>
+        ''' <param name="vertices">Drei Eckpunkte</param>
+        ''' <returns>Schwerpunkt als PointF</returns>
+        Public Shared Function Centroid(vertices As PointF()) As PointF
+            ValidateVertices(vertices)
+
+            Dim cx = CSng((vertices(0).X + vertices(1).X + vertices(2).X) / 3.0)
+            Dim cy = CSng((vertices(0).Y + vertices(1).Y + vertices(2).Y) / 3.0)
+            Return New PointF(cx, cy)
+        End Function
+
+        ''' <summary>
+        ''' Prüft, ob die Eckpunkte ein gültiges Dreieck bilden.
+        ''' </summary>
+        ''' <param name="vertices">Drei Eckpunkte</param>
+        ''' <param name="tolerance">Numerische Toleranz (&gt; 0)</param>
+        ''' <returns>True, wenn die Fläche größer als die Toleranz ist</returns>
+        Public Shared Function IsValidTriangleFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
+            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            ValidateVertices(vertices)
+
+            Return AreaFromVertices(vertices) > tolerance
+        End Function
+
+        Private Shared Sub ValidateSides(a As Double, b As Double, c As Double)
+            If a <= 0 Then Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
+            If b <= 0 Then Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
+            If c <= 0 Then Throw New ArgumentException("Seite c muss größer als 0 sein.", NameOf(c))
+
+            If a + b <= c OrElse a + c <= b OrElse b + c <= a Then
+                Throw New ArgumentException("Die angegebenen Seiten bilden kein gültiges Dreieck.")
+            End If
+        End Sub
+
+        Private Shared Sub ValidateVertices(vertices As PointF())
+            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+            If vertices.Length <> 3 Then Throw New ArgumentException("Es müssen genau 3 Eckpunkte angegeben werden.", NameOf(vertices))
+        End Sub
+
+        Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double
+            Dim dx = p2.X - p1.X
+            Dim dy = p2.Y - p1.Y
+            Return Math.Sqrt((dx * dx) + (dy * dy))
+        End Function
 
     End Class
 
