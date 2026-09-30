@@ -70,7 +70,7 @@
     <Compile Include="ThreeDimensional\Pyramid .vb" />
     <Compile Include="ThreeDimensional\Sphere.vb" />
     <Compile Include="TwoDimensional\Circle.vb" />
-    <Compile Include="ThreeDimensional\Cylinder .vb" />
+    <Compile Include="ThreeDimensional\Cylinder.vb" />
     <Compile Include="TwoDimensional\Ellipse.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
