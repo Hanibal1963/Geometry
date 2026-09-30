@@ -117,8 +117,8 @@
     <None Include="TwoDimensional\Parallelogram.md" />
     <None Include="TwoDimensional\Polygon.md" />
     <None Include="TwoDimensional\Rectangle.md" />
+    <None Include="TwoDimensional\Trapezoid.md" />
     <None Include="TwoDimensional\Triangle.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
-
