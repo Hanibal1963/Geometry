@@ -112,6 +112,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="ThreeDimensional\Sphere.md" />
     <None Include="TwoDimensional\Circle.md" />
     <None Include="TwoDimensional\Ellipse.md" />
     <None Include="TwoDimensional\Parallelogram.md" />
@@ -122,4 +123,3 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
-
