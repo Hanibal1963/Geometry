@@ -9,6 +9,8 @@ Bibliothek mit Berechnungsfunktionen für Flächen und Körper.
 
 ### ThreeDimensional
 
+- [Sphere](Geometry/ThreeDimensional/Sphere.md) - Berechnung von Kugelvolumen, Oberfläche und weiteren Eigenschaften
+
 ### TwoDimensional
 
 - [Circle](Geometry/TwoDimensional/Circle.md) - Berechnung von Kreisflächen
