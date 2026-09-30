@@ -75,6 +75,7 @@
     <Compile Include="TwoDimensional\PolygonTests.vb" />
     <Compile Include="TwoDimensional\ParallelogramTests.vb" />
     <Compile Include="TwoDimensional\RectangleTests.vb" />
+	<Compile Include="TwoDimensional\TrapezoidTests.vb" />
 	<Compile Include="TwoDimensional\TriangleTests.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -131,4 +132,5 @@
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
+
 
