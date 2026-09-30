@@ -78,6 +78,7 @@
 	<Compile Include="TwoDimensional\TrapezoidTests.vb" />
 	<Compile Include="TwoDimensional\TriangleTests.vb" />
 <Compile Include="ThreeDimensional\SphereTests.vb" />
+<Compile Include="ThreeDimensional\CylinderTests.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -133,6 +134,7 @@
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
+
 
 
 
