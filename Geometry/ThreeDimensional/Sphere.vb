@@ -23,7 +23,9 @@ Namespace ThreeDimensional
         ''' <returns>Volumen 4/3 * PI * r^3</returns>
         Public Shared Function Volume(radius As Double) As Double
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (4.0 / 3.0) * Math.PI * Math.Pow(radius, 3)
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -115,9 +117,9 @@ Namespace ThreeDimensional
             End If
 
             Dim sinTheta = Math.Sin(polarAngleRadians)
-            Dim x = centerX + radius * sinTheta * Math.Cos(azimuthRadians)
-            Dim y = centerY + radius * sinTheta * Math.Sin(azimuthRadians)
-            Dim z = centerZ + radius * Math.Cos(polarAngleRadians)
+            Dim x = centerX + (radius * sinTheta * Math.Cos(azimuthRadians))
+            Dim y = centerY + (radius * sinTheta * Math.Sin(azimuthRadians))
+            Dim z = centerZ + (radius * Math.Cos(polarAngleRadians))
 
             Return Tuple.Create(x, y, z)
         End Function
