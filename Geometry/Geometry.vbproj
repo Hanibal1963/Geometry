@@ -65,7 +65,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ThreeDimensional\Cone .vb" />
+    <Compile Include="ThreeDimensional\Cone.vb" />
     <Compile Include="ThreeDimensional\Cuboid .vb" />
     <Compile Include="ThreeDimensional\Pyramid .vb" />
     <Compile Include="ThreeDimensional\Sphere.vb" />
