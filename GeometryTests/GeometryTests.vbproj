@@ -70,6 +70,7 @@
     <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ThreeDimensional\CubeTests.vb" />
     <Compile Include="TwoDimensional\CircleTests.vb" />
     <Compile Include="TwoDimensional\EllipseTests.vb" />
     <Compile Include="TwoDimensional\PolygonTests.vb" />
