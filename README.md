@@ -19,6 +19,7 @@ Bibliothek mit Berechnungsfunktionen für Flächen und Körper.
 
 - [Circle](Geometry/TwoDimensional/Circle.md) - Berechnung von Kreisflächen
 - [Ellipse](Geometry/TwoDimensional/Ellipse.md) - Berechnung von Ellipsenflächen
+- [Kite](Geometry/TwoDimensional/Kite.md) - Berechnung von Drachenflächen
 - [Parallelogram](Geometry/TwoDimensional/Parallelogram.md) - Berechnung von Parallelogrammflächen
 - [Polygon](Geometry/TwoDimensional/Polygon.md) - Berechnung von Polygonflächen
 - [Rectangle](Geometry/TwoDimensional/Rectangle.md) - Berechnung von Rechteckflächen
