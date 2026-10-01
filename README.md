@@ -13,6 +13,7 @@ Bibliothek mit Berechnungsfunktionen für Flächen und Körper.
 - [Cube](Geometry/ThreeDimensional/Cube.md) - Berechnung von Würfelvolumen, Oberfläche und weiteren Eigenschaften
 - [Cuboid](Geometry/ThreeDimensional/Cuboid.md) - Berechnung von Quadervolumen, Oberfläche und weiteren Eigenschaften
 - [Cylinder](Geometry/ThreeDimensional/Cylinder.md) - Berechnung von Zylindervolumen, Oberfläche und weiteren Eigenschaften
+- [Prism](Geometry/ThreeDimensional/Prism.md) - Berechnung von Prisma-Volumen, Oberfläche und weiteren Eigenschaften
 - [Pyramid](Geometry/ThreeDimensional/Pyramid.md) - Berechnung von Pyramidenvolumen, Oberfläche und weiteren Eigenschaften
 - [Sphere](Geometry/ThreeDimensional/Sphere.md) - Berechnung von Kugelvolumen, Oberfläche und weiteren Eigenschaften
 
