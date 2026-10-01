@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ThreeDimensional\Cone.vb" />
+    <Compile Include="ThreeDimensional\Cube.vb" />
     <Compile Include="ThreeDimensional\Cuboid.vb" />
     <Compile Include="ThreeDimensional\Pyramid.vb" />
     <Compile Include="ThreeDimensional\Sphere.vb" />
@@ -117,6 +118,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="ThreeDimensional\Cone.md" />
+    <None Include="ThreeDimensional\Cube.md" />
     <None Include="ThreeDimensional\Cuboid.md" />
     <None Include="ThreeDimensional\Cylinder.md" />
     <None Include="ThreeDimensional\Pyramid.md" />
