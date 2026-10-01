@@ -1,4 +1,4 @@
-' --------------------------------------------------------------------------------------------------------
+﻿' --------------------------------------------------------------------------------------------------------
 ' Datei: Prism.vb
 ' Author: Andreas Sauer
 ' Datum: 12.09.2026
@@ -23,6 +23,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Volumen baseArea * height</returns>
         Public Shared Function Volume(baseArea As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseArea < 0 Then Throw New ArgumentException("Die Grundfläche darf nicht negativ sein.", NameOf(baseArea))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return baseArea * height
@@ -35,6 +36,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Mantelfläche basePerimeter * height</returns>
         Public Shared Function LateralArea(basePerimeter As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If basePerimeter < 0 Then Throw New ArgumentException("Der Grundumfang darf nicht negativ sein.", NameOf(basePerimeter))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return basePerimeter * height
@@ -48,6 +50,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Oberfläche 2 * baseArea + basePerimeter * height</returns>
         Public Shared Function SurfaceArea(baseArea As Double, basePerimeter As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseArea < 0 Then Throw New ArgumentException("Die Grundfläche darf nicht negativ sein.", NameOf(baseArea))
             If basePerimeter < 0 Then Throw New ArgumentException("Der Grundumfang darf nicht negativ sein.", NameOf(basePerimeter))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
@@ -62,6 +65,7 @@ Namespace ThreeDimensional
         ''' <param name="sideC">Seite C (&gt; 0)</param>
         ''' <returns>Dreiecksfläche</returns>
         Public Shared Function TriangularBaseArea(sideA As Double, sideB As Double, sideC As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateTriangleSides(sideA, sideB, sideC)
 
             Dim s = (sideA + sideB + sideC) / 2.0
@@ -77,6 +81,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Prismahöhe (&gt;= 0)</param>
         ''' <returns>Volumen Dreiecksgrundfläche * height</returns>
         Public Shared Function TriangularPrismVolume(sideA As Double, sideB As Double, sideC As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return Volume(TriangularBaseArea(sideA, sideB, sideC), height)
         End Function
@@ -90,6 +95,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Prismahöhe (&gt;= 0)</param>
         ''' <returns>Oberfläche 2 * Dreiecksgrundfläche + (a+b+c) * height</returns>
         Public Shared Function TriangularPrismSurfaceArea(sideA As Double, sideB As Double, sideC As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Dim baseArea = TriangularBaseArea(sideA, sideB, sideC)
             Dim basePerimeter = sideA + sideB + sideC
@@ -103,6 +109,7 @@ Namespace ThreeDimensional
         ''' <param name="sideCount">Anzahl der Seiten (&gt;= 3)</param>
         ''' <returns>Fläche n*s^2/(4*tan(PI/n))</returns>
         Public Shared Function RegularPolygonBaseArea(sideLength As Double, sideCount As Integer) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideLength < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(sideLength))
             ValidateSideCount(sideCount)
 
@@ -118,6 +125,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Prismahöhe (&gt;= 0)</param>
         ''' <returns>Volumen Grundfläche * Höhe</returns>
         Public Shared Function RegularPolygonPrismVolume(sideLength As Double, sideCount As Integer, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Dim baseArea = RegularPolygonBaseArea(sideLength, sideCount)
             Return Volume(baseArea, height)
@@ -131,6 +139,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Prismahöhe (&gt;= 0)</param>
         ''' <returns>Oberfläche 2 * Grundfläche + Umfang * Höhe</returns>
         Public Shared Function RegularPolygonPrismSurfaceArea(sideLength As Double, sideCount As Integer, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Dim baseArea = RegularPolygonBaseArea(sideLength, sideCount)
             Dim basePerimeter = sideCount * sideLength
@@ -138,6 +147,7 @@ Namespace ThreeDimensional
         End Function
 
         Private Shared Sub ValidateTriangleSides(sideA As Double, sideB As Double, sideC As Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideA <= 0 Then Throw New ArgumentException("Seite A muss größer als 0 sein.", NameOf(sideA))
             If sideB <= 0 Then Throw New ArgumentException("Seite B muss größer als 0 sein.", NameOf(sideB))
             If sideC <= 0 Then Throw New ArgumentException("Seite C muss größer als 0 sein.", NameOf(sideC))
@@ -148,6 +158,7 @@ Namespace ThreeDimensional
         End Sub
 
         Private Shared Sub ValidateSideCount(sideCount As Integer)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideCount < 3 Then Throw New ArgumentException("Die Seitenanzahl muss größer oder gleich 3 sein.", NameOf(sideCount))
         End Sub
 

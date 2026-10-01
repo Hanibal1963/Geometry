@@ -1,4 +1,4 @@
-' --------------------------------------------------------------------------------------------------------
+﻿' --------------------------------------------------------------------------------------------------------
 ' Datei: SphereTests.vb
 ' Author: Andreas Sauer
 ' Datum: 11.09.2026
@@ -12,27 +12,32 @@ Namespace ThreeDimensional.Tests
 
     <TestClass>
     Public Class SphereTests
+        ' Gruppiert Testfälle für die zugehörige Geometrieklasse.
 
         <TestMethod>
         Public Sub Volume_SurfaceArea_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.AreEqual((4.0 / 3.0) * Math.PI * 8.0, Volume(2), 0.000000001)
             Assert.AreEqual(4.0 * Math.PI * 4.0, SurfaceArea(2), 0.000000001)
         End Sub
 
         <TestMethod>
         Public Sub Diameter_Radius_Conversion_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.AreEqual(10.0, DiameterFromRadius(5), 0.000000001)
             Assert.AreEqual(5.0, RadiusFromDiameter(10), 0.000000001)
         End Sub
 
         <TestMethod>
         Public Sub GreatCircle_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.AreEqual(2.0 * Math.PI * 3.0, GreatCircleCircumference(3), 0.000000001)
             Assert.AreEqual(Math.PI * 9.0, GreatCircleArea(3), 0.000000001)
         End Sub
 
         <TestMethod>
         Public Sub SphericalCap_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim volumeValue = SphericalCapVolume(5, 2)
             Dim areaValue = SphericalCapArea(5, 2)
 
@@ -42,6 +47,7 @@ Namespace ThreeDimensional.Tests
 
         <TestMethod>
         Public Sub PointOnSphere_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim p = PointOnSphere(0, 0, 0, 2, Math.PI / 2.0, 0)
             Assert.AreEqual(2.0, p.Item1, 0.000000001)
             Assert.AreEqual(0.0, p.Item2, 0.000000001)
@@ -50,16 +56,19 @@ Namespace ThreeDimensional.Tests
 
         <TestMethod>
         Public Sub Guards_Volume_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.ThrowsException(Of ArgumentException)(Sub() Volume(-1))
         End Sub
 
         <TestMethod>
         Public Sub Guards_SphericalCapVolume_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.ThrowsException(Of ArgumentException)(Sub() SphericalCapVolume(2, 5))
         End Sub
 
         <TestMethod>
         Public Sub Guards_PointOnSphere_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.ThrowsException(Of ArgumentException)(Sub() PointOnSphere(0, 0, 0, 2, -0.1, 0))
         End Sub
 

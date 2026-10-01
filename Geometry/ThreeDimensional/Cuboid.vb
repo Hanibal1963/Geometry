@@ -24,6 +24,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Volumen length * width * height</returns>
         Public Shared Function Volume(length As Double, width As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Länge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Breite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
@@ -39,6 +40,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Oberfläche 2 * (lw + lh + wh)</returns>
         Public Shared Function SurfaceArea(length As Double, width As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Länge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Breite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
@@ -54,6 +56,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Raumdiagonale sqrt(l^2 + w^2 + h^2)</returns>
         Public Shared Function SpaceDiagonal(length As Double, width As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Länge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Breite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
@@ -68,6 +71,7 @@ Namespace ThreeDimensional
         ''' <param name="width">Breite (&gt;= 0)</param>
         ''' <returns>Flächendiagonale sqrt(l^2 + w^2)</returns>
         Public Shared Function FaceDiagonalLengthWidth(length As Double, width As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Länge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Breite darf nicht negativ sein.", NameOf(width))
             Return Math.Sqrt((length * length) + (width * width))
@@ -80,6 +84,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Flächendiagonale sqrt(l^2 + h^2)</returns>
         Public Shared Function FaceDiagonalLengthHeight(length As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Länge darf nicht negativ sein.", NameOf(length))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return Math.Sqrt((length * length) + (height * height))
@@ -92,6 +97,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Flächendiagonale sqrt(w^2 + h^2)</returns>
         Public Shared Function FaceDiagonalWidthHeight(width As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If width < 0 Then Throw New ArgumentException("Die Breite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return Math.Sqrt((width * width) + (height * height))
@@ -105,6 +111,7 @@ Namespace ThreeDimensional
         ''' <param name="edge2">Kante 2 (&gt; 0)</param>
         ''' <returns>Fehlende Kante volume / (edge1 * edge2)</returns>
         Public Shared Function EdgeFromVolume(volume As Double, edge1 As Double, edge2 As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If volume < 0 Then Throw New ArgumentException("Das Volumen darf nicht negativ sein.", NameOf(volume))
             If edge1 <= 0 Then Throw New ArgumentException("Kante 1 muss größer als 0 sein.", NameOf(edge1))
             If edge2 <= 0 Then Throw New ArgumentException("Kante 2 muss größer als 0 sein.", NameOf(edge2))
@@ -120,6 +127,7 @@ Namespace ThreeDimensional
         ''' <param name="tolerance">Numerische Toleranz (&gt; 0)</param>
         ''' <returns>True, wenn alle drei Kanten innerhalb der Toleranz gleich sind</returns>
         Public Shared Function IsCube(length As Double, width As Double, height As Double, Optional tolerance As Double = 0.000001) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Länge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Breite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
@@ -139,6 +147,7 @@ Namespace ThreeDimensional
         ''' <param name="z2">Z-Koordinate Punkt 2</param>
         ''' <returns>Mittelpunkt als Tuple(X,Y,Z)</returns>
         Public Shared Function Center(x1 As Double, y1 As Double, z1 As Double, x2 As Double, y2 As Double, z2 As Double) As Tuple(Of Double, Double, Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Return Tuple.Create((x1 + x2) / 2.0, (y1 + y2) / 2.0, (z1 + z2) / 2.0)
         End Function
 
@@ -153,6 +162,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Array mit 8 Eckpunkten als Tuple(X,Y,Z)</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, cz As Double, length As Double, width As Double, height As Double) As Tuple(Of Double, Double, Double)()
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Länge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Breite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))

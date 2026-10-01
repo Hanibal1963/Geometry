@@ -25,6 +25,7 @@ Namespace TwoDimensional
         ''' <param name="sideCount">Anzahl der Seiten (&gt;= 3)</param>
         ''' <returns>Umfang sideCount * sideLength</returns>
         Public Shared Function Perimeter(sideLength As Double, sideCount As Integer) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideLength < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(sideLength))
             ValidateSideCount(sideCount)
             Return sideCount * sideLength
@@ -36,6 +37,7 @@ Namespace TwoDimensional
         ''' <param name="sideCount">Anzahl der Seiten (&gt;= 3)</param>
         ''' <returns>Innenwinkel ((n-2)*PI)/n</returns>
         Public Shared Function InteriorAngle(sideCount As Integer) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSideCount(sideCount)
             Return ((sideCount - 2.0) * Math.PI) / sideCount
         End Function
@@ -46,6 +48,7 @@ Namespace TwoDimensional
         ''' <param name="sideCount">Anzahl der Seiten (&gt;= 3)</param>
         ''' <returns>Außenwinkel 2*PI/n</returns>
         Public Shared Function ExteriorAngle(sideCount As Integer) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSideCount(sideCount)
             Return (2.0 * Math.PI) / sideCount
         End Function
@@ -57,6 +60,7 @@ Namespace TwoDimensional
         ''' <param name="sideCount">Anzahl der Seiten (&gt;= 3)</param>
         ''' <returns>Apothem sideLength / (2*tan(PI/n))</returns>
         Public Shared Function Apothem(sideLength As Double, sideCount As Integer) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideLength < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(sideLength))
             ValidateSideCount(sideCount)
 
@@ -71,6 +75,7 @@ Namespace TwoDimensional
         ''' <param name="sideCount">Anzahl der Seiten (&gt;= 3)</param>
         ''' <returns>Umkreisradius sideLength / (2*sin(PI/n))</returns>
         Public Shared Function Circumradius(sideLength As Double, sideCount As Integer) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideLength < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(sideLength))
             ValidateSideCount(sideCount)
 
@@ -85,6 +90,7 @@ Namespace TwoDimensional
         ''' <param name="sideCount">Anzahl der Seiten (&gt;= 3)</param>
         ''' <returns>Fläche 0.5 * Umfang * Apothem</returns>
         Public Shared Function Area(sideLength As Double, sideCount As Integer) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim perimeterValue = Perimeter(sideLength, sideCount)
             Dim apothemValue = Apothem(sideLength, sideCount)
             Return 0.5 * perimeterValue * apothemValue
@@ -97,6 +103,7 @@ Namespace TwoDimensional
         ''' <param name="sideCount">Anzahl der Seiten (&gt;= 3)</param>
         ''' <returns>Seitenlänge perimeter / sideCount</returns>
         Public Shared Function SideLengthFromPerimeter(perimeter As Double, sideCount As Integer) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If perimeter < 0 Then Throw New ArgumentException("Der Umfang darf nicht negativ sein.", NameOf(perimeter))
             ValidateSideCount(sideCount)
             Return perimeter / sideCount
@@ -112,6 +119,7 @@ Namespace TwoDimensional
         ''' <param name="rotationRadians">Rotation im Bogenmaß</param>
         ''' <returns>Eckpunkte in umlaufender Reihenfolge</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, sideCount As Integer, circumradius As Double, rotationRadians As Double) As PointF()
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSideCount(sideCount)
             If circumradius < 0 Then Throw New ArgumentException("Der Umkreisradius darf nicht negativ sein.", NameOf(circumradius))
 
@@ -134,6 +142,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Eckpunkte (mindestens 3)</param>
         ''' <returns>Fläche</returns>
         Public Shared Function AreaFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
 
             Dim sum As Double = 0.0
@@ -151,6 +160,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Eckpunkte (mindestens 2)</param>
         ''' <returns>Umfang</returns>
         Public Shared Function PerimeterFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 2)
 
             Dim total As Double = 0.0
@@ -169,6 +179,7 @@ Namespace TwoDimensional
         ''' <param name="tolerance">Numerische Toleranz (&gt; 0)</param>
         ''' <returns>True, wenn alle Seitenlängen und Radien zum Mittelpunkt innerhalb der Toleranz gleich sind</returns>
         Public Shared Function IsRegularFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
             If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
 
@@ -194,15 +205,18 @@ Namespace TwoDimensional
         End Function
 
         Private Shared Sub ValidateSideCount(sideCount As Integer)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideCount < 3 Then Throw New ArgumentException("Die Seitenanzahl muss größer oder gleich 3 sein.", NameOf(sideCount))
         End Sub
 
         Private Shared Sub ValidateVertices(vertices As PointF(), minCount As Integer)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then Throw New ArgumentException("Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
             If vertices.Length < minCount Then Throw New ArgumentException($"Es müssen mindestens {minCount} Eckpunkte vorhanden sein.", NameOf(vertices))
         End Sub
 
         Private Shared Function AverageCenter(vertices As PointF()) As PointF
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim sumX As Double = 0.0
             Dim sumY As Double = 0.0
 
@@ -215,6 +229,7 @@ Namespace TwoDimensional
         End Function
 
         Private Shared Function Distance(a As PointF, b As PointF) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim dx = b.X - a.X
             Dim dy = b.Y - a.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))

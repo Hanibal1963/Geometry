@@ -1,4 +1,4 @@
-' --------------------------------------------------------------------------------------------------------
+﻿' --------------------------------------------------------------------------------------------------------
 ' Datei: Pyramid.vb
 ' Author: Andreas Sauer
 ' Datum: 11.09.2026
@@ -23,6 +23,7 @@ Namespace ThreeDimensional
         ''' <param name="width">Grundbreite (&gt;= 0)</param>
         ''' <returns>Grundfläche length * width</returns>
         Public Shared Function BaseArea(length As Double, width As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
             Return length * width
@@ -36,6 +37,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Volumen (Grundfläche * Höhe) / 3</returns>
         Public Shared Function Volume(length As Double, width As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
@@ -50,6 +52,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Schräghöhe sqrt((width/2)^2 + h^2)</returns>
         Public Shared Function SlantHeightLengthFace(width As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
 
@@ -64,6 +67,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Schräghöhe sqrt((length/2)^2 + h^2)</returns>
         Public Shared Function SlantHeightWidthFace(length As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
 
@@ -79,6 +83,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Mantelfläche aus 4 Dreiecksflächen</returns>
         Public Shared Function LateralArea(length As Double, width As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
@@ -96,6 +101,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Gesamtoberfläche Grundfläche + Mantelfläche</returns>
         Public Shared Function SurfaceArea(length As Double, width As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
@@ -113,6 +119,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Volumen h/3 * (A1 + A2 + sqrt(A1*A2))</returns>
         Public Shared Function FrustumVolume(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateFrustumInputs(bottomLength, bottomWidth, topLength, topWidth, height)
 
             Dim a1 = bottomLength * bottomWidth
@@ -130,6 +137,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Mantelfläche als Summe der 4 Trapezflächen</returns>
         Public Shared Function FrustumLateralArea(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateFrustumInputs(bottomLength, bottomWidth, topLength, topWidth, height)
 
             Dim slantAlongLength = Math.Sqrt(Math.Pow((bottomWidth - topWidth) / 2.0, 2) + (height * height))
@@ -148,6 +156,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Gesamtoberfläche Grundflächen + Mantel</returns>
         Public Shared Function FrustumSurfaceArea(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateFrustumInputs(bottomLength, bottomWidth, topLength, topWidth, height)
 
             Dim baseAreas = (bottomLength * bottomWidth) + (topLength * topWidth)
@@ -165,6 +174,7 @@ Namespace ThreeDimensional
         ''' <param name="z2">Z von Punkt 2</param>
         ''' <returns>Mittelpunkt als Tuple(X,Y,Z)</returns>
         Public Shared Function Center(x1 As Double, y1 As Double, z1 As Double, x2 As Double, y2 As Double, z2 As Double) As Tuple(Of Double, Double, Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Return Tuple.Create((x1 + x2) / 2.0, (y1 + y2) / 2.0, (z1 + z2) / 2.0)
         End Function
 
@@ -179,6 +189,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Array mit 5 Punkten: 4 Grundpunkte + Spitze</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, cz As Double, length As Double, width As Double, height As Double) As Tuple(Of Double, Double, Double)()
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
             If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
@@ -197,6 +208,7 @@ Namespace ThreeDimensional
         End Function
 
         Private Shared Sub ValidateFrustumInputs(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomLength <= 0 Then Throw New ArgumentException("Die untere Grundlänge muss größer als 0 sein.", NameOf(bottomLength))
             If bottomWidth <= 0 Then Throw New ArgumentException("Die untere Grundbreite muss größer als 0 sein.", NameOf(bottomWidth))
             If topLength < 0 Then Throw New ArgumentException("Die obere Grundlänge darf nicht negativ sein.", NameOf(topLength))

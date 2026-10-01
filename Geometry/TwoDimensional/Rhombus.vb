@@ -25,6 +25,7 @@ Namespace TwoDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Fläche baseLength * height</returns>
         Public Shared Function AreaFromBaseHeight(baseLength As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseLength < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(baseLength))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return baseLength * height
@@ -37,6 +38,7 @@ Namespace TwoDimensional
         ''' <param name="diagonal2">Diagonale 2 (&gt;= 0)</param>
         ''' <returns>Fläche (d1 * d2) / 2</returns>
         Public Shared Function AreaFromDiagonals(diagonal1 As Double, diagonal2 As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diagonal1 < 0 Then Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
             If diagonal2 < 0 Then Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
             Return (diagonal1 * diagonal2) / 2.0
@@ -48,6 +50,7 @@ Namespace TwoDimensional
         ''' <param name="side">Seitenlänge (&gt;= 0)</param>
         ''' <returns>Umfang 4 * side</returns>
         Public Shared Function Perimeter(side As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(side))
             Return 4.0 * side
         End Function
@@ -59,6 +62,7 @@ Namespace TwoDimensional
         ''' <param name="side">Seitenlänge (&gt; 0)</param>
         ''' <returns>Höhe area / side</returns>
         Public Shared Function HeightFromArea(area As Double, side As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If area < 0 Then Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
             If side <= 0 Then Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
             Return area / side
@@ -71,6 +75,7 @@ Namespace TwoDimensional
         ''' <param name="interiorAngleRadians">Innenwinkel im Bogenmaß (0 &lt; Winkel &lt; PI)</param>
         ''' <returns>Array [d1, d2]</returns>
         Public Shared Function DiagonalFromSideAndAngle(side As Double, interiorAngleRadians As Double) As Double()
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side <= 0 Then Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
                 Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))
@@ -89,6 +94,7 @@ Namespace TwoDimensional
         ''' <param name="perimeter">Umfang (&gt; 0)</param>
         ''' <returns>Inkreisradius 2 * area / perimeter</returns>
         Public Shared Function InradiusFromAreaPerimeter(area As Double, perimeter As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If area < 0 Then Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
             If perimeter <= 0 Then Throw New ArgumentException("Der Umfang muss größer als 0 sein.", NameOf(perimeter))
             Return (2.0 * area) / perimeter
@@ -104,6 +110,7 @@ Namespace TwoDimensional
         ''' <param name="rotationRadians">Rotation im Bogenmaß</param>
         ''' <returns>Array mit 4 Eckpunkten in umlaufender Reihenfolge</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, side As Double, interiorAngleRadians As Double, rotationRadians As Double) As PointF()
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side <= 0 Then Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
                 Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))
@@ -131,6 +138,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Vier Eckpunkte</param>
         ''' <returns>Fläche</returns>
         Public Shared Function AreaFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
             Dim sum As Double = 0.0
             For i = 0 To 3
@@ -146,6 +154,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Vier Eckpunkte</param>
         ''' <returns>Umfang</returns>
         Public Shared Function PerimeterFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
             Dim total As Double = 0.0
             For i = 0 To 3
@@ -162,6 +171,7 @@ Namespace TwoDimensional
         ''' <param name="tolerance">Numerische Toleranz (&gt; 0)</param>
         ''' <returns>True, wenn alle Seitenlängen innerhalb der Toleranz gleich sind</returns>
         Public Shared Function IsRhombusFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
             If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
 
@@ -180,11 +190,13 @@ Namespace TwoDimensional
         End Function
 
         Private Shared Sub ValidateVertices(vertices As PointF())
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
             If vertices.Length <> 4 Then Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
         End Sub
 
         Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim dx = p2.X - p1.X
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))

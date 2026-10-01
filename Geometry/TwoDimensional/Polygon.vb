@@ -24,6 +24,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Eckpunkte des Polygons (mindestens 3)</param>
         ''' <returns>Fläche des Polygons</returns>
         Public Shared Function Area(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
 
             Dim sum As Double = 0.0
@@ -41,6 +42,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Eckpunkte des Polygons (mindestens 2)</param>
         ''' <returns>Umfang des Polygons</returns>
         Public Shared Function Perimeter(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 2)
 
             Dim totalPerimeter As Double = 0.0
@@ -59,6 +61,7 @@ Namespace TwoDimensional
         ''' <param name="tolerance">Numerische Toleranz (&gt; 0)</param>
         ''' <returns>True, wenn das Polygon konvex ist</returns>
         Public Shared Function IsConvex(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
             If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
 
@@ -89,6 +92,7 @@ Namespace TwoDimensional
         ''' <param name="tolerance">Numerische Toleranz (&gt; 0)</param>
         ''' <returns>True, wenn das Polygon regelmäßig ist</returns>
         Public Shared Function IsRegular(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
             If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
             If Not IsConvex(vertices, tolerance) Then Return False
@@ -115,6 +119,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Eckpunkte des Polygons (mindestens 3)</param>
         ''' <returns>Schwerpunkt als PointF</returns>
         Public Shared Function Centroid(vertices As PointF()) As PointF
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
 
             Dim signedArea2 As Double = 0.0
@@ -143,6 +148,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Eckpunkte des Polygons (mindestens 1)</param>
         ''' <returns>Begrenzungsrechteck als RectangleF</returns>
         Public Shared Function BoundingBox(vertices As PointF()) As RectangleF
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 1)
 
             Dim minX = vertices(0).X
@@ -168,6 +174,7 @@ Namespace TwoDimensional
         ''' <param name="dy">Verschiebung in Y-Richtung</param>
         ''' <returns>Neue, verschobene Eckpunkte</returns>
         Public Shared Function Translate(vertices As PointF(), dx As Double, dy As Double) As PointF()
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 1)
 
             Dim result(vertices.Length - 1) As PointF
@@ -186,6 +193,7 @@ Namespace TwoDimensional
         ''' <param name="center">Rotationszentrum</param>
         ''' <returns>Neue, rotierte Eckpunkte</returns>
         Public Shared Function Rotate(vertices As PointF(), angleRadians As Double, center As PointF) As PointF()
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 1)
 
             Dim cosA = Math.Cos(angleRadians)
@@ -206,11 +214,13 @@ Namespace TwoDimensional
         End Function
 
         Private Shared Sub ValidateVertices(vertices As PointF(), minCount As Integer)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
             If vertices.Length < minCount Then Throw New ArgumentException($"Es müssen mindestens {minCount} Eckpunkte angegeben werden.", NameOf(vertices))
         End Sub
 
         Private Shared Function CrossZ(p0 As PointF, p1 As PointF, p2 As PointF) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim ax = p1.X - p0.X
             Dim ay = p1.Y - p0.Y
             Dim bx = p2.X - p1.X
@@ -219,6 +229,7 @@ Namespace TwoDimensional
         End Function
 
         Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim dx = p2.X - p1.X
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))

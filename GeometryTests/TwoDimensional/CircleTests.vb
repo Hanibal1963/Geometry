@@ -16,9 +16,11 @@ Namespace TwoDimensional.Tests
     ''' </summary>
     <TestClass()>
     Public Class CircleTests
+        ' Gruppiert Testfälle für die zugehörige Geometrieklasse.
 
         <TestMethod()>
         Public Sub Area_FromRadius_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim r As Double = 2.0
             Dim expected As Double = Math.PI * r * r
             Dim actual As Double = Area(r)
@@ -27,6 +29,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod()>
         Public Sub Area_FromDiameter_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim d As Double = 4.0
             Dim expected As Double = Math.PI * 4.0
             Dim actual As Double = AreaFromDiameter(d)
@@ -35,6 +38,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod()>
         Public Sub Circumference_FromRadius_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim r As Double = 3.0
             Dim expected As Double = 2.0 * Math.PI * r
             Dim actual As Double = Circumference(r)
@@ -43,6 +47,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod()>
         Public Sub Circumference_FromDiameter_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim d As Double = 6.0
             Dim expected As Double = 2.0 * Math.PI * 3.0
             Dim actual As Double = CircumferenceFromDiameter(d)
@@ -51,6 +56,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod()>
         Public Sub DiameterRadiusConversion_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim r As Double = 2.5
             Assert.AreEqual(5.0, DiameterFromRadius(r), 0.000000001)
             Assert.AreEqual(r, RadiusFromDiameter(5.0), 0.000000001)
@@ -58,6 +64,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod()>
         Public Sub ArcLength_And_Degrees_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim r As Double = 2.0
             Dim angleRad As Double = Math.PI / 2.0 ' 90°
             Dim expected As Double = r * angleRad
@@ -67,6 +74,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod()>
         Public Sub SectorArea_And_Degrees_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim r As Double = 3.0
             Dim angleDeg As Double = 60.0
             Dim angleRad As Double = angleDeg * Math.PI / 180.0
@@ -77,6 +85,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod()>
         Public Sub ChordLength_And_FromSagitta_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim r As Double = 5.0
             Dim angleRad As Double = Math.PI / 3.0 ' 60°
             Dim chord As Double = ChordLength(r, angleRad)
@@ -92,6 +101,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod()>
         Public Sub AngleFromArcAndChord_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim r As Double = 4.0
             Dim arcLen As Double = 2.0
             Dim angleFromArc As Double = AngleFromArcLength(r, arcLen)
@@ -104,6 +114,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod()>
         Public Sub PointOnCircle_And_BoundingBox_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim cx As Double = 1.0
             Dim cy As Double = -2.0
             Dim r As Double = 3.0
@@ -122,6 +133,7 @@ Namespace TwoDimensional.Tests
         <TestMethod()>
         <ExpectedException(GetType(ArgumentException))>
         Public Sub NegativeRadius_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim unused = Area(-1.0)
         End Sub
 

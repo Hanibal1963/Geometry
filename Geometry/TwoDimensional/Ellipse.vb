@@ -30,6 +30,7 @@ Namespace TwoDimensional
 
         ' --- Validierungshilfe ---
         Private Shared Sub ValidateAxes(a As Double, b As Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If a <= 0 OrElse b <= 0 Then
                 Throw New ArgumentException("Die Halbachsen müssen größer als 0 sein (a>0, b>0).")
             End If
@@ -39,6 +40,7 @@ Namespace TwoDimensional
         ''' Fläche der Ellipse (A = π * a * b)
         ''' </summary>
         Public Shared Function Area(a As Double, b As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Return Math.PI * a * b
         End Function
@@ -47,6 +49,7 @@ Namespace TwoDimensional
         ''' Eccentricity e = sqrt(1 - (b^2 / a^2)). Sortiert intern so, dass a >= b.
         ''' </summary>
         Public Shared Function Eccentricity(a As Double, b As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim aa = Math.Max(a, b)
             Dim bb = Math.Min(a, b)
@@ -57,6 +60,7 @@ Namespace TwoDimensional
         ''' Abstand der Brennpunkte vom Zentrum: c = sqrt(a^2 - b^2) (setzt a >= b voraus)
         ''' </summary>
         Public Shared Function FocalDistance(a As Double, b As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim aa = Math.Max(a, b)
             Dim bb = Math.Min(a, b)
@@ -67,6 +71,7 @@ Namespace TwoDimensional
         ''' Prüft, ob die Ellipse tatsächlich ein Kreis ist (a == b).
         ''' </summary>
         Public Shared Function IsCircle(a As Double, b As Double) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Return Math.Abs(a - b) <= (Math.Max(a, b) * 0.000000000001)
         End Function
@@ -75,6 +80,7 @@ Namespace TwoDimensional
         ''' Punkt auf der Ellipse für Parameter theta (rad): x = a*cos(theta), y = b*sin(theta)
         ''' </summary>
         Public Shared Function PointOnEllipse(a As Double, b As Double, theta As Double) As PointF
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim x = a * Math.Cos(theta)
             Dim y = b * Math.Sin(theta)
@@ -85,6 +91,7 @@ Namespace TwoDimensional
         ''' Punkt auf der Ellipse als Double-Präzision (x,y)
         ''' </summary>
         Private Shared Function PointOnEllipseD(a As Double, b As Double, theta As Double) As (Double, Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim x = a * Math.Cos(theta)
             Dim y = b * Math.Sin(theta)
@@ -96,6 +103,7 @@ Namespace TwoDimensional
         ''' Gibt eine LineEquation-Struktur zurück. Bei vertikaler Tangente ist IsVertical = True und X ausgefüllt.
         ''' </summary>
         Public Shared Function TangentAt(a As Double, b As Double, theta As Double) As LineEquation
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim x = a * Math.Cos(theta)
             Dim y = b * Math.Sin(theta)
@@ -114,6 +122,7 @@ Namespace TwoDimensional
         ''' Normale an der Ellipse im Parameter theta.
         ''' </summary>
         Public Shared Function NormalAt(a As Double, b As Double, theta As Double) As LineEquation
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim t = TangentAt(a, b, theta)
             If t.IsVertical Then
                 ' Tangente x = const => Normale ist horizontale y = const
@@ -134,6 +143,7 @@ Namespace TwoDimensional
         ''' Formel: rho = (a^2*sin^2 + b^2*cos^2)^(3/2) / (a*b)
         ''' </summary>
         Public Shared Function RadiusOfCurvature(a As Double, b As Double, theta As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim s = a * Math.Sin(theta)
             Dim c = b * Math.Cos(theta)
@@ -146,6 +156,7 @@ Namespace TwoDimensional
         ''' Fläche und Umfassungsmaß (Perimeter) - Ramanujan-Approximation (1. Näherung)
         ''' </summary>
         Public Shared Function PerimeterRamanujan(a As Double, b As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim aa = a
             Dim bb = b
@@ -157,6 +168,7 @@ Namespace TwoDimensional
         ''' Ramanujan zweite Näherung (etwas genauer für starke Exzentrizität)
         ''' </summary>
         Public Shared Function PerimeterRamanujan2(a As Double, b As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim aa = a
             Dim bb = b
@@ -168,6 +180,7 @@ Namespace TwoDimensional
         ''' subdivisions muss gerade und >= 2 sein.
         ''' </summary>
         Public Shared Function PerimeterNumeric(a As Double, b As Double, Optional subdivisions As Integer = 1024) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             If subdivisions < 2 Then subdivisions = 2
             If subdivisions Mod 2 = 1 Then subdivisions += 1
@@ -181,6 +194,7 @@ Namespace TwoDimensional
         ''' Liefert positiven Wert; Ordung der Winkel ist beliebig.
         ''' </summary>
         Public Shared Function ArcLength(a As Double, b As Double, theta1 As Double, theta2 As Double, Optional subdivisions As Integer = 1024) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim t1 = theta1
             Dim t2 = theta2
@@ -201,6 +215,7 @@ Namespace TwoDimensional
         ''' Rückgabe: nächster Punkt (PointF) und minimaler Abstand (Double) in einem Tuple.
         ''' </summary>
         Public Shared Function ClosestPointOnEllipse(a As Double, b As Double, px As Double, py As Double, Optional initialTheta As Double = 0.0, Optional maxIter As Integer = 1000, Optional tol As Double = 0.000000000000001) As Tuple(Of PointF, Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             ' Wenn der Punkt bereits auf der Ellipse liegt, sofort zurückgeben (vermeidet numerische Probleme)
             Dim onEllipse = Math.Abs(((px * px) / (a * a)) + ((py * py) / (b * b)) - 1.0)
@@ -236,6 +251,7 @@ Namespace TwoDimensional
         ''' Umrechnung: Exzentrische Anomalie E -> wahre Anomalie ν (true anomaly). Parameter a,b werden benötigt zur Berechnung e.
         ''' </summary>
         Public Shared Function EccentricToTrueAnomaly(E As Double, a As Double, b As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim ecc = Eccentricity(a, b)
             Dim tanHalfV = Math.Sqrt((1 + ecc) / (1 - ecc)) * Math.Tan(E / 2.0)
             Return 2.0 * Math.Atan(tanHalfV)
@@ -245,6 +261,7 @@ Namespace TwoDimensional
         ''' Umrechnung: wahre Anomalie ν -> exzentrische Anomalie E
         ''' </summary>
         Public Shared Function TrueToEccentricAnomaly(v As Double, a As Double, b As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim e = Eccentricity(a, b)
             Dim tanHalfE = Math.Sqrt((1 - e) / (1 + e)) * Math.Tan(v / 2.0)
             Return 2.0 * Math.Atan(tanHalfE)
@@ -252,6 +269,7 @@ Namespace TwoDimensional
 
         ' --- Numerische Hilfsfunktionen ---
         Private Shared Function SimpsonIntegrate(f As Func(Of Double, Double), a As Double, b As Double, n As Integer) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If n < 2 Then n = 2
             If n Mod 2 = 1 Then n += 1
             Dim h = (b - a) / n

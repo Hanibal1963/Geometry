@@ -28,6 +28,7 @@ Namespace TwoDimensional
         ''' <param name="r">Radius (>= 0)</param>
         ''' <returns>Fläche = π * r^2</returns>
         Public Shared Function Area(r As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
             Return Math.PI * r * r
         End Function
@@ -38,6 +39,7 @@ Namespace TwoDimensional
         ''' <param name="d">Durchmesser (>= 0)</param>
         ''' <returns>Fläche</returns>
         Public Shared Function AreaFromDiameter(d As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Return Area(RadiusFromDiameter(d))
         End Function
 
@@ -47,6 +49,7 @@ Namespace TwoDimensional
         ''' <param name="r">Radius (>= 0)</param>
         ''' <returns>Umfang = 2 * π * r</returns>
         Public Shared Function Circumference(r As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
             Return 2.0 * Math.PI * r
         End Function
@@ -55,6 +58,7 @@ Namespace TwoDimensional
         ''' Berechnet den Umfang aus dem Durchmesser.
         ''' </summary>
         Public Shared Function CircumferenceFromDiameter(d As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Return Circumference(RadiusFromDiameter(d))
         End Function
 
@@ -62,6 +66,7 @@ Namespace TwoDimensional
         ''' Konvertiert Radius in Durchmesser.
         ''' </summary>
         Public Shared Function DiameterFromRadius(r As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
             Return 2.0 * r
         End Function
@@ -70,6 +75,7 @@ Namespace TwoDimensional
         ''' Konvertiert Durchmesser in Radius.
         ''' </summary>
         Public Shared Function RadiusFromDiameter(d As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If d < 0 Then Throw New ArgumentException("Durchmesser darf nicht negativ sein.", NameOf(d))
             Return d / 2.0
         End Function
@@ -85,6 +91,7 @@ Namespace TwoDimensional
         ''' <param name="angleRadians">Winkel in Bogenmaß</param>
         ''' <returns>Bogenlänge = r * angle</returns>
         Public Shared Function ArcLength(r As Double, angleRadians As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
             Return r * angleRadians
         End Function
@@ -93,6 +100,7 @@ Namespace TwoDimensional
         ''' Berechnet die Bogenlänge für einen Winkel in Grad.
         ''' </summary>
         Public Shared Function ArcLengthDegrees(r As Double, angleDegrees As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim rad As Double = angleDegrees * Math.PI / 180.0
             Return ArcLength(r, rad)
         End Function
@@ -102,6 +110,7 @@ Namespace TwoDimensional
         ''' </summary>
         ''' <returns>Sektorfläche = 0.5 * r^2 * angle</returns>
         Public Shared Function SectorArea(r As Double, angleRadians As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
             Return 0.5 * r * r * angleRadians
         End Function
@@ -110,6 +119,7 @@ Namespace TwoDimensional
         ''' Sektorfläche für Winkel in Grad.
         ''' </summary>
         Public Shared Function SectorAreaDegrees(r As Double, angleDegrees As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim rad As Double = angleDegrees * Math.PI / 180.0
             Return SectorArea(r, rad)
         End Function
@@ -119,6 +129,7 @@ Namespace TwoDimensional
         ''' </summary>
         ''' <returns>Sehnenlänge = 2 * r * sin(angle/2)</returns>
         Public Shared Function ChordLength(r As Double, angleRadians As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
             Return 2.0 * r * Math.Sin(angleRadians / 2.0)
         End Function
@@ -128,6 +139,7 @@ Namespace TwoDimensional
         ''' </summary>
         ''' <param name="sagitta">Sehnenhöhe (Abstand von Kreisrand zur Sehnenmitte)</param>
         Public Shared Function ChordLengthFromSagitta(r As Double, sagitta As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
             If sagitta < 0 Or sagitta > r Then Throw New ArgumentException("Sehnenhöhe ungültig.", NameOf(sagitta))
 
@@ -142,6 +154,7 @@ Namespace TwoDimensional
         ''' Berechnet den Zentralwinkel (Bogenmaß) aus Bogenlänge.
         ''' </summary>
         Public Shared Function AngleFromArcLength(r As Double, arcLength As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r <= 0 Then Throw New ArgumentException("Radius muss > 0 sein.", NameOf(r))
             Return arcLength / r
         End Function
@@ -150,6 +163,7 @@ Namespace TwoDimensional
         ''' Berechnet den Zentralwinkel (Bogenmaß) aus Sehnenlänge.
         ''' </summary>
         Public Shared Function AngleFromChordLength(r As Double, chordLength As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r <= 0 Then Throw New ArgumentException("Radius muss > 0 sein.", NameOf(r))
             If chordLength < 0 OrElse chordLength > 2.0 * r Then Throw New ArgumentException("Sehnenlänge ungültig.", NameOf(chordLength))
             ' chord = 2 r sin(theta/2) => theta = 2 * asin(chord/(2r))
@@ -169,6 +183,7 @@ Namespace TwoDimensional
         ''' <param name="angleRadians">Winkel im Bogenmaß (0 = rechts)</param>
         ''' <returns>PointF mit Koordinaten des Punktes</returns>
         Public Shared Function PointOnCircle(cx As Double, cy As Double, r As Double, angleRadians As Double) As PointF
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
             Dim x As Single = CSng(cx + (r * Math.Cos(angleRadians)))
             Dim y As Single = CSng(cy + (r * Math.Sin(angleRadians)))
@@ -179,6 +194,7 @@ Namespace TwoDimensional
         ''' Liefert das Achsen-ausgerichtete BoundingBox-Rechteck für einen Kreis.
         ''' </summary>
         Public Shared Function BoundingBox(cx As Double, cy As Double, r As Double) As RectangleF
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
             Dim x As Single = CSng(cx - r)
             Dim y As Single = CSng(cy - r)

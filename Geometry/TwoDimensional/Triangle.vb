@@ -25,6 +25,7 @@ Namespace TwoDimensional
         ''' <param name="h">Höhe zur Grundseite (>= 0)</param>
         ''' <returns>Fläche b * h / 2</returns>
         Public Shared Function Area(b As Double, h As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If b < 0 Then Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
             If h < 0 Then Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
 
@@ -39,6 +40,7 @@ Namespace TwoDimensional
         ''' <param name="c">Seite c (&gt; 0)</param>
         ''' <returns>Umfang a + b + c</returns>
         Public Shared Function Perimeter(a As Double, b As Double, c As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSides(a, b, c)
             Return a + b + c
         End Function
@@ -50,6 +52,7 @@ Namespace TwoDimensional
         ''' <param name="b">Grundseite (&gt; 0)</param>
         ''' <returns>Höhe 2 * area / b</returns>
         Public Shared Function HeightFromArea(area As Double, b As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If area < 0 Then Throw New ArgumentException("Fläche darf nicht negativ sein.", NameOf(area))
             If b <= 0 Then Throw New ArgumentException("Grundseite muss größer als 0 sein.", NameOf(b))
 
@@ -64,6 +67,7 @@ Namespace TwoDimensional
         ''' <param name="c">Seite c (&gt; 0)</param>
         ''' <returns>Fläche nach Heron</returns>
         Public Shared Function AreaHeron(a As Double, b As Double, c As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSides(a, b, c)
 
             Dim s = (a + b + c) / 2.0
@@ -78,6 +82,7 @@ Namespace TwoDimensional
         ''' <param name="adjacent2">Anliegende Seite 2 (&gt; 0)</param>
         ''' <returns>Winkel im Bogenmaß</returns>
         Public Shared Function AngleFromSides(opposite As Double, adjacent1 As Double, adjacent2 As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSides(opposite, adjacent1, adjacent2)
 
             Dim denominator = 2.0 * adjacent1 * adjacent2
@@ -96,6 +101,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Drei Eckpunkte</param>
         ''' <returns>Array mit Seitenlängen [AB, BC, CA]</returns>
         Public Shared Function SideLengthsFromVertices(vertices As PointF()) As Double()
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
 
             Dim ab = Distance(vertices(0), vertices(1))
@@ -111,6 +117,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Drei Eckpunkte</param>
         ''' <returns>Dreiecksfläche</returns>
         Public Shared Function AreaFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
 
             Dim area = Math.Abs(
@@ -128,6 +135,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Drei Eckpunkte</param>
         ''' <returns>Umfang als Summe der Seitenlängen</returns>
         Public Shared Function PerimeterFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim sides = SideLengthsFromVertices(vertices)
             Return sides(0) + sides(1) + sides(2)
         End Function
@@ -138,6 +146,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Drei Eckpunkte</param>
         ''' <returns>Schwerpunkt als PointF</returns>
         Public Shared Function Centroid(vertices As PointF()) As PointF
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
 
             Dim cx = CSng((vertices(0).X + vertices(1).X + vertices(2).X) / 3.0)
@@ -152,6 +161,7 @@ Namespace TwoDimensional
         ''' <param name="tolerance">Numerische Toleranz (&gt; 0)</param>
         ''' <returns>True, wenn die Fläche größer als die Toleranz ist</returns>
         Public Shared Function IsValidTriangleFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
             ValidateVertices(vertices)
 
@@ -159,6 +169,7 @@ Namespace TwoDimensional
         End Function
 
         Private Shared Sub ValidateSides(a As Double, b As Double, c As Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If a <= 0 Then Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
             If b <= 0 Then Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
             If c <= 0 Then Throw New ArgumentException("Seite c muss größer als 0 sein.", NameOf(c))
@@ -169,11 +180,13 @@ Namespace TwoDimensional
         End Sub
 
         Private Shared Sub ValidateVertices(vertices As PointF())
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
             If vertices.Length <> 3 Then Throw New ArgumentException("Es müssen genau 3 Eckpunkte angegeben werden.", NameOf(vertices))
         End Sub
 
         Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim dx = p2.X - p1.X
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))

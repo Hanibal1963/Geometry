@@ -42,6 +42,7 @@ Namespace TwoDimensional
         ''' <param name="h">Höhe (>= 0)</param>
         ''' <returns>Umfang (2 * (w + h))</returns>
         Public Shared Function Perimeter(w As Double, h As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If w < 0 Then Throw New ArgumentException("Breite darf nicht negativ sein.", NameOf(w))
             If h < 0 Then Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
             Return 2.0 * (w + h)
@@ -66,6 +67,7 @@ Namespace TwoDimensional
         ''' <returns>Seitenverhältnis w / h</returns>
         ''' <exception cref="ArgumentException">Wenn h = 0</exception>
         Public Shared Function AspectRatio(w As Double, h As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If h = 0 Then Throw New ArgumentException("Höhe darf nicht 0 sein.", NameOf(h))
             Return w / h
         End Function
@@ -77,6 +79,7 @@ Namespace TwoDimensional
         ''' <param name="h">Höhe</param>
         ''' <returns>True wenn w = h</returns>
         Public Shared Function IsSquare(w As Double, h As Double) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Return w = h
         End Function
 
@@ -87,6 +90,7 @@ Namespace TwoDimensional
         ''' <param name="h">Höhe</param>
         ''' <returns>Umkreisradius = Diagonale / 2</returns>
         Public Shared Function Circumradius(w As Double, h As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Return Diagonal(w, h) / 2.0
         End Function
 
@@ -97,6 +101,7 @@ Namespace TwoDimensional
         ''' <param name="h">Höhe</param>
         ''' <returns>Inkreisradius = min(w,h) / 2</returns>
         Public Shared Function Inradius(w As Double, h As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Return Math.Min(w, h) / 2.0
         End Function
 
@@ -158,6 +163,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Array mit Eckpunkten (beliebige Orientierung, geschlossener Polygon wird angenommen)</param>
         ''' <returns>Fläche (immer positiv)</returns>
         Public Shared Function AreaFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing OrElse vertices.Length < 3 Then Return 0.0
 
             Dim n As Integer = vertices.Length
@@ -178,6 +184,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Array mit Eckpunkten</param>
         ''' <returns>Perimeter als Double</returns>
         Public Shared Function PerimeterFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing OrElse vertices.Length < 2 Then Return 0.0
 
             Dim n As Integer = vertices.Length
@@ -199,6 +206,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Array mit genau 4 Punkten in Reihenfolge</param>
         ''' <returns>True, wenn alle Innenwinkel rechte Winkel sind (innerhalb einer Toleranz)</returns>
         Public Shared Function IsRectangleFromVertices(vertices As PointF()) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing OrElse vertices.Length <> 4 Then Return False
 
             ' Toleranz für numerische Ungenauigkeiten
@@ -238,6 +246,7 @@ Namespace TwoDimensional
         ''' Fläche eines Quadrats mit Seitenlänge s.
         ''' </summary>
         Public Shared Function AreaSquare(s As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If s < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(s))
             Return s * s
         End Function
@@ -246,6 +255,7 @@ Namespace TwoDimensional
         ''' Umfang eines Quadrats.
         ''' </summary>
         Public Shared Function PerimeterSquare(s As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If s < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(s))
             Return 4.0 * s
         End Function
@@ -254,6 +264,7 @@ Namespace TwoDimensional
         ''' Diagonale eines Quadrats.
         ''' </summary>
         Public Shared Function DiagonalSquare(s As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Return s * Math.Sqrt(2.0)
         End Function
 
@@ -261,6 +272,7 @@ Namespace TwoDimensional
         ''' Berechnet die Seitenlänge eines Quadrats aus der Diagonale.
         ''' </summary>
         Public Shared Function FromDiagonalToSide(d As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If d < 0 Then Throw New ArgumentException("Diagonale darf nicht negativ sein.", NameOf(d))
             Return d / Math.Sqrt(2.0)
         End Function

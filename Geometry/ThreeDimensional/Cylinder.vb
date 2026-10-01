@@ -23,6 +23,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Volumen PI * r^2 * h</returns>
         Public Shared Function Volume(radius As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return Math.PI * radius * radius * height
@@ -35,6 +36,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Mantelfläche 2 * PI * r * h</returns>
         Public Shared Function LateralArea(radius As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return 2.0 * Math.PI * radius * height
@@ -47,6 +49,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Oberfläche 2*PI*r*(r+h)</returns>
         Public Shared Function SurfaceArea(radius As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return 2.0 * Math.PI * radius * (radius + height)
@@ -58,6 +61,7 @@ Namespace ThreeDimensional
         ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <returns>2 * PI * r</returns>
         Public Shared Function BaseCircumference(radius As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             Return 2.0 * Math.PI * radius
         End Function
@@ -68,6 +72,7 @@ Namespace ThreeDimensional
         ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <returns>PI * r^2</returns>
         Public Shared Function BaseArea(radius As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             Return Math.PI * radius * radius
         End Function
@@ -78,6 +83,7 @@ Namespace ThreeDimensional
         ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <returns>Durchmesser 2 * r</returns>
         Public Shared Function DiameterFromRadius(radius As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             Return 2.0 * radius
         End Function
@@ -88,6 +94,7 @@ Namespace ThreeDimensional
         ''' <param name="diameter">Durchmesser (&gt;= 0)</param>
         ''' <returns>Radius d / 2</returns>
         Public Shared Function RadiusFromDiameter(diameter As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diameter < 0 Then Throw New ArgumentException("Der Durchmesser darf nicht negativ sein.", NameOf(diameter))
             Return diameter / 2.0
         End Function
@@ -100,6 +107,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Volumen PI * (R^2 - r^2) * h</returns>
         Public Shared Function HollowVolume(outerRadius As Double, innerRadius As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateHollowRadii(outerRadius, innerRadius)
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return Math.PI * ((outerRadius * outerRadius) - (innerRadius * innerRadius)) * height
@@ -113,6 +121,7 @@ Namespace ThreeDimensional
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Gesamtoberfläche</returns>
         Public Shared Function HollowSurfaceArea(outerRadius As Double, innerRadius As Double, height As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateHollowRadii(outerRadius, innerRadius)
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
 
@@ -134,9 +143,10 @@ Namespace ThreeDimensional
         ''' <param name="heightOffset">Höhenoffset entlang der Achse (0 bis height)</param>
         ''' <returns>3D-Koordinate als Tuple(X, Y, Z)</returns>
         Public Shared Function PointOnLateralSurface(centerX As Double, centerY As Double, baseZ As Double, radius As Double, height As Double, angleRadians As Double, heightOffset As Double) As Tuple(Of Double, Double, Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
-            If heightOffset < 0 OrElse heightOffset > height Then Throw New ArgumentException("heightOffset muss im Bereich 0 bis Höhe liegen.", NameOf(heightOffset))
+            If heightOffset < 0 OrElse heightOffset > height Then Throw New ArgumentException("Höhenoffset muss im Bereich 0 bis Höhe liegen.", NameOf(heightOffset))
 
             Dim x = centerX + radius * Math.Cos(angleRadians)
             Dim y = centerY + radius * Math.Sin(angleRadians)
@@ -146,6 +156,7 @@ Namespace ThreeDimensional
         End Function
 
         Private Shared Sub ValidateHollowRadii(outerRadius As Double, innerRadius As Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If outerRadius <= 0 Then Throw New ArgumentException("Der Außenradius muss größer als 0 sein.", NameOf(outerRadius))
             If innerRadius < 0 Then Throw New ArgumentException("Der Innenradius darf nicht negativ sein.", NameOf(innerRadius))
             If innerRadius >= outerRadius Then Throw New ArgumentException("Der Innenradius muss kleiner als der Außenradius sein.", NameOf(innerRadius))

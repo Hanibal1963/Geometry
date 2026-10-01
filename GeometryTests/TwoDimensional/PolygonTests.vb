@@ -1,4 +1,4 @@
-' --------------------------------------------------------------------------------------------------------
+﻿' --------------------------------------------------------------------------------------------------------
 ' Datei: PolygonTests.vb
 ' Author: Andreas Sauer
 ' Datum: 11.09.2026
@@ -12,9 +12,11 @@ Namespace TwoDimensional.Tests
 
     <TestClass>
     Public Class PolygonTests
+        ' Gruppiert Testfälle für die zugehörige Geometrieklasse.
 
         <TestMethod>
         Public Sub Area_Perimeter_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim rect As PointF() = {
                 New PointF(0, 0),
                 New PointF(4, 0),
@@ -28,6 +30,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod>
         Public Sub IsConvex_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim convex As PointF() = {
                 New PointF(0, 0),
                 New PointF(4, 0),
@@ -49,6 +52,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod>
         Public Sub IsRegular_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim square As PointF() = {
                 New PointF(-1, -1),
                 New PointF(1, -1),
@@ -69,6 +73,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod>
         Public Sub Centroid_BoundingBox_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim rect As PointF() = {
                 New PointF(0, 0),
                 New PointF(4, 0),
@@ -89,6 +94,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod>
         Public Sub Translate_Rotate_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim triangle As PointF() = {
                 New PointF(0, 0),
                 New PointF(2, 0),
@@ -108,11 +114,13 @@ Namespace TwoDimensional.Tests
 
         <TestMethod>
         Public Sub Guards_Area_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.ThrowsException(Of ArgumentException)(Sub() Area(New PointF() {New PointF(0, 0), New PointF(1, 1)}))
         End Sub
 
         <TestMethod>
         Public Sub Guards_IsConvex_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim points As PointF() = {
                 New PointF(0, 0),
                 New PointF(1, 0),
@@ -124,6 +132,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod>
         Public Sub Guards_Centroid_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim collinear As PointF() = {
                 New PointF(0, 0),
                 New PointF(1, 1),

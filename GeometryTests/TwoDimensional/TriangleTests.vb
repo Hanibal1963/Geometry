@@ -1,4 +1,4 @@
-' --------------------------------------------------------------------------------------------------------
+﻿' --------------------------------------------------------------------------------------------------------
 ' Datei: TriangleTests.vb
 ' Author: Andreas Sauer
 ' Datum: 11.09.2026
@@ -12,27 +12,32 @@ Namespace TwoDimensional.Tests
 
     <TestClass>
     Public Class TriangleTests
+        ' Gruppiert Testfälle für die zugehörige Geometrieklasse.
 
         <TestMethod>
         Public Sub Area_Perimeter_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.AreEqual(6.0, Area(4, 3), 0.000000001)
             Assert.AreEqual(12.0, Perimeter(3, 4, 5), 0.000000001)
         End Sub
 
         <TestMethod>
         Public Sub HeightFromArea_AreaHeron_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.AreEqual(3.0, HeightFromArea(6, 4), 0.000000001)
             Assert.AreEqual(6.0, AreaHeron(3, 4, 5), 0.000000001)
         End Sub
 
         <TestMethod>
         Public Sub AngleFromSides_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim angle = AngleFromSides(1, 1, 1)
             Assert.AreEqual(Math.PI / 3.0, angle, 0.000000001)
         End Sub
 
         <TestMethod>
         Public Sub Vertices_Methods_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim vertices As PointF() = {
                 New PointF(0, 0),
                 New PointF(4, 0),
@@ -56,6 +61,7 @@ Namespace TwoDimensional.Tests
 
         <TestMethod>
         Public Sub IsValidTriangleFromVertices_Collinear_IsFalse_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim vertices As PointF() = {
                 New PointF(0, 0),
                 New PointF(1, 1),
@@ -67,26 +73,31 @@ Namespace TwoDimensional.Tests
 
         <TestMethod>
         Public Sub Guards_Perimeter_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.ThrowsException(Of ArgumentException)(Sub() Perimeter(1, 2, 3))
         End Sub
 
         <TestMethod>
         Public Sub Guards_HeightFromArea_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.ThrowsException(Of ArgumentException)(Sub() HeightFromArea(2, 0))
         End Sub
 
         <TestMethod>
         Public Sub Guards_AngleFromSides_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.ThrowsException(Of ArgumentException)(Sub() AngleFromSides(10, 1, 1))
         End Sub
 
         <TestMethod>
         Public Sub Guards_AreaFromVertices_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.ThrowsException(Of ArgumentException)(Sub() AreaFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 1)}))
         End Sub
 
         <TestMethod>
         Public Sub Guards_IsValidTriangleFromVertices_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim vertices As PointF() = {
                 New PointF(0, 0),
                 New PointF(4, 0),

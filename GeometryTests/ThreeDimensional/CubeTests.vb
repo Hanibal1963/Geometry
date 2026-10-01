@@ -1,4 +1,4 @@
-' --------------------------------------------------------------------------------------------------------
+﻿' --------------------------------------------------------------------------------------------------------
 ' Datei: CubeTests.vb
 ' Author: Andreas Sauer
 ' Datum: 12.09.2026
@@ -12,9 +12,11 @@ Namespace ThreeDimensional.Tests
 
     <TestClass>
     Public Class CubeTests
+        ' Gruppiert Testfälle für die zugehörige Geometrieklasse.
 
         <TestMethod>
         Public Sub Volume_Surface_Diagonals_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.AreEqual(27.0, Volume(3), 0.000000001)
             Assert.AreEqual(54.0, SurfaceArea(3), 0.000000001)
             Assert.AreEqual(3.0 * Math.Sqrt(3.0), SpaceDiagonal(3), 0.000000001)
@@ -23,6 +25,7 @@ Namespace ThreeDimensional.Tests
 
         <TestMethod>
         Public Sub SideFromDerivedValues_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.AreEqual(3.0, SideFromVolume(27), 0.000000001)
             Assert.AreEqual(3.0, SideFromSurfaceArea(54), 0.000000001)
             Assert.AreEqual(3.0, SideFromSpaceDiagonal(3.0 * Math.Sqrt(3.0)), 0.000000001)
@@ -30,6 +33,7 @@ Namespace ThreeDimensional.Tests
 
         <TestMethod>
         Public Sub Center_And_Vertices_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim centerPoint = Center(0, 0, 0, 2, 2, 2)
             Assert.AreEqual(1.0, centerPoint.Item1, 0.000000001)
             Assert.AreEqual(1.0, centerPoint.Item2, 0.000000001)
@@ -44,6 +48,7 @@ Namespace ThreeDimensional.Tests
 
         <TestMethod>
         Public Sub Guards_Throws_Test()
+            ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Assert.ThrowsException(Of ArgumentException)(Sub() Volume(-1))
             Assert.ThrowsException(Of ArgumentException)(Sub() SideFromVolume(-1))
             Assert.ThrowsException(Of ArgumentException)(Sub() SideFromSurfaceArea(-1))

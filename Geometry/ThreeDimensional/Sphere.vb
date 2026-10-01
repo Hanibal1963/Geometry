@@ -1,4 +1,4 @@
-' --------------------------------------------------------------------------------------------------------
+﻿' --------------------------------------------------------------------------------------------------------
 ' Datei: Sphere.vb
 ' Author: Andreas Sauer
 ' Datum: 11.09.2026
@@ -22,6 +22,7 @@ Namespace ThreeDimensional
         ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <returns>Volumen 4/3 * PI * r^3</returns>
         Public Shared Function Volume(radius As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (4.0 / 3.0) * Math.PI * Math.Pow(radius, 3)
@@ -34,6 +35,7 @@ Namespace ThreeDimensional
         ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <returns>Oberfläche 4 * PI * r^2</returns>
         Public Shared Function SurfaceArea(radius As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             Return 4.0 * Math.PI * radius * radius
         End Function
@@ -44,6 +46,7 @@ Namespace ThreeDimensional
         ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <returns>Durchmesser 2 * r</returns>
         Public Shared Function DiameterFromRadius(radius As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             Return 2.0 * radius
         End Function
@@ -54,6 +57,7 @@ Namespace ThreeDimensional
         ''' <param name="diameter">Durchmesser (&gt;= 0)</param>
         ''' <returns>Radius d / 2</returns>
         Public Shared Function RadiusFromDiameter(diameter As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diameter < 0 Then Throw New ArgumentException("Der Durchmesser darf nicht negativ sein.", NameOf(diameter))
             Return diameter / 2.0
         End Function
@@ -64,6 +68,7 @@ Namespace ThreeDimensional
         ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <returns>Umfang 2 * PI * r</returns>
         Public Shared Function GreatCircleCircumference(radius As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             Return 2.0 * Math.PI * radius
         End Function
@@ -74,6 +79,7 @@ Namespace ThreeDimensional
         ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <returns>Fläche PI * r^2</returns>
         Public Shared Function GreatCircleArea(radius As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             Return Math.PI * radius * radius
         End Function
@@ -85,6 +91,7 @@ Namespace ThreeDimensional
         ''' <param name="capHeight">Kappenhöhe (&gt;= 0 und &lt;= 2r)</param>
         ''' <returns>Volumen PI * h^2 * (r - h/3)</returns>
         Public Shared Function SphericalCapVolume(radius As Double, capHeight As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateCapInputs(radius, capHeight)
             Return Math.PI * capHeight * capHeight * (radius - (capHeight / 3.0))
         End Function
@@ -96,6 +103,7 @@ Namespace ThreeDimensional
         ''' <param name="capHeight">Kappenhöhe (&gt;= 0 und &lt;= 2r)</param>
         ''' <returns>Fläche 2 * PI * r * h</returns>
         Public Shared Function SphericalCapArea(radius As Double, capHeight As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateCapInputs(radius, capHeight)
             Return 2.0 * Math.PI * radius * capHeight
         End Function
@@ -111,6 +119,7 @@ Namespace ThreeDimensional
         ''' <param name="azimuthRadians">Azimutwinkel phi (beliebig)</param>
         ''' <returns>3D-Koordinate als Tuple(X, Y, Z)</returns>
         Public Shared Function PointOnSphere(centerX As Double, centerY As Double, centerZ As Double, radius As Double, polarAngleRadians As Double, azimuthRadians As Double) As Tuple(Of Double, Double, Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             If polarAngleRadians < 0 OrElse polarAngleRadians > Math.PI Then
                 Throw New ArgumentException("Der Polarwinkel muss im Bereich 0 bis PI liegen.", NameOf(polarAngleRadians))
@@ -125,6 +134,7 @@ Namespace ThreeDimensional
         End Function
 
         Private Shared Sub ValidateCapInputs(radius As Double, capHeight As Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius <= 0 Then Throw New ArgumentException("Der Radius muss größer als 0 sein.", NameOf(radius))
             If capHeight < 0 Then Throw New ArgumentException("Die Kappenhöhe darf nicht negativ sein.", NameOf(capHeight))
             If capHeight > 2.0 * radius Then Throw New ArgumentException("Die Kappenhöhe darf maximal 2 * Radius sein.", NameOf(capHeight))

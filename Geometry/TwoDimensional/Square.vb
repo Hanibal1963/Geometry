@@ -24,6 +24,7 @@ Namespace TwoDimensional
         ''' <param name="side">Seitenlänge (&gt;= 0)</param>
         ''' <returns>Fläche side * side</returns>
         Public Shared Function Area(side As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
             Return side * side
         End Function
@@ -34,6 +35,7 @@ Namespace TwoDimensional
         ''' <param name="side">Seitenlänge (&gt;= 0)</param>
         ''' <returns>Umfang 4 * side</returns>
         Public Shared Function Perimeter(side As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
             Return 4.0 * side
         End Function
@@ -44,6 +46,7 @@ Namespace TwoDimensional
         ''' <param name="side">Seitenlänge (&gt;= 0)</param>
         ''' <returns>Diagonale side * sqrt(2)</returns>
         Public Shared Function Diagonal(side As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
             Return side * Math.Sqrt(2.0)
         End Function
@@ -54,6 +57,7 @@ Namespace TwoDimensional
         ''' <param name="diagonal">Diagonale (&gt;= 0)</param>
         ''' <returns>Seitenlänge diagonal / sqrt(2)</returns>
         Public Shared Function SideFromDiagonal(diagonal As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diagonal < 0 Then Throw New ArgumentException("Diagonale darf nicht negativ sein.", NameOf(diagonal))
             Return diagonal / Math.Sqrt(2.0)
         End Function
@@ -64,6 +68,7 @@ Namespace TwoDimensional
         ''' <param name="side">Seitenlänge (&gt;= 0)</param>
         ''' <returns>Inkreisradius side / 2</returns>
         Public Shared Function Inradius(side As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
             Return side / 2.0
         End Function
@@ -74,6 +79,7 @@ Namespace TwoDimensional
         ''' <param name="side">Seitenlänge (&gt;= 0)</param>
         ''' <returns>Umkreisradius side / sqrt(2)</returns>
         Public Shared Function Circumradius(side As Double) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
             Return side / Math.Sqrt(2.0)
         End Function
@@ -87,6 +93,7 @@ Namespace TwoDimensional
         ''' <param name="rotationRadians">Rotation im Bogenmaß</param>
         ''' <returns>Array mit 4 Eckpunkten im Uhrzeigersinn</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, side As Double, rotationRadians As Double) As PointF()
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
 
             Dim halfSide = side / 2.0
@@ -116,6 +123,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Vier Eckpunkte</param>
         ''' <returns>Fläche</returns>
         Public Shared Function AreaFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
 
             Dim sum As Double = 0.0
@@ -133,6 +141,7 @@ Namespace TwoDimensional
         ''' <param name="vertices">Vier Eckpunkte</param>
         ''' <returns>Umfang</returns>
         Public Shared Function PerimeterFromVertices(vertices As PointF()) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
 
             Dim total As Double = 0.0
@@ -151,6 +160,7 @@ Namespace TwoDimensional
         ''' <param name="tolerance">Numerische Toleranz (&gt; 0)</param>
         ''' <returns>True, wenn alle Seiten gleich lang und alle Winkel rechtwinklig sind</returns>
         Public Shared Function IsSquareFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
             If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
 
@@ -184,11 +194,13 @@ Namespace TwoDimensional
         End Function
 
         Private Shared Sub ValidateVertices(vertices As PointF())
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
             If vertices.Length <> 4 Then Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
         End Sub
 
         Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim dx = p2.X - p1.X
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))
