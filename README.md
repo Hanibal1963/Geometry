@@ -23,6 +23,7 @@ Bibliothek mit Berechnungsfunktionen für Flächen und Körper.
 - [Parallelogram](Geometry/TwoDimensional/Parallelogram.md) - Berechnung von Parallelogrammflächen
 - [Polygon](Geometry/TwoDimensional/Polygon.md) - Berechnung von Polygonflächen
 - [Rectangle](Geometry/TwoDimensional/Rectangle.md) - Berechnung von Rechteckflächen
+- [RegularPolygon](Geometry/TwoDimensional/RegularPolygon.md) - Berechnung von regelmäßigen Polygonflächen
 - [Rhombus](Geometry/TwoDimensional/Rhombus.md) - Berechnung von Rauteflächen
 - [Square](Geometry/TwoDimensional/Square.md) - Berechnung von Quadratflächen
 - [Trapezoid](Geometry/TwoDimensional/Trapezoid.md) - Berechnung von Trapezflächen
