@@ -75,16 +75,17 @@
     <Compile Include="TwoDimensional\PolygonTests.vb" />
     <Compile Include="TwoDimensional\ParallelogramTests.vb" />
     <Compile Include="TwoDimensional\RectangleTests.vb" />
-	<Compile Include="TwoDimensional\TrapezoidTests.vb" />
-	<Compile Include="TwoDimensional\TriangleTests.vb" />
+    <Compile Include="TwoDimensional\RegularPolygonTests.vb" />
+    <Compile Include="TwoDimensional\TrapezoidTests.vb" />
+    <Compile Include="TwoDimensional\TriangleTests.vb" />
     <Compile Include="TwoDimensional\SquareTests.vb" />
     <Compile Include="TwoDimensional\RhombusTests.vb" />
     <Compile Include="TwoDimensional\KiteTests.vb" />
-<Compile Include="ThreeDimensional\SphereTests.vb" />
-<Compile Include="ThreeDimensional\CylinderTests.vb" />
-<Compile Include="ThreeDimensional\ConeTests.vb" />
-<Compile Include="ThreeDimensional\CuboidTests.vb" />
-<Compile Include="ThreeDimensional\PyramidTests.vb" />
+    <Compile Include="ThreeDimensional\SphereTests.vb" />
+    <Compile Include="ThreeDimensional\CylinderTests.vb" />
+    <Compile Include="ThreeDimensional\ConeTests.vb" />
+    <Compile Include="ThreeDimensional\CuboidTests.vb" />
+    <Compile Include="ThreeDimensional\PyramidTests.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -134,19 +135,7 @@
       <Name>Geometry</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ThreeDimensional\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
-
-
-
-
-
-
-
-
-
-
