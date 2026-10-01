@@ -95,6 +95,7 @@
     <Compile Include="TwoDimensional\Triangle.vb" />
     <Compile Include="TwoDimensional\Square.vb" />
     <Compile Include="TwoDimensional\Rhombus.vb" />
+    <Compile Include="TwoDimensional\Kite.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -128,7 +129,9 @@
     <None Include="TwoDimensional\Triangle.md" />
     <None Include="TwoDimensional\Square.md" />
     <None Include="TwoDimensional\Rhombus.md" />
+    <None Include="TwoDimensional\Kite.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
+
 
