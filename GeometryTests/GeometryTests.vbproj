@@ -87,6 +87,7 @@
     <Compile Include="ThreeDimensional\CylinderTests.vb" />
     <Compile Include="ThreeDimensional\ConeTests.vb" />
     <Compile Include="ThreeDimensional\CuboidTests.vb" />
+    <Compile Include="ThreeDimensional\FrustumTests.vb" />
     <Compile Include="ThreeDimensional\PyramidTests.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
