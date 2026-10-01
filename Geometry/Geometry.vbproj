@@ -91,6 +91,7 @@
     <Compile Include="TwoDimensional\Parallelogram.vb" />
     <Compile Include="TwoDimensional\Polygon.vb" />
     <Compile Include="TwoDimensional\Rectangle.vb" />
+    <Compile Include="TwoDimensional\RegularPolygon.vb" />
     <Compile Include="TwoDimensional\Trapezoid.vb" />
     <Compile Include="TwoDimensional\Triangle.vb" />
     <Compile Include="TwoDimensional\Square.vb" />
@@ -125,6 +126,7 @@
     <None Include="TwoDimensional\Parallelogram.md" />
     <None Include="TwoDimensional\Polygon.md" />
     <None Include="TwoDimensional\Rectangle.md" />
+    <None Include="TwoDimensional\RegularPolygon.md" />
     <None Include="TwoDimensional\Trapezoid.md" />
     <None Include="TwoDimensional\Triangle.md" />
     <None Include="TwoDimensional\Square.md" />
@@ -133,5 +135,3 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
-
-
