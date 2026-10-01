@@ -1,6 +1,6 @@
 # Rectangle (TwoDimensional.Rectangle)
 
-Statische Hilfsklasse für Berechnungen zu Rechtecken und Quadraten (Flächen, Umfang, Diagonale, Koordinatenbasisfunktionen).
+Statische Hilfsklasse für Berechnungen zu Rechtecken und Quadraten. Enthält Funktionen für Fläche, Umfang, Diagonalen, Radiusbeziehungen sowie Koordinatenhilfen auf Eckpunktbasis.
 
 ## Funktionen
 

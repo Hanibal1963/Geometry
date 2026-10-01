@@ -1,6 +1,6 @@
 # Polygon (TwoDimensional.Polygon)
 
-Statische Hilfsklasse für Berechnungen und Koordinatenoperationen an Polygonen (Fläche, Umfang, Formeigenschaften und Transformationen).
+Statische Hilfsklasse für Polygonberechnungen und Koordinatenoperationen. Behandelt allgemeine Polygone und stellt dafür Flächen-, Umfangs-, Formeigenschafts- sowie Transformationsfunktionen bereit.
 
 ## Funktionen
 
