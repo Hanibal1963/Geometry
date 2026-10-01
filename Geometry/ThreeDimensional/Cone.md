@@ -4,9 +4,9 @@ Statische Hilfsklasse für Berechnungen zu Kegeln und Kegelstümpfen (Volumen, F
 
 ## Funktionen
 
-`Volume` - Berechnet das Volumen eines geraden Kreiskegels: `(PI * r^2 * h) / 3`. Erwartet `radius &gt;= 0` und `height &gt;= 0`.
+`Volume` - Berechnet das Volumen eines geraden Kreiskegels: `(PI * r^2 * h) / 3`. Erwartet `radius >= 0` und `height >= 0`.
 
-`SlantHeight` - Berechnet die Schräghöhe: `sqrt(r^2 + h^2)`. Erwartet `radius &gt;= 0` und `height &gt;= 0`.
+`SlantHeight` - Berechnet die Schräghöhe: `sqrt(r^2 + h^2)`. Erwartet `radius >= 0` und `height >= 0`.
 
 `LateralArea` - Berechnet die Mantelfläche: `PI * r * s`.
 
@@ -16,13 +16,13 @@ Statische Hilfsklasse für Berechnungen zu Kegeln und Kegelstümpfen (Volumen, F
 
 `RadiusFromDiameter` - Berechnet den Radius: `d / 2`.
 
-`FrustumVolume` - Berechnet das Volumen eines Kegelstumpfs: `(PI * h / 3) * (R^2 + Rr + r^2)`. Erwartet `radiusBottom &gt; 0`, `radiusTop &gt;= 0`, `radiusTop &lt; radiusBottom`, `height &gt;= 0`.
+`FrustumVolume` - Berechnet das Volumen eines Kegelstumpfs: `(PI * h / 3) * (R^2 + Rr + r^2)`. Erwartet `radiusBottom > 0`, `radiusTop >= 0`, `radiusTop < radiusBottom`, `height >= 0`.
 
 `FrustumLateralArea` - Berechnet die Mantelfläche eines Kegelstumpfs: `PI * (R + r) * s`.
 
 `FrustumSurfaceArea` - Berechnet die Gesamtoberfläche eines Kegelstumpfs (Mantel + beide Grundflächen).
 
-`PointOnLateralSurface` - Berechnet einen Punkt auf der Mantelfläche aus Grundflächenmittelpunkt, Radius, Höhe, Winkel und Parameter `t` mit `0 &lt;= t &lt;= 1`. Rückgabe als `Tuple(Of Double, Double, Double)`.
+`PointOnLateralSurface` - Berechnet einen Punkt auf der Mantelfläche aus Grundflächenmittelpunkt, Radius, Höhe, Winkel und Parameter `t` mit `0 <= t <= 1`. Rückgabe als `Tuple(Of Double, Double, Double)`.
 
 ## Hinweise
 

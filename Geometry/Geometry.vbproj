@@ -113,6 +113,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="ThreeDimensional\Cone.md" />
+    <None Include="ThreeDimensional\Cuboid.md" />
     <None Include="ThreeDimensional\Cylinder.md" />
     <None Include="ThreeDimensional\Sphere.md" />
     <None Include="TwoDimensional\Circle.md" />
