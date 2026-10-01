@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ThreeDimensional\CubeTests.vb" />
+    <Compile Include="ThreeDimensional\PrismTests.vb" />
     <Compile Include="TwoDimensional\CircleTests.vb" />
     <Compile Include="TwoDimensional\EllipseTests.vb" />
     <Compile Include="TwoDimensional\PolygonTests.vb" />
