@@ -29,7 +29,7 @@ Namespace TwoDimensional.Tests
         <TestMethod>
         Public Sub SideLength_And_Circumradius_Test()
             Assert.AreEqual(3.0, SideLengthFromPerimeter(15, 5), 0.000000001)
-            Assert.AreEqual(2.0, Circumradius(2 * Math.Sin(Math.PI / 6.0), 6), 0.000000001)
+            Assert.AreEqual(2.0, Circumradius(2.0 * 2.0 * Math.Sin(Math.PI / 6.0), 6), 0.000000001)
         End Sub
 
         <TestMethod>
