@@ -1,10 +1,21 @@
 # Geometry
 
+## Inhalt
+
+- [1. Beschreibung](#1-beschreibung)
+- [2. Schnellstart](#2-schnellstart)
+- [3. Fehlverhalten](#3-fehlverhalten)
+- [4. Namespaces](#4-namespaces)
+  - [4.1 ThreeDimensional](#41-threedimensional)
+  - [4.2 TwoDimensional](#42-twodimensional)
+
+## 1. Beschreibung
+
 `Geometry` ist eine VB.NET-Bibliothek (.NET Framework 4.7.2) für mathematische Berechnungen in der Ebenen- und Raumgeometrie.
 Sie stellt statische Hilfsklassen für 2D- und 3D-Objekte bereit und enthält neben Basiswerten (z. B. Fläche, Umfang, Volumen, Oberfläche) auch abgeleitete Standardgrößen sowie Koordinatenhilfen.
 Die Bibliothek ist so aufgebaut, dass Eingaben über Guard-Clauses validiert werden und bei ungültigen Werten konsistente `ArgumentException`-Fehler ausgelöst werden.
 
-## Schnellstart
+## 2. Schnellstart
 
 Beispiel für die Verwendung in VB.NET:
 
@@ -25,7 +36,7 @@ Module Example
 End Module
 ```
 
-## Fehlerverhalten
+## 3. Fehlerverhalten
 
 Die Methoden validieren Eingaben über Guard-Clauses und werfen bei ungültigen Werten `ArgumentException`.
 
@@ -35,12 +46,12 @@ Typische Beispiele:
 - Ungültige Seitenanzahl bei regelmäßigen Polygonen, z. B. `RegularPolygon.Area(2, 2)`
 - Ungültige Stumpfparameter, z. B. `Frustum.ConeFrustumVolume(2, 2, 5)` (oberer Radius muss kleiner als unterer Radius sein)
 
-## Namespaces
+## 4. Namespaces
 
 - ThreeDimensional - Klassen zur Berechnung von Körpern
 - TwoDimensional - Klassen zur Berechnung von Flächen
 
-### ThreeDimensional
+### 4.1. ThreeDimensional
 
 - [Cone](Geometry/ThreeDimensional/Cone.md) - Berechnungen für Kegel (Volumen, Oberfläche und weiteren Eigenschaften)
 - [Cube](Geometry/ThreeDimensional/Cube.md) - Berechnungen für Würfel (Volumen, Oberfläche und weiteren Eigenschaften)
@@ -51,7 +62,7 @@ Typische Beispiele:
 - [Pyramid](Geometry/ThreeDimensional/Pyramid.md) - Berechnungen für Pyramiden (Volumen, Oberfläche und weiteren Eigenschaften)
 - [Sphere](Geometry/ThreeDimensional/Sphere.md) - Berechnungen für Kugeln (Volumen, Oberfläche und weiteren Eigenschaften)
 
-### TwoDimensional
+### 4.2. TwoDimensional
 
 - [Circle](Geometry/TwoDimensional/Circle.md) - Berechnungen für Kreise (Fläche, Umfang und weiteren Eigenschaften)
 - [Ellipse](Geometry/TwoDimensional/Ellipse.md) - Berechnungen für Ellipsen (Fläche, Umfang und weiteren Eigenschaften)
