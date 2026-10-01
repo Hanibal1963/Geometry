@@ -1,0 +1,27 @@
+# Prism (ThreeDimensional.Prism)
+
+Statische Hilfsklasse für Berechnungen zu geraden Prismen. Enthält allgemeine Formeln sowie spezialisierte Funktionen für Dreiecksprismen und regelmäßige n-Eck-Prismen.
+
+## Funktionen
+
+`Volume` - Berechnet das Volumen eines geraden Prismas: `baseArea * height`. Erwartet `baseArea >= 0` und `height >= 0`.
+
+`LateralArea` - Berechnet die Mantelfläche: `basePerimeter * height`. Erwartet `basePerimeter >= 0` und `height >= 0`.
+
+`SurfaceArea` - Berechnet die Oberfläche: `2 * baseArea + basePerimeter * height`. Erwartet `baseArea >= 0`, `basePerimeter >= 0`, `height >= 0`.
+
+`TriangularBaseArea` - Berechnet die Dreiecksgrundfläche mit der Heron-Formel. Erwartet `sideA > 0`, `sideB > 0`, `sideC > 0` und gültige Dreiecksungleichung.
+
+`TriangularPrismVolume` - Berechnet das Volumen eines Dreiecksprismas aus den drei Dreiecksseiten und der Prismahöhe.
+
+`TriangularPrismSurfaceArea` - Berechnet die Oberfläche eines Dreiecksprismas aus den drei Dreiecksseiten und der Prismahöhe.
+
+`RegularPolygonBaseArea` - Berechnet die Grundfläche eines regelmäßigen n-Ecks: `n*s^2/(4*tan(PI/n))`. Erwartet `sideLength >= 0`, `sideCount >= 3`.
+
+`RegularPolygonPrismVolume` - Berechnet das Volumen eines regelmäßigen n-Eck-Prismas aus `sideLength`, `sideCount` und `height`.
+
+`RegularPolygonPrismSurfaceArea` - Berechnet die Oberfläche eines regelmäßigen n-Eck-Prismas aus `sideLength`, `sideCount` und `height`.
+
+## Hinweise
+
+Methoden verwenden Guard-Clauses und werfen `ArgumentException` bei ungültigen Eingaben (z. B. negative Längen, ungültige Seitenanzahl oder verletzte Dreiecksungleichung).
