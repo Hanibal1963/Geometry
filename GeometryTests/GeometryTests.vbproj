@@ -79,6 +79,7 @@
 	<Compile Include="TwoDimensional\TriangleTests.vb" />
     <Compile Include="TwoDimensional\SquareTests.vb" />
     <Compile Include="TwoDimensional\RhombusTests.vb" />
+    <Compile Include="TwoDimensional\KiteTests.vb" />
 <Compile Include="ThreeDimensional\SphereTests.vb" />
 <Compile Include="ThreeDimensional\CylinderTests.vb" />
 <Compile Include="ThreeDimensional\ConeTests.vb" />
@@ -139,6 +140,7 @@
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
+
 
 
 
