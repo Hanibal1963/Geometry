@@ -115,6 +115,7 @@
     <None Include="ThreeDimensional\Cone.md" />
     <None Include="ThreeDimensional\Cuboid.md" />
     <None Include="ThreeDimensional\Cylinder.md" />
+    <None Include="ThreeDimensional\Pyramid.md" />
     <None Include="ThreeDimensional\Sphere.md" />
     <None Include="TwoDimensional\Circle.md" />
     <None Include="TwoDimensional\Ellipse.md" />
