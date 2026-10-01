@@ -68,6 +68,7 @@
     <Compile Include="ThreeDimensional\Cone.vb" />
     <Compile Include="ThreeDimensional\Cube.vb" />
     <Compile Include="ThreeDimensional\Cuboid.vb" />
+    <Compile Include="ThreeDimensional\Frustum.vb" />
     <Compile Include="ThreeDimensional\Prism.vb" />
     <Compile Include="ThreeDimensional\Pyramid.vb" />
     <Compile Include="ThreeDimensional\Sphere.vb" />
@@ -122,6 +123,7 @@
     <None Include="ThreeDimensional\Cube.md" />
     <None Include="ThreeDimensional\Cuboid.md" />
     <None Include="ThreeDimensional\Cylinder.md" />
+    <None Include="ThreeDimensional\Frustum.md" />
     <None Include="ThreeDimensional\Prism.md" />
     <None Include="ThreeDimensional\Pyramid.md" />
     <None Include="ThreeDimensional\Sphere.md" />
