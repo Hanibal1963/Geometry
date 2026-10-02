@@ -57,6 +57,8 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet den Umfang aus dem Durchmesser.
         ''' </summary>
+        ''' <param name="d">Durchmesser (&gt;= 0)</param>
+        ''' <returns>Umfang</returns>
         Public Shared Function CircumferenceFromDiameter(d As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Return Circumference(RadiusFromDiameter(d))
@@ -65,6 +67,8 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Konvertiert Radius in Durchmesser.
         ''' </summary>
+        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <returns>Durchmesser 2 * r</returns>
         Public Shared Function DiameterFromRadius(r As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
@@ -74,6 +78,8 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Konvertiert Durchmesser in Radius.
         ''' </summary>
+        ''' <param name="d">Durchmesser (&gt;= 0)</param>
+        ''' <returns>Radius d / 2</returns>
         Public Shared Function RadiusFromDiameter(d As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If d < 0 Then Throw New ArgumentException("Durchmesser darf nicht negativ sein.", NameOf(d))
@@ -99,6 +105,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet die Bogenlänge für einen Winkel in Grad.
         ''' </summary>
+        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="angleDegrees">Winkel in Grad</param>
+        ''' <returns>Bogenlänge</returns>
         Public Shared Function ArcLengthDegrees(r As Double, angleDegrees As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim rad As Double = angleDegrees * Math.PI / 180.0
@@ -108,6 +117,8 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet die Fläche eines Kreissektors für einen gegebenen Zentralwinkel (Bogenmaß).
         ''' </summary>
+        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="angleRadians">Winkel in Bogenmaß</param>
         ''' <returns>Sektorfläche = 0.5 * r^2 * angle</returns>
         Public Shared Function SectorArea(r As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
@@ -118,6 +129,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Sektorfläche für Winkel in Grad.
         ''' </summary>
+        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="angleDegrees">Winkel in Grad</param>
+        ''' <returns>Sektorfläche</returns>
         Public Shared Function SectorAreaDegrees(r As Double, angleDegrees As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim rad As Double = angleDegrees * Math.PI / 180.0
@@ -127,6 +141,8 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet die Länge einer Sehne für einen gegebenen Zentralwinkel (Bogenmaß).
         ''' </summary>
+        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="angleRadians">Winkel in Bogenmaß</param>
         ''' <returns>Sehnenlänge = 2 * r * sin(angle/2)</returns>
         Public Shared Function ChordLength(r As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
@@ -137,7 +153,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet die Sehnenlänge aus der Sehnenhöhe (Sagitta).
         ''' </summary>
+        ''' <param name="r">Radius (&gt;= 0)</param>
         ''' <param name="sagitta">Sehnenhöhe (Abstand von Kreisrand zur Sehnenmitte)</param>
+        ''' <returns>Sehnenlänge</returns>
         Public Shared Function ChordLengthFromSagitta(r As Double, sagitta As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
@@ -153,6 +171,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet den Zentralwinkel (Bogenmaß) aus Bogenlänge.
         ''' </summary>
+        ''' <param name="r">Radius (&gt; 0)</param>
+        ''' <param name="arcLength">Bogenlänge</param>
+        ''' <returns>Zentralwinkel im Bogenmaß</returns>
         Public Shared Function AngleFromArcLength(r As Double, arcLength As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r <= 0 Then Throw New ArgumentException("Radius muss > 0 sein.", NameOf(r))
@@ -162,6 +183,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet den Zentralwinkel (Bogenmaß) aus Sehnenlänge.
         ''' </summary>
+        ''' <param name="r">Radius (&gt; 0)</param>
+        ''' <param name="chordLength">Sehnenlänge</param>
+        ''' <returns>Zentralwinkel im Bogenmaß</returns>
         Public Shared Function AngleFromChordLength(r As Double, chordLength As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r <= 0 Then Throw New ArgumentException("Radius muss > 0 sein.", NameOf(r))
@@ -193,6 +217,10 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Liefert das Achsen-ausgerichtete BoundingBox-Rechteck für einen Kreis.
         ''' </summary>
+        ''' <param name="cx">Mittelpunkt X</param>
+        ''' <param name="cy">Mittelpunkt Y</param>
+        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <returns>Achsenparalleles BoundingBox-Rechteck</returns>
         Public Shared Function BoundingBox(cx As Double, cy As Double, r As Double) As RectangleF
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))

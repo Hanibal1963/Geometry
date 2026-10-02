@@ -39,6 +39,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Fläche der Ellipse (A = π * a * b)
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <returns>Fläche der Ellipse</returns>
         Public Shared Function Area(a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -48,6 +51,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Eccentricity e = sqrt(1 - (b^2 / a^2)). Sortiert intern so, dass a >= b.
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <returns>Exzentrizität der Ellipse</returns>
         Public Shared Function Eccentricity(a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -59,6 +65,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Abstand der Brennpunkte vom Zentrum: c = sqrt(a^2 - b^2) (setzt a >= b voraus)
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <returns>Brennpunktabstand vom Zentrum</returns>
         Public Shared Function FocalDistance(a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -70,6 +79,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Prüft, ob die Ellipse tatsächlich ein Kreis ist (a == b).
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <returns>True, wenn a und b innerhalb Toleranz gleich sind</returns>
         Public Shared Function IsCircle(a As Double, b As Double) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -79,6 +91,10 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Punkt auf der Ellipse für Parameter theta (rad): x = a*cos(theta), y = b*sin(theta)
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <param name="theta">Parameterwinkel im Bogenmaß</param>
+        ''' <returns>Punkt auf der Ellipse als PointF</returns>
         Public Shared Function PointOnEllipse(a As Double, b As Double, theta As Double) As PointF
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -102,6 +118,10 @@ Namespace TwoDimensional
         ''' Tangentengleichung an der Ellipse im Parameter theta.
         ''' Gibt eine LineEquation-Struktur zurück. Bei vertikaler Tangente ist IsVertical = True und X ausgefüllt.
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <param name="theta">Parameterwinkel im Bogenmaß</param>
+        ''' <returns>Tangentengleichung als LineEquation</returns>
         Public Shared Function TangentAt(a As Double, b As Double, theta As Double) As LineEquation
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -121,6 +141,10 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Normale an der Ellipse im Parameter theta.
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <param name="theta">Parameterwinkel im Bogenmaß</param>
+        ''' <returns>Normalengleichung als LineEquation</returns>
         Public Shared Function NormalAt(a As Double, b As Double, theta As Double) As LineEquation
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim t = TangentAt(a, b, theta)
@@ -142,6 +166,10 @@ Namespace TwoDimensional
         ''' Krümmungsradius an der Ellipse im Parameter theta.
         ''' Formel: rho = (a^2*sin^2 + b^2*cos^2)^(3/2) / (a*b)
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <param name="theta">Parameterwinkel im Bogenmaß</param>
+        ''' <returns>Krümmungsradius am Punkt theta</returns>
         Public Shared Function RadiusOfCurvature(a As Double, b As Double, theta As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -155,6 +183,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Fläche und Umfassungsmaß (Perimeter) - Ramanujan-Approximation (1. Näherung)
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <returns>Näherungswert für den Umfang</returns>
         Public Shared Function PerimeterRamanujan(a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -167,6 +198,9 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Ramanujan zweite Näherung (etwas genauer für starke Exzentrizität)
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <returns>Näherungswert für den Umfang</returns>
         Public Shared Function PerimeterRamanujan2(a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -179,6 +213,10 @@ Namespace TwoDimensional
         ''' Numerische Berechnung des Umfangs durch Simpson-Integration: 4 * ∫_0^{π/2} sqrt(a^2 cos^2 t + b^2 sin^2 t) dt
         ''' subdivisions muss gerade und >= 2 sein.
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <param name="subdivisions">Anzahl Integrationsunterteilungen (wird auf gerade Zahl normalisiert)</param>
+        ''' <returns>Numerisch berechneter Umfang</returns>
         Public Shared Function PerimeterNumeric(a As Double, b As Double, Optional subdivisions As Integer = 1024) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -193,6 +231,12 @@ Namespace TwoDimensional
         ''' Arc-Länge zwischen zwei Parametern theta1 und theta2 (rad) – numerisch mit Simpson.
         ''' Liefert positiven Wert; Ordung der Winkel ist beliebig.
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <param name="theta1">Startwinkel im Bogenmaß</param>
+        ''' <param name="theta2">Endwinkel im Bogenmaß</param>
+        ''' <param name="subdivisions">Anzahl Integrationsunterteilungen (wird auf gerade Zahl normalisiert)</param>
+        ''' <returns>Bogenlänge zwischen theta1 und theta2</returns>
         Public Shared Function ArcLength(a As Double, b As Double, theta1 As Double, theta2 As Double, Optional subdivisions As Integer = 1024) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -214,6 +258,14 @@ Namespace TwoDimensional
         ''' Findet den nächsten Punkt auf der Ellipse zum Punkt (px,py) mittels iterativer Lösung (Newton).
         ''' Rückgabe: nächster Punkt (PointF) und minimaler Abstand (Double) in einem Tuple.
         ''' </summary>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <param name="px">X-Koordinate des Referenzpunkts</param>
+        ''' <param name="py">Y-Koordinate des Referenzpunkts</param>
+        ''' <param name="initialTheta">Optionaler Startwert für das Newton-Verfahren</param>
+        ''' <param name="maxIter">Maximale Iterationsanzahl</param>
+        ''' <param name="tol">Abbruch-Toleranz für die Iteration</param>
+        ''' <returns>Tuple aus nächstem Ellipsenpunkt und Abstand</returns>
         Public Shared Function ClosestPointOnEllipse(a As Double, b As Double, px As Double, py As Double, Optional initialTheta As Double = 0.0, Optional maxIter As Integer = 1000, Optional tol As Double = 0.000000000000001) As Tuple(Of PointF, Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
@@ -250,6 +302,10 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Umrechnung: Exzentrische Anomalie E -> wahre Anomalie ν (true anomaly). Parameter a,b werden benötigt zur Berechnung e.
         ''' </summary>
+        ''' <param name="E">Exzentrische Anomalie im Bogenmaß</param>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <returns>Wahre Anomalie im Bogenmaß</returns>
         Public Shared Function EccentricToTrueAnomaly(E As Double, a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim ecc = Eccentricity(a, b)
@@ -260,6 +316,10 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Umrechnung: wahre Anomalie ν -> exzentrische Anomalie E
         ''' </summary>
+        ''' <param name="v">Wahre Anomalie im Bogenmaß</param>
+        ''' <param name="a">Halbachse a (&gt; 0)</param>
+        ''' <param name="b">Halbachse b (&gt; 0)</param>
+        ''' <returns>Exzentrische Anomalie im Bogenmaß</returns>
         Public Shared Function TrueToEccentricAnomaly(v As Double, a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim e = Eccentricity(a, b)
