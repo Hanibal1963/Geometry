@@ -17,6 +17,7 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Ellipse
 
+#Region "Hilfstypen und Strukturen"
 
         ''' <summary>
         ''' Repräsentiert eine Geradengleichung der Form y = m*x + c oder eine vertikale Gerade x = X.
@@ -28,13 +29,9 @@ Namespace TwoDimensional
             Public X As Double
         End Structure
 
-        ' --- Validierungshilfe ---
-        Private Shared Sub ValidateAxes(a As Double, b As Double)
-            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If a <= 0 OrElse b <= 0 Then
-                Throw New ArgumentException("Die Halbachsen müssen größer als 0 sein (a>0, b>0).")
-            End If
-        End Sub
+#End Region
+
+#Region "Grundlegende Berechnungen"
 
         ''' <summary>
         ''' Fläche der Ellipse (A = π * a * b)
@@ -88,6 +85,10 @@ Namespace TwoDimensional
             Return Math.Abs(a - b) <= (Math.Max(a, b) * 0.000000000001)
         End Function
 
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
+
         ''' <summary>
         ''' Punkt auf der Ellipse für Parameter theta (rad): x = a*cos(theta), y = b*sin(theta)
         ''' </summary>
@@ -101,17 +102,6 @@ Namespace TwoDimensional
             Dim x = a * Math.Cos(theta)
             Dim y = b * Math.Sin(theta)
             Return New PointF(CSng(x), CSng(y))
-        End Function
-
-        ''' <summary>
-        ''' Punkt auf der Ellipse als Double-Präzision (x,y)
-        ''' </summary>
-        Private Shared Function PointOnEllipseD(a As Double, b As Double, theta As Double) As (Double, Double)
-            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            ValidateAxes(a, b)
-            Dim x = a * Math.Cos(theta)
-            Dim y = b * Math.Sin(theta)
-            Return (x, y)
         End Function
 
         ''' <summary>
@@ -161,6 +151,10 @@ Namespace TwoDimensional
             Dim nc = p.Y - (nm * p.X)
             Return New LineEquation With {.IsVertical = False, .Slope = nm, .Intercept = nc}
         End Function
+
+#End Region
+
+#Region "Abgeleitete Berechnungen"
 
         ''' <summary>
         ''' Krümmungsradius an der Ellipse im Parameter theta.
@@ -327,7 +321,25 @@ Namespace TwoDimensional
             Return 2.0 * Math.Atan(tanHalfE)
         End Function
 
-        ' --- Numerische Hilfsfunktionen ---
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
+        Private Shared Function PointOnEllipseD(a As Double, b As Double, theta As Double) As (Double, Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
+            ValidateAxes(a, b)
+            Dim x = a * Math.Cos(theta)
+            Dim y = b * Math.Sin(theta)
+            Return (x, y)
+        End Function
+
+        Private Shared Sub ValidateAxes(a As Double, b As Double)
+            ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
+            If a <= 0 OrElse b <= 0 Then
+                Throw New ArgumentException("Die Halbachsen müssen größer als 0 sein (a>0, b>0).")
+            End If
+        End Sub
+
         Private Shared Function SimpsonIntegrate(f As Func(Of Double, Double), a As Double, b As Double, n As Integer) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If n < 2 Then n = 2
@@ -340,6 +352,8 @@ Namespace TwoDimensional
             Next
             Return s * h / 3.0
         End Function
+
+#End Region
 
     End Class
 

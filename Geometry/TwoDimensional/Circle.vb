@@ -18,9 +18,7 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Circle
 
-        ' ----------------------------------------------------------------------------------
-        ' Grundlegende Kreisberechnungen
-        ' ----------------------------------------------------------------------------------
+#Region "Grundlegende Berechnungen"
 
         ''' <summary>
         ''' Berechnet die Fläche eines Kreises aus dem Radius.
@@ -86,9 +84,9 @@ Namespace TwoDimensional
             Return d / 2.0
         End Function
 
-        ' ----------------------------------------------------------------------------------
-        ' Bogensegment, Sektor, Sehne und Winkel
-        ' ----------------------------------------------------------------------------------
+#End Region
+
+#Region "Abgeleitete Berechnungen"
 
         ''' <summary>
         ''' Berechnet die Bogenlänge für einen gegebenen Zentralwinkel (im Bogenmaß).
@@ -194,9 +192,9 @@ Namespace TwoDimensional
             Return 2.0 * Math.Asin(chordLength / (2.0 * r))
         End Function
 
-        ' ----------------------------------------------------------------------------------
-        ' Hilfsfunktionen für Koordinaten
-        ' ----------------------------------------------------------------------------------
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
 
         ''' <summary>
         ''' Berechnet einen Punkt auf dem Kreis am gegebenen Winkel (Bogenmaß).
@@ -229,6 +227,8 @@ Namespace TwoDimensional
             Dim size As Single = CSng(2.0 * r)
             Return New RectangleF(x, y, size, size)
         End Function
+
+#End Region
 
     End Class
 

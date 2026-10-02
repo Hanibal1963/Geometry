@@ -18,9 +18,7 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Rectangle
 
-        ' ----------------------------------------------------------------------------------
-        ' Grundlegende rechtecksbezogene Berechnungen (Breite w, Höhe h)
-        ' ----------------------------------------------------------------------------------
+#Region "Grundlegende Berechnungen"
 
         ''' <summary>
         ''' Berechnet die Fläche eines Rechtecks.
@@ -105,9 +103,9 @@ Namespace TwoDimensional
             Return Math.Min(w, h) / 2.0
         End Function
 
-        ' ----------------------------------------------------------------------------------
-        ' Koordinatenbasierte Hilfsmethoden
-        ' ----------------------------------------------------------------------------------
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
 
         ''' <summary>
         ''' Berechnet den Mittelpunkt zweier Punkte.
@@ -238,9 +236,9 @@ Namespace TwoDimensional
             Return True
         End Function
 
-        ' ----------------------------------------------------------------------------------
-        ' Quadratspezifische Hilfsmethoden
-        ' ----------------------------------------------------------------------------------
+#End Region
+
+#Region "Abgeleitete Berechnungen"
 
         ''' <summary>
         ''' Fläche eines Quadrats mit Seitenlänge s.
@@ -276,6 +274,8 @@ Namespace TwoDimensional
             If d < 0 Then Throw New ArgumentException("Diagonale darf nicht negativ sein.", NameOf(d))
             Return d / Math.Sqrt(2.0)
         End Function
+
+#End Region
 
     End Class
 

@@ -18,6 +18,8 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Triangle
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet die Fläche eines Dreiecks.
         ''' </summary>
@@ -168,6 +170,10 @@ Namespace TwoDimensional
             Return AreaFromVertices(vertices) > tolerance
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateSides(a As Double, b As Double, c As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If a <= 0 Then Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
@@ -191,6 +197,8 @@ Namespace TwoDimensional
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))
         End Function
+
+#End Region
 
     End Class
 

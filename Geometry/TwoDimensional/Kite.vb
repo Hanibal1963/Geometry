@@ -18,6 +18,8 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Kite
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet die Fläche aus zwei Diagonalen.
         ''' </summary>
@@ -91,6 +93,10 @@ Namespace TwoDimensional
             Dim secondPair = Math.Abs(sideB - sideC) <= tolerance AndAlso Math.Abs(sideD - sideA) <= tolerance
             Return firstPair OrElse secondPair
         End Function
+
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
 
         ''' <summary>
         ''' Berechnet 4 Eckpunkte eines Drachenvierecks aus Mittelpunkt, Diagonalen und Rotation.
@@ -182,6 +188,10 @@ Namespace TwoDimensional
             Return patternA OrElse patternB
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
@@ -194,6 +204,8 @@ Namespace TwoDimensional
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))
         End Function
+
+#End Region
 
     End Class
 

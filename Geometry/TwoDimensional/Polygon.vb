@@ -18,6 +18,8 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Polygon
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet die Fläche eines Polygons über die Shoelace-Formel.
         ''' </summary>
@@ -185,6 +187,10 @@ Namespace TwoDimensional
             Return result
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         ''' <summary>
         ''' Rotiert alle Eckpunkte um einen Mittelpunkt.
         ''' </summary>
@@ -234,6 +240,8 @@ Namespace TwoDimensional
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))
         End Function
+
+#End Region
 
     End Class
 
