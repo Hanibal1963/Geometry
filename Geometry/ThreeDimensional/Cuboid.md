@@ -1,4 +1,4 @@
-# Cuboid (ThreeDimensional.Cuboid)
+﻿# Cuboid (ThreeDimensional.Cuboid)
 
 Statische Hilfsklasse für Berechnungen zu Quadern (Volumen, Oberflächen, Diagonalen, Kantenbeziehungen und Koordinatenhilfen).
 

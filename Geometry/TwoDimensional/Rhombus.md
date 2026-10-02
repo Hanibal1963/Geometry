@@ -1,4 +1,4 @@
-# Rhombus (TwoDimensional.Rhombus)
+﻿# Rhombus (TwoDimensional.Rhombus)
 
 Statische Hilfsklasse für Berechnungen zu Rauten (Fläche, Umfang, Diagonalen, Radien und koordinatenbasierte Hilfsfunktionen).
 

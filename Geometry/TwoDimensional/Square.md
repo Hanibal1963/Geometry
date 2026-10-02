@@ -1,4 +1,4 @@
-# Square (TwoDimensional.Square)
+﻿# Square (TwoDimensional.Square)
 
 Statische Hilfsklasse für Berechnungen zu Quadraten (Basiswerte, abgeleitete Größen und koordinatenbasierte Hilfsfunktionen).
 

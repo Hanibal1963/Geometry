@@ -1,4 +1,4 @@
-# Parallelogram (TwoDimensional.Parallelogram)
+﻿# Parallelogram (TwoDimensional.Parallelogram)
 
 Statische Hilfsklasse für Berechnungen zu Parallelogrammen (Fläche, Umfang, Diagonalen, Winkel und koordinatenbasierte Hilfsfunktionen).
 

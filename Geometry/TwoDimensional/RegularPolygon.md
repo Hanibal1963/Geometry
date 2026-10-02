@@ -1,4 +1,4 @@
-# RegularPolygon (TwoDimensional.RegularPolygon)
+﻿# RegularPolygon (TwoDimensional.RegularPolygon)
 
 Statische Hilfsklasse für Berechnungen an regelmäßigen Polygonen. Enthält Basiswerte, abgeleitete Größen und koordinatenbasierte Prüfungen.
 

@@ -1,4 +1,4 @@
-# Cone (ThreeDimensional.Cone)
+﻿# Cone (ThreeDimensional.Cone)
 
 Statische Hilfsklasse für Berechnungen zu Kegeln und Kegelstümpfen (Volumen, Flächen, Ableitungen und Koordinatenhilfe).
 

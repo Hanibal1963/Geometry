@@ -1,4 +1,4 @@
-# Cube (ThreeDimensional.Cube)
+﻿# Cube (ThreeDimensional.Cube)
 
 Statische Hilfsklasse für Berechnungen zu Würfeln. Enthält Basiswerte, abgeleitete Standardwerte und Koordinatenhilfen.
 

@@ -1,4 +1,4 @@
-# Trapezoid (TwoDimensional.Trapezoid)
+﻿# Trapezoid (TwoDimensional.Trapezoid)
 
 Statische Hilfsklasse für Berechnungen zu Trapezen (Fläche, Umfang, Mittellinie, gleichschenklige Eigenschaften und koordinatenbasierte Hilfsfunktionen).
 

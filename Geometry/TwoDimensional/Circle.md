@@ -1,4 +1,4 @@
-# Circle (TwoDimensional.Circle)
+﻿# Circle (TwoDimensional.Circle)
 
 Statische Hilfsklasse für Kreisberechnungen: Flächen, Umfang, Bogensegmente, Sehnen, Sektoren und Umrechnungen.
 

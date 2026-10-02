@@ -1,10 +1,10 @@
-# Geometry
+﻿# Geometry
 
 ## Inhalt
 
 - [1. Beschreibung](#1-beschreibung)
 - [2. Schnellstart](#2-schnellstart)
-- [3. Fehlverhalten](#3-fehlverhalten)
+- [3. Fehlerbehandlung](#3-fehlerbehandlung)
 - [4. Namespaces](#4-namespaces)
   - [4.1 ThreeDimensional](#41-threedimensional)
   - [4.2 TwoDimensional](#42-twodimensional)
@@ -36,7 +36,7 @@ Module Example
 End Module
 ```
 
-## 3. Fehlerverhalten
+## 3. Fehlerbehandlung
 
 Die Methoden validieren Eingaben über Guard-Clauses und werfen bei ungültigen Werten `ArgumentException`.
 

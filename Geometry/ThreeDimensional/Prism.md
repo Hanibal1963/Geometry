@@ -1,4 +1,4 @@
-# Prism (ThreeDimensional.Prism)
+﻿# Prism (ThreeDimensional.Prism)
 
 Statische Hilfsklasse für Prismenvarianten. Enthält Berechnungen für gerade Prismen allgemein, Dreiecksprismen sowie regelmäßige n-Eck-Prismen und stellt dafür Volumen- und Oberflächenfunktionen bereit.
 

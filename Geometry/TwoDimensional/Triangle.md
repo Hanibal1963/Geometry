@@ -1,4 +1,4 @@
-# Triangle (TwoDimensional.Triangle)
+﻿# Triangle (TwoDimensional.Triangle)
 
 Statische Hilfsklasse für Berechnungen zu Dreiecken (Fläche, Umfang, Winkel, Seitenbeziehungen und koordinatenbasierte Hilfsfunktionen).
 

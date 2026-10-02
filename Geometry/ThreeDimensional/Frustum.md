@@ -1,4 +1,4 @@
-# Frustum (ThreeDimensional.Frustum)
+﻿# Frustum (ThreeDimensional.Frustum)
 
 Statische Hilfsklasse für gängige Stumpfkörper. Enthält Berechnungen für Kegelstumpf, rechteckigen Pyramidenstumpf und Prisma-Stumpf; je Variante werden Volumen, Mantelfläche und Oberfläche bereitgestellt.
 

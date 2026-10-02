@@ -1,4 +1,4 @@
-# Pyramid (ThreeDimensional.Pyramid)
+﻿# Pyramid (ThreeDimensional.Pyramid)
 
 Statische Hilfsklasse für Berechnungen zu rechteckigen Pyramiden und Pyramidenstümpfen (Volumen, Flächen, Schräghöhen und Koordinatenhilfen).
 

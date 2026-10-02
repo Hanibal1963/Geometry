@@ -1,4 +1,4 @@
-# Sphere (ThreeDimensional.Sphere)
+﻿# Sphere (ThreeDimensional.Sphere)
 
 Statische Hilfsklasse für Berechnungen zu Kugeln (Volumen, Oberfläche, Großkreis, Kugelkappe und sphärische Koordinatenpunkte).
 

@@ -1,4 +1,4 @@
-# Cylinder (ThreeDimensional.Cylinder)
+﻿# Cylinder (ThreeDimensional.Cylinder)
 
 Statische Hilfsklasse für Berechnungen zu Voll- und Hohlzylindern (Volumen, Flächen, Basisgrößen und Koordinatenhilfen).
 

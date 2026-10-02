@@ -1,4 +1,4 @@
-# Ellipse (TwoDimensional.Ellipse)
+﻿# Ellipse (TwoDimensional.Ellipse)
 
 Statische Hilfsklasse zur Arbeit mit Ellipsen (Geometrie, Tangenten/Normalen, Umfangsapproximationen, numerische Integration, nächster Punkt, Anomalienkonversionen).
 

@@ -1,4 +1,4 @@
-# Kite (TwoDimensional.Kite)
+﻿# Kite (TwoDimensional.Kite)
 
 Statische Hilfsklasse für Berechnungen zu Drachenvierecken (Fläche, Umfang, Seitenmuster und koordinatenbasierte Hilfsfunktionen).
 
