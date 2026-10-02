@@ -4,13 +4,13 @@ Statische Hilfsklasse für gängige Stumpfkörper. Enthält Berechnungen für Ke
 
 ## Funktionen
 
-`ConeFrustumVolume` - Berechnet das Volumen eines Kegelstumpfs: `PI*h/3 * (R^2 + R*r + r^2)`. Erwartet `bottomRadius > 0`, `0 <= topRadius < bottomRadius`, `height >= 0`.
+`ConeFrustumVolume` - Berechnet das Volumen eines Kegelstumpfs. Parameter: `bottomRadius` (`> 0`), `topRadius` (`>= 0`, `< bottomRadius`), `height` (`>= 0`). Rückgabe: `PI*h/3 * (R^2 + R*r + r^2)`.
 
 `ConeFrustumLateralArea` - Berechnet die Mantelfläche eines Kegelstumpfs. Parameter: `bottomRadius` (`> 0`), `topRadius` (`>= 0`, `< bottomRadius`), `height` (`>= 0`). Formel: `PI * (R + r) * s` mit `s = sqrt((R-r)^2 + h^2)`.
 
 `ConeFrustumSurfaceArea` - Berechnet die Oberfläche eines Kegelstumpfs als Mantel plus beide Kreisflächen. Parameter: `bottomRadius` (`> 0`), `topRadius` (`>= 0`, `< bottomRadius`), `height` (`>= 0`).
 
-`PyramidFrustumVolume` - Berechnet das Volumen eines rechteckigen Pyramidenstumpfs: `h/3 * (A1 + A2 + sqrt(A1*A2))`.
+`PyramidFrustumVolume` - Berechnet das Volumen eines rechteckigen Pyramidenstumpfs. Parameter: `bottomLength` (`> 0`), `bottomWidth` (`> 0`), `topLength` (`>= 0`, `< bottomLength`), `topWidth` (`>= 0`, `< bottomWidth`), `height` (`>= 0`). Rückgabe: `h/3 * (A1 + A2 + sqrt(A1*A2))`.
 
 `PyramidFrustumLateralArea` - Berechnet die Mantelfläche eines rechteckigen Pyramidenstumpfs aus vier Trapezflächen. Parameter: `bottomLength` (`> 0`), `bottomWidth` (`> 0`), `topLength` (`>= 0`, `< bottomLength`), `topWidth` (`>= 0`, `< bottomWidth`), `height` (`>= 0`).
 

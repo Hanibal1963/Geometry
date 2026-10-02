@@ -4,11 +4,11 @@ Statische Hilfsklasse für Berechnungen zu Dreiecken (Fläche, Umfang, Winkel, S
 
 ## Funktionen
 
-`Area` - Berechnet die Fläche aus Grundseite `b` und Höhe `h`: `(b * h) / 2`. Erwartet `b,h >= 0`.
+`Area` - Berechnet die Fläche aus Grundseite und Höhe. Parameter: `b` (Grundseite, `>= 0`), `h` (Höhe, `>= 0`). Rückgabe: `(b * h) / 2`.
 
-`Perimeter` - Berechnet den Umfang aus drei Seiten: `a + b + c`. Erwartet `a,b,c > 0` und gültige Dreiecksungleichung.
+`Perimeter` - Berechnet den Umfang aus drei Seiten. Parameter: `a`, `b`, `c` (Seiten, `> 0`, gültige Dreiecksungleichung). Rückgabe: `a + b + c`.
 
-`HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseite: `(2 * area) / b`. Wirft `ArgumentException` bei `area < 0` oder `b <= 0`.
+`HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseite. Parameter: `area` (`>= 0`), `b` (`> 0`). Rückgabe: `(2 * area) / b`.
 
 `AreaHeron` - Berechnet die Fläche mit der Heron-Formel aus den Seitenlängen. Parameter: `a`, `b`, `c` (Seiten, `> 0`, gültige Dreiecksungleichung).
 

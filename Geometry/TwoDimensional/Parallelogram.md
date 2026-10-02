@@ -4,17 +4,17 @@ Statische Hilfsklasse für Berechnungen zu Parallelogrammen (Fläche, Umfang, Di
 
 ## Funktionen
 
-`Area` - Berechnet die Fläche aus Grundseite `b` und Höhe `h`: `b * h`. Erwartet `b,h >= 0`.
+`Area` - Berechnet die Fläche aus Grundseite und Höhe. Parameter: `b` (Grundseite, `>= 0`), `h` (Höhe, `>= 0`). Rückgabe: `b * h`.
 
-`Perimeter` - Berechnet den Umfang: `2 * (a + b)`. Erwartet `a,b >= 0`.
+`Perimeter` - Berechnet den Umfang. Parameter: `a` (Seite, `>= 0`), `b` (Seite, `>= 0`). Rückgabe: `2 * (a + b)`.
 
-`HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseite: `area / b`. Wirft `ArgumentException` bei `area < 0` oder `b <= 0`.
+`HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseite. Parameter: `area` (`>= 0`), `b` (`> 0`). Rückgabe: `area / b`.
 
-`SideFromPerimeter` - Berechnet die fehlende Seite aus Umfang und bekannter Seite: `(perimeter / 2) - knownSide`. Wirft `ArgumentException` bei negativen Werten oder wenn der Umfang nicht ausreicht.
+`SideFromPerimeter` - Berechnet die fehlende Seite aus Umfang und bekannter Seite. Parameter: `perimeter` (`> 0`), `knownSide` (`> 0`). Rückgabe: `(perimeter / 2) - knownSide`.
 
-`DiagonalBySidesAndAngle` - Berechnet beide Diagonalen aus Seiten `a`,`b` und eingeschlossenem Winkel (Bogenmaß): `[|u+v|, |u-v|]`. Erwartet `a,b > 0` und `0 < Winkel < PI`.
+`DiagonalBySidesAndAngle` - Berechnet beide Diagonalen aus Seiten und eingeschlossenem Winkel. Parameter: `a` (`> 0`), `b` (`> 0`), `includedAngleRadians` (`0 < Winkel < PI`). Rückgabe: `[|u+v|, |u-v|]`.
 
-`InteriorAngleFromSidesAndDiagonals` - Berechnet den eingeschlossenen Innenwinkel (Bogenmaß) aus Seiten und Diagonalen. Wirft `ArgumentException` bei ungültigen Längen oder inkonsistenten Eingaben.
+`InteriorAngleFromSidesAndDiagonals` - Berechnet den eingeschlossenen Innenwinkel (Bogenmaß) aus Seiten und Diagonalen. Parameter: `a` (`> 0`), `b` (`> 0`), `diagLong` (`> 0`), `diagShort` (`> 0`).
 
 `Center` - Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten. Parameter: `p1`, `p3` (gegenüberliegende Eckpunkte als `PointF`). Rückgabe: `System.Drawing.PointF`.
 

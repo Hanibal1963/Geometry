@@ -4,17 +4,17 @@ Statische Hilfsklasse für Berechnungen zu Trapezen (Fläche, Umfang, Mittellini
 
 ## Funktionen
 
-`Area` - Berechnet die Fläche aus den parallelen Grundseiten `baseA`, `baseB` und der Höhe `height`: `((baseA + baseB) / 2) * height`. Erwartet `baseA, baseB, height >= 0`.
+`Area` - Berechnet die Fläche aus den parallelen Grundseiten und der Höhe. Parameter: `baseA` (`>= 0`), `baseB` (`>= 0`), `height` (`>= 0`). Rückgabe: `((baseA + baseB) / 2) * height`.
 
-`Perimeter` - Berechnet den Umfang aus allen vier Seiten: `baseA + legB + baseC + legD`. Erwartet alle Seiten `> 0`.
+`Perimeter` - Berechnet den Umfang aus allen vier Seiten. Parameter: `baseA` (`> 0`), `legB` (`> 0`), `baseC` (`> 0`), `legD` (`> 0`). Rückgabe: `baseA + legB + baseC + legD`.
 
-`Midline` - Berechnet die Mittellinie: `(baseA + baseB) / 2`. Erwartet `baseA, baseB >= 0`.
+`Midline` - Berechnet die Mittellinie. Parameter: `baseA` (`>= 0`), `baseB` (`>= 0`). Rückgabe: `(baseA + baseB) / 2`.
 
-`HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseiten: `(2 * area) / (baseA + baseB)`. Wirft `ArgumentException` bei ungültigen Eingaben oder wenn `baseA + baseB <= 0`.
+`HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseiten. Parameter: `area` (`>= 0`), `baseA` (`>= 0`), `baseB` (`>= 0`). Rückgabe: `(2 * area) / (baseA + baseB)`.
 
 `LegLengthIsosceles` - Berechnet die Schenkellänge eines gleichschenkligen Trapezes aus Grundseiten und Höhe. Parameter: `baseA`, `baseB` (Grundseiten, `>= 0`), `height` (`>= 0`).
 
-`IsIsosceles` - Prüft, ob ein Trapez gleichschenklig ist (`|legB - legD| <= tolerance`). Erwartet `legB, legD > 0` und `tolerance > 0`.
+`IsIsosceles` - Prüft, ob ein Trapez gleichschenklig ist (`|legB - legD| <= tolerance`). Parameter: `legB` (`> 0`), `legD` (`> 0`), `tolerance` (`> 0`).
 
 `VerticesFromCenter` - Berechnet 4 Eckpunkte eines gleichschenkligen Trapezes aus Mittelpunkt, beiden Grundseiten, Höhe und Rotation (Bogenmaß). Parameter: `cx`, `cy` (Mittelpunkt), `baseA`, `baseB` (Grundseiten, `>= 0`), `height` (`>= 0`), `rotationRadians`.
 

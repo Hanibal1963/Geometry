@@ -4,19 +4,19 @@ Statische Hilfsklasse für Prismenvarianten. Enthält Berechnungen für gerade P
 
 ## Funktionen
 
-`Volume` - Berechnet das Volumen eines geraden Prismas: `baseArea * height`. Erwartet `baseArea >= 0` und `height >= 0`.
+`Volume` - Berechnet das Volumen eines geraden Prismas. Parameter: `baseArea` (`>= 0`), `height` (`>= 0`). Rückgabe: `baseArea * height`.
 
-`LateralArea` - Berechnet die Mantelfläche: `basePerimeter * height`. Erwartet `basePerimeter >= 0` und `height >= 0`.
+`LateralArea` - Berechnet die Mantelfläche. Parameter: `basePerimeter` (`>= 0`), `height` (`>= 0`). Rückgabe: `basePerimeter * height`.
 
-`SurfaceArea` - Berechnet die Oberfläche: `2 * baseArea + basePerimeter * height`. Erwartet `baseArea >= 0`, `basePerimeter >= 0`, `height >= 0`.
+`SurfaceArea` - Berechnet die Oberfläche. Parameter: `baseArea` (`>= 0`), `basePerimeter` (`>= 0`), `height` (`>= 0`). Rückgabe: `2 * baseArea + basePerimeter * height`.
 
-`TriangularBaseArea` - Berechnet die Dreiecksgrundfläche mit der Heron-Formel. Erwartet `sideA > 0`, `sideB > 0`, `sideC > 0` und gültige Dreiecksungleichung.
+`TriangularBaseArea` - Berechnet die Dreiecksgrundfläche mit der Heron-Formel. Parameter: `sideA`, `sideB`, `sideC` (Seiten, `> 0`, gültige Dreiecksungleichung).
 
 `TriangularPrismVolume` - Berechnet das Volumen eines Dreiecksprismas. Parameter: `sideA`, `sideB`, `sideC` (Dreiecksseiten, `> 0`, gültige Dreiecksungleichung), `height` (Prismahöhe, `>= 0`).
 
 `TriangularPrismSurfaceArea` - Berechnet die Oberfläche eines Dreiecksprismas. Parameter: `sideA`, `sideB`, `sideC` (Dreiecksseiten, `> 0`, gültige Dreiecksungleichung), `height` (Prismahöhe, `>= 0`).
 
-`RegularPolygonBaseArea` - Berechnet die Grundfläche eines regelmäßigen n-Ecks: `n*s^2/(4*tan(PI/n))`. Erwartet `sideLength >= 0`, `sideCount >= 3`.
+`RegularPolygonBaseArea` - Berechnet die Grundfläche eines regelmäßigen n-Ecks. Parameter: `sideLength` (`>= 0`), `sideCount` (`>= 3`). Rückgabe: `n*s^2/(4*tan(PI/n))`.
 
 `RegularPolygonPrismVolume` - Berechnet das Volumen eines regelmäßigen n-Eck-Prismas. Parameter: `sideLength` (`>= 0`), `sideCount` (`>= 3`), `height` (`>= 0`).
 

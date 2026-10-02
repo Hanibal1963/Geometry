@@ -4,17 +4,17 @@ Statische Hilfsklasse für Berechnungen zu Rauten (Fläche, Umfang, Diagonalen, 
 
 ## Funktionen
 
-`AreaFromBaseHeight` - Berechnet die Fläche aus Seitenlänge und Höhe: `baseLength * height`. Erwartet `baseLength >= 0`, `height >= 0`.
+`AreaFromBaseHeight` - Berechnet die Fläche aus Seitenlänge und Höhe. Parameter: `baseLength` (`>= 0`), `height` (`>= 0`). Rückgabe: `baseLength * height`.
 
-`AreaFromDiagonals` - Berechnet die Fläche aus den Diagonalen: `(diagonal1 * diagonal2) / 2`. Erwartet `diagonal1 >= 0`, `diagonal2 >= 0`.
+`AreaFromDiagonals` - Berechnet die Fläche aus den Diagonalen. Parameter: `diagonal1` (`>= 0`), `diagonal2` (`>= 0`). Rückgabe: `(diagonal1 * diagonal2) / 2`.
 
-`Perimeter` - Berechnet den Umfang: `4 * side`. Erwartet `side >= 0`.
+`Perimeter` - Berechnet den Umfang. Parameter: `side` (`>= 0`). Rückgabe: `4 * side`.
 
-`HeightFromArea` - Berechnet die Höhe aus Fläche und Seitenlänge: `area / side`. Erwartet `area >= 0`, `side > 0`.
+`HeightFromArea` - Berechnet die Höhe aus Fläche und Seitenlänge. Parameter: `area` (`>= 0`), `side` (`> 0`). Rückgabe: `area / side`.
 
-`DiagonalFromSideAndAngle` - Berechnet beide Diagonalen aus Seitenlänge und Innenwinkel (Bogenmaß). Erwartet `side > 0` und `0 < interiorAngleRadians < PI`.
+`DiagonalFromSideAndAngle` - Berechnet beide Diagonalen aus Seitenlänge und Innenwinkel (Bogenmaß). Parameter: `side` (`> 0`), `interiorAngleRadians` (`0 < Winkel < PI`).
 
-`InradiusFromAreaPerimeter` - Berechnet den Inkreisradius aus Fläche und Umfang: `(2 * area) / perimeter`. Erwartet `area >= 0`, `perimeter > 0`.
+`InradiusFromAreaPerimeter` - Berechnet den Inkreisradius aus Fläche und Umfang. Parameter: `area` (`>= 0`), `perimeter` (`> 0`). Rückgabe: `(2 * area) / perimeter`.
 
 `VerticesFromCenter` - Berechnet 4 Eckpunkte aus Mittelpunkt, Seitenlänge, Innenwinkel und Rotation. Parameter: `cx`, `cy` (Mittelpunkt), `side` (Seitenlänge, `> 0`), `interiorAngleRadians` (`0 < Winkel < PI`), `rotationRadians` (Bogenmaß).
 

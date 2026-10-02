@@ -4,25 +4,25 @@ Statische Hilfsklasse für Berechnungen zu Voll- und Hohlzylindern (Volumen, Fl�
 
 ## Funktionen
 
-`Volume` - Berechnet das Volumen eines Vollzylinders: `PI * r^2 * h`. Erwartet `radius, height >= 0`.
+`Volume` - Berechnet das Volumen eines Vollzylinders. Parameter: `radius` (`>= 0`), `height` (`>= 0`). Rückgabe: `PI * r^2 * h`.
 
-`LateralArea` - Berechnet die Mantelfläche: `2 * PI * r * h`. Erwartet `radius, height >= 0`.
+`LateralArea` - Berechnet die Mantelfläche. Parameter: `radius` (`>= 0`), `height` (`>= 0`). Rückgabe: `2 * PI * r * h`.
 
-`SurfaceArea` - Berechnet die Gesamtoberfläche eines Vollzylinders: `2 * PI * r * (r + h)`.
+`SurfaceArea` - Berechnet die Gesamtoberfläche eines Vollzylinders. Parameter: `radius` (`>= 0`), `height` (`>= 0`). Rückgabe: `2 * PI * r * (r + h)`.
 
-`BaseCircumference` - Berechnet den Umfang des Grundkreises: `2 * PI * r`.
+`BaseCircumference` - Berechnet den Umfang des Grundkreises. Parameter: `radius` (`>= 0`). Rückgabe: `2 * PI * r`.
 
-`BaseArea` - Berechnet die Fläche des Grundkreises: `PI * r^2`.
+`BaseArea` - Berechnet die Fläche des Grundkreises. Parameter: `radius` (`>= 0`). Rückgabe: `PI * r^2`.
 
-`DiameterFromRadius` - Berechnet den Durchmesser: `2 * r`.
+`DiameterFromRadius` - Berechnet den Durchmesser. Parameter: `radius` (`>= 0`). Rückgabe: `2 * r`.
 
-`RadiusFromDiameter` - Berechnet den Radius: `d / 2`.
+`RadiusFromDiameter` - Berechnet den Radius. Parameter: `diameter` (`>= 0`). Rückgabe: `d / 2`.
 
-`HollowVolume` - Berechnet das Volumen eines Hohlzylinders: `PI * (R^2 - r^2) * h`. Erwartet `outerRadius > 0`, `0 <= innerRadius < outerRadius`, `height >= 0`.
+`HollowVolume` - Berechnet das Volumen eines Hohlzylinders. Parameter: `outerRadius` (`> 0`), `innerRadius` (`>= 0`, `< outerRadius`), `height` (`>= 0`). Rückgabe: `PI * (R^2 - r^2) * h`.
 
-`HollowSurfaceArea` - Berechnet die Gesamtoberfläche eines Hohlzylinders (Außenmantel + Innenmantel + beide Ringflächen).
+`HollowSurfaceArea` - Berechnet die Gesamtoberfläche eines Hohlzylinders (Außenmantel + Innenmantel + beide Ringflächen). Parameter: `outerRadius` (`> 0`), `innerRadius` (`>= 0`, `< outerRadius`), `height` (`>= 0`).
 
-`PointOnLateralSurface` - Berechnet einen Punkt auf der Mantelfläche aus Achsenmittelpunkt, Radius, Winkel und Höhenoffset und liefert `Tuple(Of Double, Double, Double)`.
+`PointOnLateralSurface` - Berechnet einen Punkt auf der Mantelfläche aus Achsenmittelpunkt, Radius, Winkel und Höhenoffset. Parameter: `centerX`, `centerY`, `baseZ`, `radius`, `height`, `angleRadians`, `heightOffset`. Rückgabe: `Tuple(Of Double, Double, Double)`.
 
 ## Hinweise
 

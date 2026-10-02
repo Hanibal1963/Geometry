@@ -4,19 +4,19 @@ Statische Hilfsklasse für Berechnungen zu Würfeln. Enthält Basiswerte, abgele
 
 ## Funktionen
 
-`Volume` - Berechnet das Volumen: `side^3`. Erwartet `side >= 0`.
+`Volume` - Berechnet das Volumen. Parameter: `side` (Kantenlänge, `>= 0`). Rückgabe: `side^3`.
 
-`SurfaceArea` - Berechnet die Oberfläche: `6 * side^2`. Erwartet `side >= 0`.
+`SurfaceArea` - Berechnet die Oberfläche. Parameter: `side` (Kantenlänge, `>= 0`). Rückgabe: `6 * side^2`.
 
-`SpaceDiagonal` - Berechnet die Raumdiagonale: `side * sqrt(3)`. Erwartet `side >= 0`.
+`SpaceDiagonal` - Berechnet die Raumdiagonale. Parameter: `side` (Kantenlänge, `>= 0`). Rückgabe: `side * sqrt(3)`.
 
-`FaceDiagonal` - Berechnet die Flächendiagonale: `side * sqrt(2)`. Erwartet `side >= 0`.
+`FaceDiagonal` - Berechnet die Flächendiagonale. Parameter: `side` (Kantenlänge, `>= 0`). Rückgabe: `side * sqrt(2)`.
 
-`SideFromVolume` - Berechnet die Kantenlänge aus dem Volumen: `cubic-root(volume)`. Erwartet `volume >= 0`.
+`SideFromVolume` - Berechnet die Kantenlänge aus dem Volumen. Parameter: `volume` (`>= 0`). Rückgabe: `cubic-root(volume)`.
 
-`SideFromSurfaceArea` - Berechnet die Kantenlänge aus der Oberfläche: `sqrt(surfaceArea / 6)`. Erwartet `surfaceArea >= 0`.
+`SideFromSurfaceArea` - Berechnet die Kantenlänge aus der Oberfläche. Parameter: `surfaceArea` (`>= 0`). Rückgabe: `sqrt(surfaceArea / 6)`.
 
-`SideFromSpaceDiagonal` - Berechnet die Kantenlänge aus der Raumdiagonale: `spaceDiagonal / sqrt(3)`. Erwartet `spaceDiagonal >= 0`.
+`SideFromSpaceDiagonal` - Berechnet die Kantenlänge aus der Raumdiagonale. Parameter: `spaceDiagonal` (`>= 0`). Rückgabe: `spaceDiagonal / sqrt(3)`.
 
 `Center` - Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten. Parameter: `x1`, `y1`, `z1` (Punkt 1), `x2`, `y2`, `z2` (Punkt 2).
 

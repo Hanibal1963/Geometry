@@ -4,13 +4,13 @@ Statische Hilfsklasse für Berechnungen zu Quadraten (Basiswerte, abgeleitete Gr
 
 ## Funktionen
 
-`Area` - Berechnet die Fläche: `side * side`. Erwartet `side >= 0`.
+`Area` - Berechnet die Fläche. Parameter: `side` (Seitenlänge, `>= 0`). Rückgabe: `side * side`.
 
-`Perimeter` - Berechnet den Umfang: `4 * side`. Erwartet `side >= 0`.
+`Perimeter` - Berechnet den Umfang. Parameter: `side` (Seitenlänge, `>= 0`). Rückgabe: `4 * side`.
 
 `Diagonal` - Berechnet die Diagonale. Parameter: `side` (Seitenlänge, `>= 0`). Rückgabe: `side * sqrt(2)`.
 
-`SideFromDiagonal` - Berechnet die Seitenlänge aus der Diagonale: `diagonal / sqrt(2)`. Erwartet `diagonal >= 0`.
+`SideFromDiagonal` - Berechnet die Seitenlänge aus der Diagonale. Parameter: `diagonal` (`>= 0`). Rückgabe: `diagonal / sqrt(2)`.
 
 `Inradius` - Berechnet den Inkreisradius. Parameter: `side` (Seitenlänge, `>= 0`). Rückgabe: `side / 2`.
 

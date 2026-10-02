@@ -4,7 +4,7 @@ Statische Hilfsklasse für Berechnungen zu rechteckigen Pyramiden und Pyramidens
 
 ## Funktionen
 
-`BaseArea` - Berechnet die Grundfläche: `length * width`. Erwartet `length >= 0`, `width >= 0`.
+`BaseArea` - Berechnet die Grundfläche. Parameter: `length` (`>= 0`), `width` (`>= 0`). Rückgabe: `length * width`.
 
 `Volume` - Berechnet das Volumen einer rechteckigen Pyramide. Parameter: `length` (Grundlänge, `>= 0`), `width` (Grundbreite, `>= 0`), `height` (Höhe, `>= 0`). Rückgabe: `(BaseArea * height) / 3`.
 
@@ -16,7 +16,7 @@ Statische Hilfsklasse für Berechnungen zu rechteckigen Pyramiden und Pyramidens
 
 `SurfaceArea` - Berechnet die Gesamtoberfläche als Grundfläche + Mantelfläche. Parameter: `length` (Grundlänge, `>= 0`), `width` (Grundbreite, `>= 0`), `height` (Höhe, `>= 0`).
 
-`FrustumVolume` - Berechnet das Volumen eines rechteckigen Pyramidenstumpfs: `h/3 * (A1 + A2 + sqrt(A1*A2))`. Erwartet `bottomLength > 0`, `bottomWidth > 0`, `topLength >= 0`, `topWidth >= 0`, `topLength < bottomLength`, `topWidth < bottomWidth`, `height >= 0`.
+`FrustumVolume` - Berechnet das Volumen eines rechteckigen Pyramidenstumpfs. Parameter: `bottomLength` (`> 0`), `bottomWidth` (`> 0`), `topLength` (`>= 0`, `< bottomLength`), `topWidth` (`>= 0`, `< bottomWidth`), `height` (`>= 0`). Rückgabe: `h/3 * (A1 + A2 + sqrt(A1*A2))`.
 
 `FrustumLateralArea` - Berechnet die Mantelfläche eines rechteckigen Pyramidenstumpfs als Summe der 4 Trapezflächen. Parameter: `bottomLength`, `bottomWidth` (`> 0`), `topLength`, `topWidth` (`>= 0` und jeweils kleiner als unten), `height` (`>= 0`).
 

@@ -4,9 +4,9 @@ Statische Hilfsklasse für Berechnungen zu Kegeln und Kegelstümpfen (Volumen, F
 
 ## Funktionen
 
-`Volume` - Berechnet das Volumen eines geraden Kreiskegels: `(PI * r^2 * h) / 3`. Erwartet `radius >= 0` und `height >= 0`.
+`Volume` - Berechnet das Volumen eines geraden Kreiskegels. Parameter: `radius` (`>= 0`), `height` (`>= 0`). Rückgabe: `(PI * r^2 * h) / 3`.
 
-`SlantHeight` - Berechnet die Schräghöhe: `sqrt(r^2 + h^2)`. Erwartet `radius >= 0` und `height >= 0`.
+`SlantHeight` - Berechnet die Schräghöhe. Parameter: `radius` (`>= 0`), `height` (`>= 0`). Rückgabe: `sqrt(r^2 + h^2)`.
 
 `LateralArea` - Berechnet die Mantelfläche. Parameter: `radius` (`>= 0`), `height` (`>= 0`). Rückgabe: `PI * r * s`.
 
@@ -16,7 +16,7 @@ Statische Hilfsklasse für Berechnungen zu Kegeln und Kegelstümpfen (Volumen, F
 
 `RadiusFromDiameter` - Berechnet den Radius. Parameter: `diameter` (`>= 0`). Rückgabe: `d / 2`.
 
-`FrustumVolume` - Berechnet das Volumen eines Kegelstumpfs: `(PI * h / 3) * (R^2 + Rr + r^2)`. Erwartet `radiusBottom > 0`, `radiusTop >= 0`, `radiusTop < radiusBottom`, `height >= 0`.
+`FrustumVolume` - Berechnet das Volumen eines Kegelstumpfs. Parameter: `radiusBottom` (`> 0`), `radiusTop` (`>= 0`, `< radiusBottom`), `height` (`>= 0`). Rückgabe: `(PI * h / 3) * (R^2 + Rr + r^2)`.
 
 `FrustumLateralArea` - Berechnet die Mantelfläche eines Kegelstumpfs. Parameter: `radiusBottom` (`> 0`), `radiusTop` (`>= 0`, `< radiusBottom`), `height` (`>= 0`). Rückgabe: `PI * (R + r) * s`.
 

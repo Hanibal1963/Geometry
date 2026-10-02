@@ -4,13 +4,13 @@ Statische Hilfsklasse für Berechnungen zu Drachenvierecken (Fläche, Umfang, Se
 
 ## Funktionen
 
-`AreaFromDiagonals` - Berechnet die Fläche aus den Diagonalen: `(diagonal1 * diagonal2) / 2`. Erwartet `diagonal1 >= 0`, `diagonal2 >= 0`.
+`AreaFromDiagonals` - Berechnet die Fläche aus den Diagonalen. Parameter: `diagonal1` (`>= 0`), `diagonal2` (`>= 0`). Rückgabe: `(diagonal1 * diagonal2) / 2`.
 
-`Perimeter` - Berechnet den Umfang aus zwei Seitenpaaren: `2 * (sideA + sideB)`. Erwartet `sideA >= 0`, `sideB >= 0`.
+`Perimeter` - Berechnet den Umfang aus zwei Seitenpaaren. Parameter: `sideA` (`>= 0`), `sideB` (`>= 0`). Rückgabe: `2 * (sideA + sideB)`.
 
-`AreaFromBaseHeight` - Berechnet die Fläche aus Grundseite und Höhe: `baseLength * height`. Erwartet `baseLength >= 0`, `height >= 0`.
+`AreaFromBaseHeight` - Berechnet die Fläche aus Grundseite und Höhe. Parameter: `baseLength` (`>= 0`), `height` (`>= 0`). Rückgabe: `baseLength * height`.
 
-`HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseite: `area / baseLength`. Erwartet `area >= 0`, `baseLength > 0`.
+`HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseite. Parameter: `area` (`>= 0`), `baseLength` (`> 0`). Rückgabe: `area / baseLength`.
 
 `IsSymmetricBySides` - Prüft ein symmetrisches Drachen-Seitenmuster. Parameter: `sideA`, `sideB`, `sideC`, `sideD` (Seitenlängen, `>= 0`), `tolerance` (`> 0`).
 

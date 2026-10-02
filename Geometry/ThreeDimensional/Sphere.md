@@ -4,23 +4,23 @@ Statische Hilfsklasse für Berechnungen zu Kugeln (Volumen, Oberfläche, Großkr
 
 ## Funktionen
 
-`Volume` - Berechnet das Kugelvolumen: `(4/3) * PI * r^3`. Erwartet `radius >= 0`.
+`Volume` - Berechnet das Kugelvolumen. Parameter: `radius` (`>= 0`). Rückgabe: `(4/3) * PI * r^3`.
 
-`SurfaceArea` - Berechnet die Kugeloberfläche: `4 * PI * r^2`. Erwartet `radius >= 0`.
+`SurfaceArea` - Berechnet die Kugeloberfläche. Parameter: `radius` (`>= 0`). Rückgabe: `4 * PI * r^2`.
 
-`DiameterFromRadius` - Berechnet den Durchmesser aus dem Radius: `2 * r`.
+`DiameterFromRadius` - Berechnet den Durchmesser aus dem Radius. Parameter: `radius` (`>= 0`). Rückgabe: `2 * r`.
 
-`RadiusFromDiameter` - Berechnet den Radius aus dem Durchmesser: `d / 2`.
+`RadiusFromDiameter` - Berechnet den Radius aus dem Durchmesser. Parameter: `diameter` (`>= 0`). Rückgabe: `d / 2`.
 
-`GreatCircleCircumference` - Berechnet den Umfang des Großkreises: `2 * PI * r`.
+`GreatCircleCircumference` - Berechnet den Umfang des Großkreises. Parameter: `radius` (`>= 0`). Rückgabe: `2 * PI * r`.
 
-`GreatCircleArea` - Berechnet die Fläche des Großkreises: `PI * r^2`.
+`GreatCircleArea` - Berechnet die Fläche des Großkreises. Parameter: `radius` (`>= 0`). Rückgabe: `PI * r^2`.
 
-`SphericalCapVolume` - Berechnet das Volumen einer Kugelkappe: `PI * h^2 * (r - h/3)`. Erwartet `radius > 0` und `0 <= capHeight <= 2 * radius`.
+`SphericalCapVolume` - Berechnet das Volumen einer Kugelkappe. Parameter: `radius` (`> 0`), `capHeight` (`0 <= capHeight <= 2 * radius`). Rückgabe: `PI * h^2 * (r - h/3)`.
 
-`SphericalCapArea` - Berechnet die gekrümmte Oberfläche einer Kugelkappe: `2 * PI * r * h`. Erwartet `radius > 0` und `0 <= capHeight <= 2 * radius`.
+`SphericalCapArea` - Berechnet die gekrümmte Oberfläche einer Kugelkappe. Parameter: `radius` (`> 0`), `capHeight` (`0 <= capHeight <= 2 * radius`). Rückgabe: `2 * PI * r * h`.
 
-`PointOnSphere` - Berechnet einen Punkt auf der Kugeloberfläche aus Mittelpunkt, Radius und sphärischen Winkeln (`polarAngleRadians`, `azimuthRadians`) und liefert ein `Tuple(Of Double, Double, Double)`.
+`PointOnSphere` - Berechnet einen Punkt auf der Kugeloberfläche aus Mittelpunkt, Radius und sphärischen Winkeln. Parameter: `centerX`, `centerY`, `centerZ` (Mittelpunkt), `radius` (`>= 0`), `polarAngleRadians`, `azimuthRadians` (Bogenmaß). Rückgabe: `Tuple(Of Double, Double, Double)`.
 
 ## Hinweise
 

@@ -4,19 +4,19 @@ Statische Hilfsklasse für Berechnungen an regelmäßigen Polygonen. Enthält Ba
 
 ## Funktionen
 
-`Perimeter` - Berechnet den Umfang: `sideCount * sideLength`. Erwartet `sideLength >= 0` und `sideCount >= 3`.
+`Perimeter` - Berechnet den Umfang. Parameter: `sideLength` (`>= 0`), `sideCount` (`>= 3`). Rückgabe: `sideCount * sideLength`.
 
-`InteriorAngle` - Berechnet den Innenwinkel im Bogenmaß: `((n - 2) * PI) / n`. Erwartet `sideCount >= 3`.
+`InteriorAngle` - Berechnet den Innenwinkel im Bogenmaß. Parameter: `sideCount` (`>= 3`). Rückgabe: `((n - 2) * PI) / n`.
 
-`ExteriorAngle` - Berechnet den Außenwinkel im Bogenmaß: `(2 * PI) / n`. Erwartet `sideCount >= 3`.
+`ExteriorAngle` - Berechnet den Außenwinkel im Bogenmaß. Parameter: `sideCount` (`>= 3`). Rückgabe: `(2 * PI) / n`.
 
-`Apothem` - Berechnet die Apothem-Länge: `sideLength / (2 * tan(PI / n))`. Erwartet `sideLength >= 0` und `sideCount >= 3`.
+`Apothem` - Berechnet die Apothem-Länge. Parameter: `sideLength` (`>= 0`), `sideCount` (`>= 3`). Rückgabe: `sideLength / (2 * tan(PI / n))`.
 
-`Circumradius` - Berechnet den Umkreisradius: `sideLength / (2 * sin(PI / n))`. Erwartet `sideLength >= 0` und `sideCount >= 3`.
+`Circumradius` - Berechnet den Umkreisradius. Parameter: `sideLength` (`>= 0`), `sideCount` (`>= 3`). Rückgabe: `sideLength / (2 * sin(PI / n))`.
 
 `Area` - Berechnet die Fläche. Parameter: `sideLength` (Seitenlänge, `>= 0`), `sideCount` (Seitenanzahl, `>= 3`). Rückgabe: `0.5 * Perimeter * Apothem`.
 
-`SideLengthFromPerimeter` - Berechnet die Seitenlänge aus Umfang und Seitenanzahl: `perimeter / sideCount`. Erwartet `perimeter >= 0` und `sideCount >= 3`.
+`SideLengthFromPerimeter` - Berechnet die Seitenlänge aus Umfang und Seitenanzahl. Parameter: `perimeter` (`>= 0`), `sideCount` (`>= 3`). Rückgabe: `perimeter / sideCount`.
 
 `VerticesFromCenter` - Berechnet Eckpunkte aus Mittelpunkt, Seitenanzahl, Umkreisradius und Rotation. Parameter: `cx`, `cy` (Mittelpunkt), `sideCount` (Seitenanzahl, `>= 3`), `circumradius` (`>= 0`), `rotationRadians` (Bogenmaß).
 
