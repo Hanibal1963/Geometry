@@ -16,6 +16,8 @@ Namespace ThreeDimensional
     ''' </summary>
     Public Class Cone
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen eines geraden Kreiskegels.
         ''' </summary>
@@ -91,6 +93,10 @@ Namespace ThreeDimensional
             Return diameter / 2.0
         End Function
 
+#End Region
+
+#Region "Abgeleitete Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen eines Kegelstumpfs.
         ''' </summary>
@@ -136,6 +142,10 @@ Namespace ThreeDimensional
             Return lateral + bases
         End Function
 
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
+
         ''' <summary>
         ''' Berechnet einen Punkt auf der Mantelfläche eines geraden Kegels.
         ''' </summary>
@@ -160,12 +170,18 @@ Namespace ThreeDimensional
             Return Tuple.Create(x, y, z)
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateFrustumRadii(radiusBottom As Double, radiusTop As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radiusBottom <= 0 Then Throw New ArgumentException("Der untere Radius muss größer als 0 sein.", NameOf(radiusBottom))
             If radiusTop < 0 Then Throw New ArgumentException("Der obere Radius darf nicht negativ sein.", NameOf(radiusTop))
             If radiusTop >= radiusBottom Then Throw New ArgumentException("Der obere Radius muss kleiner als der untere Radius sein.", NameOf(radiusTop))
         End Sub
+
+#End Region
 
     End Class
 

@@ -18,6 +18,8 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Trapezoid
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet die Fläche eines Trapezes.
         ''' </summary>
@@ -31,7 +33,9 @@ Namespace TwoDimensional
             If baseB < 0 Then Throw New ArgumentException("Grundseite c darf nicht negativ sein.", NameOf(baseB))
             If height < 0 Then Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(height))
 
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return ((baseA + baseB) / 2.0) * height
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -117,6 +121,10 @@ Namespace TwoDimensional
 
             Return Math.Abs(legB - legD) <= tolerance
         End Function
+
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
 
         ''' <summary>
         ''' Berechnet 4 Eckpunkte eines gleichschenkligen Trapezes aus Mittelpunkt, Grundseiten, Höhe und Rotation.
@@ -216,6 +224,10 @@ Namespace TwoDimensional
             Return crossABCD <= tolerance OrElse crossBCDA <= tolerance
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
@@ -228,6 +240,8 @@ Namespace TwoDimensional
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))
         End Function
+
+#End Region
 
     End Class
 

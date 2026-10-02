@@ -16,6 +16,8 @@ Namespace ThreeDimensional
     ''' </summary>
     Public Class Pyramid
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet die Grundfläche einer rechteckigen Pyramide.
         ''' </summary>
@@ -109,6 +111,10 @@ Namespace ThreeDimensional
             Return BaseArea(length, width) + LateralArea(length, width, height)
         End Function
 
+#End Region
+
+#Region "Abgeleitete Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen eines rechteckigen Pyramidenstumpfs.
         ''' </summary>
@@ -163,6 +169,10 @@ Namespace ThreeDimensional
             Return baseAreas + FrustumLateralArea(bottomLength, bottomWidth, topLength, topWidth, height)
         End Function
 
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
+
         ''' <summary>
         ''' Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten.
         ''' </summary>
@@ -207,6 +217,10 @@ Namespace ThreeDimensional
             }
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateFrustumInputs(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomLength <= 0 Then Throw New ArgumentException("Die untere Grundlänge muss größer als 0 sein.", NameOf(bottomLength))
@@ -217,6 +231,8 @@ Namespace ThreeDimensional
             If topWidth >= bottomWidth Then Throw New ArgumentException("Die obere Grundbreite muss kleiner als die untere Grundbreite sein.", NameOf(topWidth))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
         End Sub
+
+#End Region
 
     End Class
 

@@ -16,6 +16,8 @@ Namespace ThreeDimensional
     ''' </summary>
     Public Class Cube
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen eines Würfels.
         ''' </summary>
@@ -93,6 +95,10 @@ Namespace ThreeDimensional
             Return spaceDiagonal / Math.Sqrt(3.0)
         End Function
 
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
+
         ''' <summary>
         ''' Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten.
         ''' </summary>
@@ -132,6 +138,8 @@ Namespace ThreeDimensional
                 Tuple.Create(cx - h, cy + h, cz + h)
             }
         End Function
+
+#End Region
 
     End Class
 

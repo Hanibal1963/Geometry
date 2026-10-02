@@ -16,6 +16,8 @@ Namespace ThreeDimensional
     ''' </summary>
     Public Class Frustum
 
+#Region "Abgeleitete Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen eines Kegelstumpfs.
         ''' </summary>
@@ -168,6 +170,10 @@ Namespace ThreeDimensional
             Return bottomArea + topArea + PrismFrustumLateralArea(bottomPerimeter, topPerimeter, height)
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateConeFrustumInputs(bottomRadius As Double, topRadius As Double, height As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomRadius <= 0 Then Throw New ArgumentException("Der untere Radius muss größer als 0 sein.", NameOf(bottomRadius))
@@ -186,6 +192,8 @@ Namespace ThreeDimensional
             If topWidth >= bottomWidth Then Throw New ArgumentException("Die obere Grundbreite muss kleiner als die untere sein.", NameOf(topWidth))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
         End Sub
+
+#End Region
 
     End Class
 

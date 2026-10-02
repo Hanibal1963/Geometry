@@ -16,6 +16,8 @@ Namespace ThreeDimensional
     ''' </summary>
     Public Class Cylinder
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen eines Vollzylinders.
         ''' </summary>
@@ -99,6 +101,10 @@ Namespace ThreeDimensional
             Return diameter / 2.0
         End Function
 
+#End Region
+
+#Region "Abgeleitete Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen eines Hohlzylinders.
         ''' </summary>
@@ -131,6 +137,10 @@ Namespace ThreeDimensional
             Return outerLateral + innerLateral + ringEnds
         End Function
 
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
+
         ''' <summary>
         ''' Berechnet einen Punkt auf der Mantelfläche eines Zylinders.
         ''' </summary>
@@ -155,12 +165,18 @@ Namespace ThreeDimensional
             Return Tuple.Create(x, y, z)
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateHollowRadii(outerRadius As Double, innerRadius As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If outerRadius <= 0 Then Throw New ArgumentException("Der Außenradius muss größer als 0 sein.", NameOf(outerRadius))
             If innerRadius < 0 Then Throw New ArgumentException("Der Innenradius darf nicht negativ sein.", NameOf(innerRadius))
             If innerRadius >= outerRadius Then Throw New ArgumentException("Der Innenradius muss kleiner als der Außenradius sein.", NameOf(innerRadius))
         End Sub
+
+#End Region
 
     End Class
 

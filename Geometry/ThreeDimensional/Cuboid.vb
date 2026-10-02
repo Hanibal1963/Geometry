@@ -16,6 +16,8 @@ Namespace ThreeDimensional
     ''' </summary>
     Public Class Cuboid
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen eines Quaders.
         ''' </summary>
@@ -136,6 +138,10 @@ Namespace ThreeDimensional
             Return Math.Abs(length - width) <= tolerance AndAlso Math.Abs(length - height) <= tolerance
         End Function
 
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
+
         ''' <summary>
         ''' Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten.
         ''' </summary>
@@ -182,6 +188,8 @@ Namespace ThreeDimensional
                 Tuple.Create(cx - lx, cy + wy, cz + hz)
             }
         End Function
+
+#End Region
 
     End Class
 

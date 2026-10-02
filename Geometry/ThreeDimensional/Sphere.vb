@@ -16,6 +16,8 @@ Namespace ThreeDimensional
     ''' </summary>
     Public Class Sphere
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen einer Kugel.
         ''' </summary>
@@ -84,6 +86,10 @@ Namespace ThreeDimensional
             Return Math.PI * radius * radius
         End Function
 
+#End Region
+
+#Region "Abgeleitete Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen einer Kugelkappe.
         ''' </summary>
@@ -107,6 +113,10 @@ Namespace ThreeDimensional
             ValidateCapInputs(radius, capHeight)
             Return 2.0 * Math.PI * radius * capHeight
         End Function
+
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
 
         ''' <summary>
         ''' Berechnet einen Punkt auf der Kugeloberfläche aus sphärischen Winkeln.
@@ -133,12 +143,18 @@ Namespace ThreeDimensional
             Return Tuple.Create(x, y, z)
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateCapInputs(radius As Double, capHeight As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius <= 0 Then Throw New ArgumentException("Der Radius muss größer als 0 sein.", NameOf(radius))
             If capHeight < 0 Then Throw New ArgumentException("Die Kappenhöhe darf nicht negativ sein.", NameOf(capHeight))
             If capHeight > 2.0 * radius Then Throw New ArgumentException("Die Kappenhöhe darf maximal 2 * Radius sein.", NameOf(capHeight))
         End Sub
+
+#End Region
 
     End Class
 

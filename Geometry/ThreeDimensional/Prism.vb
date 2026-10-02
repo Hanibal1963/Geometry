@@ -16,6 +16,8 @@ Namespace ThreeDimensional
     ''' </summary>
     Public Class Prism
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet das Volumen eines geraden Prismas.
         ''' </summary>
@@ -56,6 +58,10 @@ Namespace ThreeDimensional
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             Return (2.0 * baseArea) + LateralArea(basePerimeter, height)
         End Function
+
+#End Region
+
+#Region "Abgeleitete Berechnungen"
 
         ''' <summary>
         ''' Berechnet die Grundfläche eines Dreiecks über die drei Seitenlängen (Heron-Formel).
@@ -146,6 +152,10 @@ Namespace ThreeDimensional
             Return SurfaceArea(baseArea, basePerimeter, height)
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateTriangleSides(sideA As Double, sideB As Double, sideC As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideA <= 0 Then Throw New ArgumentException("Seite A muss größer als 0 sein.", NameOf(sideA))
@@ -161,6 +171,8 @@ Namespace ThreeDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideCount < 3 Then Throw New ArgumentException("Die Seitenanzahl muss größer oder gleich 3 sein.", NameOf(sideCount))
         End Sub
+
+#End Region
 
     End Class
 
