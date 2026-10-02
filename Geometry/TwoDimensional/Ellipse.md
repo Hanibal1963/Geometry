@@ -4,35 +4,35 @@ Statische Hilfsklasse zur Arbeit mit Ellipsen (Geometrie, Tangenten/Normalen, Um
 
 ## Funktionen
 
-`Area` - Berechnet die Fläche der Ellipse: π * a * b. Erwartet a,b > 0.
+`Area` - Berechnet die Fläche der Ellipse. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`). Rückgabe: `π * a * b`.
 
-`Eccentricity` - Berechnet die Exzentrizität e = sqrt(1 - (b^2 / a^2)). Intern wird a >= b sichergestellt.
+`Eccentricity` - Berechnet die Exzentrizität. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`). Formel: `sqrt(1 - (b^2 / a^2))`, intern mit `a >= b`.
 
-`FocalDistance` - Abstand der Brennpunkte vom Zentrum: c = sqrt(a^2 - b^2) (setzt a >= b voraus).
+`FocalDistance` - Berechnet den Abstand der Brennpunkte vom Zentrum. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`). Formel: `sqrt(a^2 - b^2)`, intern mit `a >= b`.
 
-`IsCircle` - Prüft, ob a und b praktisch gleich sind (Kreis).
+`IsCircle` - Prüft, ob die Ellipse praktisch ein Kreis ist. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`).
 
-`PerimeterRamanujan` - Ramanujan 1. Näherung für den Umfang einer Ellipse.
+`PerimeterRamanujan` - Berechnet die 1. Ramanujan-Näherung des Umfangs. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`).
 
-`PerimeterRamanujan2` - Ramanujan 2. Näherung, genauer bei hoher Exzentrizität.
+`PerimeterRamanujan2` - Berechnet die 2. Ramanujan-Näherung des Umfangs. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`).
 
-`PerimeterNumeric` - Numerische Simpson-Integration zur genauen Bestimmung des Umfangs. Der Parameter subdivisions muss gerade und >= 2 sein.
+`PerimeterNumeric` - Berechnet den Umfang numerisch mit Simpson-Integration. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `subdivisions` (Unterteilungen, wird auf gerade Zahl `>= 2` normalisiert).
 
-`PointOnEllipse` - Berechnet den Punkt (x,y) auf der Ellipse für den Parameter theta: x = a*cos(theta), y = b*sin(theta).
+`PointOnEllipse` - Berechnet einen Punkt auf der Ellipse. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta` (Parameterwinkel im Bogenmaß). Rückgabe: `PointF(x, y)` mit `x = a*cos(theta)`, `y = b*sin(theta)`.
 
-`TangentAt` - Liefert die Tangentengleichung an der Ellipse im Parameter theta. Bei vertikaler Tangente ist IsVertical = True.
+`TangentAt` - Liefert die Tangentengleichung an der Ellipse. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta` (Parameterwinkel im Bogenmaß). Bei vertikaler Tangente ist `IsVertical = True`.
 
-`NormalAt` - Liefert die Normale an der Ellipse im Parameter theta.
+`NormalAt` - Liefert die Normale an der Ellipse. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta` (Parameterwinkel im Bogenmaß).
 
-`RadiusOfCurvature` - Berechnet den Krümmungsradius an der Ellipse im Parameter theta. Gibt Infinity zurück, falls degeneriert.
+`RadiusOfCurvature` - Berechnet den Krümmungsradius an der Ellipse. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta` (Parameterwinkel im Bogenmaß). Gibt `Infinity` zurück, falls degeneriert.
 
-`ArcLength` - Numerische Berechnung der Bogenlänge zwischen zwei Parametern (Simpson-Integration).
+`ArcLength` - Berechnet die Bogenlänge numerisch zwischen zwei Parametern. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta1` (Startwinkel), `theta2` (Endwinkel), `subdivisions` (Unterteilungen, wird auf gerade Zahl `>= 2` normalisiert).
 
-`ClosestPointOnEllipse` - Findet iterativ (Newton) den nächsten Punkt auf der Ellipse zum Punkt (px,py). Rückgabe: Tuple(PointF closestPoint, Double distance).
+`ClosestPointOnEllipse` - Findet iterativ (Newton) den nächsten Punkt auf der Ellipse zu einem Referenzpunkt. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `px` (X des Referenzpunkts), `py` (Y des Referenzpunkts), `initialTheta` (optional Startwert), `maxIter` (max. Iterationen), `tol` (Abbruch-Toleranz). Rückgabe: `Tuple(PointF closestPoint, Double distance)`.
 
-`EccentricToTrueAnomaly` - Konvertiert exzentrische Anomalie E in wahre Anomalie ν.
+`EccentricToTrueAnomaly` - Konvertiert exzentrische Anomalie `E` in wahre Anomalie `ν`. Parameter: `E` (exzentrische Anomalie), `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`).
 
-`TrueToEccentricAnomaly` - Konvertiert wahre Anomalie ν in exzentrische Anomalie E.
+`TrueToEccentricAnomaly` - Konvertiert wahre Anomalie `ν` in exzentrische Anomalie `E`. Parameter: `v` (wahre Anomalie), `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`).
 
 ## Strukturen
 

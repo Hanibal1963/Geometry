@@ -4,33 +4,33 @@ Statische Hilfsklasse für Kreisberechnungen: Flächen, Umfang, Bogensegmente, S
 
 ## Funktionen
 
-`Area` - Berechnet die Fläche eines Kreises aus dem Radius r (r >= 0). Rückgabe: π * r^2.
+`Area` - Berechnet die Fläche eines Kreises. Parameter: `r` (Radius, `r >= 0`). Rückgabe: `π * r^2`.
 
-`AreaFromDiameter` - Berechnet die Fläche aus dem Durchmesser d (intern: Konversion zu Radius).
+`AreaFromDiameter` - Berechnet die Fläche aus dem Durchmesser. Parameter: `d` (Durchmesser, `d >= 0`).
 
-`Circumference` - Berechnet den Umfang aus dem Radius: 2 * π * r.
+`Circumference` - Berechnet den Umfang. Parameter: `r` (Radius, `r >= 0`). Rückgabe: `2 * π * r`.
 
-`CircumferenceFromDiameter` - Berechnet den Umfang aus dem Durchmesser.
+`CircumferenceFromDiameter` - Berechnet den Umfang aus dem Durchmesser. Parameter: `d` (Durchmesser, `d >= 0`).
 
-`DiameterFromRadius` - Konvertiert Radius in Durchmesser (2 * r).
+`DiameterFromRadius` - Konvertiert Radius in Durchmesser. Parameter: `r` (Radius, `r >= 0`). Rückgabe: `2 * r`.
 
-`RadiusFromDiameter` - Konvertiert Durchmesser in Radius (d / 2).
+`RadiusFromDiameter` - Konvertiert Durchmesser in Radius. Parameter: `d` (Durchmesser, `d >= 0`). Rückgabe: `d / 2`.
 
-`ArcLength` - Bogenlänge für einen gegebenen Zentralwinkel (Bogenmaß): r * angle.
+`ArcLength` - Berechnet die Bogenlänge für einen Zentralwinkel im Bogenmaß. Parameter: `r` (Radius, `r >= 0`), `angleRadians` (Winkel im Bogenmaß). Rückgabe: `r * angleRadians`.
 
-`ArcLengthDegrees` - Bogenlänge für Winkel in Grad (konvertiert intern in Radiant).
+`ArcLengthDegrees` - Berechnet die Bogenlänge für Winkel in Grad. Parameter: `r` (Radius, `r >= 0`), `angleDegrees` (Winkel in Grad).
 
-`SectorArea` - Fläche eines Kreissektors für Winkel im Bogenmaß: 0.5 * r^2 * angle.
+`SectorArea` - Berechnet die Fläche eines Kreissektors für Winkel im Bogenmaß. Parameter: `r` (Radius, `r >= 0`), `angleRadians` (Winkel im Bogenmaß). Rückgabe: `0.5 * r^2 * angleRadians`.
 
-`SectorAreaDegrees` - Fläche eines Kreissektors für Winkel in Grad.
+`SectorAreaDegrees` - Berechnet die Fläche eines Kreissektors für Winkel in Grad. Parameter: `r` (Radius, `r >= 0`), `angleDegrees` (Winkel in Grad).
 
-`ChordLength` - Sehnenlänge aus Zentralwinkel: 2 * r * sin(angle/2).
+`ChordLength` - Berechnet die Sehnenlänge aus dem Zentralwinkel. Parameter: `r` (Radius, `r >= 0`), `angleRadians` (Winkel im Bogenmaß). Rückgabe: `2 * r * sin(angleRadians / 2)`.
 
-`ChordLengthFromSagitta` - Sehnenlänge aus Sehnenhöhe (Sagitta). Parameter werden validiert (0 <= sagitta <= r).
+`ChordLengthFromSagitta` - Berechnet die Sehnenlänge aus der Sehnenhöhe (Sagitta). Parameter: `r` (Radius, `r >= 0`), `sagitta` (Sehnenhöhe, `0 <= sagitta <= r`).
 
-`AngleFromArcLength` - Zentralwinkel (Bogenmaß) aus Bogenlänge: arcLength / r (r > 0).
+`AngleFromArcLength` - Berechnet den Zentralwinkel (Bogenmaß) aus der Bogenlänge. Parameter: `r` (Radius, `r > 0`), `arcLength` (Bogenlänge). Rückgabe: `arcLength / r`.
 
-`AngleFromChordLength` - Zentralwinkel aus Sehnenlänge: 2 * asin(chord / (2 * r)). Parametervalidierung angewendet.
+`AngleFromChordLength` - Berechnet den Zentralwinkel (Bogenmaß) aus der Sehnenlänge. Parameter: `r` (Radius, `r > 0`), `chordLength` (Sehnenlänge, `0 <= chordLength <= 2 * r`). Rückgabe: `2 * asin(chordLength / (2 * r))`.
 
 ## Hinweise
 
