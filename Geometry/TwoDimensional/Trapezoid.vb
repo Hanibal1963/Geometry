@@ -86,7 +86,9 @@ Namespace TwoDimensional
             Dim denominator = baseA + baseB
             If denominator <= 0 Then Throw New ArgumentException("Die Summe der Grundseiten muss größer als 0 sein.")
 
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (2.0 * area) / denominator
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>

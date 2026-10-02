@@ -44,7 +44,9 @@ Namespace ThreeDimensional
             If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
 
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (BaseArea(length, width) * height) / 3.0
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -130,7 +132,9 @@ Namespace ThreeDimensional
 
             Dim a1 = bottomLength * bottomWidth
             Dim a2 = topLength * topWidth
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (height / 3.0) * (a1 + a2 + Math.Sqrt(a1 * a2))
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>

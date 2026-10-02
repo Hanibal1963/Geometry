@@ -28,7 +28,9 @@ Namespace ThreeDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (Math.PI * radius * radius * height) / 3.0
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -108,7 +110,9 @@ Namespace ThreeDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateFrustumRadii(radiusBottom, radiusTop)
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (Math.PI * height / 3.0) * ((radiusBottom * radiusBottom) + (radiusBottom * radiusTop) + (radiusTop * radiusTop))
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -164,8 +168,8 @@ Namespace ThreeDimensional
             If t < 0 OrElse t > 1 Then Throw New ArgumentException("t muss im Bereich 0 bis 1 liegen.", NameOf(t))
 
             Dim currentRadius = radius * (1.0 - t)
-            Dim x = centerX + currentRadius * Math.Cos(angleRadians)
-            Dim y = centerY + currentRadius * Math.Sin(angleRadians)
+            Dim x = centerX + (currentRadius * Math.Cos(angleRadians))
+            Dim y = centerY + (currentRadius * Math.Sin(angleRadians))
             Dim z = baseZ + (t * height)
             Return Tuple.Create(x, y, z)
         End Function

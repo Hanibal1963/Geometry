@@ -28,7 +28,9 @@ Namespace ThreeDimensional
         Public Shared Function ConeFrustumVolume(bottomRadius As Double, topRadius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateConeFrustumInputs(bottomRadius, topRadius, height)
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (Math.PI * height / 3.0) * ((bottomRadius * bottomRadius) + (bottomRadius * topRadius) + (topRadius * topRadius))
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -41,7 +43,7 @@ Namespace ThreeDimensional
         Public Shared Function ConeFrustumLateralArea(bottomRadius As Double, topRadius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateConeFrustumInputs(bottomRadius, topRadius, height)
-            Dim slantHeight = Math.Sqrt((bottomRadius - topRadius) * (bottomRadius - topRadius) + (height * height))
+            Dim slantHeight = Math.Sqrt(((bottomRadius - topRadius) * (bottomRadius - topRadius)) + (height * height))
             Return Math.PI * (bottomRadius + topRadius) * slantHeight
         End Function
 
@@ -74,7 +76,9 @@ Namespace ThreeDimensional
 
             Dim a1 = bottomLength * bottomWidth
             Dim a2 = topLength * topWidth
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (height / 3.0) * (a1 + a2 + Math.Sqrt(a1 * a2))
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -131,7 +135,9 @@ Namespace ThreeDimensional
             If topArea < 0 Then Throw New ArgumentException("Die obere Endfläche darf nicht negativ sein.", NameOf(topArea))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
 
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return ((bottomArea + topArea) / 2.0) * height
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -147,7 +153,9 @@ Namespace ThreeDimensional
             If topPerimeter < 0 Then Throw New ArgumentException("Der obere Umfang darf nicht negativ sein.", NameOf(topPerimeter))
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
 
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return ((bottomPerimeter + topPerimeter) / 2.0) * height
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>

@@ -43,7 +43,9 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diagonal1 < 0 Then Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
             If diagonal2 < 0 Then Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (diagonal1 * diagonal2) / 2.0
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -99,7 +101,9 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If area < 0 Then Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
             If perimeter <= 0 Then Throw New ArgumentException("Der Umfang muss größer als 0 sein.", NameOf(perimeter))
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (2.0 * area) / perimeter
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
 #End Region

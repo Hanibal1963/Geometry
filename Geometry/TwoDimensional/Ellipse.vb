@@ -264,7 +264,9 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             ' Wenn der Punkt bereits auf der Ellipse liegt, sofort zurückgeben (vermeidet numerische Probleme)
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Dim onEllipse = Math.Abs(((px * px) / (a * a)) + ((py * py) / (b * b)) - 1.0)
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
             If onEllipse < 0.000000000000001 Then
                 Return Tuple.Create(New PointF(CSng(px), CSng(py)), 0.0)
             End If

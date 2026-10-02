@@ -25,8 +25,12 @@ Namespace TwoDimensional.Tests
         <TestMethod>
         Public Sub Angle_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Assert.AreEqual((3.0 * Math.PI) / 5.0, InteriorAngle(5), 0.000000001)
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Assert.AreEqual((2.0 * Math.PI) / 5.0, ExteriorAngle(5), 0.000000001)
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Sub
 
         <TestMethod>

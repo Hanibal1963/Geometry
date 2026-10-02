@@ -41,7 +41,9 @@ Namespace TwoDimensional
         Public Shared Function InteriorAngle(sideCount As Integer) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSideCount(sideCount)
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return ((sideCount - 2.0) * Math.PI) / sideCount
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -52,7 +54,9 @@ Namespace TwoDimensional
         Public Shared Function ExteriorAngle(sideCount As Integer) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSideCount(sideCount)
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (2.0 * Math.PI) / sideCount
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>
@@ -130,7 +134,9 @@ Namespace TwoDimensional
             If circumradius < 0 Then Throw New ArgumentException("Der Umkreisradius darf nicht negativ sein.", NameOf(circumradius))
 
             Dim result(sideCount - 1) As PointF
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Dim stepAngle = (2.0 * Math.PI) / sideCount
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
 
             For i = 0 To sideCount - 1
                 Dim angle = rotationRadians + (i * stepAngle)

@@ -120,7 +120,9 @@ Namespace ThreeDimensional
             ValidateSideCount(sideCount)
 
             If sideLength = 0 Then Return 0
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (sideCount * sideLength * sideLength) / (4.0 * Math.Tan(Math.PI / sideCount))
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
         End Function
 
         ''' <summary>

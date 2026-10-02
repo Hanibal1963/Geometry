@@ -18,7 +18,9 @@ Namespace ThreeDimensional.Tests
         Public Sub ConeFrustum_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
             Dim volumeValue = ConeFrustumVolume(4, 2, 5)
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Assert.AreEqual((Math.PI * 5.0 / 3.0) * (16.0 + 8.0 + 4.0), volumeValue, 0.000000001)
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
 
             Dim lateral = ConeFrustumLateralArea(4, 2, 5)
             Dim surface = ConeFrustumSurfaceArea(4, 2, 5)
@@ -32,7 +34,9 @@ Namespace ThreeDimensional.Tests
             Dim volumeValue = PyramidFrustumVolume(6, 4, 2, 1, 5)
             Dim a1 = 24.0
             Dim a2 = 2.0
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Assert.AreEqual((5.0 / 3.0) * (a1 + a2 + Math.Sqrt(a1 * a2)), volumeValue, 0.000000001)
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
 
             Dim lateral = PyramidFrustumLateralArea(6, 4, 2, 1, 5)
             Dim surface = PyramidFrustumSurfaceArea(6, 4, 2, 1, 5)

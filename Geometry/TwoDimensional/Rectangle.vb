@@ -54,7 +54,7 @@ Namespace TwoDimensional
         ''' <returns>Diagonale = sqrt(w^2 + h^2)</returns>
         Public Shared Function Diagonal(w As Double, h As Double) As Double
             ' Pythagoras
-            Return Math.Sqrt(w * w + h * h)
+            Return Math.Sqrt((w * w) + (h * h))
         End Function
 
         ''' <summary>
@@ -145,8 +145,8 @@ Namespace TwoDimensional
             Dim result As PointF() = New PointF(3) {}
 
             For i As Integer = 0 To 3
-                Dim rx As Double = corners(i, 0) * cosA - corners(i, 1) * sinA
-                Dim ry As Double = corners(i, 0) * sinA + corners(i, 1) * cosA
+                Dim rx As Double = (corners(i, 0) * cosA) - (corners(i, 1) * sinA)
+                Dim ry As Double = (corners(i, 0) * sinA) + (corners(i, 1) * cosA)
 
                 ' Auf absolute Koordinaten translateiren
                 result(i) = New PointF(CSng(cx + rx), CSng(cy + ry))
@@ -169,7 +169,7 @@ Namespace TwoDimensional
 
             For i As Integer = 0 To n - 1
                 Dim j As Integer = (i + 1) Mod n
-                sum += vertices(i).X * vertices(j).Y - vertices(j).X * vertices(i).Y
+                sum += (vertices(i).X * vertices(j).Y) - (vertices(j).X * vertices(i).Y)
             Next
 
             ' absolute und halbieren
@@ -192,7 +192,7 @@ Namespace TwoDimensional
                 Dim j As Integer = (i + 1) Mod n
                 Dim dx As Double = vertices(j).X - vertices(i).X
                 Dim dy As Double = vertices(j).Y - vertices(i).Y
-                perim += Math.Sqrt(dx * dx + dy * dy)
+                perim += Math.Sqrt((dx * dx) + (dy * dy))
             Next
 
             Return perim
@@ -222,8 +222,8 @@ Namespace TwoDimensional
                 Dim wx As Double = p2.X - p1.X
                 Dim wy As Double = p2.Y - p1.Y
 
-                Dim dot As Double = vx * wx + vy * wy
-                Dim normProd As Double = Math.Sqrt((vx * vx + vy * vy) * (wx * wx + wy * wy))
+                Dim dot As Double = (vx * wx) + (vy * wy)
+                Dim normProd As Double = Math.Sqrt(((vx * vx) + (vy * vy)) * ((wx * wx) + (wy * wy)))
 
                 ' Wenn eine Seite sehr kurz ist, dann ist die Norm klein; vermeide Division durch 0
                 If normProd = 0 Then Return False

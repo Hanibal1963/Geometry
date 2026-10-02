@@ -158,8 +158,8 @@ Namespace ThreeDimensional
             If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
             If heightOffset < 0 OrElse heightOffset > height Then Throw New ArgumentException("Höhenoffset muss im Bereich 0 bis Höhe liegen.", NameOf(heightOffset))
 
-            Dim x = centerX + radius * Math.Cos(angleRadians)
-            Dim y = centerY + radius * Math.Sin(angleRadians)
+            Dim x = centerX + (radius * Math.Cos(angleRadians))
+            Dim y = centerY + (radius * Math.Sin(angleRadians))
             Dim z = baseZ + heightOffset
 
             Return Tuple.Create(x, y, z)

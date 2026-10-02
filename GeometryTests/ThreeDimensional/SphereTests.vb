@@ -17,7 +17,9 @@ Namespace ThreeDimensional.Tests
         <TestMethod>
         Public Sub Volume_SurfaceArea_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
+#Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Assert.AreEqual((4.0 / 3.0) * Math.PI * 8.0, Volume(2), 0.000000001)
+#Enable Warning IDE0047 ' Unnötige Klammern entfernen
             Assert.AreEqual(4.0 * Math.PI * 4.0, SurfaceArea(2), 0.000000001)
         End Sub
 
