@@ -27,7 +27,7 @@ Namespace TwoDimensional
         ''' <returns>Fläche = π * r^2</returns>
         Public Shared Function Area(r As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(r))
+            If r < 0 Then Messages.RadiusIsNegative(NameOf(r))
             Return Math.PI * r * r
         End Function
 
@@ -48,7 +48,7 @@ Namespace TwoDimensional
         ''' <returns>Umfang = 2 * π * r</returns>
         Public Shared Function Circumference(r As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(r))
+            If r < 0 Then Messages.RadiusIsNegative(NameOf(r))
             Return 2.0 * Math.PI * r
         End Function
 
@@ -69,7 +69,7 @@ Namespace TwoDimensional
         ''' <returns>Durchmesser 2 * r</returns>
         Public Shared Function DiameterFromRadius(r As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(r))
+            If r < 0 Then Messages.RadiusIsNegative(NameOf(r))
             Return 2.0 * r
         End Function
 
@@ -96,7 +96,7 @@ Namespace TwoDimensional
         ''' <returns>Bogenlänge = r * angle</returns>
         Public Shared Function ArcLength(r As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(r))
+            If r < 0 Then Messages.RadiusIsNegative(NameOf(r))
             Return r * angleRadians
         End Function
 
@@ -120,7 +120,7 @@ Namespace TwoDimensional
         ''' <returns>Sektorfläche = 0.5 * r^2 * angle</returns>
         Public Shared Function SectorArea(r As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(r))
+            If r < 0 Then Messages.RadiusIsNegative(NameOf(r))
             Return 0.5 * r * r * angleRadians
         End Function
 
@@ -144,7 +144,7 @@ Namespace TwoDimensional
         ''' <returns>Sehnenlänge = 2 * r * sin(angle/2)</returns>
         Public Shared Function ChordLength(r As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(r))
+            If r < 0 Then Messages.RadiusIsNegative(NameOf(r))
             Return 2.0 * r * Math.Sin(angleRadians / 2.0)
         End Function
 
@@ -156,7 +156,7 @@ Namespace TwoDimensional
         ''' <returns>Sehnenlänge</returns>
         Public Shared Function ChordLengthFromSagitta(r As Double, sagitta As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(r))
+            If r < 0 Then Messages.RadiusIsNegative(NameOf(r))
             If sagitta < 0 Or sagitta > r Then Throw New ArgumentException("Sehnenhöhe ungültig.", NameOf(sagitta))
 
             ' Abstand vom Mittelpunkt zur Sehne (h) = r - sagitta
@@ -206,7 +206,7 @@ Namespace TwoDimensional
         ''' <returns>PointF mit Koordinaten des Punktes</returns>
         Public Shared Function PointOnCircle(cx As Double, cy As Double, r As Double, angleRadians As Double) As PointF
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(r))
+            If r < 0 Then Messages.RadiusIsNegative(NameOf(r))
             Dim x As Single = CSng(cx + (r * Math.Cos(angleRadians)))
             Dim y As Single = CSng(cy + (r * Math.Sin(angleRadians)))
             Return New PointF(x, y)
@@ -221,7 +221,7 @@ Namespace TwoDimensional
         ''' <returns>Achsenparalleles BoundingBox-Rechteck</returns>
         Public Shared Function BoundingBox(cx As Double, cy As Double, r As Double) As RectangleF
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(r))
+            If r < 0 Then Messages.RadiusIsNegative(NameOf(r))
             Dim x As Single = CSng(cx - r)
             Dim y As Single = CSng(cy - r)
             Dim size As Single = CSng(2.0 * r)

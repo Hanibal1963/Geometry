@@ -25,7 +25,8 @@ Namespace ThreeDimensional
         ''' <returns>Volumen 4/3 * PI * r^3</returns>
         Public Shared Function Volume(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
+
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (4.0 / 3.0) * Math.PI * Math.Pow(radius, 3)
 #Enable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -38,7 +39,7 @@ Namespace ThreeDimensional
         ''' <returns>Oberfläche 4 * PI * r^2</returns>
         Public Shared Function SurfaceArea(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
             Return 4.0 * Math.PI * radius * radius
         End Function
 
@@ -49,7 +50,7 @@ Namespace ThreeDimensional
         ''' <returns>Durchmesser 2 * r</returns>
         Public Shared Function DiameterFromRadius(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
             Return 2.0 * radius
         End Function
 
@@ -71,7 +72,7 @@ Namespace ThreeDimensional
         ''' <returns>Umfang 2 * PI * r</returns>
         Public Shared Function GreatCircleCircumference(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
             Return 2.0 * Math.PI * radius
         End Function
 
@@ -82,7 +83,7 @@ Namespace ThreeDimensional
         ''' <returns>Fläche PI * r^2</returns>
         Public Shared Function GreatCircleArea(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
             Return Math.PI * radius * radius
         End Function
 
@@ -130,7 +131,7 @@ Namespace ThreeDimensional
         ''' <returns>3D-Koordinate als Tuple(X, Y, Z)</returns>
         Public Shared Function PointOnSphere(centerX As Double, centerY As Double, centerZ As Double, radius As Double, polarAngleRadians As Double, azimuthRadians As Double) As Tuple(Of Double, Double, Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
             If polarAngleRadians < 0 OrElse polarAngleRadians > Math.PI Then
                 Throw New ArgumentException("Der Polarwinkel muss im Bereich 0 bis PI liegen.", NameOf(polarAngleRadians))
             End If
