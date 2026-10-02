@@ -16,15 +16,15 @@ Statische Hilfsklasse für Berechnungen zu Parallelogrammen (Fläche, Umfang, Di
 
 `InteriorAngleFromSidesAndDiagonals` - Berechnet den eingeschlossenen Innenwinkel (Bogenmaß) aus Seiten und Diagonalen. Wirft `ArgumentException` bei ungültigen Längen oder inkonsistenten Eingaben.
 
-`Center` - Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten und gibt `System.Drawing.PointF` zurück.
+`Center` - Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten. Parameter: `p1`, `p3` (gegenüberliegende Eckpunkte als `PointF`). Rückgabe: `System.Drawing.PointF`.
 
-`VerticesFromCenter` - Berechnet vier Eckpunkte aus Mittelpunkt, Seitenlängen, eingeschlossenem Winkel und Rotation.
+`VerticesFromCenter` - Berechnet vier Eckpunkte aus Mittelpunkt, Seitenlängen, eingeschlossenem Winkel und Rotation. Parameter: `cx`, `cy` (Mittelpunkt), `a`, `b` (Seitenlängen, `> 0`), `interiorAngleRadians` (`0 < Winkel < PI`), `rotationRadians` (Bogenmaß).
 
-`AreaFromVertices` - Berechnet die Polygonfläche aus Eckpunkten mit der Shoelace-Formel. Erwartet mindestens 3 Punkte.
+`AreaFromVertices` - Berechnet die Polygonfläche aus Eckpunkten mit der Shoelace-Formel. Parameter: `vertices` (mindestens 3 Punkte als `PointF()`).
 
-`PerimeterFromVertices` - Berechnet den Umfang als Summe der Kantenlängen. Erwartet mindestens 2 Punkte.
+`PerimeterFromVertices` - Berechnet den Umfang als Summe der Kantenlängen. Parameter: `vertices` (mindestens 2 Punkte als `PointF()`).
 
-`IsParallelogramFromVertices` - Prüft, ob 4 Eckpunkte ein Parallelogramm bilden (Vergleich der Diagonal-Mittelpunkte mit Toleranz).
+`IsParallelogramFromVertices` - Prüft, ob 4 Eckpunkte ein Parallelogramm bilden. Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`).
 
 ## Hinweise
 

@@ -4,21 +4,21 @@ Statische Hilfsklasse für Polygonberechnungen und Koordinatenoperationen. Behan
 
 ## Funktionen
 
-`Area` - Berechnet die Fläche eines Polygons mit der Shoelace-Formel. Erwartet mindestens 3 Eckpunkte.
+`Area` - Berechnet die Fläche eines Polygons mit der Shoelace-Formel. Parameter: `vertices` (mindestens 3 Eckpunkte als `PointF()`).
 
-`Perimeter` - Berechnet den Umfang als Summe aller Kantenlängen. Erwartet mindestens 2 Eckpunkte.
+`Perimeter` - Berechnet den Umfang als Summe aller Kantenlängen. Parameter: `vertices` (mindestens 2 Eckpunkte als `PointF()`).
 
-`IsConvex` - Prüft, ob ein Polygon konvex ist (Vorzeichenprüfung der Kreuzprodukte). Erwartet mindestens 3 Eckpunkte und `tolerance > 0`.
+`IsConvex` - Prüft, ob ein Polygon konvex ist (Vorzeichenprüfung der Kreuzprodukte). Parameter: `vertices` (mindestens 3 Eckpunkte), `tolerance` (`> 0`).
 
-`IsRegular` - Prüft, ob ein Polygon regelmäßig ist (gleich lange Seiten und gleicher Radius zum Schwerpunkt innerhalb der Toleranz). Erwartet mindestens 3 Eckpunkte und `tolerance > 0`.
+`IsRegular` - Prüft, ob ein Polygon regelmäßig ist (gleich lange Seiten und gleicher Radius zum Schwerpunkt innerhalb der Toleranz). Parameter: `vertices` (mindestens 3 Eckpunkte), `tolerance` (`> 0`).
 
-`Centroid` - Berechnet den Flächenschwerpunkt des Polygons. Wirft `ArgumentException` bei degenerierten Polygonen (nahe Nullfläche).
+`Centroid` - Berechnet den Flächenschwerpunkt des Polygons. Parameter: `vertices` (mindestens 3 Eckpunkte). Wirft `ArgumentException` bei degenerierten Polygonen.
 
-`BoundingBox` - Berechnet das achsenparallele Begrenzungsrechteck als `System.Drawing.RectangleF`.
+`BoundingBox` - Berechnet das achsenparallele Begrenzungsrechteck. Parameter: `vertices` (mindestens 1 Eckpunkt). Rückgabe: `System.Drawing.RectangleF`.
 
-`Translate` - Verschiebt alle Eckpunkte um den Vektor `(dx, dy)` und liefert ein neues `PointF`-Array.
+`Translate` - Verschiebt alle Eckpunkte um den Vektor `(dx, dy)`. Parameter: `vertices` (mindestens 1 Eckpunkt), `dx` (X-Verschiebung), `dy` (Y-Verschiebung).
 
-`Rotate` - Rotiert alle Eckpunkte um ein Rotationszentrum `center` mit Winkel `angleRadians` (Bogenmaß) und liefert ein neues `PointF`-Array.
+`Rotate` - Rotiert alle Eckpunkte um ein Rotationszentrum. Parameter: `vertices` (mindestens 1 Eckpunkt), `angleRadians` (Bogenmaß), `center` (Rotationszentrum als `PointF`).
 
 ## Hinweise
 

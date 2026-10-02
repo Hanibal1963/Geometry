@@ -10,19 +10,19 @@ Statische Hilfsklasse für Berechnungen zu Dreiecken (Fläche, Umfang, Winkel, S
 
 `HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseite: `(2 * area) / b`. Wirft `ArgumentException` bei `area < 0` oder `b <= 0`.
 
-`AreaHeron` - Berechnet die Fläche mit der Heron-Formel aus den Seitenlängen. Erwartet gültige Seiten.
+`AreaHeron` - Berechnet die Fläche mit der Heron-Formel aus den Seitenlängen. Parameter: `a`, `b`, `c` (Seiten, `> 0`, gültige Dreiecksungleichung).
 
-`AngleFromSides` - Berechnet einen Innenwinkel (Bogenmaß) über den Kosinussatz aus `opposite`, `adjacent1`, `adjacent2`.
+`AngleFromSides` - Berechnet einen Innenwinkel (Bogenmaß) über den Kosinussatz. Parameter: `opposite`, `adjacent1`, `adjacent2` (Seiten, `> 0`, gültige Dreiecksungleichung).
 
-`SideLengthsFromVertices` - Berechnet die Seitenlängen aus drei Eckpunkten (`PointF`) und liefert `[AB, BC, CA]`.
+`SideLengthsFromVertices` - Berechnet die Seitenlängen aus drei Eckpunkten. Parameter: `a`, `b`, `c` (Eckpunkte als `PointF`). Rückgabe: `[AB, BC, CA]`.
 
-`AreaFromVertices` - Berechnet die Dreiecksfläche aus drei Eckpunkten mit der Shoelace-Formel.
+`AreaFromVertices` - Berechnet die Dreiecksfläche aus drei Eckpunkten mit der Shoelace-Formel. Parameter: `a`, `b`, `c` (Eckpunkte als `PointF`).
 
-`PerimeterFromVertices` - Berechnet den Umfang aus drei Eckpunkten als Summe der Seitenlängen.
+`PerimeterFromVertices` - Berechnet den Umfang aus drei Eckpunkten als Summe der Seitenlängen. Parameter: `a`, `b`, `c` (Eckpunkte als `PointF`).
 
-`Centroid` - Berechnet den Schwerpunkt (Centroid) aus drei Eckpunkten.
+`Centroid` - Berechnet den Schwerpunkt (Centroid) aus drei Eckpunkten. Parameter: `a`, `b`, `c` (Eckpunkte als `PointF`).
 
-`IsValidTriangleFromVertices` - Prüft, ob drei Eckpunkte ein gültiges Dreieck mit Fläche größer als Toleranz bilden.
+`IsValidTriangleFromVertices` - Prüft, ob drei Eckpunkte ein gültiges Dreieck mit Fläche größer als Toleranz bilden. Parameter: `a`, `b`, `c` (Eckpunkte als `PointF`), `tolerance` (`> 0`).
 
 ## Hinweise
 

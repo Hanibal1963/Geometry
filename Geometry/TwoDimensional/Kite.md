@@ -12,15 +12,15 @@ Statische Hilfsklasse für Berechnungen zu Drachenvierecken (Fläche, Umfang, Se
 
 `HeightFromArea` - Berechnet die Höhe aus Fläche und Grundseite: `area / baseLength`. Erwartet `area >= 0`, `baseLength > 0`.
 
-`IsSymmetricBySides` - Prüft ein symmetrisches Drachen-Seitenmuster aus vier Seitenlängen innerhalb Toleranz.
+`IsSymmetricBySides` - Prüft ein symmetrisches Drachen-Seitenmuster. Parameter: `sideA`, `sideB`, `sideC`, `sideD` (Seitenlängen, `>= 0`), `tolerance` (`> 0`).
 
-`VerticesFromCenter` - Berechnet 4 Eckpunkte aus Mittelpunkt, Diagonalen und Rotation (Bogenmaß).
+`VerticesFromCenter` - Berechnet 4 Eckpunkte aus Mittelpunkt, Diagonalen und Rotation. Parameter: `cx`, `cy` (Mittelpunkt), `diagonal1`, `diagonal2` (`>= 0`), `rotationRadians` (Bogenmaß).
 
-`AreaFromVertices` - Berechnet die Fläche aus 4 Eckpunkten mit der Shoelace-Formel.
+`AreaFromVertices` - Berechnet die Fläche aus 4 Eckpunkten. Parameter: `vertices` (4 Eckpunkte als `PointF()` in umlaufender Reihenfolge).
 
-`PerimeterFromVertices` - Berechnet den Umfang aus 4 Eckpunkten als Summe der Kantenlängen.
+`PerimeterFromVertices` - Berechnet den Umfang aus 4 Eckpunkten. Parameter: `vertices` (4 Eckpunkte als `PointF()`).
 
-`IsKiteFromVertices` - Prüft, ob 4 Eckpunkte ein Drachenviereck bilden (zwei benachbarte Seitenpaare gleich lang innerhalb Toleranz).
+`IsKiteFromVertices` - Prüft, ob 4 Eckpunkte ein Drachenviereck bilden. Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`).
 
 ## Hinweise
 

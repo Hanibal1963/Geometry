@@ -18,9 +18,9 @@ Statische Hilfsklasse für Berechnungen zu Würfeln. Enthält Basiswerte, abgele
 
 `SideFromSpaceDiagonal` - Berechnet die Kantenlänge aus der Raumdiagonale: `spaceDiagonal / sqrt(3)`. Erwartet `spaceDiagonal >= 0`.
 
-`Center` - Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten.
+`Center` - Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten. Parameter: `x1`, `y1`, `z1` (Punkt 1), `x2`, `y2`, `z2` (Punkt 2).
 
-`VerticesFromCenter` - Berechnet 8 Eckpunkte eines achsenparallelen Würfels aus Mittelpunkt und Kantenlänge.
+`VerticesFromCenter` - Berechnet 8 Eckpunkte eines achsenparallelen Würfels aus Mittelpunkt und Kantenlänge. Parameter: `cx`, `cy`, `cz` (Mittelpunkt), `side` (Kantenlänge, `>= 0`).
 
 ## Hinweise
 

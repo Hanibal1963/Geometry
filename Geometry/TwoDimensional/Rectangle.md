@@ -4,37 +4,37 @@ Statische Hilfsklasse für Berechnungen zu Rechtecken und Quadraten. Enthält Fu
 
 ## Funktionen
 
-`Area` - Berechnet die Fläche eines Rechtecks aus Breite w und Höhe h. Erwartet w,h >= 0; Rückgabe: w * h.
+`Area` - Berechnet die Fläche eines Rechtecks. Parameter: `w` (Breite, `>= 0`), `h` (Höhe, `>= 0`). Rückgabe: `w * h`.
 
-`Perimeter` - Berechnet den Umfang eines Rechtecks: 2 * (w + h). Enthält Guard-Clauses für negative Werte.
+`Perimeter` - Berechnet den Umfang eines Rechtecks. Parameter: `w` (Breite, `>= 0`), `h` (Höhe, `>= 0`). Rückgabe: `2 * (w + h)`.
 
-`Diagonal` - Berechnet die Diagonale eines Rechtecks: sqrt(w^2 + h^2).
+`Diagonal` - Berechnet die Diagonale eines Rechtecks. Parameter: `w` (Breite, `>= 0`), `h` (Höhe, `>= 0`).
 
-`AspectRatio` - Liefert das Seitenverhältnis w / h. Wirft ArgumentException, wenn h = 0.
+`AspectRatio` - Liefert das Seitenverhältnis `w / h`. Parameter: `w` (Breite, `>= 0`), `h` (Höhe, `> 0`).
 
-`IsSquare` - Prüft, ob w und h gleich sind (Quadrat).
+`IsSquare` - Prüft, ob Breite und Höhe gleich sind. Parameter: `w` (Breite, `>= 0`), `h` (Höhe, `>= 0`).
 
-`Circumradius` - Berechnet den Radius des Umkreises (Diagonale / 2).
+`Circumradius` - Berechnet den Radius des Umkreises. Parameter: `w` (Breite, `>= 0`), `h` (Höhe, `>= 0`).
 
-`Inradius` - Berechnet den Radius des größten einbeschriebenen Kreises: min(w,h) / 2.
+`Inradius` - Berechnet den Radius des größten einbeschriebenen Kreises. Parameter: `w` (Breite, `>= 0`), `h` (Höhe, `>= 0`).
 
-`AreaSquare` - Fläche eines Quadrats mit Seitenlänge s (s >= 0).
+`AreaSquare` - Berechnet die Fläche eines Quadrats. Parameter: `s` (Seitenlänge, `>= 0`).
 
-`PerimeterSquare` - Umfang eines Quadrats: 4 * s.
+`PerimeterSquare` - Berechnet den Umfang eines Quadrats. Parameter: `s` (Seitenlänge, `>= 0`).
 
-`DiagonalSquare` - Diagonale eines Quadrats: s * sqrt(2).
+`DiagonalSquare` - Berechnet die Diagonale eines Quadrats. Parameter: `s` (Seitenlänge, `>= 0`).
 
-`FromDiagonalToSide` - Berechnet die Seitenlänge eines Quadrats aus der Diagonale d.
+`FromDiagonalToSide` - Berechnet die Seitenlänge eines Quadrats aus der Diagonale. Parameter: `d` (Diagonale, `>= 0`).
 
-`Center` - Berechnet den Mittelpunkt zweier Punkte (Mittelwert der Koordinaten) und gibt ein System.Drawing.PointF zurück.
+`Center` - Berechnet den Mittelpunkt zweier Punkte. Parameter: `p1`, `p2` (Punkte als `PointF`). Rückgabe: `System.Drawing.PointF`.
 
-`VerticesFromCenter` - Liefert die 4 Eckpunkte (PointF) eines möglicherweise rotierten Rechtecks aus Mittelpunkt, Breite, Höhe und Winkel. Reihenfolge: oben links im Uhrzeigersinn.
+`VerticesFromCenter` - Liefert die 4 Eckpunkte eines rotierten Rechtecks aus Mittelpunkt, Breite, Höhe und Winkel. Parameter: `cx`, `cy` (Mittelpunkt), `w` (Breite, `>= 0`), `h` (Höhe, `>= 0`), `rotationRadians` (Bogenmaß).
 
-`AreaFromVertices` - Berechnet die Fläche eines (evtl. konvexen) Polygons über die Shoelace-Formel. Erwartet mindestens 3 Punkte.
+`AreaFromVertices` - Berechnet die Fläche aus Eckpunkten über die Shoelace-Formel. Parameter: `vertices` (mindestens 3 Punkte als `PointF()`).
 
-`PerimeterFromVertices` - Berechnet den Umfang eines Polygons als Summe der Kantenlängen.
+`PerimeterFromVertices` - Berechnet den Umfang als Summe der Kantenlängen. Parameter: `vertices` (mindestens 2 Punkte als `PointF()`).
 
-`IsRectangleFromVertices` - Prüft, ob vier gegebene Punkte ein Rechteck bilden (rechte Winkel innerhalb einer Toleranz).
+`IsRectangleFromVertices` - Prüft, ob vier gegebene Punkte ein Rechteck bilden. Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`).
 
 ## Hinweise
 

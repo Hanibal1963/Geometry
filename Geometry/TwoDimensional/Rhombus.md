@@ -16,13 +16,13 @@ Statische Hilfsklasse für Berechnungen zu Rauten (Fläche, Umfang, Diagonalen, 
 
 `InradiusFromAreaPerimeter` - Berechnet den Inkreisradius aus Fläche und Umfang: `(2 * area) / perimeter`. Erwartet `area >= 0`, `perimeter > 0`.
 
-`VerticesFromCenter` - Berechnet 4 Eckpunkte aus Mittelpunkt, Seitenlänge, Innenwinkel und Rotation.
+`VerticesFromCenter` - Berechnet 4 Eckpunkte aus Mittelpunkt, Seitenlänge, Innenwinkel und Rotation. Parameter: `cx`, `cy` (Mittelpunkt), `side` (Seitenlänge, `> 0`), `interiorAngleRadians` (`0 < Winkel < PI`), `rotationRadians` (Bogenmaß).
 
-`AreaFromVertices` - Berechnet die Fläche aus 4 Eckpunkten mit der Shoelace-Formel.
+`AreaFromVertices` - Berechnet die Fläche aus 4 Eckpunkten mit der Shoelace-Formel. Parameter: `vertices` (4 Eckpunkte als `PointF()`).
 
-`PerimeterFromVertices` - Berechnet den Umfang aus 4 Eckpunkten als Summe der Kantenlängen.
+`PerimeterFromVertices` - Berechnet den Umfang aus 4 Eckpunkten als Summe der Kantenlängen. Parameter: `vertices` (4 Eckpunkte als `PointF()`).
 
-`IsRhombusFromVertices` - Prüft, ob 4 Eckpunkte eine Raute bilden (alle Seitenlängen gleich innerhalb Toleranz).
+`IsRhombusFromVertices` - Prüft, ob 4 Eckpunkte eine Raute bilden (alle Seitenlängen gleich innerhalb Toleranz). Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`).
 
 ## Hinweise
 

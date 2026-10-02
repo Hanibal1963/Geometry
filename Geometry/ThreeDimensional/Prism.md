@@ -12,15 +12,15 @@ Statische Hilfsklasse für Prismenvarianten. Enthält Berechnungen für gerade P
 
 `TriangularBaseArea` - Berechnet die Dreiecksgrundfläche mit der Heron-Formel. Erwartet `sideA > 0`, `sideB > 0`, `sideC > 0` und gültige Dreiecksungleichung.
 
-`TriangularPrismVolume` - Berechnet das Volumen eines Dreiecksprismas aus den drei Dreiecksseiten und der Prismahöhe.
+`TriangularPrismVolume` - Berechnet das Volumen eines Dreiecksprismas. Parameter: `sideA`, `sideB`, `sideC` (Dreiecksseiten, `> 0`, gültige Dreiecksungleichung), `height` (Prismahöhe, `>= 0`).
 
-`TriangularPrismSurfaceArea` - Berechnet die Oberfläche eines Dreiecksprismas aus den drei Dreiecksseiten und der Prismahöhe.
+`TriangularPrismSurfaceArea` - Berechnet die Oberfläche eines Dreiecksprismas. Parameter: `sideA`, `sideB`, `sideC` (Dreiecksseiten, `> 0`, gültige Dreiecksungleichung), `height` (Prismahöhe, `>= 0`).
 
 `RegularPolygonBaseArea` - Berechnet die Grundfläche eines regelmäßigen n-Ecks: `n*s^2/(4*tan(PI/n))`. Erwartet `sideLength >= 0`, `sideCount >= 3`.
 
-`RegularPolygonPrismVolume` - Berechnet das Volumen eines regelmäßigen n-Eck-Prismas aus `sideLength`, `sideCount` und `height`.
+`RegularPolygonPrismVolume` - Berechnet das Volumen eines regelmäßigen n-Eck-Prismas. Parameter: `sideLength` (`>= 0`), `sideCount` (`>= 3`), `height` (`>= 0`).
 
-`RegularPolygonPrismSurfaceArea` - Berechnet die Oberfläche eines regelmäßigen n-Eck-Prismas aus `sideLength`, `sideCount` und `height`.
+`RegularPolygonPrismSurfaceArea` - Berechnet die Oberfläche eines regelmäßigen n-Eck-Prismas. Parameter: `sideLength` (`>= 0`), `sideCount` (`>= 3`), `height` (`>= 0`).
 
 ## Hinweise
 
