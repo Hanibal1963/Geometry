@@ -18,6 +18,8 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Parallelogram
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet die Fläche eines Parallelogramms.
         ''' </summary>
@@ -59,6 +61,10 @@ Namespace TwoDimensional
 
             Return area / b
         End Function
+
+#End Region
+
+#Region "Abgeleitete Berechnungen"
 
         ''' <summary>
         ''' Berechnet die fehlende Seitenlänge aus Umfang und bekannter Seite.
@@ -121,6 +127,10 @@ Namespace TwoDimensional
 
             Return Math.Acos(cosValue)
         End Function
+
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
 
         ''' <summary>
         ''' Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten.
@@ -228,6 +238,8 @@ Namespace TwoDimensional
             Return Math.Abs(midpointDiagonal1.X - midpointDiagonal2.X) <= tolerance AndAlso
                    Math.Abs(midpointDiagonal1.Y - midpointDiagonal2.Y) <= tolerance
         End Function
+
+#End Region
 
     End Class
 

@@ -18,6 +18,8 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class RegularPolygon
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet den Umfang eines regelmäßigen Polygons.
         ''' </summary>
@@ -108,6 +110,10 @@ Namespace TwoDimensional
             ValidateSideCount(sideCount)
             Return perimeter / sideCount
         End Function
+
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
 
         ''' <summary>
         ''' Berechnet Eckpunkte eines regelmäßigen Polygons aus Mittelpunkt, Umkreisradius und Rotation.
@@ -204,6 +210,10 @@ Namespace TwoDimensional
             Return True
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateSideCount(sideCount As Integer)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideCount < 3 Then Throw New ArgumentException("Die Seitenanzahl muss größer oder gleich 3 sein.", NameOf(sideCount))
@@ -234,6 +244,8 @@ Namespace TwoDimensional
             Dim dy = b.Y - a.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))
         End Function
+
+#End Region
 
     End Class
 

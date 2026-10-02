@@ -18,6 +18,8 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Rhombus
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet die Fläche aus Seitenlänge und Höhe.
         ''' </summary>
@@ -99,6 +101,10 @@ Namespace TwoDimensional
             If perimeter <= 0 Then Throw New ArgumentException("Der Umfang muss größer als 0 sein.", NameOf(perimeter))
             Return (2.0 * area) / perimeter
         End Function
+
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
 
         ''' <summary>
         ''' Berechnet die 4 Eckpunkte einer Raute aus Mittelpunkt, Seitenlänge, Innenwinkel und Rotation.
@@ -189,6 +195,10 @@ Namespace TwoDimensional
             Return True
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
@@ -201,6 +211,8 @@ Namespace TwoDimensional
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))
         End Function
+
+#End Region
 
     End Class
 

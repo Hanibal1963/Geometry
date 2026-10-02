@@ -18,6 +18,8 @@ Namespace TwoDimensional
     ''' </summary>
     Public Class Square
 
+#Region "Grundlegende Berechnungen"
+
         ''' <summary>
         ''' Berechnet die Fläche eines Quadrats.
         ''' </summary>
@@ -83,6 +85,10 @@ Namespace TwoDimensional
             If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
             Return side / Math.Sqrt(2.0)
         End Function
+
+#End Region
+
+#Region "Koordinatenbasierte Hilfsmethoden"
 
         ''' <summary>
         ''' Berechnet die Eckpunkte eines (optional rotierten) Quadrats aus dem Mittelpunkt.
@@ -193,6 +199,10 @@ Namespace TwoDimensional
             Return True
         End Function
 
+#End Region
+
+#Region "Validierung und interne Hilfsmethoden"
+
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
@@ -205,6 +215,8 @@ Namespace TwoDimensional
             Dim dy = p2.Y - p1.Y
             Return Math.Sqrt((dx * dx) + (dy * dy))
         End Function
+
+#End Region
 
     End Class
 
