@@ -34,18 +34,18 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet die Fläche eines Kreises aus dem Durchmesser.
         ''' </summary>
-        ''' <param name="d">Durchmesser (>= 0)</param>
+        ''' <param name="diameter">Durchmesser (>= 0)</param>
         ''' <returns>Fläche</returns>
-        Public Shared Function AreaFromDiameter(d As Double) As Double
+        Public Shared Function AreaFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            Return Area(RadiusFromDiameter(d))
+            Return Area(RadiusFromDiameter(diameter))
         End Function
 
         ''' <summary>
         ''' Berechnet den Umfang (Kreisumfang) aus dem Radius.
         ''' </summary>
         ''' <param name="radius">Radius (>= 0)</param>
-        ''' <returns>Umfang = 2 * π * r</returns>
+        ''' <returns>Umfang = 2 * π * radius</returns>
         Public Shared Function Circumference(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
@@ -55,11 +55,11 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet den Umfang aus dem Durchmesser.
         ''' </summary>
-        ''' <param name="d">Durchmesser (&gt;= 0)</param>
+        ''' <param name="diameter">Durchmesser (&gt;= 0)</param>
         ''' <returns>Umfang</returns>
-        Public Shared Function CircumferenceFromDiameter(d As Double) As Double
+        Public Shared Function CircumferenceFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            Return Circumference(RadiusFromDiameter(d))
+            Return Circumference(RadiusFromDiameter(diameter))
         End Function
 
         ''' <summary>
@@ -76,12 +76,12 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Konvertiert Durchmesser in Radius.
         ''' </summary>
-        ''' <param name="d">Durchmesser (&gt;= 0)</param>
-        ''' <returns>Radius d / 2</returns>
-        Public Shared Function RadiusFromDiameter(d As Double) As Double
+        ''' <param name="diameter">Durchmesser (&gt;= 0)</param>
+        ''' <returns>Radius diameter / 2</returns>
+        Public Shared Function RadiusFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If d < 0 Then Throw New ArgumentException("Der Durchmesser darf nicht negativ sein.", NameOf(d))
-            Return d / 2.0
+            If diameter < 0 Then Messages.DiameterIsNegative(NameOf(diameter))
+            Return diameter / 2.0
         End Function
 
 #End Region

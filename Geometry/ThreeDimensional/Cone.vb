@@ -91,7 +91,7 @@ Namespace ThreeDimensional
         ''' <returns>Radius d / 2</returns>
         Public Shared Function RadiusFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If diameter < 0 Then Throw New ArgumentException("Der Durchmesser darf nicht negativ sein.", NameOf(diameter))
+            If diameter < 0 Then Messages.DiameterIsNegative(NameOf(diameter))
             Return diameter / 2.0
         End Function
 

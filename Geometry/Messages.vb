@@ -1,8 +1,13 @@
-﻿Friend Class Messages
+﻿Module Messages
 
-    Public Shared Sub RadiusIsNegative(ParameterName As String)
+    Public Sub RadiusIsNegative(ParameterName As String)
         Dim message As String = My.Resources.RadiusIsNegative
         Throw New ArgumentException(message, ParameterName)
     End Sub
 
-End Class
+    Public Sub DiameterIsNegative(ParameterName As String)
+        Dim message As String = My.Resources.DiameterIsNegative
+        Throw New ArgumentException(message, ParameterName)
+    End Sub
+
+End Module

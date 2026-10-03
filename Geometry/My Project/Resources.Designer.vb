@@ -61,6 +61,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Durchmesser darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property DiameterIsNegative() As String
+            Get
+                Return ResourceManager.GetString("DiameterIsNegative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius darf nicht negativ sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property RadiusIsNegative() As String
