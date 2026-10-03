@@ -120,6 +120,9 @@
   <data name="DiameterIsNegative" xml:space="preserve">
     <value>Der Durchmesser darf nicht negativ sein.</value>
   </data>
+  <data name="InvalidTriangleSides" xml:space="preserve">
+    <value>Die angegebenen Seiten bilden kein gültiges Dreieck.</value>
+  </data>
   <data name="RadiusIfZeroOrLess" xml:space="preserve">
     <value>Der Radius muss grösser Null sein.</value>
   </data>

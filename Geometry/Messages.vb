@@ -15,4 +15,9 @@
         Throw New ArgumentException(message, ParameterName)
     End Sub
 
+    Public Sub InvalidTriangleSides()
+        Dim message As String = My.Resources.InvalidTriangleSides
+        Throw New ArgumentException(message)
+    End Sub
+
 End Module

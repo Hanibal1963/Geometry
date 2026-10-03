@@ -70,6 +70,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die angegebenen Seiten bilden kein gültiges Dreieck. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property InvalidTriangleSides() As String
+            Get
+                Return ResourceManager.GetString("InvalidTriangleSides", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius muss grösser Null sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property RadiusIfZeroOrLess() As String
