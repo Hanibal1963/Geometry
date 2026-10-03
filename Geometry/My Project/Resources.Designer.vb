@@ -70,6 +70,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius muss grösser Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RadiusIfZeroOrLess() As String
+            Get
+                Return ResourceManager.GetString("RadiusIfZeroOrLess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius darf nicht negativ sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property RadiusIsNegative() As String

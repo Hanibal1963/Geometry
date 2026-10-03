@@ -10,4 +10,9 @@
         Throw New ArgumentException(message, ParameterName)
     End Sub
 
+    Public Sub RadiusIsZeroOrLess(ParameterName As String)
+        Dim message As String = My.Resources.RadiusIfZeroOrLess
+        Throw New ArgumentException(message, ParameterName)
+    End Sub
+
 End Module

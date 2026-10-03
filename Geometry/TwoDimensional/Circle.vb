@@ -174,7 +174,7 @@ Namespace TwoDimensional
         ''' <returns>Zentralwinkel im Bogenmaß</returns>
         Public Shared Function AngleFromArcLength(radius As Double, arcLength As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius <= 0 Then Throw New ArgumentException("Radius muss > 0 sein.", NameOf(radius))
+            If radius <= 0 Then Messages.RadiusIsZeroOrLess(NameOf(radius))
             Return arcLength / radius
         End Function
 
@@ -186,7 +186,7 @@ Namespace TwoDimensional
         ''' <returns>Zentralwinkel im Bogenmaß</returns>
         Public Shared Function AngleFromChordLength(radius As Double, chordLength As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius <= 0 Then Throw New ArgumentException("Radius muss > 0 sein.", NameOf(radius))
+            If radius <= 0 Then Messages.RadiusIsZeroOrLess(NameOf(radius))
             If chordLength < 0 OrElse chordLength > 2.0 * radius Then Throw New ArgumentException("Sehnenlänge ungültig.", NameOf(chordLength))
             ' chord = 2 radius sin(theta/2) => theta = 2 * asin(chord/(2*radius))
             Return 2.0 * Math.Asin(chordLength / (2.0 * radius))

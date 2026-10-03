@@ -120,6 +120,9 @@
   <data name="DiameterIsNegative" xml:space="preserve">
     <value>Der Durchmesser darf nicht negativ sein.</value>
   </data>
+  <data name="RadiusIfZeroOrLess" xml:space="preserve">
+    <value>Der Radius muss grösser Null sein.</value>
+  </data>
   <data name="RadiusIsNegative" xml:space="preserve">
     <value>Der Radius darf nicht negativ sein.</value>
   </data>
