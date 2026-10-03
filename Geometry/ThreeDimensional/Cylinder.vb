@@ -26,8 +26,12 @@ Namespace ThreeDimensional
         ''' <returns>Volumen PI * r^2 * h</returns>
         Public Shared Function Volume(radius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            End If
             Return Math.PI * radius * radius * height
         End Function
 
@@ -39,8 +43,12 @@ Namespace ThreeDimensional
         ''' <returns>Mantelfläche 2 * PI * r * h</returns>
         Public Shared Function LateralArea(radius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            End If
             Return 2.0 * Math.PI * radius * height
         End Function
 
@@ -52,8 +60,12 @@ Namespace ThreeDimensional
         ''' <returns>Oberfläche 2*PI*r*(r+h)</returns>
         Public Shared Function SurfaceArea(radius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            End If
             Return 2.0 * Math.PI * radius * (radius + height)
         End Function
 
@@ -64,7 +76,9 @@ Namespace ThreeDimensional
         ''' <returns>2 * PI * r</returns>
         Public Shared Function BaseCircumference(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+            End If
             Return 2.0 * Math.PI * radius
         End Function
 
@@ -75,7 +89,9 @@ Namespace ThreeDimensional
         ''' <returns>PI * r^2</returns>
         Public Shared Function BaseArea(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+            End If
             Return Math.PI * radius * radius
         End Function
 
@@ -86,7 +102,9 @@ Namespace ThreeDimensional
         ''' <returns>Durchmesser 2 * r</returns>
         Public Shared Function DiameterFromRadius(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+            End If
             Return 2.0 * radius
         End Function
 
@@ -97,7 +115,9 @@ Namespace ThreeDimensional
         ''' <returns>Radius d / 2</returns>
         Public Shared Function RadiusFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If diameter < 0 Then Messages.DiameterIsNegative(NameOf(diameter))
+            If diameter < 0 Then
+                Throw New ArgumentException(My.Resources.DiameterIsNegative, NameOf(diameter))
+            End If
             Return diameter / 2.0
         End Function
 
@@ -154,9 +174,15 @@ Namespace ThreeDimensional
         ''' <returns>3D-Koordinate als Tuple(X, Y, Z)</returns>
         Public Shared Function PointOnLateralSurface(centerX As Double, centerY As Double, baseZ As Double, radius As Double, height As Double, angleRadians As Double, heightOffset As Double) As Tuple(Of Double, Double, Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Messages.RadiusIsNegative(NameOf(radius))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
-            If heightOffset < 0 OrElse heightOffset > height Then Throw New ArgumentException("Höhenoffset muss im Bereich 0 bis Höhe liegen.", NameOf(heightOffset))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            End If
+            If heightOffset < 0 OrElse heightOffset > height Then
+                Throw New ArgumentException("Höhenoffset muss im Bereich 0 bis Höhe liegen.", NameOf(heightOffset))
+            End If
 
             Dim x = centerX + (radius * Math.Cos(angleRadians))
             Dim y = centerY + (radius * Math.Sin(angleRadians))

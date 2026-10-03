@@ -95,7 +95,7 @@ Namespace TwoDimensional
             Dim cosValue = ((adjacent1 * adjacent1) + (adjacent2 * adjacent2) - (opposite * opposite)) / denominator
 
             If cosValue < -1.0 OrElse cosValue > 1.0 Then
-                Messages.InvalidTriangleSides()
+                Throw New ArgumentException(My.Resources.InvalidTriangleSides)
             End If
 
             Return Math.Acos(cosValue)
@@ -184,7 +184,7 @@ Namespace TwoDimensional
             If b <= 0 Then Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
             If c <= 0 Then Throw New ArgumentException("Seite c muss größer als 0 sein.", NameOf(c))
             If a + b <= c OrElse a + c <= b OrElse b + c <= a Then
-                Messages.InvalidTriangleSides()
+                Throw New ArgumentException(My.Resources.InvalidTriangleSides)
             End If
         End Sub
 
