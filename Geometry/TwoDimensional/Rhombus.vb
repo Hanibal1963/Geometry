@@ -29,7 +29,7 @@ Namespace TwoDimensional
         Public Shared Function AreaFromBaseHeight(baseLength As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseLength < 0 Then
-                Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(baseLength))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(baseLength))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
@@ -64,7 +64,7 @@ Namespace TwoDimensional
         Public Shared Function Perimeter(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then
-                Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(side))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
             End If
             Return 4.0 * side
         End Function
@@ -77,8 +77,12 @@ Namespace TwoDimensional
         ''' <returns>Höhe area / side</returns>
         Public Shared Function HeightFromArea(area As Double, side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If area < 0 Then Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
-            If side <= 0 Then Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+            If area < 0 Then
+                Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
+            End If
+            If side <= 0 Then
+                Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+            End If
             Return area / side
         End Function
 
@@ -90,7 +94,9 @@ Namespace TwoDimensional
         ''' <returns>Array [d1, d2]</returns>
         Public Shared Function DiagonalFromSideAndAngle(side As Double, interiorAngleRadians As Double) As Double()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side <= 0 Then Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+            If side <= 0 Then
+                Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+            End If
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
                 Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))
             End If
@@ -109,8 +115,12 @@ Namespace TwoDimensional
         ''' <returns>Inkreisradius 2 * area / perimeter</returns>
         Public Shared Function InradiusFromAreaPerimeter(area As Double, perimeter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If area < 0 Then Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
-            If perimeter <= 0 Then Throw New ArgumentException("Der Umfang muss größer als 0 sein.", NameOf(perimeter))
+            If area < 0 Then
+                Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
+            End If
+            If perimeter <= 0 Then
+                Throw New ArgumentException("Der Umfang muss größer als 0 sein.", NameOf(perimeter))
+            End If
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (2.0 * area) / perimeter
 #Enable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -131,7 +141,9 @@ Namespace TwoDimensional
         ''' <returns>Array mit 4 Eckpunkten in umlaufender Reihenfolge</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, side As Double, interiorAngleRadians As Double, rotationRadians As Double) As PointF()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side <= 0 Then Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+            If side <= 0 Then
+                Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+            End If
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
                 Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))
             End If
@@ -193,7 +205,9 @@ Namespace TwoDimensional
         Public Shared Function IsRhombusFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
-            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            If tolerance <= 0 Then
+                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            End If
 
             Dim lengths(3) As Double
             For i = 0 To 3
@@ -215,8 +229,12 @@ Namespace TwoDimensional
 
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
-            If vertices.Length <> 4 Then Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+            If vertices Is Nothing Then
+                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+            End If
+            If vertices.Length <> 4 Then
+                Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+            End If
         End Sub
 
         Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double

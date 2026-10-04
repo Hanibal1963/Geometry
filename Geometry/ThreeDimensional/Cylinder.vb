@@ -201,9 +201,15 @@ Namespace ThreeDimensional
 
         Private Shared Sub ValidateHollowRadii(outerRadius As Double, innerRadius As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If outerRadius <= 0 Then Throw New ArgumentException("Der Außenradius muss größer als 0 sein.", NameOf(outerRadius))
-            If innerRadius < 0 Then Throw New ArgumentException("Der Innenradius darf nicht negativ sein.", NameOf(innerRadius))
-            If innerRadius >= outerRadius Then Throw New ArgumentException("Der Innenradius muss kleiner als der Außenradius sein.", NameOf(innerRadius))
+            If outerRadius <= 0 Then
+                Throw New ArgumentException("Der Außenradius muss größer als 0 sein.", NameOf(outerRadius))
+            End If
+            If innerRadius < 0 Then
+                Throw New ArgumentException("Der Innenradius darf nicht negativ sein.", NameOf(innerRadius))
+            End If
+            If innerRadius >= outerRadius Then
+                Throw New ArgumentException("Der Innenradius muss kleiner als der Außenradius sein.", NameOf(innerRadius))
+            End If
         End Sub
 
 #End Region

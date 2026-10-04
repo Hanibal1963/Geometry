@@ -27,7 +27,9 @@ Namespace TwoDimensional
         ''' <returns>Fläche side * side</returns>
         Public Shared Function Area(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
             Return side * side
         End Function
 
@@ -38,7 +40,9 @@ Namespace TwoDimensional
         ''' <returns>Umfang 4 * side</returns>
         Public Shared Function Perimeter(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
             Return 4.0 * side
         End Function
 
@@ -49,7 +53,9 @@ Namespace TwoDimensional
         ''' <returns>Diagonale side * sqrt(2)</returns>
         Public Shared Function Diagonal(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
             Return side * Math.Sqrt(2.0)
         End Function
 
@@ -60,7 +66,9 @@ Namespace TwoDimensional
         ''' <returns>Seitenlänge diagonal / sqrt(2)</returns>
         Public Shared Function SideFromDiagonal(diagonal As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If diagonal < 0 Then Throw New ArgumentException("Diagonale darf nicht negativ sein.", NameOf(diagonal))
+            If diagonal < 0 Then
+                Throw New ArgumentException("Diagonale darf nicht negativ sein.", NameOf(diagonal))
+            End If
             Return diagonal / Math.Sqrt(2.0)
         End Function
 
@@ -71,7 +79,9 @@ Namespace TwoDimensional
         ''' <returns>Inkreisradius side / 2</returns>
         Public Shared Function Inradius(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
             Return side / 2.0
         End Function
 
@@ -82,7 +92,9 @@ Namespace TwoDimensional
         ''' <returns>Umkreisradius side / sqrt(2)</returns>
         Public Shared Function Circumradius(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
             Return side / Math.Sqrt(2.0)
         End Function
 
@@ -100,7 +112,9 @@ Namespace TwoDimensional
         ''' <returns>Array mit 4 Eckpunkten im Uhrzeigersinn</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, side As Double, rotationRadians As Double) As PointF()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
 
             Dim halfSide = side / 2.0
             Dim local As PointF() = {
@@ -168,7 +182,9 @@ Namespace TwoDimensional
         Public Shared Function IsSquareFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
-            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            If tolerance <= 0 Then
+                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            End If
 
             Dim lengths(3) As Double
             For i = 0 To 3
@@ -205,8 +221,12 @@ Namespace TwoDimensional
 
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
-            If vertices.Length <> 4 Then Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+            If vertices Is Nothing Then
+                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+            End If
+            If vertices.Length <> 4 Then
+                Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+            End If
         End Sub
 
         Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double

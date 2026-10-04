@@ -174,7 +174,9 @@ Namespace TwoDimensional
             If radius < 0 Then
                 Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
             End If
-            If sagitta < 0 Or sagitta > radius Then Throw New ArgumentException("Sehnenhöhe ungültig.", NameOf(sagitta))
+            If sagitta < 0 Or sagitta > radius Then
+                Throw New ArgumentException("Sehnenhöhe ungültig.", NameOf(sagitta))
+            End If
 
             ' Abstand vom Mittelpunkt zur Sehne (h) = radius - sagitta
             Dim h As Double = radius - sagitta
@@ -208,7 +210,9 @@ Namespace TwoDimensional
             If radius <= 0 Then
                 Throw New ArgumentException(My.Resources.RadiusIfZeroOrLess, NameOf(radius))
             End If
-            If chordLength < 0 OrElse chordLength > 2.0 * radius Then Throw New ArgumentException("Sehnenlänge ungültig.", NameOf(chordLength))
+            If chordLength < 0 OrElse chordLength > 2.0 * radius Then
+                Throw New ArgumentException("Sehnenlänge ungültig.", NameOf(chordLength))
+            End If
             ' chord = 2 radius sin(theta/2) => theta = 2 * asin(chord/(2*radius))
             Return 2.0 * Math.Asin(chordLength / (2.0 * radius))
         End Function

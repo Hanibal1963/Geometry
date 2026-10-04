@@ -206,10 +206,18 @@ Namespace ThreeDimensional
 
         Private Shared Sub ValidateConeFrustumInputs(bottomRadius As Double, topRadius As Double, height As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If bottomRadius <= 0 Then Throw New ArgumentException("Der untere Radius muss größer als 0 sein.", NameOf(bottomRadius))
-            If topRadius < 0 Then Throw New ArgumentException("Der obere Radius darf nicht negativ sein.", NameOf(topRadius))
-            If topRadius >= bottomRadius Then Throw New ArgumentException("Der obere Radius muss kleiner als der untere Radius sein.", NameOf(topRadius))
-            If height < 0 Then Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            If bottomRadius <= 0 Then
+                Throw New ArgumentException("Der untere Radius muss größer als 0 sein.", NameOf(bottomRadius))
+            End If
+            If topRadius < 0 Then
+                Throw New ArgumentException("Der obere Radius darf nicht negativ sein.", NameOf(topRadius))
+            End If
+            If topRadius >= bottomRadius Then
+                Throw New ArgumentException("Der obere Radius muss kleiner als der untere Radius sein.", NameOf(topRadius))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
         End Sub
 
         Private Shared Sub ValidatePyramidFrustumInputs(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double)
@@ -221,10 +229,10 @@ Namespace ThreeDimensional
                 Throw New ArgumentException("Die untere Grundbreite muss größer als 0 sein.", NameOf(bottomWidth))
             End If
             If topLength < 0 Then
-                Throw New ArgumentException("Die obere Grundlänge darf nicht negativ sein.", NameOf(topLength))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(topLength))
             End If
             If topWidth < 0 Then
-                Throw New ArgumentException("Die obere Grundbreite darf nicht negativ sein.", NameOf(topWidth))
+                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(topWidth))
             End If
             If topLength >= bottomLength Then
                 Throw New ArgumentException("Die obere Grundlänge muss kleiner als die untere sein.", NameOf(topLength))

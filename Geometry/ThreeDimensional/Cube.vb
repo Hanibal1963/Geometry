@@ -25,7 +25,9 @@ Namespace ThreeDimensional
         ''' <returns>Volumen side^3</returns>
         Public Shared Function Volume(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Die Kantenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
             Return side * side * side
         End Function
 
@@ -36,7 +38,9 @@ Namespace ThreeDimensional
         ''' <returns>Oberfläche 6 * side^2</returns>
         Public Shared Function SurfaceArea(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Die Kantenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
             Return 6.0 * side * side
         End Function
 
@@ -47,7 +51,9 @@ Namespace ThreeDimensional
         ''' <returns>Raumdiagonale side * sqrt(3)</returns>
         Public Shared Function SpaceDiagonal(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Die Kantenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
             Return side * Math.Sqrt(3.0)
         End Function
 
@@ -58,7 +64,9 @@ Namespace ThreeDimensional
         ''' <returns>Flächendiagonale side * sqrt(2)</returns>
         Public Shared Function FaceDiagonal(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Die Kantenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
             Return side * Math.Sqrt(2.0)
         End Function
 
@@ -69,7 +77,9 @@ Namespace ThreeDimensional
         ''' <returns>Kantenlänge cubic-root(volume)</returns>
         Public Shared Function SideFromVolume(volume As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If volume < 0 Then Throw New ArgumentException("Das Volumen darf nicht negativ sein.", NameOf(volume))
+            If volume < 0 Then
+                Throw New ArgumentException("Das Volumen darf nicht negativ sein.", NameOf(volume))
+            End If
             Return Math.Pow(volume, 1.0 / 3.0)
         End Function
 
@@ -80,7 +90,9 @@ Namespace ThreeDimensional
         ''' <returns>Kantenlänge sqrt(surfaceArea / 6)</returns>
         Public Shared Function SideFromSurfaceArea(surfaceArea As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If surfaceArea < 0 Then Throw New ArgumentException("Die Oberfläche darf nicht negativ sein.", NameOf(surfaceArea))
+            If surfaceArea < 0 Then
+                Throw New ArgumentException("Die Oberfläche darf nicht negativ sein.", NameOf(surfaceArea))
+            End If
             Return Math.Sqrt(surfaceArea / 6.0)
         End Function
 
@@ -91,7 +103,9 @@ Namespace ThreeDimensional
         ''' <returns>Kantenlänge spaceDiagonal / sqrt(3)</returns>
         Public Shared Function SideFromSpaceDiagonal(spaceDiagonal As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If spaceDiagonal < 0 Then Throw New ArgumentException("Die Raumdiagonale darf nicht negativ sein.", NameOf(spaceDiagonal))
+            If spaceDiagonal < 0 Then
+                Throw New ArgumentException("Die Raumdiagonale darf nicht negativ sein.", NameOf(spaceDiagonal))
+            End If
             Return spaceDiagonal / Math.Sqrt(3.0)
         End Function
 
@@ -124,7 +138,9 @@ Namespace ThreeDimensional
         ''' <returns>Array mit 8 Eckpunkten als Tuple(X,Y,Z)</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, cz As Double, side As Double) As Tuple(Of Double, Double, Double)()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Die Kantenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+            End If
 
             Dim h = side / 2.0
             Return New Tuple(Of Double, Double, Double)() {

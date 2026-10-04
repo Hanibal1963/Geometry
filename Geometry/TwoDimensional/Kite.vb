@@ -28,8 +28,12 @@ Namespace TwoDimensional
         ''' <returns>Fläche (d1 * d2) / 2</returns>
         Public Shared Function AreaFromDiagonals(diagonal1 As Double, diagonal2 As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If diagonal1 < 0 Then Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
-            If diagonal2 < 0 Then Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+            If diagonal1 < 0 Then
+                Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
+            End If
+            If diagonal2 < 0 Then
+                Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+            End If
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (diagonal1 * diagonal2) / 2.0
 #Enable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -43,8 +47,12 @@ Namespace TwoDimensional
         ''' <returns>Umfang 2 * (sideA + sideB)</returns>
         Public Shared Function Perimeter(sideA As Double, sideB As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If sideA < 0 Then Throw New ArgumentException("Seitenlänge A darf nicht negativ sein.", NameOf(sideA))
-            If sideB < 0 Then Throw New ArgumentException("Seitenlänge B darf nicht negativ sein.", NameOf(sideB))
+            If sideA < 0 Then
+                Throw New ArgumentException("Seitenlänge A darf nicht negativ sein.", NameOf(sideA))
+            End If
+            If sideB < 0 Then
+                Throw New ArgumentException("Seitenlänge B darf nicht negativ sein.", NameOf(sideB))
+            End If
             Return 2.0 * (sideA + sideB)
         End Function
 
@@ -129,8 +137,12 @@ Namespace TwoDimensional
         ''' <returns>Array mit 4 Eckpunkten in umlaufender Reihenfolge</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, diagonal1 As Double, diagonal2 As Double, rotationRadians As Double) As PointF()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If diagonal1 < 0 Then Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
-            If diagonal2 < 0 Then Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+            If diagonal1 < 0 Then
+                Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
+            End If
+            If diagonal2 < 0 Then
+                Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+            End If
 
             Dim halfD1 = diagonal1 / 2.0
             Dim halfD2 = diagonal2 / 2.0
@@ -196,7 +208,9 @@ Namespace TwoDimensional
         Public Shared Function IsKiteFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
-            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            If tolerance <= 0 Then
+                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            End If
 
             Dim l0 = Distance(vertices(0), vertices(1))
             Dim l1 = Distance(vertices(1), vertices(2))
@@ -214,8 +228,12 @@ Namespace TwoDimensional
 
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
-            If vertices.Length <> 4 Then Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+            If vertices Is Nothing Then
+                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+            End If
+            If vertices.Length <> 4 Then
+                Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+            End If
         End Sub
 
         Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double

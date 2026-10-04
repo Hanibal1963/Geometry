@@ -129,7 +129,9 @@ Namespace ThreeDimensional
         Public Shared Function FrustumVolume(radiusBottom As Double, radiusTop As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateFrustumRadii(radiusBottom, radiusTop)
-            If height < 0 Then Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (Math.PI * height / 3.0) * ((radiusBottom * radiusBottom) + (radiusBottom * radiusTop) + (radiusTop * radiusTop))
 #Enable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -145,7 +147,9 @@ Namespace ThreeDimensional
         Public Shared Function FrustumLateralArea(radiusBottom As Double, radiusTop As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateFrustumRadii(radiusBottom, radiusTop)
-            If height < 0 Then Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
             Dim s = Math.Sqrt(((radiusBottom - radiusTop) * (radiusBottom - radiusTop)) + (height * height))
             Return Math.PI * (radiusBottom + radiusTop) * s
         End Function
@@ -160,7 +164,9 @@ Namespace ThreeDimensional
         Public Shared Function FrustumSurfaceArea(radiusBottom As Double, radiusTop As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateFrustumRadii(radiusBottom, radiusTop)
-            If height < 0 Then Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
             Dim lateral = FrustumLateralArea(radiusBottom, radiusTop, height)
             Dim bases = Math.PI * ((radiusBottom * radiusBottom) + (radiusTop * radiusTop))
             Return lateral + bases
@@ -187,8 +193,12 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
             End If
 
-            If height < 0 Then Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
-            If t < 0 OrElse t > 1 Then Throw New ArgumentException("t muss im Bereich 0 bis 1 liegen.", NameOf(t))
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
+            If t < 0 OrElse t > 1 Then
+                Throw New ArgumentException("t muss im Bereich 0 bis 1 liegen.", NameOf(t))
+            End If
 
             Dim currentRadius = radius * (1.0 - t)
             Dim x = centerX + (currentRadius * Math.Cos(angleRadians))
@@ -203,9 +213,15 @@ Namespace ThreeDimensional
 
         Private Shared Sub ValidateFrustumRadii(radiusBottom As Double, radiusTop As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radiusBottom <= 0 Then Throw New ArgumentException("Der untere Radius muss größer als 0 sein.", NameOf(radiusBottom))
-            If radiusTop < 0 Then Throw New ArgumentException("Der obere Radius darf nicht negativ sein.", NameOf(radiusTop))
-            If radiusTop >= radiusBottom Then Throw New ArgumentException("Der obere Radius muss kleiner als der untere Radius sein.", NameOf(radiusTop))
+            If radiusBottom <= 0 Then
+                Throw New ArgumentException("Der untere Radius muss größer als 0 sein.", NameOf(radiusBottom))
+            End If
+            If radiusTop < 0 Then
+                Throw New ArgumentException("Der obere Radius darf nicht negativ sein.", NameOf(radiusTop))
+            End If
+            If radiusTop >= radiusBottom Then
+                Throw New ArgumentException("Der obere Radius muss kleiner als der untere Radius sein.", NameOf(radiusTop))
+            End If
         End Sub
 
 #End Region

@@ -135,7 +135,7 @@ Namespace ThreeDimensional
         Public Shared Function RegularPolygonBaseArea(sideLength As Double, sideCount As Integer) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideLength < 0 Then
-                Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(sideLength))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideLength))
             End If
             ValidateSideCount(sideCount)
 
@@ -190,7 +190,9 @@ Namespace ThreeDimensional
             If sideB <= 0 Then
                 Throw New ArgumentException("Seite B muss größer als 0 sein.", NameOf(sideB))
             End If
-            If sideC <= 0 Then Throw New ArgumentException("Seite C muss größer als 0 sein.", NameOf(sideC))
+            If sideC <= 0 Then
+                Throw New ArgumentException("Seite C muss größer als 0 sein.", NameOf(sideC))
+            End If
 
             If sideA + sideB <= sideC OrElse sideA + sideC <= sideB OrElse sideB + sideC <= sideA Then
                 Throw New ArgumentException("Die Seiten erfüllen die Dreiecksungleichung nicht.", NameOf(sideC))
@@ -199,7 +201,9 @@ Namespace ThreeDimensional
 
         Private Shared Sub ValidateSideCount(sideCount As Integer)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If sideCount < 3 Then Throw New ArgumentException("Die Seitenanzahl muss größer oder gleich 3 sein.", NameOf(sideCount))
+            If sideCount < 3 Then
+                Throw New ArgumentException("Die Seitenanzahl muss größer oder gleich 3 sein.", NameOf(sideCount))
+            End If
         End Sub
 
 #End Region

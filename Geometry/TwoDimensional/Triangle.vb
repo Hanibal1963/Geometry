@@ -32,7 +32,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
             End If
             If h < 0 Then
-                Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(h))
             End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -176,7 +176,9 @@ Namespace TwoDimensional
         ''' <returns>True, wenn die Fläche größer als die Toleranz ist</returns>
         Public Shared Function IsValidTriangleFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            If tolerance <= 0 Then
+                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            End If
             ValidateVertices(vertices)
 
             Return AreaFromVertices(vertices) > tolerance
@@ -188,9 +190,15 @@ Namespace TwoDimensional
 
         Private Shared Sub ValidateSides(a As Double, b As Double, c As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If a <= 0 Then Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
-            If b <= 0 Then Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
-            If c <= 0 Then Throw New ArgumentException("Seite c muss größer als 0 sein.", NameOf(c))
+            If a <= 0 Then
+                Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
+            End If
+            If b <= 0 Then
+                Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
+            End If
+            If c <= 0 Then
+                Throw New ArgumentException("Seite c muss größer als 0 sein.", NameOf(c))
+            End If
             If a + b <= c OrElse a + c <= b OrElse b + c <= a Then
                 Throw New ArgumentException(My.Resources.InvalidTriangleSides)
             End If
@@ -198,8 +206,12 @@ Namespace TwoDimensional
 
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
-            If vertices.Length <> 3 Then Throw New ArgumentException("Es müssen genau 3 Eckpunkte angegeben werden.", NameOf(vertices))
+            If vertices Is Nothing Then
+                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+            End If
+            If vertices.Length <> 3 Then
+                Throw New ArgumentException("Es müssen genau 3 Eckpunkte angegeben werden.", NameOf(vertices))
+            End If
         End Sub
 
         Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double

@@ -29,10 +29,10 @@ Namespace TwoDimensional
         Public Shared Function Area(w As Double, h As Double) As Double
             ' Guard-Clauses: negative Werte sind nicht erlaubt
             If w < 0 Then
-                Throw New ArgumentException("Breite darf nicht negativ sein.", NameOf(w))
+                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(w))
             End If
             If h < 0 Then
-                Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(h))
             End If
             Return w * h
         End Function
@@ -46,10 +46,10 @@ Namespace TwoDimensional
         Public Shared Function Perimeter(w As Double, h As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If w < 0 Then
-                Throw New ArgumentException("Breite darf nicht negativ sein.", NameOf(w))
+                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(w))
             End If
             If h < 0 Then
-                Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(h))
             End If
             Return 2.0 * (w + h)
         End Function
@@ -255,7 +255,9 @@ Namespace TwoDimensional
         ''' </summary>
         Public Shared Function AreaSquare(s As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If s < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(s))
+            If s < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(s))
+            End If
             Return s * s
         End Function
 
@@ -264,7 +266,9 @@ Namespace TwoDimensional
         ''' </summary>
         Public Shared Function PerimeterSquare(s As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If s < 0 Then Throw New ArgumentException("Seitenlänge darf nicht negativ sein.", NameOf(s))
+            If s < 0 Then
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(s))
+            End If
             Return 4.0 * s
         End Function
 
@@ -281,7 +285,9 @@ Namespace TwoDimensional
         ''' </summary>
         Public Shared Function FromDiagonalToSide(d As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If d < 0 Then Throw New ArgumentException("Diagonale darf nicht negativ sein.", NameOf(d))
+            If d < 0 Then
+                Throw New ArgumentException("Diagonale darf nicht negativ sein.", NameOf(d))
+            End If
             Return d / Math.Sqrt(2.0)
         End Function
 

@@ -168,7 +168,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException("Der Radius muss größer als 0 sein.", NameOf(radius))
             End If
             If capHeight < 0 Then
-                Throw New ArgumentException("Die Kappenhöhe darf nicht negativ sein.", NameOf(capHeight))
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(capHeight))
             End If
             If capHeight > 2.0 * radius Then
                 Throw New ArgumentException("Die Kappenhöhe darf maximal 2 * Radius sein.", NameOf(capHeight))
