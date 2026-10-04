@@ -164,9 +164,15 @@ Namespace ThreeDimensional
 
         Private Shared Sub ValidateCapInputs(radius As Double, capHeight As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius <= 0 Then Throw New ArgumentException("Der Radius muss größer als 0 sein.", NameOf(radius))
-            If capHeight < 0 Then Throw New ArgumentException("Die Kappenhöhe darf nicht negativ sein.", NameOf(capHeight))
-            If capHeight > 2.0 * radius Then Throw New ArgumentException("Die Kappenhöhe darf maximal 2 * Radius sein.", NameOf(capHeight))
+            If radius <= 0 Then
+                Throw New ArgumentException("Der Radius muss größer als 0 sein.", NameOf(radius))
+            End If
+            If capHeight < 0 Then
+                Throw New ArgumentException("Die Kappenhöhe darf nicht negativ sein.", NameOf(capHeight))
+            End If
+            If capHeight > 2.0 * radius Then
+                Throw New ArgumentException("Die Kappenhöhe darf maximal 2 * Radius sein.", NameOf(capHeight))
+            End If
         End Sub
 
 #End Region

@@ -56,8 +56,12 @@ Namespace TwoDimensional
         ''' <returns>Fläche baseLength * height</returns>
         Public Shared Function AreaFromBaseHeight(baseLength As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If baseLength < 0 Then Throw New ArgumentException("Die Grundseite darf nicht negativ sein.", NameOf(baseLength))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If baseLength < 0 Then
+                Throw New ArgumentException("Die Grundseite darf nicht negativ sein.", NameOf(baseLength))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
             Return baseLength * height
         End Function
 
@@ -69,8 +73,12 @@ Namespace TwoDimensional
         ''' <returns>Höhe area / baseLength</returns>
         Public Shared Function HeightFromArea(area As Double, baseLength As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If area < 0 Then Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
-            If baseLength <= 0 Then Throw New ArgumentException("Die Grundseite muss größer als 0 sein.", NameOf(baseLength))
+            If area < 0 Then
+                Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
+            End If
+            If baseLength <= 0 Then
+                Throw New ArgumentException("Die Grundseite muss größer als 0 sein.", NameOf(baseLength))
+            End If
             Return area / baseLength
         End Function
 
@@ -85,11 +93,21 @@ Namespace TwoDimensional
         ''' <returns>True, wenn |A-B| und |C-D| innerhalb der Toleranz sind</returns>
         Public Shared Function IsSymmetricBySides(sideA As Double, sideB As Double, sideC As Double, sideD As Double, Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If sideA < 0 Then Throw New ArgumentException("Seite A darf nicht negativ sein.", NameOf(sideA))
-            If sideB < 0 Then Throw New ArgumentException("Seite B darf nicht negativ sein.", NameOf(sideB))
-            If sideC < 0 Then Throw New ArgumentException("Seite C darf nicht negativ sein.", NameOf(sideC))
-            If sideD < 0 Then Throw New ArgumentException("Seite D darf nicht negativ sein.", NameOf(sideD))
-            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            If sideA < 0 Then
+                Throw New ArgumentException("Seite A darf nicht negativ sein.", NameOf(sideA))
+            End If
+            If sideB < 0 Then
+                Throw New ArgumentException("Seite B darf nicht negativ sein.", NameOf(sideB))
+            End If
+            If sideC < 0 Then
+                Throw New ArgumentException("Seite C darf nicht negativ sein.", NameOf(sideC))
+            End If
+            If sideD < 0 Then
+                Throw New ArgumentException("Seite D darf nicht negativ sein.", NameOf(sideD))
+            End If
+            If tolerance <= 0 Then
+                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            End If
 
             Dim firstPair = Math.Abs(sideA - sideB) <= tolerance AndAlso Math.Abs(sideC - sideD) <= tolerance
             Dim secondPair = Math.Abs(sideB - sideC) <= tolerance AndAlso Math.Abs(sideD - sideA) <= tolerance

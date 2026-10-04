@@ -30,7 +30,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
             End If
             If height < 0 Then
-                Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
             End If
             Return Math.PI * radius * radius * height
         End Function
@@ -47,7 +47,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
             End If
             If height < 0 Then
-                Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
             End If
             Return 2.0 * Math.PI * radius * height
         End Function
@@ -64,7 +64,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
             End If
             If height < 0 Then
-                Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
             End If
             Return 2.0 * Math.PI * radius * (radius + height)
         End Function
@@ -135,7 +135,9 @@ Namespace ThreeDimensional
         Public Shared Function HollowVolume(outerRadius As Double, innerRadius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateHollowRadii(outerRadius, innerRadius)
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
             Return Math.PI * ((outerRadius * outerRadius) - (innerRadius * innerRadius)) * height
         End Function
 
@@ -149,7 +151,9 @@ Namespace ThreeDimensional
         Public Shared Function HollowSurfaceArea(outerRadius As Double, innerRadius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateHollowRadii(outerRadius, innerRadius)
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
 
             Dim outerLateral = 2.0 * Math.PI * outerRadius * height
             Dim innerLateral = 2.0 * Math.PI * innerRadius * height
@@ -178,7 +182,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
             End If
             If height < 0 Then
-                Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
             End If
             If heightOffset < 0 OrElse heightOffset > height Then
                 Throw New ArgumentException("Höhenoffset muss im Bereich 0 bis Höhe liegen.", NameOf(heightOffset))

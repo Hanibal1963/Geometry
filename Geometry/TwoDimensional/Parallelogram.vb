@@ -28,8 +28,12 @@ Namespace TwoDimensional
         ''' <returns>Fläche b * h</returns>
         Public Shared Function Area(b As Double, h As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If b < 0 Then Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
-            If h < 0 Then Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
+            If b < 0 Then
+                Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
+            End If
+            If h < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(h))
+            End If
 
             Return b * h
         End Function
@@ -42,8 +46,12 @@ Namespace TwoDimensional
         ''' <returns>Umfang 2 * (a + b)</returns>
         Public Shared Function Perimeter(a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If a < 0 Then Throw New ArgumentException("Seite a darf nicht negativ sein.", NameOf(a))
-            If b < 0 Then Throw New ArgumentException("Seite b darf nicht negativ sein.", NameOf(b))
+            If a < 0 Then
+                Throw New ArgumentException("Seite a darf nicht negativ sein.", NameOf(a))
+            End If
+            If b < 0 Then
+                Throw New ArgumentException("Seite b darf nicht negativ sein.", NameOf(b))
+            End If
 
             Return 2.0 * (a + b)
         End Function
@@ -56,8 +64,12 @@ Namespace TwoDimensional
         ''' <returns>Höhe area / b</returns>
         Public Shared Function HeightFromArea(area As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If area < 0 Then Throw New ArgumentException("Fläche darf nicht negativ sein.", NameOf(area))
-            If b <= 0 Then Throw New ArgumentException("Grundseite muss größer als 0 sein.", NameOf(b))
+            If area < 0 Then
+                Throw New ArgumentException("Fläche darf nicht negativ sein.", NameOf(area))
+            End If
+            If b <= 0 Then
+                Throw New ArgumentException("Grundseite muss größer als 0 sein.", NameOf(b))
+            End If
 
             Return area / b
         End Function

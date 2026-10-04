@@ -28,8 +28,12 @@ Namespace TwoDimensional
         ''' <returns>Fläche baseLength * height</returns>
         Public Shared Function AreaFromBaseHeight(baseLength As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If baseLength < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(baseLength))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If baseLength < 0 Then
+                Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(baseLength))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
             Return baseLength * height
         End Function
 
@@ -41,8 +45,12 @@ Namespace TwoDimensional
         ''' <returns>Fläche (d1 * d2) / 2</returns>
         Public Shared Function AreaFromDiagonals(diagonal1 As Double, diagonal2 As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If diagonal1 < 0 Then Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
-            If diagonal2 < 0 Then Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+            If diagonal1 < 0 Then
+                Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
+            End If
+            If diagonal2 < 0 Then
+                Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+            End If
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (diagonal1 * diagonal2) / 2.0
 #Enable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -55,7 +63,9 @@ Namespace TwoDimensional
         ''' <returns>Umfang 4 * side</returns>
         Public Shared Function Perimeter(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(side))
+            End If
             Return 4.0 * side
         End Function
 

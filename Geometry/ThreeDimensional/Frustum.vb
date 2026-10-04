@@ -131,9 +131,15 @@ Namespace ThreeDimensional
         ''' <returns>Volumen ((bottomArea + topArea)/2) * height</returns>
         Public Shared Function PrismFrustumVolume(bottomArea As Double, topArea As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If bottomArea < 0 Then Throw New ArgumentException("Die untere Endfläche darf nicht negativ sein.", NameOf(bottomArea))
-            If topArea < 0 Then Throw New ArgumentException("Die obere Endfläche darf nicht negativ sein.", NameOf(topArea))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If bottomArea < 0 Then
+                Throw New ArgumentException("Die untere Endfläche darf nicht negativ sein.", NameOf(bottomArea))
+            End If
+            If topArea < 0 Then
+                Throw New ArgumentException("Die obere Endfläche darf nicht negativ sein.", NameOf(topArea))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return ((bottomArea + topArea) / 2.0) * height
@@ -149,9 +155,15 @@ Namespace ThreeDimensional
         ''' <returns>Mantelfläche ((bottomPerimeter + topPerimeter)/2) * height</returns>
         Public Shared Function PrismFrustumLateralArea(bottomPerimeter As Double, topPerimeter As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If bottomPerimeter < 0 Then Throw New ArgumentException("Der untere Umfang darf nicht negativ sein.", NameOf(bottomPerimeter))
-            If topPerimeter < 0 Then Throw New ArgumentException("Der obere Umfang darf nicht negativ sein.", NameOf(topPerimeter))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If bottomPerimeter < 0 Then
+                Throw New ArgumentException("Der untere Umfang darf nicht negativ sein.", NameOf(bottomPerimeter))
+            End If
+            If topPerimeter < 0 Then
+                Throw New ArgumentException("Der obere Umfang darf nicht negativ sein.", NameOf(topPerimeter))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return ((bottomPerimeter + topPerimeter) / 2.0) * height
@@ -169,11 +181,21 @@ Namespace ThreeDimensional
         ''' <returns>Oberfläche Endflächen + Mantelfläche</returns>
         Public Shared Function PrismFrustumSurfaceArea(bottomArea As Double, topArea As Double, bottomPerimeter As Double, topPerimeter As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If bottomArea < 0 Then Throw New ArgumentException("Die untere Endfläche darf nicht negativ sein.", NameOf(bottomArea))
-            If topArea < 0 Then Throw New ArgumentException("Die obere Endfläche darf nicht negativ sein.", NameOf(topArea))
-            If bottomPerimeter < 0 Then Throw New ArgumentException("Der untere Umfang darf nicht negativ sein.", NameOf(bottomPerimeter))
-            If topPerimeter < 0 Then Throw New ArgumentException("Der obere Umfang darf nicht negativ sein.", NameOf(topPerimeter))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If bottomArea < 0 Then
+                Throw New ArgumentException("Die untere Endfläche darf nicht negativ sein.", NameOf(bottomArea))
+            End If
+            If topArea < 0 Then
+                Throw New ArgumentException("Die obere Endfläche darf nicht negativ sein.", NameOf(topArea))
+            End If
+            If bottomPerimeter < 0 Then
+                Throw New ArgumentException("Der untere Umfang darf nicht negativ sein.", NameOf(bottomPerimeter))
+            End If
+            If topPerimeter < 0 Then
+                Throw New ArgumentException("Der obere Umfang darf nicht negativ sein.", NameOf(topPerimeter))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
 
             Return bottomArea + topArea + PrismFrustumLateralArea(bottomPerimeter, topPerimeter, height)
         End Function
@@ -187,18 +209,32 @@ Namespace ThreeDimensional
             If bottomRadius <= 0 Then Throw New ArgumentException("Der untere Radius muss größer als 0 sein.", NameOf(bottomRadius))
             If topRadius < 0 Then Throw New ArgumentException("Der obere Radius darf nicht negativ sein.", NameOf(topRadius))
             If topRadius >= bottomRadius Then Throw New ArgumentException("Der obere Radius muss kleiner als der untere Radius sein.", NameOf(topRadius))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If height < 0 Then Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
         End Sub
 
         Private Shared Sub ValidatePyramidFrustumInputs(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If bottomLength <= 0 Then Throw New ArgumentException("Die untere Grundlänge muss größer als 0 sein.", NameOf(bottomLength))
-            If bottomWidth <= 0 Then Throw New ArgumentException("Die untere Grundbreite muss größer als 0 sein.", NameOf(bottomWidth))
-            If topLength < 0 Then Throw New ArgumentException("Die obere Grundlänge darf nicht negativ sein.", NameOf(topLength))
-            If topWidth < 0 Then Throw New ArgumentException("Die obere Grundbreite darf nicht negativ sein.", NameOf(topWidth))
-            If topLength >= bottomLength Then Throw New ArgumentException("Die obere Grundlänge muss kleiner als die untere sein.", NameOf(topLength))
-            If topWidth >= bottomWidth Then Throw New ArgumentException("Die obere Grundbreite muss kleiner als die untere sein.", NameOf(topWidth))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If bottomLength <= 0 Then
+                Throw New ArgumentException("Die untere Grundlänge muss größer als 0 sein.", NameOf(bottomLength))
+            End If
+            If bottomWidth <= 0 Then
+                Throw New ArgumentException("Die untere Grundbreite muss größer als 0 sein.", NameOf(bottomWidth))
+            End If
+            If topLength < 0 Then
+                Throw New ArgumentException("Die obere Grundlänge darf nicht negativ sein.", NameOf(topLength))
+            End If
+            If topWidth < 0 Then
+                Throw New ArgumentException("Die obere Grundbreite darf nicht negativ sein.", NameOf(topWidth))
+            End If
+            If topLength >= bottomLength Then
+                Throw New ArgumentException("Die obere Grundlänge muss kleiner als die untere sein.", NameOf(topLength))
+            End If
+            If topWidth >= bottomWidth Then
+                Throw New ArgumentException("Die obere Grundbreite muss kleiner als die untere sein.", NameOf(topWidth))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+            End If
         End Sub
 
 #End Region

@@ -28,8 +28,12 @@ Namespace TwoDimensional
         ''' <returns>Fläche b * h / 2</returns>
         Public Shared Function Area(b As Double, h As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If b < 0 Then Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
-            If h < 0 Then Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
+            If b < 0 Then
+                Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
+            End If
+            If h < 0 Then
+                Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
+            End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (b * h) / 2.0
@@ -57,8 +61,12 @@ Namespace TwoDimensional
         ''' <returns>Höhe 2 * area / b</returns>
         Public Shared Function HeightFromArea(area As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If area < 0 Then Throw New ArgumentException("Fläche darf nicht negativ sein.", NameOf(area))
-            If b <= 0 Then Throw New ArgumentException("Grundseite muss größer als 0 sein.", NameOf(b))
+            If area < 0 Then
+                Throw New ArgumentException("Fläche darf nicht negativ sein.", NameOf(area))
+            End If
+            If b <= 0 Then
+                Throw New ArgumentException("Grundseite muss größer als 0 sein.", NameOf(b))
+            End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (2.0 * area) / b
