@@ -70,11 +70,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Höhe darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property HeightIsNegative() As String
+            Get
+                Return ResourceManager.GetString("HeightIsNegative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die angegebenen Seiten bilden kein gültiges Dreieck. ähnelt.
         '''</summary>
         Friend ReadOnly Property InvalidTriangleSides() As String
             Get
                 Return ResourceManager.GetString("InvalidTriangleSides", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Länge darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property LengthIsNegative() As String
+            Get
+                Return ResourceManager.GetString("LengthIsNegative", resourceCulture)
             End Get
         End Property
         
@@ -93,6 +111,15 @@ Namespace My.Resources
         Friend ReadOnly Property RadiusIsNegative() As String
             Get
                 Return ResourceManager.GetString("RadiusIsNegative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Breite darf nicht negatv sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property WidthIsNegative() As String
+            Get
+                Return ResourceManager.GetString("WidthIsNegative", resourceCulture)
             End Get
         End Property
     End Module
