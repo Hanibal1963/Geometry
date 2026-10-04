@@ -46,10 +46,10 @@ Namespace TwoDimensional
         Public Shared Function AreaFromDiagonals(diagonal1 As Double, diagonal2 As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diagonal1 < 0 Then
-                Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(diagonal1))
             End If
             If diagonal2 < 0 Then
-                Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(diagonal2))
             End If
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (diagonal1 * diagonal2) / 2.0

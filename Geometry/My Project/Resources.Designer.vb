@@ -61,6 +61,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Diagonale darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeDiagonal() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeDiagonal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Halbachsen müssen größer als 0 sein (a&gt;0, b&gt;0). ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveAxes() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveAxes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Länge muss grösser als Null sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckPositiveLength() As String
@@ -75,6 +93,15 @@ Namespace My.Resources
         Friend ReadOnly Property CheckPositiveWidth() As String
             Get
                 Return ResourceManager.GetString("CheckPositiveWidth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Sehnenlänge ist ungültig. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property ChordLengthInvalid() As String
+            Get
+                Return ResourceManager.GetString("ChordLengthInvalid", resourceCulture)
             End Get
         End Property
         
@@ -133,20 +160,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Länge muss kleiner als die untere Länge sein. ähnelt.
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Sehnenhöhe ist ungültig. ähnelt.
         '''</summary>
-        Friend ReadOnly Property VerifyTopLengthLessThanBottom() As String
+        Friend ReadOnly Property SagittaHeightInvalid() As String
             Get
-                Return ResourceManager.GetString("String1", resourceCulture)
+                Return ResourceManager.GetString("SagittaHeightInvalid", resourceCulture)
             End Get
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Breite muss kleiner als die untere Breite sein. ähnelt.
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Länge muss kleiner als die untere Länge sein. ähnelt.
         '''</summary>
-        Friend ReadOnly Property VerifyTopWidthLessThanBottom() As String
+        Friend ReadOnly Property VerifyTopLengthLessThanBottom() As String
             Get
-                Return ResourceManager.GetString("String2", resourceCulture)
+                Return ResourceManager.GetString("VerifyTopLengthLessThanBottom", resourceCulture)
             End Get
         End Property
         
@@ -155,7 +182,16 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property VerifyTopRadiusLessThanBottom() As String
             Get
-                Return ResourceManager.GetString("VerifyTopLessThanBottom", resourceCulture)
+                Return ResourceManager.GetString("VerifyTopRadiusLessThanBottom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Breite muss kleiner als die untere Breite sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyTopWidthLessThanBottom() As String
+            Get
+                Return ResourceManager.GetString("VerifyTopWidthLessThanBottom", resourceCulture)
             End Get
         End Property
         

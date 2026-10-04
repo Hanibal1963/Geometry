@@ -153,4 +153,16 @@
   <data name="WidthIsNegative" xml:space="preserve">
     <value>Die Breite darf nicht negatv sein.</value>
   </data>
+  <data name="SagittaHeightInvalid" xml:space="preserve">
+    <value>Die Sehnenhöhe ist ungültig.</value>
+  </data>
+  <data name="ChordLengthInvalid" xml:space="preserve">
+    <value>Die Sehnenlänge ist ungültig.</value>
+  </data>
+  <data name="CheckPositiveAxes" xml:space="preserve">
+    <value>Die Halbachsen müssen größer als 0 sein (a&gt;0, b&gt;0).</value>
+  </data>
+  <data name="CheckNonNegativeDiagonal" xml:space="preserve">
+    <value>Die Diagonale darf nicht negativ sein.</value>
+  </data>
 </root>

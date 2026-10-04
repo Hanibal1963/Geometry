@@ -29,10 +29,10 @@ Namespace TwoDimensional
         Public Shared Function AreaFromDiagonals(diagonal1 As Double, diagonal2 As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diagonal1 < 0 Then
-                Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(diagonal1))
             End If
             If diagonal2 < 0 Then
-                Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(diagonal2))
             End If
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (diagonal1 * diagonal2) / 2.0
@@ -48,10 +48,10 @@ Namespace TwoDimensional
         Public Shared Function Perimeter(sideA As Double, sideB As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideA < 0 Then
-                Throw New ArgumentException("Seitenlänge A darf nicht negativ sein.", NameOf(sideA))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideA))
             End If
             If sideB < 0 Then
-                Throw New ArgumentException("Seitenlänge B darf nicht negativ sein.", NameOf(sideB))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideB))
             End If
             Return 2.0 * (sideA + sideB)
         End Function
@@ -65,7 +65,7 @@ Namespace TwoDimensional
         Public Shared Function AreaFromBaseHeight(baseLength As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseLength < 0 Then
-                Throw New ArgumentException("Die Grundseite darf nicht negativ sein.", NameOf(baseLength))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(baseLength))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
@@ -102,16 +102,16 @@ Namespace TwoDimensional
         Public Shared Function IsSymmetricBySides(sideA As Double, sideB As Double, sideC As Double, sideD As Double, Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideA < 0 Then
-                Throw New ArgumentException("Seite A darf nicht negativ sein.", NameOf(sideA))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideA))
             End If
             If sideB < 0 Then
-                Throw New ArgumentException("Seite B darf nicht negativ sein.", NameOf(sideB))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideB))
             End If
             If sideC < 0 Then
-                Throw New ArgumentException("Seite C darf nicht negativ sein.", NameOf(sideC))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideC))
             End If
             If sideD < 0 Then
-                Throw New ArgumentException("Seite D darf nicht negativ sein.", NameOf(sideD))
+                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideD))
             End If
             If tolerance <= 0 Then
                 Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
@@ -138,10 +138,10 @@ Namespace TwoDimensional
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, diagonal1 As Double, diagonal2 As Double, rotationRadians As Double) As PointF()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diagonal1 < 0 Then
-                Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(diagonal1))
             End If
             If diagonal2 < 0 Then
-                Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(diagonal2))
             End If
 
             Dim halfD1 = diagonal1 / 2.0

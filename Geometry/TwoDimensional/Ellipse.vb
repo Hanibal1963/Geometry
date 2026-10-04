@@ -338,7 +338,7 @@ Namespace TwoDimensional
         Private Shared Sub ValidateAxes(a As Double, b As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If a <= 0 OrElse b <= 0 Then
-                Throw New ArgumentException("Die Halbachsen müssen größer als 0 sein (a>0, b>0).")
+                Throw New ArgumentException(My.Resources.CheckPositiveAxes)
             End If
         End Sub
 
