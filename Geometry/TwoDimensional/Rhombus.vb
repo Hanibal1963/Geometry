@@ -81,7 +81,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
             End If
             If side <= 0 Then
-                Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+                Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(side))
             End If
             Return area / side
         End Function
@@ -95,7 +95,7 @@ Namespace TwoDimensional
         Public Shared Function DiagonalFromSideAndAngle(side As Double, interiorAngleRadians As Double) As Double()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side <= 0 Then
-                Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+                Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(side))
             End If
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
                 Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))
@@ -142,7 +142,7 @@ Namespace TwoDimensional
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, side As Double, interiorAngleRadians As Double, rotationRadians As Double) As PointF()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side <= 0 Then
-                Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+                Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(side))
             End If
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
                 Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))

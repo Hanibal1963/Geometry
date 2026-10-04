@@ -140,7 +140,7 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSideCount(sideCount)
             If circumradius < 0 Then
-                Throw New ArgumentException("Der Umkreisradius darf nicht negativ sein.", NameOf(circumradius))
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(circumradius))
             End If
 
             Dim result(sideCount - 1) As PointF

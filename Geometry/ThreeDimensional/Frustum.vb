@@ -207,13 +207,13 @@ Namespace ThreeDimensional
         Private Shared Sub ValidateConeFrustumInputs(bottomRadius As Double, topRadius As Double, height As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomRadius <= 0 Then
-                Throw New ArgumentException("Der untere Radius muss größer als 0 sein.", NameOf(bottomRadius))
+                Throw New ArgumentException(My.Resources.RadiusIfZeroOrLess, NameOf(bottomRadius))
             End If
             If topRadius < 0 Then
-                Throw New ArgumentException("Der obere Radius darf nicht negativ sein.", NameOf(topRadius))
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(topRadius))
             End If
             If topRadius >= bottomRadius Then
-                Throw New ArgumentException("Der obere Radius muss kleiner als der untere Radius sein.", NameOf(topRadius))
+                Throw New ArgumentException(My.Resources.VerifyTopRadiusLessThanBottom, NameOf(topRadius))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
@@ -223,10 +223,10 @@ Namespace ThreeDimensional
         Private Shared Sub ValidatePyramidFrustumInputs(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomLength <= 0 Then
-                Throw New ArgumentException("Die untere Grundlänge muss größer als 0 sein.", NameOf(bottomLength))
+                Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(bottomLength))
             End If
             If bottomWidth <= 0 Then
-                Throw New ArgumentException("Die untere Grundbreite muss größer als 0 sein.", NameOf(bottomWidth))
+                Throw New ArgumentException(My.Resources.CheckPositiveWidth, NameOf(bottomWidth))
             End If
             If topLength < 0 Then
                 Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(topLength))

@@ -123,7 +123,7 @@ Namespace ThreeDimensional
         ''' Berechnet das Volumen eines Kegelstumpfs.
         ''' </summary>
         ''' <param name="radiusBottom">Unterer Radius (&gt; 0)</param>
-        ''' <param name="radiusTop">Oberer Radius (&gt;= 0 und &lt; radiusBottom)</param>
+        ''' <param name="radiusTop">Oberer Radius (&gt;= 0 und &lt; bottomRadius)</param>
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Volumen (PI * h / 3) * (R^2 + Rr + r^2)</returns>
         Public Shared Function FrustumVolume(radiusBottom As Double, radiusTop As Double, height As Double) As Double
@@ -141,7 +141,7 @@ Namespace ThreeDimensional
         ''' Berechnet die Mantelfläche eines Kegelstumpfs.
         ''' </summary>
         ''' <param name="radiusBottom">Unterer Radius (&gt; 0)</param>
-        ''' <param name="radiusTop">Oberer Radius (&gt;= 0 und &lt; radiusBottom)</param>
+        ''' <param name="radiusTop">Oberer Radius (&gt;= 0 und &lt; bottomRadius)</param>
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Mantelfläche PI * (R + r) * s</returns>
         Public Shared Function FrustumLateralArea(radiusBottom As Double, radiusTop As Double, height As Double) As Double
@@ -158,7 +158,7 @@ Namespace ThreeDimensional
         ''' Berechnet die Gesamtoberfläche eines Kegelstumpfs.
         ''' </summary>
         ''' <param name="radiusBottom">Unterer Radius (&gt; 0)</param>
-        ''' <param name="radiusTop">Oberer Radius (&gt;= 0 und &lt; radiusBottom)</param>
+        ''' <param name="radiusTop">Oberer Radius (&gt;= 0 und &lt; bottomRadius)</param>
         ''' <param name="height">Höhe (&gt;= 0)</param>
         ''' <returns>Gesamtoberfläche (Mantel + beide Grundflächen)</returns>
         Public Shared Function FrustumSurfaceArea(radiusBottom As Double, radiusTop As Double, height As Double) As Double
@@ -211,16 +211,16 @@ Namespace ThreeDimensional
 
 #Region "Validierung und interne Hilfsmethoden"
 
-        Private Shared Sub ValidateFrustumRadii(radiusBottom As Double, radiusTop As Double)
+        Private Shared Sub ValidateFrustumRadii(bottomRadius As Double, topRadius As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radiusBottom <= 0 Then
-                Throw New ArgumentException("Der untere Radius muss größer als 0 sein.", NameOf(radiusBottom))
+            If bottomRadius <= 0 Then
+                Throw New ArgumentException(My.Resources.RadiusIfZeroOrLess, NameOf(bottomRadius))
             End If
-            If radiusTop < 0 Then
-                Throw New ArgumentException("Der obere Radius darf nicht negativ sein.", NameOf(radiusTop))
+            If topRadius < 0 Then
+                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(topRadius))
             End If
-            If radiusTop >= radiusBottom Then
-                Throw New ArgumentException("Der obere Radius muss kleiner als der untere Radius sein.", NameOf(radiusTop))
+            If topRadius >= bottomRadius Then
+                Throw New ArgumentException(My.Resources.VerifyTopRadiusLessThanBottom, NameOf(topRadius))
             End If
         End Sub
 

@@ -264,10 +264,10 @@ Namespace ThreeDimensional
         Private Shared Sub ValidateFrustumInputs(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomLength <= 0 Then
-                Throw New ArgumentException("Die untere Grundlänge muss größer als 0 sein.", NameOf(bottomLength))
+                Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(bottomLength))
             End If
             If bottomWidth <= 0 Then
-                Throw New ArgumentException("Die untere Grundbreite muss größer als 0 sein.", NameOf(bottomWidth))
+                Throw New ArgumentException(My.Resources.CheckPositiveWidth, NameOf(bottomWidth))
             End If
             If topLength < 0 Then
                 Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(topLength))
@@ -276,10 +276,10 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(topWidth))
             End If
             If topLength >= bottomLength Then
-                Throw New ArgumentException("Die obere Grundlänge muss kleiner als die untere Grundlänge sein.", NameOf(topLength))
+                Throw New ArgumentException(My.Resources.VerifyTopLengthLessThanBottom, NameOf(topLength))
             End If
             If topWidth >= bottomWidth Then
-                Throw New ArgumentException("Die obere Grundbreite muss kleiner als die untere Grundbreite sein.", NameOf(topWidth))
+                Throw New ArgumentException(My.Resources.VerifyTopWidthLessThanBottom, NameOf(topWidth))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))

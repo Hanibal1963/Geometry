@@ -165,7 +165,7 @@ Namespace ThreeDimensional
         Private Shared Sub ValidateCapInputs(radius As Double, capHeight As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius <= 0 Then
-                Throw New ArgumentException("Der Radius muss größer als 0 sein.", NameOf(radius))
+                Throw New ArgumentException(My.Resources.RadiusIfZeroOrLess, NameOf(radius))
             End If
             If capHeight < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(capHeight))

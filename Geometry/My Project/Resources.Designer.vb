@@ -61,6 +61,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Länge muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveLength() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveLength", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Breite muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveWidth() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveWidth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Der Durchmesser darf nicht negativ sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property DiameterIsNegative() As String
@@ -111,6 +129,33 @@ Namespace My.Resources
         Friend ReadOnly Property RadiusIsNegative() As String
             Get
                 Return ResourceManager.GetString("RadiusIsNegative", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Länge muss kleiner als die untere Länge sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyTopLengthLessThanBottom() As String
+            Get
+                Return ResourceManager.GetString("String1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Breite muss kleiner als die untere Breite sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyTopWidthLessThanBottom() As String
+            Get
+                Return ResourceManager.GetString("String2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der obere Radius muss kleiner als der untere Radius sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyTopRadiusLessThanBottom() As String
+            Get
+                Return ResourceManager.GetString("VerifyTopLessThanBottom", resourceCulture)
             End Get
         End Property
         
