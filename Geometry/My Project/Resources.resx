@@ -165,4 +165,10 @@
   <data name="CheckNonNegativeDiagonal" xml:space="preserve">
     <value>Die Diagonale darf nicht negativ sein.</value>
   </data>
+  <data name="IsPolarAngleInBounds" xml:space="preserve">
+    <value>Der Polarwinkel muss im Bereich von Null bis PI liegen.</value>
+  </data>
+  <data name="CheckCapHeightLimit" xml:space="preserve">
+    <value>Die Kappenhöhe darf maximal 2 * Radius sein.</value>
+  </data>
 </root>

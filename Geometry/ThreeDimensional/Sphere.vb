@@ -147,7 +147,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
             End If
             If polarAngleRadians < 0 OrElse polarAngleRadians > Math.PI Then
-                Throw New ArgumentException("Der Polarwinkel muss im Bereich 0 bis PI liegen.", NameOf(polarAngleRadians))
+                Throw New ArgumentException(My.Resources.IsPolarAngleInBounds, NameOf(polarAngleRadians))
             End If
 
             Dim sinTheta = Math.Sin(polarAngleRadians)
@@ -171,7 +171,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(capHeight))
             End If
             If capHeight > 2.0 * radius Then
-                Throw New ArgumentException("Die Kappenhöhe darf maximal 2 * Radius sein.", NameOf(capHeight))
+                Throw New ArgumentException(My.Resources.CheckCapHeightLimit, NameOf(capHeight))
             End If
         End Sub
 

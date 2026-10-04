@@ -61,6 +61,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Kappenhöhe darf maximal 2 * Radius sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckCapHeightLimit() As String
+            Get
+                Return ResourceManager.GetString("CheckCapHeightLimit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Diagonale darf nicht negativ sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckNonNegativeDiagonal() As String
@@ -129,6 +138,15 @@ Namespace My.Resources
         Friend ReadOnly Property InvalidTriangleSides() As String
             Get
                 Return ResourceManager.GetString("InvalidTriangleSides", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Polarwinkel muss im Bereich von Null bis PI liegen. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property IsPolarAngleInBounds() As String
+            Get
+                Return ResourceManager.GetString("IsPolarAngleInBounds", resourceCulture)
             End Get
         End Property
         
