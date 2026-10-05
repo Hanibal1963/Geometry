@@ -70,6 +70,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Umfang darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeCircumference() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeCircumference", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Diagonale darf nicht negativ sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckNonNegativeDiagonal() As String
@@ -93,6 +102,15 @@ Namespace My.Resources
         Friend ReadOnly Property CheckPositiveLength() As String
             Get
                 Return ResourceManager.GetString("CheckPositiveLength", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Seite muss größer als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveSide() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveSide", resourceCulture)
             End Get
         End Property
         

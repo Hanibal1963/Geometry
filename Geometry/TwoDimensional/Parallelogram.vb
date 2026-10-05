@@ -87,7 +87,7 @@ Namespace TwoDimensional
         Public Shared Function SideFromPerimeter(perimeter As Double, knownSide As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If perimeter < 0 Then
-                Throw New ArgumentException("Umfang darf nicht negativ sein.", NameOf(perimeter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(perimeter))
             End If
             If knownSide < 0 Then
                 Throw New ArgumentException("Bekannte Seite darf nicht negativ sein.", NameOf(knownSide))

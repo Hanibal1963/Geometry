@@ -44,7 +44,7 @@ Namespace ThreeDimensional
         Public Shared Function LateralArea(basePerimeter As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If basePerimeter < 0 Then
-                Throw New ArgumentException("Der Grundumfang darf nicht negativ sein.", NameOf(basePerimeter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(basePerimeter))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
@@ -65,7 +65,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException("Die Grundfläche darf nicht negativ sein.", NameOf(baseArea))
             End If
             If basePerimeter < 0 Then
-                Throw New ArgumentException("Der Grundumfang darf nicht negativ sein.", NameOf(basePerimeter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(basePerimeter))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
@@ -185,13 +185,13 @@ Namespace ThreeDimensional
         Private Shared Sub ValidateTriangleSides(sideA As Double, sideB As Double, sideC As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideA <= 0 Then
-                Throw New ArgumentException("Seite A muss größer als 0 sein.", NameOf(sideA))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(sideA))
             End If
             If sideB <= 0 Then
-                Throw New ArgumentException("Seite B muss größer als 0 sein.", NameOf(sideB))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(sideB))
             End If
             If sideC <= 0 Then
-                Throw New ArgumentException("Seite C muss größer als 0 sein.", NameOf(sideC))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(sideC))
             End If
 
             If sideA + sideB <= sideC OrElse sideA + sideC <= sideB OrElse sideB + sideC <= sideA Then

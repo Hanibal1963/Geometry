@@ -177,4 +177,10 @@
   <data name="VerifyOffsetWithinHeight" xml:space="preserve">
     <value>Höhenoffset muss im Bereich 0 bis Höhe liegen.</value>
   </data>
+  <data name="CheckPositiveSide" xml:space="preserve">
+    <value>Die Seite muss größer als Null sein.</value>
+  </data>
+  <data name="CheckNonNegativeCircumference" xml:space="preserve">
+    <value>Der Umfang darf nicht negativ sein.</value>
+  </data>
 </root>

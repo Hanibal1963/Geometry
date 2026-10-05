@@ -156,10 +156,10 @@ Namespace ThreeDimensional
         Public Shared Function PrismFrustumLateralArea(bottomPerimeter As Double, topPerimeter As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomPerimeter < 0 Then
-                Throw New ArgumentException("Der untere Umfang darf nicht negativ sein.", NameOf(bottomPerimeter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(bottomPerimeter))
             End If
             If topPerimeter < 0 Then
-                Throw New ArgumentException("Der obere Umfang darf nicht negativ sein.", NameOf(topPerimeter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(topPerimeter))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
@@ -188,10 +188,10 @@ Namespace ThreeDimensional
                 Throw New ArgumentException("Die obere Endfläche darf nicht negativ sein.", NameOf(topArea))
             End If
             If bottomPerimeter < 0 Then
-                Throw New ArgumentException("Der untere Umfang darf nicht negativ sein.", NameOf(bottomPerimeter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(bottomPerimeter))
             End If
             If topPerimeter < 0 Then
-                Throw New ArgumentException("Der obere Umfang darf nicht negativ sein.", NameOf(topPerimeter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(topPerimeter))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))

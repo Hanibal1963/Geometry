@@ -117,7 +117,7 @@ Namespace TwoDimensional
         Public Shared Function SideLengthFromPerimeter(perimeter As Double, sideCount As Integer) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If perimeter < 0 Then
-                Throw New ArgumentException("Der Umfang darf nicht negativ sein.", NameOf(perimeter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(perimeter))
             End If
             ValidateSideCount(sideCount)
             Return perimeter / sideCount
