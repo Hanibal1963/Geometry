@@ -185,12 +185,11 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
             End If
             If heightOffset < 0 OrElse heightOffset > height Then
-                Throw New ArgumentException("Höhenoffset muss im Bereich 0 bis Höhe liegen.", NameOf(heightOffset))
+                Throw New ArgumentException(My.Resources.VerifyOffsetWithinHeight, NameOf(heightOffset))
             End If
 
             Dim x = centerX + (radius * Math.Cos(angleRadians))
-            Dim y = centerY + (radius * Math.Sin(angleRadians))
-            Dim z = baseZ + heightOffset
+            Dim y = centerY + (radius * Math.Sin(angleRadians))            Dim z = baseZ + heightOffset
 
             Return Tuple.Create(x, y, z)
         End Function
@@ -208,7 +207,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(innerRadius))
             End If
             If innerRadius >= outerRadius Then
-                Throw New ArgumentException("Der Innenradius muss kleiner als der Außenradius sein.", NameOf(innerRadius))
+                Throw New ArgumentException(My.Resources.VerifyInnerLessThanOuter, NameOf(innerRadius))
             End If
         End Sub
 

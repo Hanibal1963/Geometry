@@ -187,6 +187,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Innenradius muss kleiner als der Außenradius sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyInnerLessThanOuter() As String
+            Get
+                Return ResourceManager.GetString("VerifyInnerLessThanOuter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Höhenoffset muss im Bereich 0 bis Höhe liegen. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyOffsetWithinHeight() As String
+            Get
+                Return ResourceManager.GetString("VerifyOffsetWithinHeight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Länge muss kleiner als die untere Länge sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property VerifyTopLengthLessThanBottom() As String

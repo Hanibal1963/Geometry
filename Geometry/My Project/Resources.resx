@@ -171,4 +171,10 @@
   <data name="CheckCapHeightLimit" xml:space="preserve">
     <value>Die Kappenhöhe darf maximal 2 * Radius sein.</value>
   </data>
+  <data name="VerifyInnerLessThanOuter" xml:space="preserve">
+    <value>Der Innenradius muss kleiner als der Außenradius sein.</value>
+  </data>
+  <data name="VerifyOffsetWithinHeight" xml:space="preserve">
+    <value>Höhenoffset muss im Bereich 0 bis Höhe liegen.</value>
+  </data>
 </root>
