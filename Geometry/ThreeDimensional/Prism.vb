@@ -27,7 +27,7 @@ Namespace ThreeDimensional
         Public Shared Function Volume(baseArea As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseArea < 0 Then
-                Throw New ArgumentException("Die Grundfläche darf nicht negativ sein.", NameOf(baseArea))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(baseArea))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
@@ -62,7 +62,7 @@ Namespace ThreeDimensional
         Public Shared Function SurfaceArea(baseArea As Double, basePerimeter As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseArea < 0 Then
-                Throw New ArgumentException("Die Grundfläche darf nicht negativ sein.", NameOf(baseArea))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(baseArea))
             End If
             If basePerimeter < 0 Then
                 Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(basePerimeter))

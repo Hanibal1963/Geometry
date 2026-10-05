@@ -70,6 +70,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Fläche darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeArea() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeArea", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Der Umfang darf nicht negativ sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckNonNegativeCircumference() As String

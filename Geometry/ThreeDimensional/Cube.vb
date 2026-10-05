@@ -91,7 +91,7 @@ Namespace ThreeDimensional
         Public Shared Function SideFromSurfaceArea(surfaceArea As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If surfaceArea < 0 Then
-                Throw New ArgumentException("Die Oberfläche darf nicht negativ sein.", NameOf(surfaceArea))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(surfaceArea))
             End If
             Return Math.Sqrt(surfaceArea / 6.0)
         End Function

@@ -183,4 +183,7 @@
   <data name="CheckNonNegativeCircumference" xml:space="preserve">
     <value>Der Umfang darf nicht negativ sein.</value>
   </data>
+  <data name="CheckNonNegativeArea" xml:space="preserve">
+    <value>Die Fläche darf nicht negativ sein.</value>
+  </data>
 </root>

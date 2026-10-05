@@ -132,10 +132,10 @@ Namespace ThreeDimensional
         Public Shared Function PrismFrustumVolume(bottomArea As Double, topArea As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomArea < 0 Then
-                Throw New ArgumentException("Die untere Endfläche darf nicht negativ sein.", NameOf(bottomArea))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(bottomArea))
             End If
             If topArea < 0 Then
-                Throw New ArgumentException("Die obere Endfläche darf nicht negativ sein.", NameOf(topArea))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(topArea))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
@@ -182,10 +182,10 @@ Namespace ThreeDimensional
         Public Shared Function PrismFrustumSurfaceArea(bottomArea As Double, topArea As Double, bottomPerimeter As Double, topPerimeter As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomArea < 0 Then
-                Throw New ArgumentException("Die untere Endfläche darf nicht negativ sein.", NameOf(bottomArea))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(bottomArea))
             End If
             If topArea < 0 Then
-                Throw New ArgumentException("Die obere Endfläche darf nicht negativ sein.", NameOf(topArea))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(topArea))
             End If
             If bottomPerimeter < 0 Then
                 Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(bottomPerimeter))

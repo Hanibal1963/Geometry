@@ -78,7 +78,7 @@ Namespace TwoDimensional
         Public Shared Function HeightFromArea(area As Double, side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If area < 0 Then
-                Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
             End If
             If side <= 0 Then
                 Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(side))
@@ -116,7 +116,7 @@ Namespace TwoDimensional
         Public Shared Function InradiusFromAreaPerimeter(area As Double, perimeter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If area < 0 Then
-                Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
             End If
             If perimeter <= 0 Then
                 Throw New ArgumentException("Der Umfang muss größer als 0 sein.", NameOf(perimeter))

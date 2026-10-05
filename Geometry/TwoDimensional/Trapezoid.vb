@@ -98,7 +98,7 @@ Namespace TwoDimensional
         Public Shared Function HeightFromArea(area As Double, baseA As Double, baseB As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If area < 0 Then
-                Throw New ArgumentException("Fläche darf nicht negativ sein.", NameOf(area))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
             End If
             If baseA < 0 Then
                 Throw New ArgumentException("Grundseite a darf nicht negativ sein.", NameOf(baseA))
