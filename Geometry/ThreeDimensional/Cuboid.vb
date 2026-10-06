@@ -145,13 +145,13 @@ Namespace ThreeDimensional
         Public Shared Function EdgeFromVolume(volume As Double, edge1 As Double, edge2 As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If volume < 0 Then
-                Throw New ArgumentException("Das Volumen darf nicht negativ sein.", NameOf(volume))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeVolume, NameOf(volume))
             End If
             If edge1 <= 0 Then
-                Throw New ArgumentException("Kante 1 muss größer als 0 sein.", NameOf(edge1))
+                Throw New ArgumentException(My.Resources.CheckPositiveEdge, NameOf(edge1))
             End If
             If edge2 <= 0 Then
-                Throw New ArgumentException("Kante 2 muss größer als 0 sein.", NameOf(edge2))
+                Throw New ArgumentException(My.Resources.CheckPositiveEdge, NameOf(edge2))
             End If
             Return volume / (edge1 * edge2)
         End Function

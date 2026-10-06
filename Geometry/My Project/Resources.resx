@@ -186,4 +186,22 @@
   <data name="CheckNonNegativeArea" xml:space="preserve">
     <value>Die Fläche darf nicht negativ sein.</value>
   </data>
+  <data name="String1" xml:space="preserve">
+    <value>Die Seiten erfüllen die Dreiecksungleichung nicht.</value>
+  </data>
+  <data name="RequireAtLeastThreeSides" xml:space="preserve">
+    <value>Die Seitenanzahl muss größer oder gleich 3 sein.</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Die obere Grundlänge muss kleiner als die untere sein.</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Die obere Grundbreite muss kleiner als die untere sein.</value>
+  </data>
+  <data name="CheckNonNegativeVolume" xml:space="preserve">
+    <value>Das Volumen darf nicht negativ sein.</value>
+  </data>
+  <data name="CheckPositiveEdge" xml:space="preserve">
+    <value>Die Kante muss grösser als Null sein.</value>
+  </data>
 </root>

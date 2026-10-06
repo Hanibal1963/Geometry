@@ -195,14 +195,14 @@ Namespace ThreeDimensional
             End If
 
             If sideA + sideB <= sideC OrElse sideA + sideC <= sideB OrElse sideB + sideC <= sideA Then
-                Throw New ArgumentException("Die Seiten erfüllen die Dreiecksungleichung nicht.", NameOf(sideC))
+                Throw New ArgumentException(My.Resources.String1, NameOf(sideC))
             End If
         End Sub
 
         Private Shared Sub ValidateSideCount(sideCount As Integer)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideCount < 3 Then
-                Throw New ArgumentException("Die Seitenanzahl muss größer oder gleich 3 sein.", NameOf(sideCount))
+                Throw New ArgumentException(My.Resources.RequireAtLeastThreeSides, NameOf(sideCount))
             End If
         End Sub
 

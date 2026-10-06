@@ -78,7 +78,7 @@ Namespace ThreeDimensional
         Public Shared Function SideFromVolume(volume As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If volume < 0 Then
-                Throw New ArgumentException("Das Volumen darf nicht negativ sein.", NameOf(volume))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeVolume, NameOf(volume))
             End If
             Return Math.Pow(volume, 1.0 / 3.0)
         End Function

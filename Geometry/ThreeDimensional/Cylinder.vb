@@ -189,7 +189,8 @@ Namespace ThreeDimensional
             End If
 
             Dim x = centerX + (radius * Math.Cos(angleRadians))
-            Dim y = centerY + (radius * Math.Sin(angleRadians))            Dim z = baseZ + heightOffset
+            Dim y = centerY + (radius * Math.Sin(angleRadians))
+            Dim z = baseZ + heightOffset
 
             Return Tuple.Create(x, y, z)
         End Function

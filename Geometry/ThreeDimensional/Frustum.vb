@@ -235,10 +235,10 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(topWidth))
             End If
             If topLength >= bottomLength Then
-                Throw New ArgumentException("Die obere Grundlänge muss kleiner als die untere sein.", NameOf(topLength))
+                Throw New ArgumentException(My.Resources.String2, NameOf(topLength))
             End If
             If topWidth >= bottomWidth Then
-                Throw New ArgumentException("Die obere Grundbreite muss kleiner als die untere sein.", NameOf(topWidth))
+                Throw New ArgumentException(My.Resources.String3, NameOf(topWidth))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))

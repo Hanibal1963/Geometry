@@ -235,7 +235,7 @@ Namespace TwoDimensional
         Private Shared Sub ValidateSideCount(sideCount As Integer)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideCount < 3 Then
-                Throw New ArgumentException("Die Seitenanzahl muss größer oder gleich 3 sein.", NameOf(sideCount))
+                Throw New ArgumentException(My.Resources.RequireAtLeastThreeSides, NameOf(sideCount))
             End If
         End Sub
 
