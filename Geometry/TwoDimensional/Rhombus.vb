@@ -29,10 +29,10 @@ Namespace TwoDimensional
         Public Shared Function AreaFromBaseHeight(baseLength As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseLength < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(baseLength))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(baseLength))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return baseLength * height
         End Function
@@ -64,7 +64,7 @@ Namespace TwoDimensional
         Public Shared Function Perimeter(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(side))
             End If
             Return 4.0 * side
         End Function
@@ -119,7 +119,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
             End If
             If perimeter <= 0 Then
-                Throw New ArgumentException("Der Umfang muss größer als 0 sein.", NameOf(perimeter))
+                Throw New ArgumentException(My.Resources.CheckPositiveCircumference, NameOf(perimeter))
             End If
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (2.0 * area) / perimeter
@@ -206,7 +206,7 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
 
             Dim lengths(3) As Double

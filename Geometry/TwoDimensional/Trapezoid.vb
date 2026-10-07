@@ -36,7 +36,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException("Grundseite c darf nicht negativ sein.", NameOf(baseB))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -55,16 +55,16 @@ Namespace TwoDimensional
         Public Shared Function Perimeter(baseA As Double, legB As Double, baseC As Double, legD As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseA <= 0 Then
-                Throw New ArgumentException("Grundseite a muss größer als 0 sein.", NameOf(baseA))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(baseA))
             End If
             If legB <= 0 Then
-                Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(legB))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(legB))
             End If
             If baseC <= 0 Then
-                Throw New ArgumentException("Grundseite c muss größer als 0 sein.", NameOf(baseC))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(baseC))
             End If
             If legD <= 0 Then
-                Throw New ArgumentException("Seite d muss größer als 0 sein.", NameOf(legD))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(legD))
             End If
 
             Return baseA + legB + baseC + legD
@@ -133,7 +133,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException("Grundseite c darf nicht negativ sein.", NameOf(baseB))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
             Dim halfDiff = Math.Abs(baseA - baseB) / 2.0
@@ -150,13 +150,13 @@ Namespace TwoDimensional
         Public Shared Function IsIsosceles(legB As Double, legD As Double, Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If legB <= 0 Then
-                Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(legB))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(legB))
             End If
             If legD <= 0 Then
-                Throw New ArgumentException("Seite d muss größer als 0 sein.", NameOf(legD))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(legD))
             End If
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
 
             Return Math.Abs(legB - legD) <= tolerance
@@ -179,13 +179,13 @@ Namespace TwoDimensional
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, baseA As Double, baseB As Double, height As Double, rotationRadians As Double) As PointF()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseA <= 0 Then
-                Throw New ArgumentException("Grundseite a muss größer als 0 sein.", NameOf(baseA))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(baseA))
             End If
             If baseB <= 0 Then
-                Throw New ArgumentException("Grundseite c muss größer als 0 sein.", NameOf(baseB))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(baseB))
             End If
             If height <= 0 Then
-                Throw New ArgumentException("Höhe muss größer als 0 sein.", NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckPositiveHeight, NameOf(height))
             End If
 
             Dim halfA = baseA / 2.0
@@ -258,7 +258,7 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
 
             Dim ab = New PointF(vertices(1).X - vertices(0).X, vertices(1).Y - vertices(0).Y)

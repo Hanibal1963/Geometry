@@ -26,7 +26,7 @@ Namespace ThreeDimensional
         Public Shared Function Volume(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -42,7 +42,7 @@ Namespace ThreeDimensional
         Public Shared Function SurfaceArea(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return 4.0 * Math.PI * radius * radius
         End Function
@@ -55,7 +55,7 @@ Namespace ThreeDimensional
         Public Shared Function DiameterFromRadius(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return 2.0 * radius
         End Function
@@ -68,7 +68,7 @@ Namespace ThreeDimensional
         Public Shared Function RadiusFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diameter < 0 Then
-                Throw New ArgumentException(My.Resources.DiameterIsNegative, NameOf(diameter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiameter, NameOf(diameter))
             End If
             Return diameter / 2.0
         End Function
@@ -81,7 +81,7 @@ Namespace ThreeDimensional
         Public Shared Function GreatCircleCircumference(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return 2.0 * Math.PI * radius
         End Function
@@ -94,7 +94,7 @@ Namespace ThreeDimensional
         Public Shared Function GreatCircleArea(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return Math.PI * radius * radius
         End Function
@@ -144,7 +144,7 @@ Namespace ThreeDimensional
         Public Shared Function PointOnSphere(centerX As Double, centerY As Double, centerZ As Double, radius As Double, polarAngleRadians As Double, azimuthRadians As Double) As Tuple(Of Double, Double, Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             If polarAngleRadians < 0 OrElse polarAngleRadians > Math.PI Then
                 Throw New ArgumentException(My.Resources.IsPolarAngleInBounds, NameOf(polarAngleRadians))
@@ -165,10 +165,10 @@ Namespace ThreeDimensional
         Private Shared Sub ValidateCapInputs(radius As Double, capHeight As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius <= 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIfZeroOrLess, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckPositiveRadius, NameOf(radius))
             End If
             If capHeight < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(capHeight))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(capHeight))
             End If
             If capHeight > 2.0 * radius Then
                 Throw New ArgumentException(My.Resources.CheckCapHeightLimit, NameOf(capHeight))

@@ -97,6 +97,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Durchmesser darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeDiameter() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeDiameter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Höhe darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeHeight() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeHeight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Länge darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeLength() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeLength", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeRadius() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeRadius", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Das Volumen darf nicht negativ sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckNonNegativeVolume() As String
@@ -106,11 +142,38 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Die Halbachsen müssen größer als 0 sein (a&gt;0, b&gt;0). ähnelt.
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Breite darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeWidth() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeWidth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Halbachsen müssen größer als Null sein (a&gt;0, b&gt;0). ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckPositiveAxes() As String
             Get
                 Return ResourceManager.GetString("CheckPositiveAxes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Umfang muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveCircumference() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveCircumference", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Diagonale muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveDiagonal() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveDiagonal", resourceCulture)
             End Get
         End Property
         
@@ -124,6 +187,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die höhe muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveHeight() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveHeight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Länge muss grösser als Null sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckPositiveLength() As String
@@ -133,11 +205,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveRadius() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveRadius", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Seite muss größer als Null sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckPositiveSide() As String
             Get
                 Return ResourceManager.GetString("CheckPositiveSide", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Toleranz muss größer als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveTolerance() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveTolerance", resourceCulture)
             End Get
         End Property
         
@@ -160,24 +250,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Der Durchmesser darf nicht negativ sein. ähnelt.
-        '''</summary>
-        Friend ReadOnly Property DiameterIsNegative() As String
-            Get
-                Return ResourceManager.GetString("DiameterIsNegative", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Die Höhe darf nicht negativ sein. ähnelt.
-        '''</summary>
-        Friend ReadOnly Property HeightIsNegative() As String
-            Get
-                Return ResourceManager.GetString("HeightIsNegative", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die angegebenen Seiten bilden kein gültiges Dreieck. ähnelt.
         '''</summary>
         Friend ReadOnly Property InvalidTriangleSides() As String
@@ -192,33 +264,6 @@ Namespace My.Resources
         Friend ReadOnly Property IsPolarAngleInBounds() As String
             Get
                 Return ResourceManager.GetString("IsPolarAngleInBounds", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Die Länge darf nicht negativ sein. ähnelt.
-        '''</summary>
-        Friend ReadOnly Property LengthIsNegative() As String
-            Get
-                Return ResourceManager.GetString("LengthIsNegative", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius muss grösser Null sein. ähnelt.
-        '''</summary>
-        Friend ReadOnly Property RadiusIfZeroOrLess() As String
-            Get
-                Return ResourceManager.GetString("RadiusIfZeroOrLess", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius darf nicht negativ sein. ähnelt.
-        '''</summary>
-        Friend ReadOnly Property RadiusIsNegative() As String
-            Get
-                Return ResourceManager.GetString("RadiusIsNegative", resourceCulture)
             End Get
         End Property
         
@@ -309,15 +354,6 @@ Namespace My.Resources
         Friend ReadOnly Property VerifyTopWidthLessThanBottom() As String
             Get
                 Return ResourceManager.GetString("VerifyTopWidthLessThanBottom", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Die Breite darf nicht negatv sein. ähnelt.
-        '''</summary>
-        Friend ReadOnly Property WidthIsNegative() As String
-            Get
-                Return ResourceManager.GetString("WidthIsNegative", resourceCulture)
             End Get
         End Property
     End Module

@@ -123,22 +123,22 @@
   <data name="CheckPositiveWidth" xml:space="preserve">
     <value>Die Breite muss grösser als Null sein.</value>
   </data>
-  <data name="DiameterIsNegative" xml:space="preserve">
+  <data name="CheckNonNegativeDiameter" xml:space="preserve">
     <value>Der Durchmesser darf nicht negativ sein.</value>
   </data>
-  <data name="HeightIsNegative" xml:space="preserve">
+  <data name="CheckNonNegativeHeight" xml:space="preserve">
     <value>Die Höhe darf nicht negativ sein.</value>
   </data>
   <data name="InvalidTriangleSides" xml:space="preserve">
     <value>Die angegebenen Seiten bilden kein gültiges Dreieck.</value>
   </data>
-  <data name="LengthIsNegative" xml:space="preserve">
+  <data name="CheckNonNegativeLength" xml:space="preserve">
     <value>Die Länge darf nicht negativ sein.</value>
   </data>
-  <data name="RadiusIfZeroOrLess" xml:space="preserve">
-    <value>Der Radius muss grösser Null sein.</value>
+  <data name="CheckPositiveRadius" xml:space="preserve">
+    <value>Der Radius muss grösser als Null sein.</value>
   </data>
-  <data name="RadiusIsNegative" xml:space="preserve">
+  <data name="CheckNonNegativeRadius" xml:space="preserve">
     <value>Der Radius darf nicht negativ sein.</value>
   </data>
   <data name="VerifyTopLengthLessThanBottom" xml:space="preserve">
@@ -150,8 +150,8 @@
   <data name="VerifyTopRadiusLessThanBottom" xml:space="preserve">
     <value>Der obere Radius muss kleiner als der untere Radius sein.</value>
   </data>
-  <data name="WidthIsNegative" xml:space="preserve">
-    <value>Die Breite darf nicht negatv sein.</value>
+  <data name="CheckNonNegativeWidth" xml:space="preserve">
+    <value>Die Breite darf nicht negativ sein.</value>
   </data>
   <data name="SagittaHeightInvalid" xml:space="preserve">
     <value>Die Sehnenhöhe ist ungültig.</value>
@@ -160,7 +160,7 @@
     <value>Die Sehnenlänge ist ungültig.</value>
   </data>
   <data name="CheckPositiveAxes" xml:space="preserve">
-    <value>Die Halbachsen müssen größer als 0 sein (a&gt;0, b&gt;0).</value>
+    <value>Die Halbachsen müssen größer als Null sein (a&gt;0, b&gt;0).</value>
   </data>
   <data name="CheckNonNegativeDiagonal" xml:space="preserve">
     <value>Die Diagonale darf nicht negativ sein.</value>
@@ -203,5 +203,17 @@
   </data>
   <data name="CheckPositiveEdge" xml:space="preserve">
     <value>Die Kante muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckPositiveTolerance" xml:space="preserve">
+    <value>Die Toleranz muss größer als Null sein.</value>
+  </data>
+  <data name="CheckPositiveCircumference" xml:space="preserve">
+    <value>Der Umfang muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckPositiveHeight" xml:space="preserve">
+    <value>Die höhe muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckPositiveDiagonal" xml:space="preserve">
+    <value>Die Diagonale muss grösser als Null sein.</value>
   </data>
 </root>

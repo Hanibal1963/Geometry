@@ -138,7 +138,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(topArea))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -162,7 +162,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(topPerimeter))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -194,7 +194,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(topPerimeter))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
             Return bottomArea + topArea + PrismFrustumLateralArea(bottomPerimeter, topPerimeter, height)
@@ -207,16 +207,16 @@ Namespace ThreeDimensional
         Private Shared Sub ValidateConeFrustumInputs(bottomRadius As Double, topRadius As Double, height As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If bottomRadius <= 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIfZeroOrLess, NameOf(bottomRadius))
+                Throw New ArgumentException(My.Resources.CheckPositiveRadius, NameOf(bottomRadius))
             End If
             If topRadius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(topRadius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(topRadius))
             End If
             If topRadius >= bottomRadius Then
                 Throw New ArgumentException(My.Resources.VerifyTopRadiusLessThanBottom, NameOf(topRadius))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
         End Sub
 
@@ -229,10 +229,10 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.CheckPositiveWidth, NameOf(bottomWidth))
             End If
             If topLength < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(topLength))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(topLength))
             End If
             If topWidth < 0 Then
-                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(topWidth))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(topWidth))
             End If
             If topLength >= bottomLength Then
                 Throw New ArgumentException(My.Resources.String2, NameOf(topLength))
@@ -241,7 +241,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.String3, NameOf(topWidth))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
         End Sub
 

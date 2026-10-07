@@ -48,10 +48,10 @@ Namespace TwoDimensional
         Public Shared Function Perimeter(sideA As Double, sideB As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideA < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideA))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideA))
             End If
             If sideB < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideB))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideB))
             End If
             Return 2.0 * (sideA + sideB)
         End Function
@@ -65,10 +65,10 @@ Namespace TwoDimensional
         Public Shared Function AreaFromBaseHeight(baseLength As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseLength < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(baseLength))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(baseLength))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return baseLength * height
         End Function
@@ -85,7 +85,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
             End If
             If baseLength <= 0 Then
-                Throw New ArgumentException("Die Grundseite muss größer als 0 sein.", NameOf(baseLength))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(baseLength))
             End If
             Return area / baseLength
         End Function
@@ -102,19 +102,19 @@ Namespace TwoDimensional
         Public Shared Function IsSymmetricBySides(sideA As Double, sideB As Double, sideC As Double, sideD As Double, Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideA < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideA))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideA))
             End If
             If sideB < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideB))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideB))
             End If
             If sideC < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideC))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideC))
             End If
             If sideD < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideD))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideD))
             End If
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
 
             Dim firstPair = Math.Abs(sideA - sideB) <= tolerance AndAlso Math.Abs(sideC - sideD) <= tolerance
@@ -209,7 +209,7 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
 
             Dim l0 = Distance(vertices(0), vertices(1))

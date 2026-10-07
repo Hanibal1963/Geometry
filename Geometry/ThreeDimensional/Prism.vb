@@ -30,7 +30,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(baseArea))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return baseArea * height
         End Function
@@ -47,7 +47,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(basePerimeter))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return basePerimeter * height
         End Function
@@ -68,7 +68,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(basePerimeter))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return (2.0 * baseArea) + LateralArea(basePerimeter, height)
         End Function
@@ -103,7 +103,7 @@ Namespace ThreeDimensional
         Public Shared Function TriangularPrismVolume(sideA As Double, sideB As Double, sideC As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return Volume(TriangularBaseArea(sideA, sideB, sideC), height)
         End Function
@@ -119,7 +119,7 @@ Namespace ThreeDimensional
         Public Shared Function TriangularPrismSurfaceArea(sideA As Double, sideB As Double, sideC As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Dim baseArea = TriangularBaseArea(sideA, sideB, sideC)
             Dim basePerimeter = sideA + sideB + sideC
@@ -135,7 +135,7 @@ Namespace ThreeDimensional
         Public Shared Function RegularPolygonBaseArea(sideLength As Double, sideCount As Integer) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideLength < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideLength))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideLength))
             End If
             ValidateSideCount(sideCount)
 
@@ -155,7 +155,7 @@ Namespace ThreeDimensional
         Public Shared Function RegularPolygonPrismVolume(sideLength As Double, sideCount As Integer, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Dim baseArea = RegularPolygonBaseArea(sideLength, sideCount)
             Return Volume(baseArea, height)
@@ -171,7 +171,7 @@ Namespace ThreeDimensional
         Public Shared Function RegularPolygonPrismSurfaceArea(sideLength As Double, sideCount As Integer, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Dim baseArea = RegularPolygonBaseArea(sideLength, sideCount)
             Dim basePerimeter = sideCount * sideLength

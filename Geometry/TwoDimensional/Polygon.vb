@@ -66,7 +66,7 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
 
             Dim hasPositive As Boolean = False
@@ -99,7 +99,7 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
             If Not IsConvex(vertices, tolerance) Then Return False
 

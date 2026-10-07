@@ -32,7 +32,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
             End If
             If h < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(h))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(h))
             End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -65,7 +65,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
             End If
             If b <= 0 Then
-                Throw New ArgumentException("Grundseite muss größer als 0 sein.", NameOf(b))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
             End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -177,7 +177,7 @@ Namespace TwoDimensional
         Public Shared Function IsValidTriangleFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
             ValidateVertices(vertices)
 
@@ -191,13 +191,13 @@ Namespace TwoDimensional
         Private Shared Sub ValidateSides(a As Double, b As Double, c As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If a <= 0 Then
-                Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(a))
             End If
             If b <= 0 Then
-                Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
             End If
             If c <= 0 Then
-                Throw New ArgumentException("Seite c muss größer als 0 sein.", NameOf(c))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(c))
             End If
             If a + b <= c OrElse a + c <= b OrElse b + c <= a Then
                 Throw New ArgumentException(My.Resources.InvalidTriangleSides)

@@ -29,7 +29,7 @@ Namespace TwoDimensional
         Public Shared Function Perimeter(sideLength As Double, sideCount As Integer) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideLength < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideLength))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideLength))
             End If
             ValidateSideCount(sideCount)
             Return sideCount * sideLength
@@ -70,7 +70,7 @@ Namespace TwoDimensional
         Public Shared Function Apothem(sideLength As Double, sideCount As Integer) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideLength < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideLength))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideLength))
             End If
             ValidateSideCount(sideCount)
 
@@ -87,7 +87,7 @@ Namespace TwoDimensional
         Public Shared Function Circumradius(sideLength As Double, sideCount As Integer) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If sideLength < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(sideLength))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(sideLength))
             End If
             ValidateSideCount(sideCount)
 
@@ -140,7 +140,7 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateSideCount(sideCount)
             If circumradius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(circumradius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(circumradius))
             End If
 
             Dim result(sideCount - 1) As PointF
@@ -204,7 +204,7 @@ Namespace TwoDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
 
             If AreaFromVertices(vertices) <= tolerance Then Return False

@@ -27,10 +27,10 @@ Namespace ThreeDimensional
         Public Shared Function Volume(radius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return Math.PI * radius * radius * height
         End Function
@@ -44,10 +44,10 @@ Namespace ThreeDimensional
         Public Shared Function LateralArea(radius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return 2.0 * Math.PI * radius * height
         End Function
@@ -61,10 +61,10 @@ Namespace ThreeDimensional
         Public Shared Function SurfaceArea(radius As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return 2.0 * Math.PI * radius * (radius + height)
         End Function
@@ -77,7 +77,7 @@ Namespace ThreeDimensional
         Public Shared Function BaseCircumference(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return 2.0 * Math.PI * radius
         End Function
@@ -90,7 +90,7 @@ Namespace ThreeDimensional
         Public Shared Function BaseArea(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return Math.PI * radius * radius
         End Function
@@ -103,7 +103,7 @@ Namespace ThreeDimensional
         Public Shared Function DiameterFromRadius(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return 2.0 * radius
         End Function
@@ -116,7 +116,7 @@ Namespace ThreeDimensional
         Public Shared Function RadiusFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diameter < 0 Then
-                Throw New ArgumentException(My.Resources.DiameterIsNegative, NameOf(diameter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiameter, NameOf(diameter))
             End If
             Return diameter / 2.0
         End Function
@@ -136,7 +136,7 @@ Namespace ThreeDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateHollowRadii(outerRadius, innerRadius)
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return Math.PI * ((outerRadius * outerRadius) - (innerRadius * innerRadius)) * height
         End Function
@@ -152,7 +152,7 @@ Namespace ThreeDimensional
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateHollowRadii(outerRadius, innerRadius)
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
             Dim outerLateral = 2.0 * Math.PI * outerRadius * height
@@ -179,10 +179,10 @@ Namespace ThreeDimensional
         Public Shared Function PointOnLateralSurface(centerX As Double, centerY As Double, baseZ As Double, radius As Double, height As Double, angleRadians As Double, heightOffset As Double) As Tuple(Of Double, Double, Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             If heightOffset < 0 OrElse heightOffset > height Then
                 Throw New ArgumentException(My.Resources.VerifyOffsetWithinHeight, NameOf(heightOffset))
@@ -202,10 +202,10 @@ Namespace ThreeDimensional
         Private Shared Sub ValidateHollowRadii(outerRadius As Double, innerRadius As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If outerRadius <= 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIfZeroOrLess, NameOf(outerRadius))
+                Throw New ArgumentException(My.Resources.CheckPositiveRadius, NameOf(outerRadius))
             End If
             If innerRadius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(innerRadius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(innerRadius))
             End If
             If innerRadius >= outerRadius Then
                 Throw New ArgumentException(My.Resources.VerifyInnerLessThanOuter, NameOf(innerRadius))

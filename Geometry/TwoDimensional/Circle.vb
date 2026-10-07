@@ -28,7 +28,7 @@ Namespace TwoDimensional
         Public Shared Function Area(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
 
             Return Math.PI * radius * radius
@@ -52,7 +52,7 @@ Namespace TwoDimensional
         Public Shared Function Circumference(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return 2.0 * Math.PI * radius
         End Function
@@ -75,7 +75,7 @@ Namespace TwoDimensional
         Public Shared Function DiameterFromRadius(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return 2.0 * radius
         End Function
@@ -88,7 +88,7 @@ Namespace TwoDimensional
         Public Shared Function RadiusFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diameter < 0 Then
-                Throw New ArgumentException(My.Resources.DiameterIsNegative, NameOf(diameter))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiameter, NameOf(diameter))
             End If
             Return diameter / 2.0
         End Function
@@ -106,7 +106,7 @@ Namespace TwoDimensional
         Public Shared Function ArcLength(radius As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return radius * angleRadians
         End Function
@@ -132,7 +132,7 @@ Namespace TwoDimensional
         Public Shared Function SectorArea(radius As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return 0.5 * radius * radius * angleRadians
         End Function
@@ -158,7 +158,7 @@ Namespace TwoDimensional
         Public Shared Function ChordLength(radius As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Return 2.0 * radius * Math.Sin(angleRadians / 2.0)
         End Function
@@ -172,7 +172,7 @@ Namespace TwoDimensional
         Public Shared Function ChordLengthFromSagitta(radius As Double, sagitta As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             If sagitta < 0 Or sagitta > radius Then
                 Throw New ArgumentException(My.Resources.SagittaHeightInvalid, NameOf(sagitta))
@@ -194,7 +194,7 @@ Namespace TwoDimensional
         Public Shared Function AngleFromArcLength(radius As Double, arcLength As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius <= 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIfZeroOrLess, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckPositiveRadius, NameOf(radius))
             End If
             Return arcLength / radius
         End Function
@@ -208,7 +208,7 @@ Namespace TwoDimensional
         Public Shared Function AngleFromChordLength(radius As Double, chordLength As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius <= 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIfZeroOrLess, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckPositiveRadius, NameOf(radius))
             End If
             If chordLength < 0 OrElse chordLength > 2.0 * radius Then
                 Throw New ArgumentException(My.Resources.ChordLengthInvalid, NameOf(chordLength))
@@ -232,7 +232,7 @@ Namespace TwoDimensional
         Public Shared Function PointOnCircle(cx As Double, cy As Double, radius As Double, angleRadians As Double) As PointF
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
 
             Dim x As Single = CSng(cx + (radius * Math.Cos(angleRadians)))
@@ -250,7 +250,7 @@ Namespace TwoDimensional
         Public Shared Function BoundingBox(cx As Double, cy As Double, radius As Double) As RectangleF
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If radius < 0 Then
-                Throw New ArgumentException(My.Resources.RadiusIsNegative, NameOf(radius))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
             End If
             Dim x As Single = CSng(cx - radius)
             Dim y As Single = CSng(cy - radius)

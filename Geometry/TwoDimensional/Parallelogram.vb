@@ -32,7 +32,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
             End If
             If h < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(h))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(h))
             End If
 
             Return b * h
@@ -68,7 +68,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
             End If
             If b <= 0 Then
-                Throw New ArgumentException("Grundseite muss größer als 0 sein.", NameOf(b))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
             End If
 
             Return area / b
@@ -109,10 +109,10 @@ Namespace TwoDimensional
         Public Shared Function DiagonalBySidesAndAngle(a As Double, b As Double, includedAngleRadians As Double) As Double()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If a <= 0 Then
-                Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(a))
             End If
             If b <= 0 Then
-                Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
             End If
             If includedAngleRadians <= 0 OrElse includedAngleRadians >= Math.PI Then
                 Throw New ArgumentException("Der eingeschlossene Winkel muss zwischen 0 und PI liegen.", NameOf(includedAngleRadians))
@@ -136,16 +136,16 @@ Namespace TwoDimensional
         Public Shared Function InteriorAngleFromSidesAndDiagonals(a As Double, b As Double, d1 As Double, d2 As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If a <= 0 Then
-                Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(a))
             End If
             If b <= 0 Then
-                Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
             End If
             If d1 <= 0 Then
-                Throw New ArgumentException("Diagonale d1 muss größer als 0 sein.", NameOf(d1))
+                Throw New ArgumentException(My.Resources.CheckPositiveDiagonal, NameOf(d1))
             End If
             If d2 <= 0 Then
-                Throw New ArgumentException("Diagonale d2 muss größer als 0 sein.", NameOf(d2))
+                Throw New ArgumentException(My.Resources.CheckPositiveDiagonal, NameOf(d2))
             End If
 
             Dim denominator = 4.0 * a * b
@@ -188,10 +188,10 @@ Namespace TwoDimensional
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, a As Double, b As Double, includedAngleRadians As Double, rotationRadians As Double) As PointF()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If a <= 0 Then
-                Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(a))
             End If
             If b <= 0 Then
-                Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
             End If
             If includedAngleRadians <= 0 OrElse includedAngleRadians >= Math.PI Then
                 Throw New ArgumentException("Der eingeschlossene Winkel muss zwischen 0 und PI liegen.", NameOf(includedAngleRadians))
@@ -277,7 +277,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
             End If
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
 
             Dim midpointDiagonal1 = Center(vertices(0).X, vertices(0).Y, vertices(2).X, vertices(2).Y)

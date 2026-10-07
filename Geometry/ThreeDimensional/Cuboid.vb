@@ -28,13 +28,13 @@ Namespace ThreeDimensional
         Public Shared Function Volume(length As Double, width As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(length))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
             End If
             If width < 0 Then
-                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(width))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
             Return length * width * height
@@ -50,13 +50,13 @@ Namespace ThreeDimensional
         Public Shared Function SurfaceArea(length As Double, width As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(length))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
             End If
             If width < 0 Then
-                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(width))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
             Return 2.0 * ((length * width) + (length * height) + (width * height))
@@ -72,13 +72,13 @@ Namespace ThreeDimensional
         Public Shared Function SpaceDiagonal(length As Double, width As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(length))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
             End If
             If width < 0 Then
-                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(width))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
             Return Math.Sqrt((length * length) + (width * width) + (height * height))
@@ -93,10 +93,10 @@ Namespace ThreeDimensional
         Public Shared Function FaceDiagonalLengthWidth(length As Double, width As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(length))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
             End If
             If width < 0 Then
-                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(width))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
             End If
             Return Math.Sqrt((length * length) + (width * width))
         End Function
@@ -110,10 +110,10 @@ Namespace ThreeDimensional
         Public Shared Function FaceDiagonalLengthHeight(length As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(length))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return Math.Sqrt((length * length) + (height * height))
         End Function
@@ -127,10 +127,10 @@ Namespace ThreeDimensional
         Public Shared Function FaceDiagonalWidthHeight(width As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If width < 0 Then
-                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(width))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             Return Math.Sqrt((width * width) + (height * height))
         End Function
@@ -167,16 +167,16 @@ Namespace ThreeDimensional
         Public Shared Function IsCube(length As Double, width As Double, height As Double, Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(length))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
             End If
             If width < 0 Then
-                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(width))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             If tolerance <= 0 Then
-                Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
             End If
 
             Return Math.Abs(length - width) <= tolerance AndAlso Math.Abs(length - height) <= tolerance
@@ -214,13 +214,13 @@ Namespace ThreeDimensional
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, cz As Double, length As Double, width As Double, height As Double) As Tuple(Of Double, Double, Double)()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If length < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(length))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
             End If
             If width < 0 Then
-                Throw New ArgumentException(My.Resources.WidthIsNegative, NameOf(width))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
             End If
             If height < 0 Then
-                Throw New ArgumentException(My.Resources.HeightIsNegative, NameOf(height))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
 
             Dim lx = length / 2.0

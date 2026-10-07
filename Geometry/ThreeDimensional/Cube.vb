@@ -26,7 +26,7 @@ Namespace ThreeDimensional
         Public Shared Function Volume(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(side))
             End If
             Return side * side * side
         End Function
@@ -39,7 +39,7 @@ Namespace ThreeDimensional
         Public Shared Function SurfaceArea(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(side))
             End If
             Return 6.0 * side * side
         End Function
@@ -52,7 +52,7 @@ Namespace ThreeDimensional
         Public Shared Function SpaceDiagonal(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(side))
             End If
             Return side * Math.Sqrt(3.0)
         End Function
@@ -65,7 +65,7 @@ Namespace ThreeDimensional
         Public Shared Function FaceDiagonal(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(side))
             End If
             Return side * Math.Sqrt(2.0)
         End Function
@@ -139,7 +139,7 @@ Namespace ThreeDimensional
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, cz As Double, side As Double) As Tuple(Of Double, Double, Double)()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If side < 0 Then
-                Throw New ArgumentException(My.Resources.LengthIsNegative, NameOf(side))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(side))
             End If
 
             Dim h = side / 2.0
