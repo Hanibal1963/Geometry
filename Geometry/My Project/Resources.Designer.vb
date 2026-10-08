@@ -268,6 +268,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        '''</summary>
+        Friend ReadOnly Property IncludedAngleMustBeBetweenZeroAndPi() As String
+            Get
+                Return ResourceManager.GetString("IncludedAngleMustBeBetweenZeroAndPi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die angegebenen Seiten bilden kein gültiges Dreieck. ähnelt.
         '''</summary>
         Friend ReadOnly Property InvalidTriangleSides() As String

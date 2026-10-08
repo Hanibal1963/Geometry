@@ -225,4 +225,7 @@
   <data name="RequireExactlyFourVertices" xml:space="preserve">
     <value>Es müssen genau 4 Eckpunkte angegeben werden.</value>
   </data>
+  <data name="IncludedAngleMustBeBetweenZeroAndPi" xml:space="preserve">
+    <value />
+  </data>
 </root>

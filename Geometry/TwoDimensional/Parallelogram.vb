@@ -115,7 +115,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
             End If
             If includedAngleRadians <= 0 OrElse includedAngleRadians >= Math.PI Then
-                Throw New ArgumentException("Der eingeschlossene Winkel muss zwischen 0 und PI liegen.", NameOf(includedAngleRadians))
+                Throw New ArgumentException(My.Resources.IncludedAngleMustBeBetweenZeroAndPi, NameOf(includedAngleRadians))
             End If
 
             Dim cosValue = Math.Cos(includedAngleRadians)
@@ -194,7 +194,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
             End If
             If includedAngleRadians <= 0 OrElse includedAngleRadians >= Math.PI Then
-                Throw New ArgumentException("Der eingeschlossene Winkel muss zwischen 0 und PI liegen.", NameOf(includedAngleRadians))
+                Throw New ArgumentException(My.Resources.IncludedAngleMustBeBetweenZeroAndPi, NameOf(includedAngleRadians))
             End If
 
             Dim halfA = a / 2.0

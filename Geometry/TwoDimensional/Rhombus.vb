@@ -98,7 +98,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(side))
             End If
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
-                Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))
+                Throw New ArgumentException(My.Resources.IncludedAngleMustBeBetweenZeroAndPi, NameOf(interiorAngleRadians))
             End If
 
             Dim halfAngle = interiorAngleRadians / 2.0
@@ -145,7 +145,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(side))
             End If
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
-                Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))
+                Throw New ArgumentException(My.Resources.IncludedAngleMustBeBetweenZeroAndPi, NameOf(interiorAngleRadians))
             End If
 
             Dim halfA = side / 2.0
