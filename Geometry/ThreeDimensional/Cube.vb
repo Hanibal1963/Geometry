@@ -104,7 +104,7 @@ Namespace ThreeDimensional
         Public Shared Function SideFromSpaceDiagonal(spaceDiagonal As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If spaceDiagonal < 0 Then
-                Throw New ArgumentException("Die Raumdiagonale darf nicht negativ sein.", NameOf(spaceDiagonal))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(spaceDiagonal))
             End If
             Return spaceDiagonal / Math.Sqrt(3.0)
         End Function

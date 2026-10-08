@@ -226,7 +226,7 @@ Namespace TwoDimensional
         Private Shared Sub ValidateVertices(vertices As PointF(), minCount As Integer)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then
-                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length < minCount Then
                 Throw New ArgumentException($"Es müssen mindestens {minCount} Eckpunkte angegeben werden.", NameOf(vertices))

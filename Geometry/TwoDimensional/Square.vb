@@ -67,7 +67,7 @@ Namespace TwoDimensional
         Public Shared Function SideFromDiagonal(diagonal As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If diagonal < 0 Then
-                Throw New ArgumentException("Diagonale darf nicht negativ sein.", NameOf(diagonal))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(diagonal))
             End If
             Return diagonal / Math.Sqrt(2.0)
         End Function
@@ -222,10 +222,10 @@ Namespace TwoDimensional
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then
-                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length <> 4 Then
-                Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.RequireExactlyFourVertices, NameOf(vertices))
             End If
         End Sub
 

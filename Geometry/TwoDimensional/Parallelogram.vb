@@ -29,7 +29,7 @@ Namespace TwoDimensional
         Public Shared Function Area(b As Double, h As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If b < 0 Then
-                Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(b))
             End If
             If h < 0 Then
                 Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(h))
@@ -47,10 +47,10 @@ Namespace TwoDimensional
         Public Shared Function Perimeter(a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If a < 0 Then
-                Throw New ArgumentException("Seite a darf nicht negativ sein.", NameOf(a))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(a))
             End If
             If b < 0 Then
-                Throw New ArgumentException("Seite b darf nicht negativ sein.", NameOf(b))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(b))
             End If
 
             Return 2.0 * (a + b)
@@ -90,7 +90,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(perimeter))
             End If
             If knownSide < 0 Then
-                Throw New ArgumentException("Bekannte Seite darf nicht negativ sein.", NameOf(knownSide))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(knownSide))
             End If
             If perimeter <= 2.0 * knownSide Then
                 Throw New ArgumentException("Umfang ist für die angegebene Seite zu klein.", NameOf(perimeter))
@@ -222,7 +222,7 @@ Namespace TwoDimensional
         Public Shared Function AreaFromVertices(vertices As PointF()) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then
-                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length < 3 Then
                 Throw New ArgumentException("Es müssen mindestens 3 Eckpunkte angegeben werden.", NameOf(vertices))
@@ -245,7 +245,7 @@ Namespace TwoDimensional
         Public Shared Function PerimeterFromVertices(vertices As PointF()) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then
-                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length < 2 Then
                 Throw New ArgumentException("Es müssen mindestens 2 Eckpunkte angegeben werden.", NameOf(vertices))
@@ -271,10 +271,10 @@ Namespace TwoDimensional
         Public Shared Function IsParallelogramFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then
-                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length <> 4 Then
-                Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.RequireExactlyFourVertices, NameOf(vertices))
             End If
             If tolerance <= 0 Then
                 Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))

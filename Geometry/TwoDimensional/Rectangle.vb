@@ -286,7 +286,7 @@ Namespace TwoDimensional
         Public Shared Function FromDiagonalToSide(d As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If d < 0 Then
-                Throw New ArgumentException("Diagonale darf nicht negativ sein.", NameOf(d))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(d))
             End If
             Return d / Math.Sqrt(2.0)
         End Function

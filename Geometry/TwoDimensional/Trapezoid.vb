@@ -30,10 +30,10 @@ Namespace TwoDimensional
         Public Shared Function Area(baseA As Double, baseB As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseA < 0 Then
-                Throw New ArgumentException("Grundseite a darf nicht negativ sein.", NameOf(baseA))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(baseA))
             End If
             If baseB < 0 Then
-                Throw New ArgumentException("Grundseite c darf nicht negativ sein.", NameOf(baseB))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(baseB))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
@@ -79,10 +79,10 @@ Namespace TwoDimensional
         Public Shared Function Midline(baseA As Double, baseB As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseA < 0 Then
-                Throw New ArgumentException("Grundseite a darf nicht negativ sein.", NameOf(baseA))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(baseA))
             End If
             If baseB < 0 Then
-                Throw New ArgumentException("Grundseite c darf nicht negativ sein.", NameOf(baseB))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(baseB))
             End If
 
             Return (baseA + baseB) / 2.0
@@ -101,10 +101,10 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
             End If
             If baseA < 0 Then
-                Throw New ArgumentException("Grundseite a darf nicht negativ sein.", NameOf(baseA))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(baseA))
             End If
             If baseB < 0 Then
-                Throw New ArgumentException("Grundseite c darf nicht negativ sein.", NameOf(baseB))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(baseB))
             End If
 
             Dim denominator = baseA + baseB
@@ -127,10 +127,10 @@ Namespace TwoDimensional
         Public Shared Function LegLengthIsosceles(baseA As Double, baseB As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If baseA < 0 Then
-                Throw New ArgumentException("Grundseite a darf nicht negativ sein.", NameOf(baseA))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(baseA))
             End If
             If baseB < 0 Then
-                Throw New ArgumentException("Grundseite c darf nicht negativ sein.", NameOf(baseB))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(baseB))
             End If
             If height < 0 Then
                 Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
@@ -279,10 +279,10 @@ Namespace TwoDimensional
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then
-                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length <> 4 Then
-                Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.RequireExactlyFourVertices, NameOf(vertices))
             End If
         End Sub
 

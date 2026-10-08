@@ -29,7 +29,7 @@ Namespace TwoDimensional
         Public Shared Function Area(b As Double, h As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If b < 0 Then
-                Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(b))
             End If
             If h < 0 Then
                 Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(h))
@@ -207,7 +207,7 @@ Namespace TwoDimensional
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If vertices Is Nothing Then
-                Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length <> 3 Then
                 Throw New ArgumentException("Es müssen genau 3 Eckpunkte angegeben werden.", NameOf(vertices))

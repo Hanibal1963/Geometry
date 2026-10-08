@@ -216,4 +216,13 @@
   <data name="CheckPositiveDiagonal" xml:space="preserve">
     <value>Die Diagonale muss grösser als Null sein.</value>
   </data>
+  <data name="CheckNonNegativeSide" xml:space="preserve">
+    <value>Die Seite darf nicht negativ sein.</value>
+  </data>
+  <data name="CheckVerticesNotNull" xml:space="preserve">
+    <value>Die Eckpunkte dürfen nicht Nothing sein.</value>
+  </data>
+  <data name="RequireExactlyFourVertices" xml:space="preserve">
+    <value>Es müssen genau 4 Eckpunkte angegeben werden.</value>
+  </data>
 </root>

@@ -133,6 +133,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Seite darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeSide() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeSide", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Das Volumen darf nicht negativ sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckNonNegativeVolume() As String
@@ -241,6 +250,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Eckpunkte dürfen nicht Nothing sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckVerticesNotNull() As String
+            Get
+                Return ResourceManager.GetString("CheckVerticesNotNull", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Sehnenlänge ist ungültig. ähnelt.
         '''</summary>
         Friend ReadOnly Property ChordLengthInvalid() As String
@@ -273,6 +291,15 @@ Namespace My.Resources
         Friend ReadOnly Property RequireAtLeastThreeSides() As String
             Get
                 Return ResourceManager.GetString("RequireAtLeastThreeSides", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen genau 4 Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RequireExactlyFourVertices() As String
+            Get
+                Return ResourceManager.GetString("RequireExactlyFourVertices", resourceCulture)
             End Get
         End Property
         
