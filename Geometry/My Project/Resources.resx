@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CheckPositiveLength" xml:space="preserve">
-    <value>Die Länge muss grösser als Null sein.</value>
+    <value>Die Länge muss größer als Null sein.</value>
   </data>
   <data name="CheckPositiveWidth" xml:space="preserve">
-    <value>Die Breite muss grösser als Null sein.</value>
+    <value>Die Breite muss größer als Null sein.</value>
   </data>
   <data name="CheckNonNegativeDiameter" xml:space="preserve">
     <value>Der Durchmesser darf nicht negativ sein.</value>
@@ -136,7 +136,7 @@
     <value>Die Länge darf nicht negativ sein.</value>
   </data>
   <data name="CheckPositiveRadius" xml:space="preserve">
-    <value>Der Radius muss grösser als Null sein.</value>
+    <value>Der Radius muss größer als Null sein.</value>
   </data>
   <data name="CheckNonNegativeRadius" xml:space="preserve">
     <value>Der Radius darf nicht negativ sein.</value>
@@ -202,19 +202,19 @@
     <value>Das Volumen darf nicht negativ sein.</value>
   </data>
   <data name="CheckPositiveEdge" xml:space="preserve">
-    <value>Die Kante muss grösser als Null sein.</value>
+    <value>Die Kante muss größer als Null sein.</value>
   </data>
   <data name="CheckPositiveTolerance" xml:space="preserve">
     <value>Die Toleranz muss größer als Null sein.</value>
   </data>
   <data name="CheckPositiveCircumference" xml:space="preserve">
-    <value>Der Umfang muss grösser als Null sein.</value>
+    <value>Der Umfang muss größer als Null sein.</value>
   </data>
   <data name="CheckPositiveHeight" xml:space="preserve">
-    <value>Die Höhe muss grösser als Null sein.</value>
+    <value>Die Höhe muss größer als Null sein.</value>
   </data>
   <data name="CheckPositiveDiagonal" xml:space="preserve">
-    <value>Die Diagonale muss grösser als Null sein.</value>
+    <value>Die Diagonale muss größer als Null sein.</value>
   </data>
   <data name="CheckNonNegativeSide" xml:space="preserve">
     <value>Die Seite darf nicht negativ sein.</value>
