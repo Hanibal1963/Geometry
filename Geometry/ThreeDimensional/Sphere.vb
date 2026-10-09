@@ -25,7 +25,10 @@ Namespace ThreeDimensional
         ''' <returns>Volumen 4/3 * PI * r^3</returns>
         Public Shared Function Volume(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (4.0 / 3.0) * Math.PI * Math.Pow(radius, 3)
 #Enable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -38,7 +41,9 @@ Namespace ThreeDimensional
         ''' <returns>Oberfläche 4 * PI * r^2</returns>
         Public Shared Function SurfaceArea(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
             Return 4.0 * Math.PI * radius * radius
         End Function
 
@@ -49,7 +54,9 @@ Namespace ThreeDimensional
         ''' <returns>Durchmesser 2 * r</returns>
         Public Shared Function DiameterFromRadius(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
             Return 2.0 * radius
         End Function
 
@@ -60,7 +67,9 @@ Namespace ThreeDimensional
         ''' <returns>Radius d / 2</returns>
         Public Shared Function RadiusFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If diameter < 0 Then Throw New ArgumentException("Der Durchmesser darf nicht negativ sein.", NameOf(diameter))
+            If diameter < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiameter, NameOf(diameter))
+            End If
             Return diameter / 2.0
         End Function
 
@@ -71,7 +80,9 @@ Namespace ThreeDimensional
         ''' <returns>Umfang 2 * PI * r</returns>
         Public Shared Function GreatCircleCircumference(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
             Return 2.0 * Math.PI * radius
         End Function
 
@@ -82,7 +93,9 @@ Namespace ThreeDimensional
         ''' <returns>Fläche PI * r^2</returns>
         Public Shared Function GreatCircleArea(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
             Return Math.PI * radius * radius
         End Function
 
@@ -130,9 +143,11 @@ Namespace ThreeDimensional
         ''' <returns>3D-Koordinate als Tuple(X, Y, Z)</returns>
         Public Shared Function PointOnSphere(centerX As Double, centerY As Double, centerZ As Double, radius As Double, polarAngleRadians As Double, azimuthRadians As Double) As Tuple(Of Double, Double, Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius < 0 Then Throw New ArgumentException("Der Radius darf nicht negativ sein.", NameOf(radius))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
             If polarAngleRadians < 0 OrElse polarAngleRadians > Math.PI Then
-                Throw New ArgumentException("Der Polarwinkel muss im Bereich 0 bis PI liegen.", NameOf(polarAngleRadians))
+                Throw New ArgumentException(My.Resources.IsPolarAngleInBounds, NameOf(polarAngleRadians))
             End If
 
             Dim sinTheta = Math.Sin(polarAngleRadians)
@@ -149,9 +164,15 @@ Namespace ThreeDimensional
 
         Private Shared Sub ValidateCapInputs(radius As Double, capHeight As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If radius <= 0 Then Throw New ArgumentException("Der Radius muss größer als 0 sein.", NameOf(radius))
-            If capHeight < 0 Then Throw New ArgumentException("Die Kappenhöhe darf nicht negativ sein.", NameOf(capHeight))
-            If capHeight > 2.0 * radius Then Throw New ArgumentException("Die Kappenhöhe darf maximal 2 * Radius sein.", NameOf(capHeight))
+            If radius <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveRadius, NameOf(radius))
+            End If
+            If capHeight < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(capHeight))
+            End If
+            If capHeight > 2.0 * radius Then
+                Throw New ArgumentException(My.Resources.CheckCapHeightLimit, NameOf(capHeight))
+            End If
         End Sub
 
 #End Region

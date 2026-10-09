@@ -23,65 +23,74 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet die Fläche eines Kreises aus dem Radius.
         ''' </summary>
-        ''' <param name="r">Radius (>= 0)</param>
-        ''' <returns>Fläche = π * r^2</returns>
-        Public Shared Function Area(r As Double) As Double
+        ''' <param name="radius">Radius (>= 0)</param>
+        ''' <returns>Fläche = π * radius^2</returns>
+        Public Shared Function Area(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
-            Return Math.PI * r * r
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+
+            Return Math.PI * radius * radius
         End Function
 
         ''' <summary>
         ''' Berechnet die Fläche eines Kreises aus dem Durchmesser.
         ''' </summary>
-        ''' <param name="d">Durchmesser (>= 0)</param>
+        ''' <param name="diameter">Durchmesser (>= 0)</param>
         ''' <returns>Fläche</returns>
-        Public Shared Function AreaFromDiameter(d As Double) As Double
+        Public Shared Function AreaFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            Return Area(RadiusFromDiameter(d))
+            Return Area(RadiusFromDiameter(diameter))
         End Function
 
         ''' <summary>
         ''' Berechnet den Umfang (Kreisumfang) aus dem Radius.
         ''' </summary>
-        ''' <param name="r">Radius (>= 0)</param>
-        ''' <returns>Umfang = 2 * π * r</returns>
-        Public Shared Function Circumference(r As Double) As Double
+        ''' <param name="radius">Radius (>= 0)</param>
+        ''' <returns>Umfang = 2 * π * radius</returns>
+        Public Shared Function Circumference(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
-            Return 2.0 * Math.PI * r
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+            Return 2.0 * Math.PI * radius
         End Function
 
         ''' <summary>
         ''' Berechnet den Umfang aus dem Durchmesser.
         ''' </summary>
-        ''' <param name="d">Durchmesser (&gt;= 0)</param>
+        ''' <param name="diameter">Durchmesser (&gt;= 0)</param>
         ''' <returns>Umfang</returns>
-        Public Shared Function CircumferenceFromDiameter(d As Double) As Double
+        Public Shared Function CircumferenceFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            Return Circumference(RadiusFromDiameter(d))
+            Return Circumference(RadiusFromDiameter(diameter))
         End Function
 
         ''' <summary>
         ''' Konvertiert Radius in Durchmesser.
         ''' </summary>
-        ''' <param name="r">Radius (&gt;= 0)</param>
-        ''' <returns>Durchmesser 2 * r</returns>
-        Public Shared Function DiameterFromRadius(r As Double) As Double
+        ''' <param name="radius">Radius (&gt;= 0)</param>
+        ''' <returns>Durchmesser 2 * radius</returns>
+        Public Shared Function DiameterFromRadius(radius As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
-            Return 2.0 * r
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+            Return 2.0 * radius
         End Function
 
         ''' <summary>
         ''' Konvertiert Durchmesser in Radius.
         ''' </summary>
-        ''' <param name="d">Durchmesser (&gt;= 0)</param>
-        ''' <returns>Radius d / 2</returns>
-        Public Shared Function RadiusFromDiameter(d As Double) As Double
+        ''' <param name="diameter">Durchmesser (&gt;= 0)</param>
+        ''' <returns>Radius diameter / 2</returns>
+        Public Shared Function RadiusFromDiameter(diameter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If d < 0 Then Throw New ArgumentException("Durchmesser darf nicht negativ sein.", NameOf(d))
-            Return d / 2.0
+            If diameter < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiameter, NameOf(diameter))
+            End If
+            Return diameter / 2.0
         End Function
 
 #End Region
@@ -91,105 +100,121 @@ Namespace TwoDimensional
         ''' <summary>
         ''' Berechnet die Bogenlänge für einen gegebenen Zentralwinkel (im Bogenmaß).
         ''' </summary>
-        ''' <param name="r">Radius</param>
+        ''' <param name="radius">Radius</param>
         ''' <param name="angleRadians">Winkel in Bogenmaß</param>
-        ''' <returns>Bogenlänge = r * angle</returns>
-        Public Shared Function ArcLength(r As Double, angleRadians As Double) As Double
+        ''' <returns>Bogenlänge = radius * angle</returns>
+        Public Shared Function ArcLength(radius As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
-            Return r * angleRadians
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+            Return radius * angleRadians
         End Function
 
         ''' <summary>
         ''' Berechnet die Bogenlänge für einen Winkel in Grad.
         ''' </summary>
-        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <param name="angleDegrees">Winkel in Grad</param>
         ''' <returns>Bogenlänge</returns>
-        Public Shared Function ArcLengthDegrees(r As Double, angleDegrees As Double) As Double
+        Public Shared Function ArcLengthDegrees(radius As Double, angleDegrees As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim rad As Double = angleDegrees * Math.PI / 180.0
-            Return ArcLength(r, rad)
+            Return ArcLength(radius, rad)
         End Function
 
         ''' <summary>
         ''' Berechnet die Fläche eines Kreissektors für einen gegebenen Zentralwinkel (Bogenmaß).
         ''' </summary>
-        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <param name="angleRadians">Winkel in Bogenmaß</param>
-        ''' <returns>Sektorfläche = 0.5 * r^2 * angle</returns>
-        Public Shared Function SectorArea(r As Double, angleRadians As Double) As Double
+        ''' <returns>Sektorfläche = 0.5 * radius^2 * angle</returns>
+        Public Shared Function SectorArea(radius As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
-            Return 0.5 * r * r * angleRadians
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+            Return 0.5 * radius * radius * angleRadians
         End Function
 
         ''' <summary>
         ''' Sektorfläche für Winkel in Grad.
         ''' </summary>
-        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <param name="angleDegrees">Winkel in Grad</param>
         ''' <returns>Sektorfläche</returns>
-        Public Shared Function SectorAreaDegrees(r As Double, angleDegrees As Double) As Double
+        Public Shared Function SectorAreaDegrees(radius As Double, angleDegrees As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             Dim rad As Double = angleDegrees * Math.PI / 180.0
-            Return SectorArea(r, rad)
+            Return SectorArea(radius, rad)
         End Function
 
         ''' <summary>
         ''' Berechnet die Länge einer Sehne für einen gegebenen Zentralwinkel (Bogenmaß).
         ''' </summary>
-        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <param name="angleRadians">Winkel in Bogenmaß</param>
-        ''' <returns>Sehnenlänge = 2 * r * sin(angle/2)</returns>
-        Public Shared Function ChordLength(r As Double, angleRadians As Double) As Double
+        ''' <returns>Sehnenlänge = 2 * radius * sin(angle/2)</returns>
+        Public Shared Function ChordLength(radius As Double, angleRadians As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
-            Return 2.0 * r * Math.Sin(angleRadians / 2.0)
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+            Return 2.0 * radius * Math.Sin(angleRadians / 2.0)
         End Function
 
         ''' <summary>
         ''' Berechnet die Sehnenlänge aus der Sehnenhöhe (Sagitta).
         ''' </summary>
-        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <param name="sagitta">Sehnenhöhe (Abstand von Kreisrand zur Sehnenmitte)</param>
         ''' <returns>Sehnenlänge</returns>
-        Public Shared Function ChordLengthFromSagitta(r As Double, sagitta As Double) As Double
+        Public Shared Function ChordLengthFromSagitta(radius As Double, sagitta As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
-            If sagitta < 0 Or sagitta > r Then Throw New ArgumentException("Sehnenhöhe ungültig.", NameOf(sagitta))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+            If sagitta < 0 Or sagitta > radius Then
+                Throw New ArgumentException(My.Resources.SagittaHeightInvalid, NameOf(sagitta))
+            End If
 
-            ' Abstand vom Mittelpunkt zur Sehne (h) = r - sagitta
-            Dim h As Double = r - sagitta
-            ' Halbe Sehnenlänge = sqrt(r^2 - h^2)
-            Dim half As Double = Math.Sqrt((r * r) - (h * h))
+            ' Abstand vom Mittelpunkt zur Sehne (h) = radius - sagitta
+            Dim h As Double = radius - sagitta
+            ' Halbe Sehnenlänge = sqrt(radius^2 - h^2)
+            Dim half As Double = Math.Sqrt((radius * radius) - (h * h))
             Return 2.0 * half
         End Function
 
         ''' <summary>
         ''' Berechnet den Zentralwinkel (Bogenmaß) aus Bogenlänge.
         ''' </summary>
-        ''' <param name="r">Radius (&gt; 0)</param>
+        ''' <param name="radius">Radius (&gt; 0)</param>
         ''' <param name="arcLength">Bogenlänge</param>
         ''' <returns>Zentralwinkel im Bogenmaß</returns>
-        Public Shared Function AngleFromArcLength(r As Double, arcLength As Double) As Double
+        Public Shared Function AngleFromArcLength(radius As Double, arcLength As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r <= 0 Then Throw New ArgumentException("Radius muss > 0 sein.", NameOf(r))
-            Return arcLength / r
+            If radius <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveRadius, NameOf(radius))
+            End If
+            Return arcLength / radius
         End Function
 
         ''' <summary>
         ''' Berechnet den Zentralwinkel (Bogenmaß) aus Sehnenlänge.
         ''' </summary>
-        ''' <param name="r">Radius (&gt; 0)</param>
+        ''' <param name="radius">Radius (&gt; 0)</param>
         ''' <param name="chordLength">Sehnenlänge</param>
         ''' <returns>Zentralwinkel im Bogenmaß</returns>
-        Public Shared Function AngleFromChordLength(r As Double, chordLength As Double) As Double
+        Public Shared Function AngleFromChordLength(radius As Double, chordLength As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r <= 0 Then Throw New ArgumentException("Radius muss > 0 sein.", NameOf(r))
-            If chordLength < 0 OrElse chordLength > 2.0 * r Then Throw New ArgumentException("Sehnenlänge ungültig.", NameOf(chordLength))
-            ' chord = 2 r sin(theta/2) => theta = 2 * asin(chord/(2r))
-            Return 2.0 * Math.Asin(chordLength / (2.0 * r))
+            If radius <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveRadius, NameOf(radius))
+            End If
+            If chordLength < 0 OrElse chordLength > 2.0 * radius Then
+                Throw New ArgumentException(My.Resources.ChordLengthInvalid, NameOf(chordLength))
+            End If
+            ' chord = 2 radius sin(theta/2) => theta = 2 * asin(chord/(2*radius))
+            Return 2.0 * Math.Asin(chordLength / (2.0 * radius))
         End Function
 
 #End Region
@@ -201,14 +226,17 @@ Namespace TwoDimensional
         ''' </summary>
         ''' <param name="cx">Mittelpunkt X</param>
         ''' <param name="cy">Mittelpunkt Y</param>
-        ''' <param name="r">Radius</param>
+        ''' <param name="radius">Radius</param>
         ''' <param name="angleRadians">Winkel im Bogenmaß (0 = rechts)</param>
         ''' <returns>PointF mit Koordinaten des Punktes</returns>
-        Public Shared Function PointOnCircle(cx As Double, cy As Double, r As Double, angleRadians As Double) As PointF
+        Public Shared Function PointOnCircle(cx As Double, cy As Double, radius As Double, angleRadians As Double) As PointF
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
-            Dim x As Single = CSng(cx + (r * Math.Cos(angleRadians)))
-            Dim y As Single = CSng(cy + (r * Math.Sin(angleRadians)))
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+
+            Dim x As Single = CSng(cx + (radius * Math.Cos(angleRadians)))
+            Dim y As Single = CSng(cy + (radius * Math.Sin(angleRadians)))
             Return New PointF(x, y)
         End Function
 
@@ -217,14 +245,16 @@ Namespace TwoDimensional
         ''' </summary>
         ''' <param name="cx">Mittelpunkt X</param>
         ''' <param name="cy">Mittelpunkt Y</param>
-        ''' <param name="r">Radius (&gt;= 0)</param>
+        ''' <param name="radius">Radius (&gt;= 0)</param>
         ''' <returns>Achsenparalleles BoundingBox-Rechteck</returns>
-        Public Shared Function BoundingBox(cx As Double, cy As Double, r As Double) As RectangleF
+        Public Shared Function BoundingBox(cx As Double, cy As Double, radius As Double) As RectangleF
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If r < 0 Then Throw New ArgumentException("Radius darf nicht negativ sein.", NameOf(r))
-            Dim x As Single = CSng(cx - r)
-            Dim y As Single = CSng(cy - r)
-            Dim size As Single = CSng(2.0 * r)
+            If radius < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeRadius, NameOf(radius))
+            End If
+            Dim x As Single = CSng(cx - radius)
+            Dim y As Single = CSng(cy - radius)
+            Dim size As Single = CSng(2.0 * radius)
             Return New RectangleF(x, y, size, size)
         End Function
 

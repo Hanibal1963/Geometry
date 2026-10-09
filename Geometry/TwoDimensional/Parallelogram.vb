@@ -28,8 +28,12 @@ Namespace TwoDimensional
         ''' <returns>Fläche b * h</returns>
         Public Shared Function Area(b As Double, h As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If b < 0 Then Throw New ArgumentException("Grundseite darf nicht negativ sein.", NameOf(b))
-            If h < 0 Then Throw New ArgumentException("Höhe darf nicht negativ sein.", NameOf(h))
+            If b < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(b))
+            End If
+            If h < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(h))
+            End If
 
             Return b * h
         End Function
@@ -42,8 +46,12 @@ Namespace TwoDimensional
         ''' <returns>Umfang 2 * (a + b)</returns>
         Public Shared Function Perimeter(a As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If a < 0 Then Throw New ArgumentException("Seite a darf nicht negativ sein.", NameOf(a))
-            If b < 0 Then Throw New ArgumentException("Seite b darf nicht negativ sein.", NameOf(b))
+            If a < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(a))
+            End If
+            If b < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(b))
+            End If
 
             Return 2.0 * (a + b)
         End Function
@@ -56,8 +64,12 @@ Namespace TwoDimensional
         ''' <returns>Höhe area / b</returns>
         Public Shared Function HeightFromArea(area As Double, b As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If area < 0 Then Throw New ArgumentException("Fläche darf nicht negativ sein.", NameOf(area))
-            If b <= 0 Then Throw New ArgumentException("Grundseite muss größer als 0 sein.", NameOf(b))
+            If area < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
+            End If
+            If b <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
+            End If
 
             Return area / b
         End Function
@@ -74,9 +86,15 @@ Namespace TwoDimensional
         ''' <returns>Fehlende Seitenlänge</returns>
         Public Shared Function SideFromPerimeter(perimeter As Double, knownSide As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If perimeter < 0 Then Throw New ArgumentException("Umfang darf nicht negativ sein.", NameOf(perimeter))
-            If knownSide < 0 Then Throw New ArgumentException("Bekannte Seite darf nicht negativ sein.", NameOf(knownSide))
-            If perimeter <= 2.0 * knownSide Then Throw New ArgumentException("Umfang ist für die angegebene Seite zu klein.", NameOf(perimeter))
+            If perimeter < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeCircumference, NameOf(perimeter))
+            End If
+            If knownSide < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(knownSide))
+            End If
+            If perimeter <= 2.0 * knownSide Then
+                Throw New ArgumentException(My.Resources.VerifyPerimeterGreaterThanTwiceKnownSide, NameOf(perimeter))
+            End If
 
             Return (perimeter / 2.0) - knownSide
         End Function
@@ -90,10 +108,14 @@ Namespace TwoDimensional
         ''' <returns>Array mit zwei Diagonalen: [|u+v|, |u-v|]</returns>
         Public Shared Function DiagonalBySidesAndAngle(a As Double, b As Double, includedAngleRadians As Double) As Double()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If a <= 0 Then Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
-            If b <= 0 Then Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
+            If a <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(a))
+            End If
+            If b <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
+            End If
             If includedAngleRadians <= 0 OrElse includedAngleRadians >= Math.PI Then
-                Throw New ArgumentException("Der eingeschlossene Winkel muss zwischen 0 und PI liegen.", NameOf(includedAngleRadians))
+                Throw New ArgumentException(My.Resources.IncludedAngleMustBeBetweenZeroAndPi, NameOf(includedAngleRadians))
             End If
 
             Dim cosValue = Math.Cos(includedAngleRadians)
@@ -113,16 +135,24 @@ Namespace TwoDimensional
         ''' <returns>Innenwinkel im Bogenmaß</returns>
         Public Shared Function InteriorAngleFromSidesAndDiagonals(a As Double, b As Double, d1 As Double, d2 As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If a <= 0 Then Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
-            If b <= 0 Then Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
-            If d1 <= 0 Then Throw New ArgumentException("Diagonale d1 muss größer als 0 sein.", NameOf(d1))
-            If d2 <= 0 Then Throw New ArgumentException("Diagonale d2 muss größer als 0 sein.", NameOf(d2))
+            If a <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(a))
+            End If
+            If b <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
+            End If
+            If d1 <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveDiagonal, NameOf(d1))
+            End If
+            If d2 <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveDiagonal, NameOf(d2))
+            End If
 
             Dim denominator = 4.0 * a * b
             Dim cosValue = ((d1 * d1) - (d2 * d2)) / denominator
 
             If cosValue < -1.0 OrElse cosValue > 1.0 Then
-                Throw New ArgumentException("Die angegebenen Seiten und Diagonalen bilden kein gültiges Parallelogramm.")
+                Throw New ArgumentException(My.Resources.InvalidParallelogramBySidesAndDiagonals)
             End If
 
             Return Math.Acos(cosValue)
@@ -157,10 +187,14 @@ Namespace TwoDimensional
         ''' <returns>Array mit 4 Eckpunkten in umlaufender Reihenfolge</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, a As Double, b As Double, includedAngleRadians As Double, rotationRadians As Double) As PointF()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If a <= 0 Then Throw New ArgumentException("Seite a muss größer als 0 sein.", NameOf(a))
-            If b <= 0 Then Throw New ArgumentException("Seite b muss größer als 0 sein.", NameOf(b))
+            If a <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(a))
+            End If
+            If b <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveSide, NameOf(b))
+            End If
             If includedAngleRadians <= 0 OrElse includedAngleRadians >= Math.PI Then
-                Throw New ArgumentException("Der eingeschlossene Winkel muss zwischen 0 und PI liegen.", NameOf(includedAngleRadians))
+                Throw New ArgumentException(My.Resources.IncludedAngleMustBeBetweenZeroAndPi, NameOf(includedAngleRadians))
             End If
 
             Dim halfA = a / 2.0
@@ -187,8 +221,12 @@ Namespace TwoDimensional
         ''' <returns>Polygonfläche</returns>
         Public Shared Function AreaFromVertices(vertices As PointF()) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
-            If vertices.Length < 3 Then Throw New ArgumentException("Es müssen mindestens 3 Eckpunkte angegeben werden.", NameOf(vertices))
+            If vertices Is Nothing Then
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
+            End If
+            If vertices.Length < 3 Then
+                Throw New ArgumentException(My.Resources.RequireAtLeastThreeVertices, NameOf(vertices))
+            End If
 
             Dim sum As Double = 0.0
             For i = 0 To vertices.Length - 1
@@ -206,8 +244,12 @@ Namespace TwoDimensional
         ''' <returns>Umfang als Summe der Kantenlängen</returns>
         Public Shared Function PerimeterFromVertices(vertices As PointF()) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
-            If vertices.Length < 2 Then Throw New ArgumentException("Es müssen mindestens 2 Eckpunkte angegeben werden.", NameOf(vertices))
+            If vertices Is Nothing Then
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
+            End If
+            If vertices.Length < 2 Then
+                Throw New ArgumentException(My.Resources.RequireAtLeastTwoVertices, NameOf(vertices))
+            End If
 
             Dim perimeter As Double = 0.0
             For i = 0 To vertices.Length - 1
@@ -228,9 +270,15 @@ Namespace TwoDimensional
         ''' <returns>True, wenn die Diagonalen denselben Mittelpunkt besitzen</returns>
         Public Shared Function IsParallelogramFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
-            If vertices.Length <> 4 Then Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
-            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            If vertices Is Nothing Then
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
+            End If
+            If vertices.Length <> 4 Then
+                Throw New ArgumentException(My.Resources.RequireExactlyFourVertices, NameOf(vertices))
+            End If
+            If tolerance <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
+            End If
 
             Dim midpointDiagonal1 = Center(vertices(0).X, vertices(0).Y, vertices(2).X, vertices(2).Y)
             Dim midpointDiagonal2 = Center(vertices(1).X, vertices(1).Y, vertices(3).X, vertices(3).Y)

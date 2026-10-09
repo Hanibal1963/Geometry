@@ -14,28 +14,28 @@ Option Explicit On
 Imports System
 
 Namespace My.Resources
-
+    
     'Diese Klasse wurde von der StronglyTypedResourceBuilder automatisch generiert
     '-Klasse über ein Tool wie ResGen oder Visual Studio automatisch generiert.
     'Um einen Member hinzuzufügen oder zu entfernen, bearbeiten Sie die .ResX-Datei und führen dann ResGen
     'mit der /str-Option erneut aus, oder Sie erstellen Ihr VS-Projekt neu.
-    ''' <summary>
+    '''<summary>
     '''  Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
-    ''' </summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0"),
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),
-     Global.Microsoft.VisualBasic.HideModuleNameAttribute()>
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0"),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
+     Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
     Friend Module Resources
-
+        
         Private resourceMan As Global.System.Resources.ResourceManager
-
+        
         Private resourceCulture As Global.System.Globalization.CultureInfo
-
-        ''' <summary>
+        
+        '''<summary>
         '''  Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
-        ''' </summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+        '''</summary>
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
@@ -45,19 +45,433 @@ Namespace My.Resources
                 Return resourceMan
             End Get
         End Property
-
-        ''' <summary>
+        
+        '''<summary>
         '''  Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
         '''  Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
-        ''' </summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+        '''</summary>
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Friend Property Culture() As Global.System.Globalization.CultureInfo
             Get
                 Return resourceCulture
             End Get
             Set
-                resourceCulture = Value
+                resourceCulture = value
             End Set
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Kappenhöhe darf maximal 2 * Radius sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckCapHeightLimit() As String
+            Get
+                Return ResourceManager.GetString("CheckCapHeightLimit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Fläche darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeArea() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeArea", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Umfang darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeCircumference() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeCircumference", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Diagonale darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeDiagonal() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeDiagonal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Durchmesser darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeDiameter() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeDiameter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Höhe darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeHeight() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeHeight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Länge darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeLength() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeLength", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeRadius() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeRadius", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Seite darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeSide() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeSide", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Das Volumen darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeVolume() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeVolume", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Breite darf nicht negativ sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckNonNegativeWidth() As String
+            Get
+                Return ResourceManager.GetString("CheckNonNegativeWidth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Halbachsen müssen größer als Null sein (a&gt;0, b&gt;0). ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveAxes() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveAxes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Umfang muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveCircumference() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveCircumference", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Diagonale muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveDiagonal() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveDiagonal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Kante muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveEdge() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveEdge", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Höhe muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveHeight() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveHeight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Länge muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveLength() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveLength", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Radius muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveRadius() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveRadius", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Seite muss größer als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveSide() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveSide", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Toleranz muss größer als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveTolerance() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveTolerance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Breite muss grösser als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckPositiveWidth() As String
+            Get
+                Return ResourceManager.GetString("CheckPositiveWidth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Eckpunkte dürfen nicht Nothing sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CheckVerticesNotNull() As String
+            Get
+                Return ResourceManager.GetString("CheckVerticesNotNull", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Sehnenlänge ist ungültig. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property ChordLengthInvalid() As String
+            Get
+                Return ResourceManager.GetString("ChordLengthInvalid", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der eingeschlossene Winkel muss zwischen Null und Pi liegen. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property IncludedAngleMustBeBetweenZeroAndPi() As String
+            Get
+                Return ResourceManager.GetString("IncludedAngleMustBeBetweenZeroAndPi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die angegebenen Seiten und Diagonalen bilden kein gültiges Parallelogramm. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property InvalidParallelogramBySidesAndDiagonals() As String
+            Get
+                Return ResourceManager.GetString("InvalidParallelogramBySidesAndDiagonals", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die angegebenen Seiten bilden kein gültiges Dreieck. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property InvalidTriangleSides() As String
+            Get
+                Return ResourceManager.GetString("InvalidTriangleSides", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Polarwinkel muss im Bereich von Null bis PI liegen. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property IsPolarAngleInBounds() As String
+            Get
+                Return ResourceManager.GetString("IsPolarAngleInBounds", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Seitenanzahl muss größer oder gleich 3 sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RequireAtLeastThreeSides() As String
+            Get
+                Return ResourceManager.GetString("RequireAtLeastThreeSides", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen mindestens 3 Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RequireAtLeastThreeVertices() As String
+            Get
+                Return ResourceManager.GetString("RequireAtLeastThreeVertices", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen mindestens 2 Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RequireAtLeastTwoVertices() As String
+            Get
+                Return ResourceManager.GetString("RequireAtLeastTwoVertices", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen genau 4 Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RequireExactlyFourVertices() As String
+            Get
+                Return ResourceManager.GetString("RequireExactlyFourVertices", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen genau 3 Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RequireExactlyThreeVertices() As String
+            Get
+                Return ResourceManager.GetString("RequireExactlyThreeVertices", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Sehnenhöhe ist ungültig. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property SagittaHeightInvalid() As String
+            Get
+                Return ResourceManager.GetString("SagittaHeightInvalid", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Seiten erfüllen die Dreiecksungleichung nicht. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String1() As String
+            Get
+                Return ResourceManager.GetString("String1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Grundlänge muss kleiner als die untere sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String2() As String
+            Get
+                Return ResourceManager.GetString("String2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Grundbreite muss kleiner als die untere sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String3() As String
+            Get
+                Return ResourceManager.GetString("String3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die t muss im Bereich 0 bis 1 liegen. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String4() As String
+            Get
+                Return ResourceManager.GetString("String4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Summe der Grundseiten muss größer als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String5() As String
+            Get
+                Return ResourceManager.GetString("String5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Eckpunkte dürfen kein degeneriertes Polygon bilden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String6() As String
+            Get
+                Return ResourceManager.GetString("String6", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen mindestens {0} Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String7() As String
+            Get
+                Return ResourceManager.GetString("String7", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der Innenradius muss kleiner als der Außenradius sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyInnerLessThanOuter() As String
+            Get
+                Return ResourceManager.GetString("VerifyInnerLessThanOuter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Höhenoffset muss im Bereich 0 bis Höhe liegen. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyOffsetWithinHeight() As String
+            Get
+                Return ResourceManager.GetString("VerifyOffsetWithinHeight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Umfang ist für die angegebene Seite zu klein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyPerimeterGreaterThanTwiceKnownSide() As String
+            Get
+                Return ResourceManager.GetString("VerifyPerimeterGreaterThanTwiceKnownSide", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Länge muss kleiner als die untere Länge sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyTopLengthLessThanBottom() As String
+            Get
+                Return ResourceManager.GetString("VerifyTopLengthLessThanBottom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der obere Radius muss kleiner als der untere Radius sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyTopRadiusLessThanBottom() As String
+            Get
+                Return ResourceManager.GetString("VerifyTopRadiusLessThanBottom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Breite muss kleiner als die untere Breite sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyTopWidthLessThanBottom() As String
+            Get
+                Return ResourceManager.GetString("VerifyTopWidthLessThanBottom", resourceCulture)
+            End Get
         End Property
     End Module
 End Namespace

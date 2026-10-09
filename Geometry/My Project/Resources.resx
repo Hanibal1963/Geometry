@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,147 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CheckPositiveLength" xml:space="preserve">
+    <value>Die Länge muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckPositiveWidth" xml:space="preserve">
+    <value>Die Breite muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckNonNegativeDiameter" xml:space="preserve">
+    <value>Der Durchmesser darf nicht negativ sein.</value>
+  </data>
+  <data name="CheckNonNegativeHeight" xml:space="preserve">
+    <value>Die Höhe darf nicht negativ sein.</value>
+  </data>
+  <data name="InvalidTriangleSides" xml:space="preserve">
+    <value>Die angegebenen Seiten bilden kein gültiges Dreieck.</value>
+  </data>
+  <data name="CheckNonNegativeLength" xml:space="preserve">
+    <value>Die Länge darf nicht negativ sein.</value>
+  </data>
+  <data name="CheckPositiveRadius" xml:space="preserve">
+    <value>Der Radius muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckNonNegativeRadius" xml:space="preserve">
+    <value>Der Radius darf nicht negativ sein.</value>
+  </data>
+  <data name="VerifyTopLengthLessThanBottom" xml:space="preserve">
+    <value>Die obere Länge muss kleiner als die untere Länge sein.</value>
+  </data>
+  <data name="VerifyTopWidthLessThanBottom" xml:space="preserve">
+    <value>Die obere Breite muss kleiner als die untere Breite sein.</value>
+  </data>
+  <data name="VerifyTopRadiusLessThanBottom" xml:space="preserve">
+    <value>Der obere Radius muss kleiner als der untere Radius sein.</value>
+  </data>
+  <data name="CheckNonNegativeWidth" xml:space="preserve">
+    <value>Die Breite darf nicht negativ sein.</value>
+  </data>
+  <data name="SagittaHeightInvalid" xml:space="preserve">
+    <value>Die Sehnenhöhe ist ungültig.</value>
+  </data>
+  <data name="ChordLengthInvalid" xml:space="preserve">
+    <value>Die Sehnenlänge ist ungültig.</value>
+  </data>
+  <data name="CheckPositiveAxes" xml:space="preserve">
+    <value>Die Halbachsen müssen größer als Null sein (a&gt;0, b&gt;0).</value>
+  </data>
+  <data name="CheckNonNegativeDiagonal" xml:space="preserve">
+    <value>Die Diagonale darf nicht negativ sein.</value>
+  </data>
+  <data name="IsPolarAngleInBounds" xml:space="preserve">
+    <value>Der Polarwinkel muss im Bereich von Null bis PI liegen.</value>
+  </data>
+  <data name="CheckCapHeightLimit" xml:space="preserve">
+    <value>Die Kappenhöhe darf maximal 2 * Radius sein.</value>
+  </data>
+  <data name="VerifyInnerLessThanOuter" xml:space="preserve">
+    <value>Der Innenradius muss kleiner als der Außenradius sein.</value>
+  </data>
+  <data name="VerifyOffsetWithinHeight" xml:space="preserve">
+    <value>Höhenoffset muss im Bereich 0 bis Höhe liegen.</value>
+  </data>
+  <data name="CheckPositiveSide" xml:space="preserve">
+    <value>Die Seite muss größer als Null sein.</value>
+  </data>
+  <data name="CheckNonNegativeCircumference" xml:space="preserve">
+    <value>Der Umfang darf nicht negativ sein.</value>
+  </data>
+  <data name="CheckNonNegativeArea" xml:space="preserve">
+    <value>Die Fläche darf nicht negativ sein.</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Die Seiten erfüllen die Dreiecksungleichung nicht.</value>
+  </data>
+  <data name="RequireAtLeastThreeSides" xml:space="preserve">
+    <value>Die Seitenanzahl muss größer oder gleich 3 sein.</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Die obere Grundlänge muss kleiner als die untere sein.</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Die obere Grundbreite muss kleiner als die untere sein.</value>
+  </data>
+  <data name="CheckNonNegativeVolume" xml:space="preserve">
+    <value>Das Volumen darf nicht negativ sein.</value>
+  </data>
+  <data name="CheckPositiveEdge" xml:space="preserve">
+    <value>Die Kante muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckPositiveTolerance" xml:space="preserve">
+    <value>Die Toleranz muss größer als Null sein.</value>
+  </data>
+  <data name="CheckPositiveCircumference" xml:space="preserve">
+    <value>Der Umfang muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckPositiveHeight" xml:space="preserve">
+    <value>Die Höhe muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckPositiveDiagonal" xml:space="preserve">
+    <value>Die Diagonale muss grösser als Null sein.</value>
+  </data>
+  <data name="CheckNonNegativeSide" xml:space="preserve">
+    <value>Die Seite darf nicht negativ sein.</value>
+  </data>
+  <data name="CheckVerticesNotNull" xml:space="preserve">
+    <value>Die Eckpunkte dürfen nicht Nothing sein.</value>
+  </data>
+  <data name="RequireExactlyFourVertices" xml:space="preserve">
+    <value>Es müssen genau 4 Eckpunkte angegeben werden.</value>
+  </data>
+  <data name="IncludedAngleMustBeBetweenZeroAndPi" xml:space="preserve">
+    <value>Der eingeschlossene Winkel muss zwischen Null und Pi liegen.</value>
+  </data>
+  <data name="RequireAtLeastThreeVertices" xml:space="preserve">
+    <value>Es müssen mindestens 3 Eckpunkte angegeben werden.</value>
+  </data>
+  <data name="VerifyPerimeterGreaterThanTwiceKnownSide" xml:space="preserve">
+    <value>Umfang ist für die angegebene Seite zu klein.</value>
+  </data>
+  <data name="InvalidParallelogramBySidesAndDiagonals" xml:space="preserve">
+    <value>Die angegebenen Seiten und Diagonalen bilden kein gültiges Parallelogramm.</value>
+  </data>
+  <data name="RequireAtLeastTwoVertices" xml:space="preserve">
+    <value>Es müssen mindestens 2 Eckpunkte angegeben werden.</value>
+  </data>
+  <data name="RequireExactlyThreeVertices" xml:space="preserve">
+    <value>Es müssen genau 3 Eckpunkte angegeben werden.</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>t muss im Bereich 0 bis 1 liegen.</value>
+  </data>
+  <data name="String5" xml:space="preserve">
+    <value>Die Summe der Grundseiten muss größer als Null sein.</value>
+  </data>
+  <data name="String6" xml:space="preserve">
+    <value>Die Eckpunkte dürfen kein degeneriertes Polygon bilden.</value>
+  </data>
+  <data name="String7" xml:space="preserve">
+    <value>Es müssen mindestens {0} Eckpunkte angegeben werden.</value>
+  </data>
 </root>

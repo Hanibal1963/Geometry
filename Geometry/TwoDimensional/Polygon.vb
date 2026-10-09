@@ -65,7 +65,9 @@ Namespace TwoDimensional
         Public Shared Function IsConvex(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
-            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            If tolerance <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
+            End If
 
             Dim hasPositive As Boolean = False
             Dim hasNegative As Boolean = False
@@ -96,7 +98,9 @@ Namespace TwoDimensional
         Public Shared Function IsRegular(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices, 3)
-            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            If tolerance <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
+            End If
             If Not IsConvex(vertices, tolerance) Then Return False
 
             Dim firstSide = Distance(vertices(0), vertices(1))
@@ -137,7 +141,7 @@ Namespace TwoDimensional
             Next
 
             If Math.Abs(signedArea2) <= Double.Epsilon Then
-                Throw New ArgumentException("Die Eckpunkte dürfen kein degeneriertes Polygon bilden.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.String6, NameOf(vertices))
             End If
 
             Dim factor = 1.0 / (3.0 * signedArea2)
@@ -221,8 +225,12 @@ Namespace TwoDimensional
 
         Private Shared Sub ValidateVertices(vertices As PointF(), minCount As Integer)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
-            If vertices.Length < minCount Then Throw New ArgumentException($"Es müssen mindestens {minCount} Eckpunkte angegeben werden.", NameOf(vertices))
+            If vertices Is Nothing Then
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
+            End If
+            If vertices.Length < minCount Then
+                Throw New ArgumentException(My.Resources.String7.Replace("{0}", minCount.ToString()), NameOf(vertices))
+            End If
         End Sub
 
         Private Shared Function CrossZ(p0 As PointF, p1 As PointF, p2 As PointF) As Double

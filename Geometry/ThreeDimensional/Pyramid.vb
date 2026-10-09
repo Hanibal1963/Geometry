@@ -26,8 +26,12 @@ Namespace ThreeDimensional
         ''' <returns>Grundfläche length * width</returns>
         Public Shared Function BaseArea(length As Double, width As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
-            If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
+            If length < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
+            End If
+            If width < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
+            End If
             Return length * width
         End Function
 
@@ -40,9 +44,15 @@ Namespace ThreeDimensional
         ''' <returns>Volumen (Grundfläche * Höhe) / 3</returns>
         Public Shared Function Volume(length As Double, width As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
-            If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If length < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
+            End If
+            If width < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
+            End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (BaseArea(length, width) * height) / 3.0
@@ -57,8 +67,12 @@ Namespace ThreeDimensional
         ''' <returns>Schräghöhe sqrt((width/2)^2 + h^2)</returns>
         Public Shared Function SlantHeightLengthFace(width As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If width < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
+            End If
 
             Dim halfWidth = width / 2.0
             Return Math.Sqrt((halfWidth * halfWidth) + (height * height))
@@ -72,8 +86,12 @@ Namespace ThreeDimensional
         ''' <returns>Schräghöhe sqrt((length/2)^2 + h^2)</returns>
         Public Shared Function SlantHeightWidthFace(length As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If length < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
+            End If
 
             Dim halfLength = length / 2.0
             Return Math.Sqrt((halfLength * halfLength) + (height * height))
@@ -88,9 +106,15 @@ Namespace ThreeDimensional
         ''' <returns>Mantelfläche aus 4 Dreiecksflächen</returns>
         Public Shared Function LateralArea(length As Double, width As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
-            If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If length < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
+            End If
+            If width < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
+            End If
 
             Dim slantLen = SlantHeightLengthFace(width, height)
             Dim slantWid = SlantHeightWidthFace(length, height)
@@ -106,9 +130,15 @@ Namespace ThreeDimensional
         ''' <returns>Gesamtoberfläche Grundfläche + Mantelfläche</returns>
         Public Shared Function SurfaceArea(length As Double, width As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
-            If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If length < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
+            End If
+            If width < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
+            End If
 
             Return BaseArea(length, width) + LateralArea(length, width, height)
         End Function
@@ -204,9 +234,15 @@ Namespace ThreeDimensional
         ''' <returns>Array mit 5 Punkten: 4 Grundpunkte + Spitze</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, cz As Double, length As Double, width As Double, height As Double) As Tuple(Of Double, Double, Double)()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If length < 0 Then Throw New ArgumentException("Die Grundlänge darf nicht negativ sein.", NameOf(length))
-            If width < 0 Then Throw New ArgumentException("Die Grundbreite darf nicht negativ sein.", NameOf(width))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If length < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(length))
+            End If
+            If width < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(width))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
+            End If
 
             Dim halfLength = length / 2.0
             Dim halfWidth = width / 2.0
@@ -227,13 +263,27 @@ Namespace ThreeDimensional
 
         Private Shared Sub ValidateFrustumInputs(bottomLength As Double, bottomWidth As Double, topLength As Double, topWidth As Double, height As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If bottomLength <= 0 Then Throw New ArgumentException("Die untere Grundlänge muss größer als 0 sein.", NameOf(bottomLength))
-            If bottomWidth <= 0 Then Throw New ArgumentException("Die untere Grundbreite muss größer als 0 sein.", NameOf(bottomWidth))
-            If topLength < 0 Then Throw New ArgumentException("Die obere Grundlänge darf nicht negativ sein.", NameOf(topLength))
-            If topWidth < 0 Then Throw New ArgumentException("Die obere Grundbreite darf nicht negativ sein.", NameOf(topWidth))
-            If topLength >= bottomLength Then Throw New ArgumentException("Die obere Grundlänge muss kleiner als die untere Grundlänge sein.", NameOf(topLength))
-            If topWidth >= bottomWidth Then Throw New ArgumentException("Die obere Grundbreite muss kleiner als die untere Grundbreite sein.", NameOf(topWidth))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If bottomLength <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(bottomLength))
+            End If
+            If bottomWidth <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveWidth, NameOf(bottomWidth))
+            End If
+            If topLength < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(topLength))
+            End If
+            If topWidth < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeWidth, NameOf(topWidth))
+            End If
+            If topLength >= bottomLength Then
+                Throw New ArgumentException(My.Resources.VerifyTopLengthLessThanBottom, NameOf(topLength))
+            End If
+            If topWidth >= bottomWidth Then
+                Throw New ArgumentException(My.Resources.VerifyTopWidthLessThanBottom, NameOf(topWidth))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
+            End If
         End Sub
 
 #End Region

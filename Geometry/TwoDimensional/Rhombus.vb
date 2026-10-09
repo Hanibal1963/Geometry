@@ -28,8 +28,12 @@ Namespace TwoDimensional
         ''' <returns>Fläche baseLength * height</returns>
         Public Shared Function AreaFromBaseHeight(baseLength As Double, height As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If baseLength < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(baseLength))
-            If height < 0 Then Throw New ArgumentException("Die Höhe darf nicht negativ sein.", NameOf(height))
+            If baseLength < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(baseLength))
+            End If
+            If height < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
+            End If
             Return baseLength * height
         End Function
 
@@ -41,8 +45,12 @@ Namespace TwoDimensional
         ''' <returns>Fläche (d1 * d2) / 2</returns>
         Public Shared Function AreaFromDiagonals(diagonal1 As Double, diagonal2 As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If diagonal1 < 0 Then Throw New ArgumentException("Diagonale 1 darf nicht negativ sein.", NameOf(diagonal1))
-            If diagonal2 < 0 Then Throw New ArgumentException("Diagonale 2 darf nicht negativ sein.", NameOf(diagonal2))
+            If diagonal1 < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(diagonal1))
+            End If
+            If diagonal2 < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeDiagonal, NameOf(diagonal2))
+            End If
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (diagonal1 * diagonal2) / 2.0
 #Enable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -55,7 +63,9 @@ Namespace TwoDimensional
         ''' <returns>Umfang 4 * side</returns>
         Public Shared Function Perimeter(side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side < 0 Then Throw New ArgumentException("Die Seitenlänge darf nicht negativ sein.", NameOf(side))
+            If side < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeLength, NameOf(side))
+            End If
             Return 4.0 * side
         End Function
 
@@ -67,8 +77,12 @@ Namespace TwoDimensional
         ''' <returns>Höhe area / side</returns>
         Public Shared Function HeightFromArea(area As Double, side As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If area < 0 Then Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
-            If side <= 0 Then Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+            If area < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
+            End If
+            If side <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(side))
+            End If
             Return area / side
         End Function
 
@@ -80,9 +94,11 @@ Namespace TwoDimensional
         ''' <returns>Array [d1, d2]</returns>
         Public Shared Function DiagonalFromSideAndAngle(side As Double, interiorAngleRadians As Double) As Double()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side <= 0 Then Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+            If side <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(side))
+            End If
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
-                Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))
+                Throw New ArgumentException(My.Resources.IncludedAngleMustBeBetweenZeroAndPi, NameOf(interiorAngleRadians))
             End If
 
             Dim halfAngle = interiorAngleRadians / 2.0
@@ -99,8 +115,12 @@ Namespace TwoDimensional
         ''' <returns>Inkreisradius 2 * area / perimeter</returns>
         Public Shared Function InradiusFromAreaPerimeter(area As Double, perimeter As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If area < 0 Then Throw New ArgumentException("Die Fläche darf nicht negativ sein.", NameOf(area))
-            If perimeter <= 0 Then Throw New ArgumentException("Der Umfang muss größer als 0 sein.", NameOf(perimeter))
+            If area < 0 Then
+                Throw New ArgumentException(My.Resources.CheckNonNegativeArea, NameOf(area))
+            End If
+            If perimeter <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveCircumference, NameOf(perimeter))
+            End If
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
             Return (2.0 * area) / perimeter
 #Enable Warning IDE0047 ' Unnötige Klammern entfernen
@@ -121,9 +141,11 @@ Namespace TwoDimensional
         ''' <returns>Array mit 4 Eckpunkten in umlaufender Reihenfolge</returns>
         Public Shared Function VerticesFromCenter(cx As Double, cy As Double, side As Double, interiorAngleRadians As Double, rotationRadians As Double) As PointF()
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If side <= 0 Then Throw New ArgumentException("Die Seitenlänge muss größer als 0 sein.", NameOf(side))
+            If side <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveLength, NameOf(side))
+            End If
             If interiorAngleRadians <= 0 OrElse interiorAngleRadians >= Math.PI Then
-                Throw New ArgumentException("Der Innenwinkel muss zwischen 0 und PI liegen.", NameOf(interiorAngleRadians))
+                Throw New ArgumentException(My.Resources.IncludedAngleMustBeBetweenZeroAndPi, NameOf(interiorAngleRadians))
             End If
 
             Dim halfA = side / 2.0
@@ -183,7 +205,9 @@ Namespace TwoDimensional
         Public Shared Function IsRhombusFromVertices(vertices As PointF(), Optional tolerance As Double = 0.000001) As Boolean
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateVertices(vertices)
-            If tolerance <= 0 Then Throw New ArgumentException("Die Toleranz muss größer als 0 sein.", NameOf(tolerance))
+            If tolerance <= 0 Then
+                Throw New ArgumentException(My.Resources.CheckPositiveTolerance, NameOf(tolerance))
+            End If
 
             Dim lengths(3) As Double
             For i = 0 To 3
@@ -205,8 +229,12 @@ Namespace TwoDimensional
 
         Private Shared Sub ValidateVertices(vertices As PointF())
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
-            If vertices Is Nothing Then Throw New ArgumentException("Die Eckpunkte dürfen nicht Nothing sein.", NameOf(vertices))
-            If vertices.Length <> 4 Then Throw New ArgumentException("Es müssen genau 4 Eckpunkte angegeben werden.", NameOf(vertices))
+            If vertices Is Nothing Then
+                Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
+            End If
+            If vertices.Length <> 4 Then
+                Throw New ArgumentException(My.Resources.RequireExactlyFourVertices, NameOf(vertices))
+            End If
         End Sub
 
         Private Shared Function Distance(p1 As PointF, p2 As PointF) As Double
