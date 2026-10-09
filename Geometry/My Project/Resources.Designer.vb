@@ -268,11 +268,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        '''  Sucht eine lokalisierte Zeichenfolge, die Der eingeschlossene Winkel muss zwischen Null und Pi liegen. ähnelt.
         '''</summary>
         Friend ReadOnly Property IncludedAngleMustBeBetweenZeroAndPi() As String
             Get
                 Return ResourceManager.GetString("IncludedAngleMustBeBetweenZeroAndPi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die angegebenen Seiten und Diagonalen bilden kein gültiges Parallelogramm. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property InvalidParallelogramBySidesAndDiagonals() As String
+            Get
+                Return ResourceManager.GetString("InvalidParallelogramBySidesAndDiagonals", resourceCulture)
             End Get
         End Property
         
@@ -300,6 +309,24 @@ Namespace My.Resources
         Friend ReadOnly Property RequireAtLeastThreeSides() As String
             Get
                 Return ResourceManager.GetString("RequireAtLeastThreeSides", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen mindestens 3 Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RequireAtLeastThreeVertices() As String
+            Get
+                Return ResourceManager.GetString("RequireAtLeastThreeVertices", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen mindestens 2 Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RequireAtLeastTwoVertices() As String
+            Get
+                Return ResourceManager.GetString("RequireAtLeastTwoVertices", resourceCulture)
             End Get
         End Property
         
@@ -363,6 +390,15 @@ Namespace My.Resources
         Friend ReadOnly Property VerifyOffsetWithinHeight() As String
             Get
                 Return ResourceManager.GetString("VerifyOffsetWithinHeight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Umfang ist für die angegebene Seite zu klein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property VerifyPerimeterGreaterThanTwiceKnownSide() As String
+            Get
+                Return ResourceManager.GetString("VerifyPerimeterGreaterThanTwiceKnownSide", resourceCulture)
             End Get
         End Property
         

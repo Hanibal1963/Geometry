@@ -93,7 +93,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeSide, NameOf(knownSide))
             End If
             If perimeter <= 2.0 * knownSide Then
-                Throw New ArgumentException("Umfang ist für die angegebene Seite zu klein.", NameOf(perimeter))
+                Throw New ArgumentException(My.Resources.VerifyPerimeterGreaterThanTwiceKnownSide, NameOf(perimeter))
             End If
 
             Return (perimeter / 2.0) - knownSide
@@ -152,7 +152,7 @@ Namespace TwoDimensional
             Dim cosValue = ((d1 * d1) - (d2 * d2)) / denominator
 
             If cosValue < -1.0 OrElse cosValue > 1.0 Then
-                Throw New ArgumentException("Die angegebenen Seiten und Diagonalen bilden kein gültiges Parallelogramm.")
+                Throw New ArgumentException(My.Resources.InvalidParallelogramBySidesAndDiagonals)
             End If
 
             Return Math.Acos(cosValue)
@@ -225,7 +225,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length < 3 Then
-                Throw New ArgumentException("Es müssen mindestens 3 Eckpunkte angegeben werden.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.RequireAtLeastThreeVertices, NameOf(vertices))
             End If
 
             Dim sum As Double = 0.0
@@ -248,7 +248,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length < 2 Then
-                Throw New ArgumentException("Es müssen mindestens 2 Eckpunkte angegeben werden.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.RequireAtLeastTwoVertices, NameOf(vertices))
             End If
 
             Dim perimeter As Double = 0.0

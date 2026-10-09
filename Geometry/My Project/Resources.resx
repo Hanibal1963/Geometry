@@ -226,6 +226,18 @@
     <value>Es müssen genau 4 Eckpunkte angegeben werden.</value>
   </data>
   <data name="IncludedAngleMustBeBetweenZeroAndPi" xml:space="preserve">
-    <value />
+    <value>Der eingeschlossene Winkel muss zwischen Null und Pi liegen.</value>
+  </data>
+  <data name="RequireAtLeastThreeVertices" xml:space="preserve">
+    <value>Es müssen mindestens 3 Eckpunkte angegeben werden.</value>
+  </data>
+  <data name="VerifyPerimeterGreaterThanTwiceKnownSide" xml:space="preserve">
+    <value>Umfang ist für die angegebene Seite zu klein.</value>
+  </data>
+  <data name="InvalidParallelogramBySidesAndDiagonals" xml:space="preserve">
+    <value>Die angegebenen Seiten und Diagonalen bilden kein gültiges Parallelogramm.</value>
+  </data>
+  <data name="RequireAtLeastTwoVertices" xml:space="preserve">
+    <value>Es müssen mindestens 2 Eckpunkte angegeben werden.</value>
   </data>
 </root>
