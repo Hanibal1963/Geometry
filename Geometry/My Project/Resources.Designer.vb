@@ -196,7 +196,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die Die höhe muss grösser als Null sein. ähnelt.
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Höhe muss grösser als Null sein. ähnelt.
         '''</summary>
         Friend ReadOnly Property CheckPositiveHeight() As String
             Get
@@ -340,6 +340,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen genau 3 Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property RequireExactlyThreeVertices() As String
+            Get
+                Return ResourceManager.GetString("RequireExactlyThreeVertices", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Sehnenhöhe ist ungültig. ähnelt.
         '''</summary>
         Friend ReadOnly Property SagittaHeightInvalid() As String
@@ -372,6 +381,42 @@ Namespace My.Resources
         Friend ReadOnly Property String3() As String
             Get
                 Return ResourceManager.GetString("String3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die t muss im Bereich 0 bis 1 liegen. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String4() As String
+            Get
+                Return ResourceManager.GetString("String4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Summe der Grundseiten muss größer als Null sein. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String5() As String
+            Get
+                Return ResourceManager.GetString("String5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Die Eckpunkte dürfen kein degeneriertes Polygon bilden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String6() As String
+            Get
+                Return ResourceManager.GetString("String6", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen mindestens {0} Eckpunkte angegeben werden. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property String7() As String
+            Get
+                Return ResourceManager.GetString("String7", resourceCulture)
             End Get
         End Property
         

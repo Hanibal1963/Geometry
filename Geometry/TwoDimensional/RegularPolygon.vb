@@ -245,7 +245,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length < minCount Then
-                Throw New ArgumentException($"Es müssen mindestens {minCount} Eckpunkte vorhanden sein.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.String7.Replace("{0}", minCount.ToString()), NameOf(vertices))
             End If
         End Sub
 

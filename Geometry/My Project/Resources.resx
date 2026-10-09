@@ -211,7 +211,7 @@
     <value>Der Umfang muss grösser als Null sein.</value>
   </data>
   <data name="CheckPositiveHeight" xml:space="preserve">
-    <value>Die höhe muss grösser als Null sein.</value>
+    <value>Die Höhe muss grösser als Null sein.</value>
   </data>
   <data name="CheckPositiveDiagonal" xml:space="preserve">
     <value>Die Diagonale muss grösser als Null sein.</value>
@@ -239,5 +239,20 @@
   </data>
   <data name="RequireAtLeastTwoVertices" xml:space="preserve">
     <value>Es müssen mindestens 2 Eckpunkte angegeben werden.</value>
+  </data>
+  <data name="RequireExactlyThreeVertices" xml:space="preserve">
+    <value>Es müssen genau 3 Eckpunkte angegeben werden.</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>t muss im Bereich 0 bis 1 liegen.</value>
+  </data>
+  <data name="String5" xml:space="preserve">
+    <value>Die Summe der Grundseiten muss größer als Null sein.</value>
+  </data>
+  <data name="String6" xml:space="preserve">
+    <value>Die Eckpunkte dürfen kein degeneriertes Polygon bilden.</value>
+  </data>
+  <data name="String7" xml:space="preserve">
+    <value>Es müssen mindestens {0} Eckpunkte angegeben werden.</value>
   </data>
 </root>

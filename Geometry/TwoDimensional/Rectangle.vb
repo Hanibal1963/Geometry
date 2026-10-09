@@ -75,7 +75,7 @@ Namespace TwoDimensional
         Public Shared Function AspectRatio(w As Double, h As Double) As Double
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             If h = 0 Then
-                Throw New ArgumentException("Höhe darf nicht 0 sein.", NameOf(h))
+                Throw New ArgumentException(My.Resources.CheckPositiveHeight, NameOf(h))
             End If
             Return w / h
         End Function

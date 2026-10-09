@@ -141,7 +141,7 @@ Namespace TwoDimensional
             Next
 
             If Math.Abs(signedArea2) <= Double.Epsilon Then
-                Throw New ArgumentException("Die Eckpunkte dürfen kein degeneriertes Polygon bilden.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.String6, NameOf(vertices))
             End If
 
             Dim factor = 1.0 / (3.0 * signedArea2)
@@ -229,7 +229,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length < minCount Then
-                Throw New ArgumentException($"Es müssen mindestens {minCount} Eckpunkte angegeben werden.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.String7.Replace("{0}", minCount.ToString()), NameOf(vertices))
             End If
         End Sub
 

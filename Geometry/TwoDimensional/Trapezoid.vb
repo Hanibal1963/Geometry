@@ -109,7 +109,7 @@ Namespace TwoDimensional
 
             Dim denominator = baseA + baseB
             If denominator <= 0 Then
-                Throw New ArgumentException("Die Summe der Grundseiten muss größer als 0 sein.")
+                Throw New ArgumentException(My.Resources.String5)
             End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen

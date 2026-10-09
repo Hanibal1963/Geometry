@@ -210,7 +210,7 @@ Namespace TwoDimensional
                 Throw New ArgumentException(My.Resources.CheckVerticesNotNull, NameOf(vertices))
             End If
             If vertices.Length <> 3 Then
-                Throw New ArgumentException("Es müssen genau 3 Eckpunkte angegeben werden.", NameOf(vertices))
+                Throw New ArgumentException(My.Resources.RequireExactlyThreeVertices, NameOf(vertices))
             End If
         End Sub
 
