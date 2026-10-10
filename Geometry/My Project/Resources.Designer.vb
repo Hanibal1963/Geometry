@@ -360,9 +360,9 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Seiten erfüllen die Dreiecksungleichung nicht. ähnelt.
         '''</summary>
-        Friend ReadOnly Property String1() As String
+        Friend ReadOnly Property CheckTriangleInequality() As String
             Get
-                Return ResourceManager.GetString("String1", resourceCulture)
+                Return ResourceManager.GetString("CheckTriangleInequality", resourceCulture)
             End Get
         End Property
         

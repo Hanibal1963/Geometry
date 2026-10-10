@@ -186,7 +186,7 @@
   <data name="CheckNonNegativeArea" xml:space="preserve">
     <value>Die Fläche darf nicht negativ sein.</value>
   </data>
-  <data name="String1" xml:space="preserve">
+  <data name="CheckTriangleInequality" xml:space="preserve">
     <value>Die Seiten erfüllen die Dreiecksungleichung nicht.</value>
   </data>
   <data name="RequireAtLeastThreeSides" xml:space="preserve">

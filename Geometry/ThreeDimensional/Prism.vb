@@ -195,7 +195,7 @@ Namespace ThreeDimensional
             End If
 
             If sideA + sideB <= sideC OrElse sideA + sideC <= sideB OrElse sideB + sideC <= sideA Then
-                Throw New ArgumentException(My.Resources.String1, NameOf(sideC))
+                Throw New ArgumentException(My.Resources.CheckTriangleInequality, NameOf(sideC))
             End If
         End Sub
 
