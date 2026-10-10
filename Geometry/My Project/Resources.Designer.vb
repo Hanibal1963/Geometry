@@ -387,9 +387,9 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die t muss im Bereich 0 bis 1 liegen. ähnelt.
         '''</summary>
-        Friend ReadOnly Property String4() As String
+        Friend ReadOnly Property CheckParameterBetweenZeroAndOne() As String
             Get
-                Return ResourceManager.GetString("String4", resourceCulture)
+                Return ResourceManager.GetString("CheckParameterBetweenZeroAndOne", resourceCulture)
             End Get
         End Property
         

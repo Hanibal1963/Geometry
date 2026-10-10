@@ -197,7 +197,7 @@ Namespace ThreeDimensional
                 Throw New ArgumentException(My.Resources.CheckNonNegativeHeight, NameOf(height))
             End If
             If t < 0 OrElse t > 1 Then
-                Throw New ArgumentException(My.Resources.String4, NameOf(t))
+                Throw New ArgumentException(My.Resources.CheckParameterBetweenZeroAndOne, NameOf(t))
             End If
 
             Dim currentRadius = radius * (1.0 - t)

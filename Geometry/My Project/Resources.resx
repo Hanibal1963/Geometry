@@ -243,7 +243,7 @@
   <data name="RequireExactlyThreeVertices" xml:space="preserve">
     <value>Es müssen genau 3 Eckpunkte angegeben werden.</value>
   </data>
-  <data name="String4" xml:space="preserve">
+  <data name="CheckParameterBetweenZeroAndOne" xml:space="preserve">
     <value>t muss im Bereich 0 bis 1 liegen.</value>
   </data>
   <data name="String5" xml:space="preserve">
