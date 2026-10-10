@@ -8,9 +8,9 @@ Statische Hilfsklasse für Polygonberechnungen und Koordinatenoperationen. Behan
 
 `Perimeter` - Berechnet den Umfang als Summe aller Kantenlängen. Parameter: `vertices` (mindestens 2 Eckpunkte als `PointF()`).
 
-`IsConvex` - Prüft, ob ein Polygon konvex ist (Vorzeichenprüfung der Kreuzprodukte). Parameter: `vertices` (mindestens 3 Eckpunkte), `tolerance` (`> 0`).
+`IsConvex` - Prüft, ob ein Polygon konvex ist (Vorzeichenprüfung der Kreuzprodukte). Parameter: `vertices` (mindestens 3 Eckpunkte), `tolerance` (`> 0`, optional).
 
-`IsRegular` - Prüft, ob ein Polygon regelmäßig ist (gleich lange Seiten und gleicher Radius zum Schwerpunkt innerhalb der Toleranz). Parameter: `vertices` (mindestens 3 Eckpunkte), `tolerance` (`> 0`).
+`IsRegular` - Prüft, ob ein Polygon regelmäßig ist (gleich lange Seiten und gleicher Radius zum Schwerpunkt innerhalb der Toleranz). Parameter: `vertices` (mindestens 3 Eckpunkte), `tolerance` (`> 0`, optional).
 
 `Centroid` - Berechnet den Flächenschwerpunkt des Polygons. Parameter: `vertices` (mindestens 3 Eckpunkte). Wirft `ArgumentException` bei degenerierten Polygonen.
 

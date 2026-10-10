@@ -186,16 +186,16 @@
   <data name="CheckNonNegativeArea" xml:space="preserve">
     <value>Die Fläche darf nicht negativ sein.</value>
   </data>
-  <data name="String1" xml:space="preserve">
+  <data name="CheckTriangleInequality" xml:space="preserve">
     <value>Die Seiten erfüllen die Dreiecksungleichung nicht.</value>
   </data>
   <data name="RequireAtLeastThreeSides" xml:space="preserve">
     <value>Die Seitenanzahl muss größer oder gleich 3 sein.</value>
   </data>
-  <data name="String2" xml:space="preserve">
+  <data name="CheckTopLengthLessThanBottom" xml:space="preserve">
     <value>Die obere Grundlänge muss kleiner als die untere sein.</value>
   </data>
-  <data name="String3" xml:space="preserve">
+  <data name="CheckTopWidthIsLessThanBottom" xml:space="preserve">
     <value>Die obere Grundbreite muss kleiner als die untere sein.</value>
   </data>
   <data name="CheckNonNegativeVolume" xml:space="preserve">
@@ -243,16 +243,16 @@
   <data name="RequireExactlyThreeVertices" xml:space="preserve">
     <value>Es müssen genau 3 Eckpunkte angegeben werden.</value>
   </data>
-  <data name="String4" xml:space="preserve">
+  <data name="CheckParameterBetweenZeroAndOne" xml:space="preserve">
     <value>t muss im Bereich 0 bis 1 liegen.</value>
   </data>
-  <data name="String5" xml:space="preserve">
+  <data name="CheckBasesSumPositive" xml:space="preserve">
     <value>Die Summe der Grundseiten muss größer als Null sein.</value>
   </data>
-  <data name="String6" xml:space="preserve">
+  <data name="CheckPolygonNonDegenerate" xml:space="preserve">
     <value>Die Eckpunkte dürfen kein degeneriertes Polygon bilden.</value>
   </data>
-  <data name="String7" xml:space="preserve">
+  <data name="CheckVerticesMinimumCount" xml:space="preserve">
     <value>Es müssen mindestens {0} Eckpunkte angegeben werden.</value>
   </data>
 </root>

@@ -24,7 +24,7 @@ Statische Hilfsklasse für Berechnungen an regelmäßigen Polygonen. Enthält Ba
 
 `PerimeterFromVertices` - Berechnet den Umfang aus Eckpunkten als Summe der Kantenlängen. Parameter: `vertices` (mindestens 2 Eckpunkte als `PointF()`).
 
-`IsRegularFromVertices` - Prüft, ob ein Eckpunkt-Array ein regelmäßiges Polygon bildet (gleiche Seitenlängen und gleiche Radien zum Mittelpunkt). Parameter: `vertices` (mindestens 3 Eckpunkte), `tolerance` (`> 0`).
+`IsRegularFromVertices` - Prüft, ob ein Eckpunkt-Array ein regelmäßiges Polygon bildet (gleiche Seitenlängen und gleiche Radien zum Mittelpunkt). Parameter: `vertices` (mindestens 3 Eckpunkte), `tolerance` (`> 0`, optional).
 
 ## Hinweise
 

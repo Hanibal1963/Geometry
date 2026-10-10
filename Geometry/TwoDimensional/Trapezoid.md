@@ -14,7 +14,7 @@ Statische Hilfsklasse für Berechnungen zu Trapezen (Fläche, Umfang, Mittellini
 
 `LegLengthIsosceles` - Berechnet die Schenkellänge eines gleichschenkligen Trapezes aus Grundseiten und Höhe. Parameter: `baseA`, `baseB` (Grundseiten, `>= 0`), `height` (`>= 0`).
 
-`IsIsosceles` - Prüft, ob ein Trapez gleichschenklig ist (`|legB - legD| <= tolerance`). Parameter: `legB` (`> 0`), `legD` (`> 0`), `tolerance` (`> 0`).
+`IsIsosceles` - Prüft, ob ein Trapez gleichschenklig ist (`|legB - legD| <= tolerance`). Parameter: `legB` (`> 0`), `legD` (`> 0`), `tolerance` (`> 0`, optional).
 
 `VerticesFromCenter` - Berechnet 4 Eckpunkte eines gleichschenkligen Trapezes aus Mittelpunkt, beiden Grundseiten, Höhe und Rotation (Bogenmaß). Parameter: `cx`, `cy` (Mittelpunkt), `baseA`, `baseB` (Grundseiten, `>= 0`), `height` (`>= 0`), `rotationRadians`.
 
@@ -22,7 +22,7 @@ Statische Hilfsklasse für Berechnungen zu Trapezen (Fläche, Umfang, Mittellini
 
 `PerimeterFromVertices` - Berechnet den Umfang aus 4 Eckpunkten als Summe der Kantenlängen. Parameter: `vertices` (4 Eckpunkte als `PointF()`).
 
-`IsTrapezoidFromVertices` - Prüft, ob 4 Eckpunkte ein Trapez bilden (mindestens ein Paar gegenüberliegender Seiten parallel, innerhalb einer Toleranz). Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`).
+`IsTrapezoidFromVertices` - Prüft, ob 4 Eckpunkte ein Trapez bilden (mindestens ein Paar gegenüberliegender Seiten parallel, innerhalb einer Toleranz). Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`, optional).
 
 ## Hinweise
 
