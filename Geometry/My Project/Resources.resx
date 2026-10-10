@@ -252,7 +252,7 @@
   <data name="CheckPolygonNonDegenerate" xml:space="preserve">
     <value>Die Eckpunkte dürfen kein degeneriertes Polygon bilden.</value>
   </data>
-  <data name="String7" xml:space="preserve">
+  <data name="CheckVerticesMinimumCount" xml:space="preserve">
     <value>Es müssen mindestens {0} Eckpunkte angegeben werden.</value>
   </data>
 </root>

@@ -414,9 +414,9 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Es müssen mindestens {0} Eckpunkte angegeben werden. ähnelt.
         '''</summary>
-        Friend ReadOnly Property String7() As String
+        Friend ReadOnly Property CheckVerticesMinimumCount() As String
             Get
-                Return ResourceManager.GetString("String7", resourceCulture)
+                Return ResourceManager.GetString("CheckVerticesMinimumCount", resourceCulture)
             End Get
         End Property
         
