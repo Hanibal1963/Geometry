@@ -396,9 +396,9 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Summe der Grundseiten muss größer als Null sein. ähnelt.
         '''</summary>
-        Friend ReadOnly Property String5() As String
+        Friend ReadOnly Property CheckBasesSumPositive() As String
             Get
-                Return ResourceManager.GetString("String5", resourceCulture)
+                Return ResourceManager.GetString("CheckBasesSumPositive", resourceCulture)
             End Get
         End Property
         

@@ -246,7 +246,7 @@
   <data name="CheckParameterBetweenZeroAndOne" xml:space="preserve">
     <value>t muss im Bereich 0 bis 1 liegen.</value>
   </data>
-  <data name="String5" xml:space="preserve">
+  <data name="CheckBasesSumPositive" xml:space="preserve">
     <value>Die Summe der Grundseiten muss größer als Null sein.</value>
   </data>
   <data name="String6" xml:space="preserve">

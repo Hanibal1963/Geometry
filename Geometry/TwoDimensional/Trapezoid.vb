@@ -109,7 +109,7 @@ Namespace TwoDimensional
 
             Dim denominator = baseA + baseB
             If denominator <= 0 Then
-                Throw New ArgumentException(My.Resources.String5)
+                Throw New ArgumentException(My.Resources.CheckBasesSumPositive)
             End If
 
 #Disable Warning IDE0047 ' Unnötige Klammern entfernen
