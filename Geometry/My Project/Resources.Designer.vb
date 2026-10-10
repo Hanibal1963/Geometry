@@ -369,18 +369,18 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Grundlänge muss kleiner als die untere sein. ähnelt.
         '''</summary>
-        Friend ReadOnly Property String2() As String
+        Friend ReadOnly Property CheckTopLengthLessThanBottom() As String
             Get
-                Return ResourceManager.GetString("String2", resourceCulture)
+                Return ResourceManager.GetString("CheckTopLengthLessThanBottom", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die obere Grundbreite muss kleiner als die untere sein. ähnelt.
         '''</summary>
-        Friend ReadOnly Property String3() As String
+        Friend ReadOnly Property CheckTopWidthIsLessThanBottom() As String
             Get
-                Return ResourceManager.GetString("String3", resourceCulture)
+                Return ResourceManager.GetString("CheckTopWidthIsLessThanBottom", resourceCulture)
             End Get
         End Property
         

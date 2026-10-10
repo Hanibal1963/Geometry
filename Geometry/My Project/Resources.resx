@@ -192,10 +192,10 @@
   <data name="RequireAtLeastThreeSides" xml:space="preserve">
     <value>Die Seitenanzahl muss größer oder gleich 3 sein.</value>
   </data>
-  <data name="String2" xml:space="preserve">
+  <data name="CheckTopLengthLessThanBottom" xml:space="preserve">
     <value>Die obere Grundlänge muss kleiner als die untere sein.</value>
   </data>
-  <data name="String3" xml:space="preserve">
+  <data name="CheckTopWidthIsLessThanBottom" xml:space="preserve">
     <value>Die obere Grundbreite muss kleiner als die untere sein.</value>
   </data>
   <data name="CheckNonNegativeVolume" xml:space="preserve">
