@@ -249,7 +249,7 @@
   <data name="CheckBasesSumPositive" xml:space="preserve">
     <value>Die Summe der Grundseiten muss größer als Null sein.</value>
   </data>
-  <data name="String6" xml:space="preserve">
+  <data name="CheckPolygonNonDegenerate" xml:space="preserve">
     <value>Die Eckpunkte dürfen kein degeneriertes Polygon bilden.</value>
   </data>
   <data name="String7" xml:space="preserve">

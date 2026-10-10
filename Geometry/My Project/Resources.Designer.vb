@@ -405,9 +405,9 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Zeichenfolge, die Die Eckpunkte dürfen kein degeneriertes Polygon bilden. ähnelt.
         '''</summary>
-        Friend ReadOnly Property String6() As String
+        Friend ReadOnly Property CheckPolygonNonDegenerate() As String
             Get
-                Return ResourceManager.GetString("String6", resourceCulture)
+                Return ResourceManager.GetString("CheckPolygonNonDegenerate", resourceCulture)
             End Get
         End Property
         

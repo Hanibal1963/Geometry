@@ -141,7 +141,7 @@ Namespace TwoDimensional
             Next
 
             If Math.Abs(signedArea2) <= Double.Epsilon Then
-                Throw New ArgumentException(My.Resources.String6, NameOf(vertices))
+                Throw New ArgumentException(My.Resources.CheckPolygonNonDegenerate, NameOf(vertices))
             End If
 
             Dim factor = 1.0 / (3.0 * signedArea2)
