@@ -131,10 +131,9 @@ Namespace TwoDimensional.Tests
         End Sub
 
         <TestMethod()>
-        <ExpectedException(GetType(ArgumentException))>
         Public Sub NegativeRadius_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Dim unused = Area(-1.0)
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Area(-1.0))
         End Sub
 
     End Class

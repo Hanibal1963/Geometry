@@ -55,19 +55,19 @@ Namespace ThreeDimensional.Tests
         <TestMethod>
         Public Sub Guards_Volume_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() Volume(-1, 2, 3))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Volume(-1, 2, 3))
         End Sub
 
         <TestMethod>
         Public Sub Guards_EdgeFromVolume_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() EdgeFromVolume(10, 0, 2))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() EdgeFromVolume(10, 0, 2))
         End Sub
 
         <TestMethod>
         Public Sub Guards_IsCube_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() IsCube(1, 1, 1, 0))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() IsCube(1, 1, 1, 0))
         End Sub
 
     End Class

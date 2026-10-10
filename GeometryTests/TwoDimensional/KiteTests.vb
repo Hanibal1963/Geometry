@@ -56,19 +56,19 @@ Namespace TwoDimensional.Tests
         <TestMethod>
         Public Sub Guards_AreaFromDiagonals_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() AreaFromDiagonals(-1, 2))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() AreaFromDiagonals(-1, 2))
         End Sub
 
         <TestMethod>
         Public Sub Guards_HeightFromArea_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() HeightFromArea(10, 0))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() HeightFromArea(10, 0))
         End Sub
 
         <TestMethod>
         Public Sub Guards_IsKiteFromVertices_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() IsKiteFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() IsKiteFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
         End Sub
 
     End Class

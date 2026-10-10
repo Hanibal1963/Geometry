@@ -49,11 +49,11 @@ Namespace ThreeDimensional.Tests
         <TestMethod>
         Public Sub Guards_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() Volume(-1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() SideFromVolume(-1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() SideFromSurfaceArea(-1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() SideFromSpaceDiagonal(-1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() VerticesFromCenter(0, 0, 0, -1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Volume(-1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() SideFromVolume(-1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() SideFromSurfaceArea(-1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() SideFromSpaceDiagonal(-1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() VerticesFromCenter(0, 0, 0, -1))
         End Sub
 
     End Class

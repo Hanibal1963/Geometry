@@ -42,24 +42,24 @@ Namespace ThreeDimensional.Tests
         <TestMethod>
         Public Sub Guards_General_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() Volume(-1, 1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() LateralArea(1, -1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() SurfaceArea(1, -1, 1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Volume(-1, 1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() LateralArea(1, -1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() SurfaceArea(1, -1, 1))
         End Sub
 
         <TestMethod>
         Public Sub Guards_Triangular_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() TriangularBaseArea(1, 2, 3))
-            Assert.ThrowsException(Of ArgumentException)(Sub() TriangularPrismVolume(3, 4, 5, -1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() TriangularBaseArea(1, 2, 3))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() TriangularPrismVolume(3, 4, 5, -1))
         End Sub
 
         <TestMethod>
         Public Sub Guards_RegularPolygon_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() RegularPolygonBaseArea(1, 2))
-            Assert.ThrowsException(Of ArgumentException)(Sub() RegularPolygonPrismVolume(-1, 6, 1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() RegularPolygonPrismSurfaceArea(1, 6, -1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() RegularPolygonBaseArea(1, 2))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() RegularPolygonPrismVolume(-1, 6, 1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() RegularPolygonPrismSurfaceArea(1, 6, -1))
         End Sub
 
     End Class

@@ -53,19 +53,19 @@ Namespace ThreeDimensional.Tests
         <TestMethod>
         Public Sub Guards_Volume_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Dim unused = Assert.ThrowsException(Of ArgumentException)(Sub() Volume(-1, 2))
+            Dim unused = Assert.ThrowsExactly(Of ArgumentException)(Sub() Volume(-1, 2))
         End Sub
 
         <TestMethod>
         Public Sub Guards_Frustum_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Dim unused = Assert.ThrowsException(Of ArgumentException)(Sub() FrustumVolume(3, 3, 2))
+            Dim unused = Assert.ThrowsExactly(Of ArgumentException)(Sub() FrustumVolume(3, 3, 2))
         End Sub
 
         <TestMethod>
         Public Sub Guards_PointOnLateralSurface_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Dim unused = Assert.ThrowsException(Of ArgumentException)(Sub() PointOnLateralSurface(0, 0, 0, 3, 5, 0, 1.1))
+            Dim unused = Assert.ThrowsExactly(Of ArgumentException)(Sub() PointOnLateralSurface(0, 0, 0, 3, 5, 0, 1.1))
         End Sub
 
     End Class
