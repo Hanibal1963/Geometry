@@ -55,23 +55,23 @@ Namespace ThreeDimensional.Tests
         <TestMethod>
         Public Sub Guards_ConeFrustum_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() ConeFrustumVolume(2, 2, 1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() ConeFrustumLateralArea(-1, 0, 1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() ConeFrustumVolume(2, 2, 1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() ConeFrustumLateralArea(-1, 0, 1))
         End Sub
 
         <TestMethod>
         Public Sub Guards_PyramidFrustum_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() PyramidFrustumVolume(4, 3, 4, 2, 5))
-            Assert.ThrowsException(Of ArgumentException)(Sub() PyramidFrustumSurfaceArea(4, 3, 1, 0, -1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() PyramidFrustumVolume(4, 3, 4, 2, 5))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() PyramidFrustumSurfaceArea(4, 3, 1, 0, -1))
         End Sub
 
         <TestMethod>
         Public Sub Guards_PrismFrustum_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() PrismFrustumVolume(-1, 2, 1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() PrismFrustumLateralArea(1, -1, 1))
-            Assert.ThrowsException(Of ArgumentException)(Sub() PrismFrustumSurfaceArea(1, 1, 1, 1, -1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() PrismFrustumVolume(-1, 2, 1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() PrismFrustumLateralArea(1, -1, 1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() PrismFrustumSurfaceArea(1, 1, 1, 1, -1))
         End Sub
 
     End Class

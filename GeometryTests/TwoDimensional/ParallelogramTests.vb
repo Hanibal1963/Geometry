@@ -68,31 +68,31 @@ Namespace TwoDimensional.Tests
         <TestMethod>
         Public Sub Guards_Area_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() Area(-1, 2))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Area(-1, 2))
         End Sub
 
         <TestMethod>
         Public Sub Guards_DiagonalBySidesAndAngle_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() DiagonalBySidesAndAngle(5, 3, 0))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() DiagonalBySidesAndAngle(5, 3, 0))
         End Sub
 
         <TestMethod>
         Public Sub Guards_InteriorAngleFromSidesAndDiagonals_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() InteriorAngleFromSidesAndDiagonals(5, 3, 100, 1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() InteriorAngleFromSidesAndDiagonals(5, 3, 100, 1))
         End Sub
 
         <TestMethod>
         Public Sub Guards_AreaFromVertices_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() AreaFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 1)}))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() AreaFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 1)}))
         End Sub
 
         <TestMethod>
         Public Sub Guards_IsParallelogramFromVertices_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() IsParallelogramFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() IsParallelogramFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
         End Sub
 
     End Class

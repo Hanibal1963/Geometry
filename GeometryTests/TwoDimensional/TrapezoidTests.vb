@@ -53,25 +53,25 @@ Namespace TwoDimensional.Tests
         <TestMethod>
         Public Sub Guards_Area_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() Area(-1, 4, 3))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Area(-1, 4, 3))
         End Sub
 
         <TestMethod>
         Public Sub Guards_HeightFromArea_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() HeightFromArea(10, 0, 0))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() HeightFromArea(10, 0, 0))
         End Sub
 
         <TestMethod>
         Public Sub Guards_IsIsosceles_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() IsIsosceles(5, 5, 0))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() IsIsosceles(5, 5, 0))
         End Sub
 
         <TestMethod>
         Public Sub Guards_AreaFromVertices_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() AreaFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() AreaFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
         End Sub
 
     End Class

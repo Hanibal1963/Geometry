@@ -59,19 +59,19 @@ Namespace ThreeDimensional.Tests
         <TestMethod>
         Public Sub Guards_Volume_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() Volume(-1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Volume(-1))
         End Sub
 
         <TestMethod>
         Public Sub Guards_SphericalCapVolume_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() SphericalCapVolume(2, 5))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() SphericalCapVolume(2, 5))
         End Sub
 
         <TestMethod>
         Public Sub Guards_PointOnSphere_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() PointOnSphere(0, 0, 0, 2, -0.1, 0))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() PointOnSphere(0, 0, 0, 2, -0.1, 0))
         End Sub
 
     End Class

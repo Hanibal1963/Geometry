@@ -65,19 +65,19 @@ Namespace ThreeDimensional.Tests
         <TestMethod>
         Public Sub Guards_BaseArea_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() BaseArea(-1, 2))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() BaseArea(-1, 2))
         End Sub
 
         <TestMethod>
         Public Sub Guards_Frustum_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() FrustumVolume(4, 3, 4, 2, 5))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() FrustumVolume(4, 3, 4, 2, 5))
         End Sub
 
         <TestMethod>
         Public Sub Guards_Vertices_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() VerticesFromCenter(0, 0, 0, -1, 1, 1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() VerticesFromCenter(0, 0, 0, -1, 1, 1))
         End Sub
 
     End Class

@@ -115,7 +115,7 @@ Namespace TwoDimensional.Tests
         <TestMethod>
         Public Sub Guards_Area_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() Area(New PointF() {New PointF(0, 0), New PointF(1, 1)}))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Area(New PointF() {New PointF(0, 0), New PointF(1, 1)}))
         End Sub
 
         <TestMethod>
@@ -127,7 +127,7 @@ Namespace TwoDimensional.Tests
                 New PointF(0, 1)
             }
 
-            Assert.ThrowsException(Of ArgumentException)(Sub() IsConvex(points, 0))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() IsConvex(points, 0))
         End Sub
 
         <TestMethod>
@@ -139,7 +139,7 @@ Namespace TwoDimensional.Tests
                 New PointF(2, 2)
             }
 
-            Assert.ThrowsException(Of ArgumentException)(Sub() Centroid(collinear))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Centroid(collinear))
         End Sub
 
     End Class

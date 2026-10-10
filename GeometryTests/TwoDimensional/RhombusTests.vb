@@ -58,19 +58,19 @@ Namespace TwoDimensional.Tests
         <TestMethod>
         Public Sub Guards_AreaFromBaseHeight_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() AreaFromBaseHeight(-1, 2))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() AreaFromBaseHeight(-1, 2))
         End Sub
 
         <TestMethod>
         Public Sub Guards_DiagonalFromSideAndAngle_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() DiagonalFromSideAndAngle(4, 0))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() DiagonalFromSideAndAngle(4, 0))
         End Sub
 
         <TestMethod>
         Public Sub Guards_IsRhombusFromVertices_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() IsRhombusFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() IsRhombusFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
         End Sub
 
     End Class

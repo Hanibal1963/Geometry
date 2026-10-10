@@ -56,13 +56,13 @@ Namespace TwoDimensional.Tests
         <TestMethod>
         Public Sub Guards_Area_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() Area(-1))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() Area(-1))
         End Sub
 
         <TestMethod>
         Public Sub Guards_IsSquareFromVertices_Throws_Test()
             ' Führt den Testfall aus und prüft das erwartete Ergebnis.
-            Assert.ThrowsException(Of ArgumentException)(Sub() IsSquareFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() IsSquareFromVertices(New PointF() {New PointF(0, 0), New PointF(1, 0), New PointF(1, 1)}))
         End Sub
 
         <TestMethod>
@@ -74,7 +74,7 @@ Namespace TwoDimensional.Tests
                 New PointF(1, 1),
                 New PointF(0, 1)
             }
-            Assert.ThrowsException(Of ArgumentException)(Sub() IsSquareFromVertices(vertices, 0))
+            Assert.ThrowsExactly(Of ArgumentException)(Sub() IsSquareFromVertices(vertices, 0))
         End Sub
 
     End Class
