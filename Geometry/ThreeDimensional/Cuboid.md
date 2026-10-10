@@ -18,7 +18,7 @@ Statische Hilfsklasse für Berechnungen zu Quadern (Volumen, Oberflächen, Diago
 
 `EdgeFromVolume` - Berechnet eine fehlende Kante aus Volumen und zwei bekannten Kanten. Parameter: `volume` (`>= 0`), `edge1` (`> 0`), `edge2` (`> 0`). Rückgabe: `volume / (edge1 * edge2)`.
 
-`IsCube` - Prüft, ob ein Quader innerhalb einer Toleranz ein Würfel ist (alle Kanten gleich). Parameter: `length` (`>= 0`), `width` (`>= 0`), `height` (`>= 0`), `tolerance` (`> 0`).
+`IsCube` - Prüft, ob ein Quader innerhalb einer Toleranz ein Würfel ist (alle Kanten gleich). Parameter: `length` (`>= 0`), `width` (`>= 0`), `height` (`>= 0`), `tolerance` (`> 0`, optional).
 
 `Center` - Berechnet den Mittelpunkt aus zwei gegenüberliegenden Eckpunkten. Parameter: `x1`, `y1`, `z1` (Punkt 1), `x2`, `y2`, `z2` (Punkt 2). Rückgabe: `Tuple(Of Double, Double, Double)`.
 

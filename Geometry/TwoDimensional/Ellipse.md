@@ -16,7 +16,7 @@ Statische Hilfsklasse zur Arbeit mit Ellipsen (Geometrie, Tangenten/Normalen, Um
 
 `PerimeterRamanujan2` - Berechnet die 2. Ramanujan-Näherung des Umfangs. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`).
 
-`PerimeterNumeric` - Berechnet den Umfang numerisch mit Simpson-Integration. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `subdivisions` (Unterteilungen, wird auf gerade Zahl `>= 2` normalisiert).
+`PerimeterNumeric` - Berechnet den Umfang numerisch mit Simpson-Integration. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `subdivisions` (Unterteilungen, optional; wird auf gerade Zahl `>= 2` normalisiert).
 
 `PointOnEllipse` - Berechnet einen Punkt auf der Ellipse. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta` (Parameterwinkel im Bogenmaß). Rückgabe: `PointF(x, y)` mit `x = a*cos(theta)`, `y = b*sin(theta)`.
 
@@ -24,9 +24,9 @@ Statische Hilfsklasse zur Arbeit mit Ellipsen (Geometrie, Tangenten/Normalen, Um
 
 `NormalAt` - Liefert die Normale an der Ellipse. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta` (Parameterwinkel im Bogenmaß).
 
-`RadiusOfCurvature` - Berechnet den Krümmungsradius an der Ellipse. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta` (Parameterwinkel im Bogenmaß). Gibt `Infinity` zurück, falls degeneriert.
+`RadiusOfCurvature` - Berechnet den Krümmungsradius an der Ellipse. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta` (Parameterwinkel im Bogenmaß). Rückgabe: Krümmungsradius; bei degeneriertem Fall `Double.PositiveInfinity`.
 
-`ArcLength` - Berechnet die Bogenlänge numerisch zwischen zwei Parametern. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta1` (Startwinkel), `theta2` (Endwinkel), `subdivisions` (Unterteilungen, wird auf gerade Zahl `>= 2` normalisiert).
+`ArcLength` - Berechnet die Bogenlänge numerisch zwischen zwei Parametern. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `theta1` (Startwinkel), `theta2` (Endwinkel), `subdivisions` (Unterteilungen, optional; wird auf gerade Zahl `>= 2` normalisiert).
 
 `ClosestPointOnEllipse` - Findet iterativ (Newton) den nächsten Punkt auf der Ellipse zu einem Referenzpunkt. Parameter: `a` (Halbachse a, `a > 0`), `b` (Halbachse b, `b > 0`), `px` (X des Referenzpunkts), `py` (Y des Referenzpunkts), `initialTheta` (optional Startwert), `maxIter` (max. Iterationen), `tol` (Abbruch-Toleranz). Rückgabe: `Tuple(PointF closestPoint, Double distance)`.
 

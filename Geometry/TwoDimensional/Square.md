@@ -22,7 +22,7 @@ Statische Hilfsklasse für Berechnungen zu Quadraten (Basiswerte, abgeleitete Gr
 
 `PerimeterFromVertices` - Berechnet den Umfang aus 4 Eckpunkten als Summe der Kantenlängen. Parameter: `vertices` (4 Eckpunkte als `PointF()`).
 
-`IsSquareFromVertices` - Prüft, ob 4 Eckpunkte ein Quadrat bilden (gleich lange Seiten + rechte Winkel innerhalb Toleranz). Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`).
+`IsSquareFromVertices` - Prüft, ob 4 Eckpunkte ein Quadrat bilden (gleich lange Seiten + rechte Winkel innerhalb Toleranz). Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`, optional).
 
 ## Hinweise
 

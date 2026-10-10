@@ -22,7 +22,7 @@ Statische Hilfsklasse für Berechnungen zu Rauten (Fläche, Umfang, Diagonalen, 
 
 `PerimeterFromVertices` - Berechnet den Umfang aus 4 Eckpunkten als Summe der Kantenlängen. Parameter: `vertices` (4 Eckpunkte als `PointF()`).
 
-`IsRhombusFromVertices` - Prüft, ob 4 Eckpunkte eine Raute bilden (alle Seitenlängen gleich innerhalb Toleranz). Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`).
+`IsRhombusFromVertices` - Prüft, ob 4 Eckpunkte eine Raute bilden (alle Seitenlängen gleich innerhalb Toleranz). Parameter: `vertices` (4 Eckpunkte), `tolerance` (`> 0`, optional).
 
 ## Hinweise
 
