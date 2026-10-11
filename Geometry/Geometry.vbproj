@@ -133,25 +133,25 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="ThreeDimensional\Cone.md" />
-    <None Include="ThreeDimensional\Cube.md" />
-    <None Include="ThreeDimensional\Cuboid.md" />
-    <None Include="ThreeDimensional\Cylinder.md" />
-    <None Include="ThreeDimensional\Frustum.md" />
-    <None Include="ThreeDimensional\Prism.md" />
-    <None Include="ThreeDimensional\Pyramid.md" />
-    <None Include="ThreeDimensional\Sphere.md" />
-    <None Include="TwoDimensional\Circle.md" />
-    <None Include="TwoDimensional\Ellipse.md" />
-    <None Include="TwoDimensional\Parallelogram.md" />
-    <None Include="TwoDimensional\Polygon.md" />
-    <None Include="TwoDimensional\Rectangle.md" />
-    <None Include="TwoDimensional\RegularPolygon.md" />
-    <None Include="TwoDimensional\Trapezoid.md" />
-    <None Include="TwoDimensional\Triangle.md" />
-    <None Include="TwoDimensional\Square.md" />
-    <None Include="TwoDimensional\Rhombus.md" />
-    <None Include="TwoDimensional\Kite.md" />
+    <None Include="Doc\ThreeDimensional\Cone.md" />
+    <None Include="Doc\ThreeDimensional\Cube.md" />
+    <None Include="Doc\ThreeDimensional\Cuboid.md" />
+    <None Include="Doc\ThreeDimensional\Cylinder.md" />
+    <None Include="Doc\ThreeDimensional\Frustum.md" />
+    <None Include="Doc\ThreeDimensional\Prism.md" />
+    <None Include="Doc\ThreeDimensional\Pyramid.md" />
+    <None Include="Doc\ThreeDimensional\Sphere.md" />
+    <None Include="Doc\TwoDimensional\Circle.md" />
+    <None Include="Doc\TwoDimensional\Ellipse.md" />
+    <None Include="Doc\TwoDimensional\Parallelogram.md" />
+    <None Include="Doc\TwoDimensional\Polygon.md" />
+    <None Include="Doc\TwoDimensional\Rectangle.md" />
+    <None Include="Doc\TwoDimensional\RegularPolygon.md" />
+    <None Include="Doc\TwoDimensional\Trapezoid.md" />
+    <None Include="Doc\TwoDimensional\Triangle.md" />
+    <None Include="Doc\TwoDimensional\Square.md" />
+    <None Include="Doc\TwoDimensional\Rhombus.md" />
+    <None Include="Doc\TwoDimensional\Kite.md" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers">
@@ -160,9 +160,6 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Doc\ThreeDimensional\" />
-    <Folder Include="Doc\TwoDimensional\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
