@@ -53,25 +53,25 @@ Typische Beispiele:
 
 ### 4.1. ThreeDimensional
 
-- [Cone](Geometry/ThreeDimensional/Cone.md) - Berechnungen für Kegel (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Cube](Geometry/ThreeDimensional/Cube.md) - Berechnungen für Würfel (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Cuboid](Geometry/ThreeDimensional/Cuboid.md) - Berechnungen für Quader (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Cylinder](Geometry/ThreeDimensional/Cylinder.md) - Berechnungen für Zylinder (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Frustum](Geometry/ThreeDimensional/Frustum.md) - Berechnungen für Kegelstumpf, rechteckigen Pyramidenstumpf und Prisma-Stumpf (jeweils Volumen, Mantelfläche und Oberfläche)
-- [Prism](Geometry/ThreeDimensional/Prism.md) - Berechnungen für gerade Prismen allgemein, Dreiecksprismen sowie regelmäßige n-Eck-Prismen (jeweils Volumen und Oberfläche)
-- [Pyramid](Geometry/ThreeDimensional/Pyramid.md) - Berechnungen für Pyramiden (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Sphere](Geometry/ThreeDimensional/Sphere.md) - Berechnungen für Kugeln (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Cone](Geometry/Doc/ThreeDimensional/Cone.md) - Berechnungen für Kegel (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Cube](Geometry/Doc/ThreeDimensional/Cube.md) - Berechnungen für Würfel (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Cuboid](Geometry/Doc/ThreeDimensional/Cuboid.md) - Berechnungen für Quader (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Cylinder](Geometry/Doc/ThreeDimensional/Cylinder.md) - Berechnungen für Zylinder (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Frustum](Geometry/Doc/ThreeDimensional/Frustum.md) - Berechnungen für Kegelstumpf, rechteckigen Pyramidenstumpf und Prisma-Stumpf (jeweils Volumen, Mantelfläche und Oberfläche)
+- [Prism](Geometry/Doc/ThreeDimensional/Prism.md) - Berechnungen für gerade Prismen allgemein, Dreiecksprismen sowie regelmäßige n-Eck-Prismen (jeweils Volumen und Oberfläche)
+- [Pyramid](Geometry/Doc/ThreeDimensional/Pyramid.md) - Berechnungen für Pyramiden (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Sphere](Geometry/Doc/ThreeDimensional/Sphere.md) - Berechnungen für Kugeln (Volumen, Oberfläche und weiteren Eigenschaften)
 
 ### 4.2. TwoDimensional
 
-- [Circle](Geometry/TwoDimensional/Circle.md) - Berechnungen für Kreise (Fläche, Umfang und weiteren Eigenschaften)
-- [Ellipse](Geometry/TwoDimensional/Ellipse.md) - Berechnungen für Ellipsen (Fläche, Umfang und weiteren Eigenschaften)
-- [Kite](Geometry/TwoDimensional/Kite.md) - Berechnungen für Drachen (Fläche, Umfang und weiteren Eigenschaften)
-- [Parallelogram](Geometry/TwoDimensional/Parallelogram.md) - Berechnung von Parallelogrammflächen
-- [Polygon](Geometry/TwoDimensional/Polygon.md) - Berechnung von Polygonflächen
-- [Rectangle](Geometry/TwoDimensional/Rectangle.md) - Berechnung von Rechteckflächen
-- [RegularPolygon](Geometry/TwoDimensional/RegularPolygon.md) - Berechnung von regelmäßigen Polygonflächen
-- [Rhombus](Geometry/TwoDimensional/Rhombus.md) - Berechnung von Rauteflächen
-- [Square](Geometry/TwoDimensional/Square.md) - Berechnungen für Quadrate (Fläche, Umfang und weiteren Eigenschaften)
-- [Trapezoid](Geometry/TwoDimensional/Trapezoid.md) - Berechnungen für Trapeze (Fläche, Umfang und weiteren Eigenschaften)
-- [Triangle](Geometry/TwoDimensional/Triangle.md) - Berechnungen für Dreiecke (Fläche, Umfang und weiteren Eigenschaften)
+- [Circle](Geometry/Doc/TwoDimensional/Circle.md) - Berechnungen für Kreise (Fläche, Umfang und weiteren Eigenschaften)
+- [Ellipse](Geometry/Doc/TwoDimensional/Ellipse.md) - Berechnungen für Ellipsen (Fläche, Umfang und weiteren Eigenschaften)
+- [Kite](Geometry/Doc/TwoDimensional/Kite.md) - Berechnungen für Drachen (Fläche, Umfang und weiteren Eigenschaften)
+- [Parallelogram](Geometry/Doc/TwoDimensional/Parallelogram.md) - Berechnung von Parallelogrammflächen
+- [Polygon](Geometry/Doc/TwoDimensional/Polygon.md) - Berechnung von Polygonflächen
+- [Rectangle](Geometry/Doc/TwoDimensional/Rectangle.md) - Berechnung von Rechteckflächen
+- [RegularPolygon](Geometry/Doc/TwoDimensional/RegularPolygon.md) - Berechnung von regelmäßigen Polygonflächen
+- [Rhombus](Geometry/Doc/TwoDimensional/Rhombus.md) - Berechnung von Rauteflächen
+- [Square](Geometry/Doc/TwoDimensional/Square.md) - Berechnungen für Quadrate (Fläche, Umfang und weiteren Eigenschaften)
+- [Trapezoid](Geometry/Doc/TwoDimensional/Trapezoid.md) - Berechnungen für Trapeze (Fläche, Umfang und weiteren Eigenschaften)
+- [Triangle](Geometry/Doc/TwoDimensional/Triangle.md) - Berechnungen für Dreiecke (Fläche, Umfang und weiteren Eigenschaften)
