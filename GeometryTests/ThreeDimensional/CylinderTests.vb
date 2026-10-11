@@ -5,7 +5,8 @@
 ' --------------------------------------------------------------------------------------------------------
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
-Imports SchlumpfSoft.Geometry.ThreeDimensional.Cylinder
+
+Imports SchlumpfSoft.GeometryNET.ThreeDimensional.Cylinder
 
 Namespace ThreeDimensional.Tests
 

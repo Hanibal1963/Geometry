@@ -5,7 +5,8 @@
 ' --------------------------------------------------------------------------------------------------------
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
-Imports SchlumpfSoft.Geometry.ThreeDimensional.Pyramid
+
+Imports SchlumpfSoft.GeometryNET.ThreeDimensional.Pyramid
 
 Namespace ThreeDimensional.Tests
 

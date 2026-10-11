@@ -327,13 +327,14 @@ Namespace TwoDimensional
 
 #Region "Validierung und interne Hilfsmethoden"
 
-        Private Shared Function PointOnEllipseD(a As Double, b As Double, theta As Double) As (Double, Double)
+        Private Shared Function PointOnEllipseD(a As Double, b As Double, theta As Double) As Tuple(Of Double, Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.
             ValidateAxes(a, b)
             Dim x = a * Math.Cos(theta)
             Dim y = b * Math.Sin(theta)
-            Return (x, y)
+            Return Tuple.Create(x, y)
         End Function
+
 
         Private Shared Sub ValidateAxes(a As Double, b As Double)
             ' Prüft Eingaben und führt den Berechnungsschritt dieser Methode aus.

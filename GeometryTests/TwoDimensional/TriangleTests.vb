@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports System.Drawing
-Imports SchlumpfSoft.Geometry.TwoDimensional.Triangle
+Imports SchlumpfSoft.GeometryNET.TwoDimensional.Triangle
 
 Namespace TwoDimensional.Tests
 

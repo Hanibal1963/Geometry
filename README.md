@@ -11,7 +11,7 @@
 
 ## 1. Beschreibung
 
-`Geometry` ist eine VB.NET-Bibliothek (.NET Framework 4.7.2) für mathematische Berechnungen in der Ebenen- und Raumgeometrie.
+`Geometry` ist eine VB.NET-Bibliothek für mathematische Berechnungen in der Ebenen- und Raumgeometrie.
 Sie stellt statische Hilfsklassen für 2D- und 3D-Objekte bereit und enthält neben Basiswerten (z. B. Fläche, Umfang, Volumen, Oberfläche) auch abgeleitete Standardgrößen sowie Koordinatenhilfen.
 Die Bibliothek ist so aufgebaut, dass Eingaben über Guard-Clauses validiert werden und bei ungültigen Werten konsistente `ArgumentException`-Fehler ausgelöst werden.
 
@@ -20,19 +20,29 @@ Die Bibliothek ist so aufgebaut, dass Eingaben über Guard-Clauses validiert wer
 Beispiel für die Verwendung in VB.NET:
 
 ```vb
-Imports SchlumpfSoft.Geometry.TwoDimensional
-Imports SchlumpfSoft.Geometry.ThreeDimensional
+Imports SchlumpfSoft.GeometryNET.TwoDimensional
+Imports SchlumpfSoft.GeometryNET.ThreeDimensional
 
 Module Example
-    Sub Main()
-        Dim circleArea = Circle.Area(5)        Dim circleArea = Circle.Area(5)
-        Dim rectanglePerimeter = Rectangle.Perimeter(4, 3)        Dim rectanglePerimeter = Rectangle.Perimeter(4, 3)
-        Dim sphereVolume = Sphere.Volume(2)        Dim sphereVolume = Sphere.Volume(2)
 
-        Console.WriteLine($"Kreisfläche: {circleArea}")        Console.WriteLine($"Kreisfläche: {circleArea}")
-        Console.WriteLine($"Rechteckumfang: {rectanglePerimeter}")        Console.WriteLine($"Rechteckumfang: {rectanglePerimeter}")
-        Console.WriteLine($"Kugelvolumen: {sphereVolume}")        Console.WriteLine($"Kugelvolumen: {sphereVolume}")
+    Sub Main()
+
+        Dim circleArea = Circle.Area(5)        
+        Dim circleArea = Circle.Area(5)
+        Dim rectanglePerimeter = Rectangle.Perimeter(4, 3)        
+        Dim rectanglePerimeter = Rectangle.Perimeter(4, 3)
+        Dim sphereVolume = Sphere.Volume(2)        
+        Dim sphereVolume = Sphere.Volume(2)
+
+        Console.WriteLine($"Kreisfläche: {circleArea}")        
+        Console.WriteLine($"Kreisfläche: {circleArea}")
+        Console.WriteLine($"Rechteckumfang: {rectanglePerimeter}")        
+        Console.WriteLine($"Rechteckumfang: {rectanglePerimeter}")
+        Console.WriteLine($"Kugelvolumen: {sphereVolume}")        
+        Console.WriteLine($"Kugelvolumen: {sphereVolume}")
+
     End Sub
+
 End Module
 ```
 
@@ -53,25 +63,25 @@ Typische Beispiele:
 
 ### 4.1. ThreeDimensional
 
-- [Cone](Geometry/Doc/ThreeDimensional/Cone.md) - Berechnungen für Kegel (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Cube](Geometry/Doc/ThreeDimensional/Cube.md) - Berechnungen für Würfel (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Cuboid](Geometry/Doc/ThreeDimensional/Cuboid.md) - Berechnungen für Quader (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Cylinder](Geometry/Doc/ThreeDimensional/Cylinder.md) - Berechnungen für Zylinder (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Frustum](Geometry/Doc/ThreeDimensional/Frustum.md) - Berechnungen für Kegelstumpf, rechteckigen Pyramidenstumpf und Prisma-Stumpf (jeweils Volumen, Mantelfläche und Oberfläche)
-- [Prism](Geometry/Doc/ThreeDimensional/Prism.md) - Berechnungen für gerade Prismen allgemein, Dreiecksprismen sowie regelmäßige n-Eck-Prismen (jeweils Volumen und Oberfläche)
-- [Pyramid](Geometry/Doc/ThreeDimensional/Pyramid.md) - Berechnungen für Pyramiden (Volumen, Oberfläche und weiteren Eigenschaften)
-- [Sphere](Geometry/Doc/ThreeDimensional/Sphere.md) - Berechnungen für Kugeln (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Cone](GeometryNET/Doc/ThreeDimensional/Cone.md) - Berechnungen für Kegel (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Cube](GeometryNET/Doc/ThreeDimensional/Cube.md) - Berechnungen für Würfel (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Cuboid](GeometryNET/Doc/ThreeDimensional/Cuboid.md) - Berechnungen für Quader (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Cylinder](GeometryNET/Doc/ThreeDimensional/Cylinder.md) - Berechnungen für Zylinder (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Frustum](GeometryNET/Doc/ThreeDimensional/Frustum.md) - Berechnungen für Kegelstumpf, rechteckigen Pyramidenstumpf und Prisma-Stumpf (jeweils Volumen, Mantelfläche und Oberfläche)
+- [Prism](GeometryNET/Doc/ThreeDimensional/Prism.md) - Berechnungen für gerade Prismen allgemein, Dreiecksprismen sowie regelmäßige n-Eck-Prismen (jeweils Volumen und Oberfläche)
+- [Pyramid](GeometryNET/Doc/ThreeDimensional/Pyramid.md) - Berechnungen für Pyramiden (Volumen, Oberfläche und weiteren Eigenschaften)
+- [Sphere](GeometryNET/Doc/ThreeDimensional/Sphere.md) - Berechnungen für Kugeln (Volumen, Oberfläche und weiteren Eigenschaften)
 
 ### 4.2. TwoDimensional
 
-- [Circle](Geometry/Doc/TwoDimensional/Circle.md) - Berechnungen für Kreise (Fläche, Umfang und weiteren Eigenschaften)
-- [Ellipse](Geometry/Doc/TwoDimensional/Ellipse.md) - Berechnungen für Ellipsen (Fläche, Umfang und weiteren Eigenschaften)
-- [Kite](Geometry/Doc/TwoDimensional/Kite.md) - Berechnungen für Drachen (Fläche, Umfang und weiteren Eigenschaften)
-- [Parallelogram](Geometry/Doc/TwoDimensional/Parallelogram.md) - Berechnung von Parallelogrammflächen
-- [Polygon](Geometry/Doc/TwoDimensional/Polygon.md) - Berechnung von Polygonflächen
-- [Rectangle](Geometry/Doc/TwoDimensional/Rectangle.md) - Berechnung von Rechteckflächen
-- [RegularPolygon](Geometry/Doc/TwoDimensional/RegularPolygon.md) - Berechnung von regelmäßigen Polygonflächen
-- [Rhombus](Geometry/Doc/TwoDimensional/Rhombus.md) - Berechnung von Rauteflächen
-- [Square](Geometry/Doc/TwoDimensional/Square.md) - Berechnungen für Quadrate (Fläche, Umfang und weiteren Eigenschaften)
-- [Trapezoid](Geometry/Doc/TwoDimensional/Trapezoid.md) - Berechnungen für Trapeze (Fläche, Umfang und weiteren Eigenschaften)
-- [Triangle](Geometry/Doc/TwoDimensional/Triangle.md) - Berechnungen für Dreiecke (Fläche, Umfang und weiteren Eigenschaften)
+- [Circle](GeometryNET/Doc/TwoDimensional/Circle.md) - Berechnungen für Kreise (Fläche, Umfang und weiteren Eigenschaften)
+- [Ellipse](GeometryNET/Doc/TwoDimensional/Ellipse.md) - Berechnungen für Ellipsen (Fläche, Umfang und weiteren Eigenschaften)
+- [Kite](GeometryNET/Doc/TwoDimensional/Kite.md) - Berechnungen für Drachen (Fläche, Umfang und weiteren Eigenschaften)
+- [Parallelogram](GeometryNET/Doc/TwoDimensional/Parallelogram.md) - Berechnung von Parallelogrammflächen
+- [Polygon](GeometryNET/Doc/TwoDimensional/Polygon.md) - Berechnung von Polygonflächen
+- [Rectangle](GeometryNET/Doc/TwoDimensional/Rectangle.md) - Berechnung von Rechteckflächen
+- [RegularPolygon](GeometryNET/Doc/TwoDimensional/RegularPolygon.md) - Berechnung von regelmäßigen Polygonflächen
+- [Rhombus](GeometryNET/Doc/TwoDimensional/Rhombus.md) - Berechnung von Rauteflächen
+- [Square](GeometryNET/Doc/TwoDimensional/Square.md) - Berechnungen für Quadrate (Fläche, Umfang und weiteren Eigenschaften)
+- [Trapezoid](GeometryNET/Doc/TwoDimensional/Trapezoid.md) - Berechnungen für Trapeze (Fläche, Umfang und weiteren Eigenschaften)
+- [Triangle](GeometryNET/Doc/TwoDimensional/Triangle.md) - Berechnungen für Dreiecke (Fläche, Umfang und weiteren Eigenschaften)

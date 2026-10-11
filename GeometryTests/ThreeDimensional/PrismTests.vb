@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
-Imports SchlumpfSoft.Geometry.ThreeDimensional.Prism
+Imports SchlumpfSoft.GeometryNET.ThreeDimensional.Prism
 
 Namespace ThreeDimensional.Tests
 

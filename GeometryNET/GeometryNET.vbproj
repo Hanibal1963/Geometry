@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+  <PropertyGroup>
+    <RootNamespace>SchlumpfSoft.GeometryNET</RootNamespace>
+    <TargetFrameworks>net472;net462;net481;net8.0-windows;net9.0-windows;net10.0-windows</TargetFrameworks>
+    <OptionStrict>On</OptionStrict>
+    <Company>SchlumpfSoft</Company>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <NeutralLanguage>de</NeutralLanguage>
+    <AssemblyVersion>1.2026.0</AssemblyVersion>
+    <FileVersion>1.2026.0</FileVersion>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Geometry NET</Title>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Version>1.2026.0</Version>
+    <Authors>Andreas Sauer</Authors>
+    <Product>GeometryNET</Product>
+    <Description>VB.NET-Bibliothek für mathematische Berechnungen in der Ebenen- und Raumgeometrie</Description>
+    <Copyright>Copyright (c) 2026 Andreas Sauer</Copyright>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+	
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Include="Icon.png" Pack="true" PackagePath="\" />
+		<None Include="LICENSE.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	
+  <Target Name="CopyPackageToLocalFeed" AfterTargets="Pack">
+	<ItemGroup>
+		<PackedFiles Include="$(PackageOutputPath)\*.nupkg;$(PackageOutputPath)\*.snupkg" />
+	</ItemGroup>
+	<MakeDir Directories="d:\MyNuGet" />
+	<Copy SourceFiles="@(PackedFiles)" DestinationFolder="d:\MyNuGet" SkipUnchangedFiles="true" />
+  </Target>
+	
+</Project>

@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports System.Drawing
-Imports SchlumpfSoft.Geometry.TwoDimensional.Trapezoid
+Imports SchlumpfSoft.GeometryNET.TwoDimensional.Trapezoid
 
 Namespace TwoDimensional.Tests
 

@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports System.Drawing
-Imports SchlumpfSoft.Geometry.TwoDimensional.Parallelogram
+Imports SchlumpfSoft.GeometryNET.TwoDimensional.Parallelogram
 
 Namespace TwoDimensional.Tests
 

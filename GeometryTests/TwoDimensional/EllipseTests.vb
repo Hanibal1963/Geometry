@@ -8,7 +8,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports System
 Imports System.Drawing
 
-Imports SchlumpfSoft.Geometry.TwoDimensional.Ellipse
+Imports SchlumpfSoft.GeometryNET.TwoDimensional.Ellipse
 
 Namespace TwoDimensional.Tests
 
