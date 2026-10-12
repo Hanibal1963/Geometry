@@ -24,7 +24,7 @@
     <PackageProjectUrl>https://github.com/Hanibal1963/Geometry</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Hanibal1963/Geometry</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>Cone Cube Cuboid Cylinder Frustum Prism Pyramid Sphere Circle Ellipse Kite Parallelogram Polygon Rhombus Square Trapetoid Triangle Geometry Calculate </PackageTags>
+    <PackageTags>Cone Cube Cuboid Cylinder Frustum Prism Pyramid Sphere Circle Ellipse Kite Parallelogram Polygon Rhombus Square Trapezoid Triangle Geometry Calculate </PackageTags>
     <AssemblyName>GeometryNET</AssemblyName>
     <AssemblyTitle>GeometryNET</AssemblyTitle>
   </PropertyGroup>
