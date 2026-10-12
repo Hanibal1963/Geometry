@@ -5,7 +5,8 @@
 ' --------------------------------------------------------------------------------------------------------
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
-Imports SchlumpfSoft.Geometry.ThreeDimensional.Cone
+
+Imports SchlumpfSoft.GeometryNET.ThreeDimensional.Cone
 
 Namespace ThreeDimensional.Tests
 

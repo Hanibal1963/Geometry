@@ -5,7 +5,8 @@
 ' --------------------------------------------------------------------------------------------------------
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
-Imports SchlumpfSoft.Geometry.ThreeDimensional.Cuboid
+
+Imports SchlumpfSoft.GeometryNET.ThreeDimensional.Cuboid
 
 Namespace ThreeDimensional.Tests
 

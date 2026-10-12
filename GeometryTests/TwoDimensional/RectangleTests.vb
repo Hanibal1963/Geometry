@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports System.Drawing
-Imports SchlumpfSoft.Geometry.TwoDimensional.Rectangle
+Imports SchlumpfSoft.GeometryNET.TwoDimensional.Rectangle
 
 Namespace TwoDimensional.Tests
 

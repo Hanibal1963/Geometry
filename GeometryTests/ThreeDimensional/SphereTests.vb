@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
-Imports SchlumpfSoft.Geometry.ThreeDimensional.Sphere
+Imports SchlumpfSoft.GeometryNET.ThreeDimensional.Sphere
 
 Namespace ThreeDimensional.Tests
 

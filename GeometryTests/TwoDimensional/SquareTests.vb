@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports System.Drawing
-Imports SchlumpfSoft.Geometry.TwoDimensional.Square
+Imports SchlumpfSoft.GeometryNET.TwoDimensional.Square
 
 Namespace TwoDimensional.Tests
 

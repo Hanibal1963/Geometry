@@ -129,12 +129,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Geometry\Geometry.vbproj">
-      <Project>{4030dfdf-b8bc-4a3e-a351-dd179055de17}</Project>
-      <Name>Geometry</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers">
       <Version>5.9.0</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -142,6 +136,9 @@
     </PackageReference>
     <PackageReference Include="MSTest">
       <Version>4.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="SchlumpfSoft.GeometryNET">
+      <Version>1.2026.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

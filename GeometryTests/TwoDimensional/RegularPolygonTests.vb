@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports System.Drawing
-Imports SchlumpfSoft.Geometry.TwoDimensional.RegularPolygon
+Imports SchlumpfSoft.GeometryNET.TwoDimensional.RegularPolygon
 
 Namespace TwoDimensional.Tests
 

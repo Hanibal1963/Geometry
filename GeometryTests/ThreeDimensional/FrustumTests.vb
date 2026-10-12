@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
-Imports SchlumpfSoft.Geometry.ThreeDimensional.Frustum
+Imports SchlumpfSoft.GeometryNET.ThreeDimensional.Frustum
 
 Namespace ThreeDimensional.Tests
 

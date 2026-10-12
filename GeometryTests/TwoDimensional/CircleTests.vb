@@ -7,7 +7,7 @@
 Imports System
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports System.Drawing
-Imports SchlumpfSoft.Geometry.TwoDimensional.Circle
+Imports SchlumpfSoft.GeometryNET.TwoDimensional.Circle
 
 Namespace TwoDimensional.Tests
 

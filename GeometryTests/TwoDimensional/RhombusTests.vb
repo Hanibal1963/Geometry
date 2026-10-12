@@ -6,7 +6,7 @@
 
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports System.Drawing
-Imports SchlumpfSoft.Geometry.TwoDimensional.Rhombus
+Imports SchlumpfSoft.GeometryNET.TwoDimensional.Rhombus
 
 Namespace TwoDimensional.Tests
 
