@@ -32,18 +32,11 @@ Module Example
     Sub Main()
 
         Dim circleArea = Circle.Area(5)        
-        Dim circleArea = Circle.Area(5)
         Dim rectanglePerimeter = Rectangle.Perimeter(4, 3)        
-        Dim rectanglePerimeter = Rectangle.Perimeter(4, 3)
         Dim sphereVolume = Sphere.Volume(2)        
-        Dim sphereVolume = Sphere.Volume(2)
-
         Console.WriteLine($"Kreisfläche: {circleArea}")        
-        Console.WriteLine($"Kreisfläche: {circleArea}")
         Console.WriteLine($"Rechteckumfang: {rectanglePerimeter}")        
-        Console.WriteLine($"Rechteckumfang: {rectanglePerimeter}")
         Console.WriteLine($"Kugelvolumen: {sphereVolume}")        
-        Console.WriteLine($"Kugelvolumen: {sphereVolume}")
 
     End Sub
 
